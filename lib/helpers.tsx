@@ -1,16 +1,26 @@
-export const conversionRates: Record<string, number> = {
-  meters: 1,
-  kilometers: 0.001,
-  miles: 0.000621371,
-  feet: 3.28084,
-  inches: 39.3701,
-};
+import { availableLocales, defaultLanguage } from "@/i18n/settings";
 
-export const convertLength = (
+export type Rates = Record<string, number>;
+export const converter = (
   value: number,
   fromUnit: string,
-  toUnit: string
+  toUnit: string,
+  conversionRates: Rates
 ) => {
   const inMeters = value / conversionRates[fromUnit];
   return inMeters * conversionRates[toUnit];
+};
+
+export const omitLocaleFromPath = (path: string): string => {
+  if (!path) return "";
+  const splittedPath = path.split("/").filter((item) => !!item);
+  const isFirstSegmentLocale = availableLocales.includes(splittedPath[0]);
+  if (
+    splittedPath.length === 1 &&
+    (isFirstSegmentLocale || defaultLanguage === splittedPath[0])
+  ) {
+    return "";
+  }
+  const startIdx = isFirstSegmentLocale ? 1 : 0;
+  return splittedPath.slice(startIdx).join("/");
 };

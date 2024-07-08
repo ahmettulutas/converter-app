@@ -7,17 +7,21 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { SelectType } from "./combobox";
+import { SelectType } from ".";
 import { useCallback } from "react";
+import { useParams } from "next/navigation";
+import { useTranslation } from "@/i18n/client";
 
 type ComboItems = {
   setOpen?: (open: boolean) => void;
   setSelected: (option: SelectType | undefined) => void;
-  data?: Array<SelectType>;
+  data?: readonly SelectType[];
   emptyMessage?: string;
 };
 
 export function ComboItems(props: ComboItems) {
+  const params = useParams();
+  const { t } = useTranslation(params.locale as string, "translation");
   const { setOpen, setSelected, data, emptyMessage } = props;
   const handleSelect = useCallback(
     (selected: string) => {
@@ -35,9 +39,9 @@ export function ComboItems(props: ComboItems) {
 
   return (
     <Command>
-      <CommandInput placeholder="Ara..." />
+      <CommandInput placeholder={t("labels.search")} />
       <CommandList>
-        <CommandEmpty>{emptyMessage ?? "Hiçbir sonuç bulunamadı"}</CommandEmpty>
+        <CommandEmpty>{emptyMessage ?? t("msg.noResult")}</CommandEmpty>
         <CommandGroup>
           {data?.map((option) => (
             <CommandItem

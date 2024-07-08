@@ -1,35 +1,54 @@
 "use client";
-import { ComboBoxResponsive } from "@/components/shared/combobox";
+import { ComboBoxResponsive, SelectType } from "@/components/shared/combobox";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { lengthUnits } from "@/constants/length-units";
-import { convertLength } from "@/lib/helpers";
+import { useTranslation } from "@/i18n/client";
+import { Rates, converter } from "@/lib/helpers";
 import { ArrowLeftRight } from "lucide-react";
+import { useParams } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 
-export const LengthConverter = () => {
+type UnitValues<T extends readonly SelectType[]> = T[number]["value"];
+
+type ConverterProps<T extends readonly SelectType[]> = {
+  units: T;
+  initialInputUnit: UnitValues<T>;
+  initialOutputUnit: UnitValues<T>;
+  rates: Rates;
+};
+
+export const Converter = <T extends readonly SelectType[]>(
+  props: ConverterProps<T>
+) => {
+  const { units, initialInputUnit, initialOutputUnit, rates } = props;
   const [inputValue, setInputValue] = useState("");
-  const [inputUnit, setInputUnit] = useState("meters");
-  const [outputUnit, setOutputUnit] = useState("kilometers");
+  const [inputUnit, setInputUnit] = useState(String(initialInputUnit));
+  const [outputUnit, setOutputUnit] = useState(String(initialOutputUnit));
   const [outputValue, setOutputValue] = useState("");
+  const params = useParams();
+  const { t } = useTranslation(params.locale as string, "translation");
 
   const handleConvert = useCallback(() => {
     const value = parseFloat(inputValue);
     if (!isNaN(value)) {
-      const result = convertLength(value, inputUnit, outputUnit);
-      console.log("result", result);
+      const result = converter(value, inputUnit, outputUnit, rates);
       setOutputValue(String(result));
     }
-  }, [inputUnit, inputValue, outputUnit]);
+  }, [inputUnit, inputValue, outputUnit, rates]);
+
   const handleSwap = () => {
     let prevInput = inputUnit;
     setInputUnit(outputUnit);
     setOutputUnit(prevInput);
   };
+
   useEffect(() => {
     handleConvert();
   }, [inputUnit, outputUnit, inputValue, handleConvert]);
-
+  const translatedUnitOptions = units.map(({ value, label }) => ({
+    value,
+    label: t(`labels.units.${label}`),
+  }));
   return (
     <section className="grid grid-cols-2 gap-4 w-full max-w-[450px]">
       <div className="w-full col-span-2 flex gap-2">
@@ -39,8 +58,8 @@ export const LengthConverter = () => {
             className: "justify-between w-full",
           }}
           value={inputUnit}
-          title="kaynak birim"
-          data={lengthUnits}
+          title={t("labels.from")}
+          data={translatedUnitOptions}
           handleChange={(e) => {
             setInputUnit(String(e));
             handleConvert();
@@ -56,8 +75,8 @@ export const LengthConverter = () => {
             className: "justify-between w-full",
           }}
           value={outputUnit}
-          title="hedef birim"
-          data={lengthUnits}
+          title={t("labels.result")}
+          data={translatedUnitOptions}
           handleChange={(e) => {
             setOutputUnit(String(e));
             handleConvert();
@@ -65,20 +84,28 @@ export const LengthConverter = () => {
         />
       </div>
       <Input
+        type="number"
+        autoFocus
         value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value);
           handleConvert();
         }}
-        placeholder={`Enter ${inputUnit}`}
+        placeholder={t("labels.typeUnit")}
         className="col-span-2 md:col-span-1"
       />
       <Input
+        type="number"
         defaultValue={outputValue}
-        placeholder="The result"
+        placeholder={t("labels.result")}
         disabled
         className="col-span-2 md:col-span-1 disabled:opacity-100 bg-gray-100 disabled:cursor-default"
       />
+      {inputValue ? (
+        <h2 className="col-span-2 text-center text-lg md:text-2xl">{`${inputValue} ${t(
+          `labels.units.${inputUnit}`
+        )} =  ${outputValue} ${t(`labels.units.${outputUnit}`)}`}</h2>
+      ) : null}
     </section>
   );
 };

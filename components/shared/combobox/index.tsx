@@ -12,14 +12,14 @@ import { Button, ButtonProps } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { ComboItems } from "./combo-items";
-import { DownIcon } from "../icons/down-icon";
+import { DownIcon } from "../../icons/down-icon";
 import { useMediaQuery } from "@/hooks/use-media";
 
 export type SelectType = { value: string | number; label: string };
 
 export type ComboboxProps = {
   title: string;
-  data?: Array<SelectType>;
+  data?: readonly SelectType[];
   triggerProps?: ButtonProps;
   value: SelectType["value"];
   handleChange: (val: SelectType["value"]) => void;
@@ -34,13 +34,10 @@ export function ComboBoxResponsive(props: Readonly<ComboboxProps>) {
   const selectedVal = data?.find((item) => item.value === value);
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
+
   const onChange = (selected: SelectType | undefined) => {
-    if (
-      typeof selected?.value === "string" ||
-      typeof selected?.value === "number"
-    ) {
-      handleChange(selected?.value);
-    }
+    if (!selected) return;
+    handleChange(selected?.value);
   };
 
   const buttonContent = (

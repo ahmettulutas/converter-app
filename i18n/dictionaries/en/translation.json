@@ -1,0 +1,75 @@
+{
+  "lengthHeader": "Length Converter",
+  "weightHeader": "Weight Converter",
+  "labels": {
+    "from": "From",
+    "result": "Result",
+    "typeUnit": "Type a value",
+    "convert": "Convert",
+    "search": "Search",
+    "home": "Home",
+    "weight": "Weight converter",
+    "units": {
+      "millimeters": "Millimeters",
+      "centimeters": "Centimeters",
+      "decimeters": "Decimeters",
+      "meters": "Meters",
+      "kilometers": "Kilometers",
+      "miles": "Miles",
+      "feet": "Feet",
+      "inches": "Inches",
+      "yards": "Yards",
+      "miligrams": "Miligrams",
+      "centigrams": "Centigrams",
+      "decigrams": "Decigrams",
+      "grams": "Grams",
+      "kilograms": "Kilograms",
+      "pounds": "Pounds",
+      "ounces": "Ounces"
+    }
+  },
+  "msg": {
+    "noLangSelected": "No language is selected",
+    "selectLang": "Select a language",
+    "noResult": "No result found."
+  },
+  "metaData": {
+    "applicationName": "Easiest Length Conversion Tools",
+    "home": {
+      "description": "Metre, santimetre, milimetre, kilometre gibi farklı uzunluk birimleri arasında hızlı ve kolay dönüştürmeler için Türkiye'nin en kapsamlı uzunluk dönüştürme web sitesine hoş geldiniz! Sitemizde, Türkiye'de en çok aranan uzunluk dönüştürme sorularına yanıt veren dönüştürme araçları ve tablolar bulabilirsiniz.",
+      "keywords": [
+        "Uzunluk dönüştürme",
+        "Metre dönüştürme",
+        "Santimetre dönüştürme",
+        "Milimetre dönüştürme",
+        "Kilometre dönüştürme",
+        "Cm'yi metreye çevirme",
+        "Metreyi cm'ye çevirme",
+        "Mm'yi metreye çevirme",
+        "Metreyi mm'ye çevirme",
+        "Km'yi metreye çevirme",
+        "Metreyi km'ye çevirme",
+        "1 metre kaç kmdir?",
+        "Feet to meter",
+        "how much is 1 feet in inches"
+      ]
+    },
+    "weight": {
+      "description": "Welcome to Turkey's most comprehensive weight conversion website for quick and easy conversions between different weight units such as grams, kilograms, tons, and ounces! Here on our site, you can find conversion tools and tables that address the most frequently asked weight conversion questions in Turkey.",
+      "keywords": [
+        "Weight conversion",
+        "Gram conversion",
+        "Kilogram conversion",
+        "Ton conversion",
+        "Ounce conversion",
+        "Convert g to kg",
+        "Convert kg to g",
+        "Convert ton to kg",
+        "Convert kg to ton",
+        "Convert ounce to kg",
+        "Convert kg to ounce",
+        ""
+      ]
+    }
+  }
+}

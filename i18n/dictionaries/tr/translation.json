@@ -1,0 +1,78 @@
+{
+  "lengthHeader": "Uzunluk Dönüştürücü",
+  "weightHeader": "Ağırlık Dönüştürücü",
+  "labels": {
+    "from": "Başlangıç",
+    "result": "Sonuç",
+    "typeUnit": "Bir değer girin",
+    "convert": "Dönüştür",
+    "search": "Ara",
+    "home": "Anasayfa",
+    "weight": "Ağırlık Hesapla",
+    "units": {
+      "millimeters": "Milimetre",
+      "centimeters": "Santimetre",
+      "decimeters": "Desimetre",
+      "meters": "Metre",
+      "kilometers": "Kilometre",
+      "miles": "Mil",
+      "feet": "Fit",
+      "inches": "İnç",
+      "yards": "Yarda",
+      "miligrams": "Miligram",
+      "centigrams": "Santigram",
+      "decigrams": "Desigram",
+      "grams": "Gram",
+      "kilograms": "Kilogram",
+      "pounds": "Pound",
+      "ounces": "Ons"
+    }
+  },
+  "msg": {
+    "noLangSelected": "Dil seçilmedi",
+    "selectLang": "Bir dil seçin",
+    "noResult": "Sonuç bulunamadı."
+  },
+  "metaData": {
+    "applicationName": "En Kolay Uzunluk Dönüştürme Araçları",
+    "home": {
+      "title": "En Kolay Uzunluk Dönüştürme Araçları - Türkiye | Hemen Cm'yi Metreye Çevir!",
+      "description": "Metre, santimetre, milimetre, kilometre gibi farklı uzunluk birimleri arasında hızlı ve kolay dönüştürmeler için Türkiye'nin en kapsamlı uzunluk dönüştürme web sitesine hoş geldiniz! Sitemizde, Türkiye'de en çok aranan uzunluk dönüştürme sorularına yanıt veren dönüştürme araçları ve tablolar bulabilirsiniz.",
+      "keywords": [
+        "Uzunluk dönüştürme",
+        "Metre dönüştürme",
+        "Santimetre dönüştürme",
+        "Milimetre dönüştürme",
+        "Kilometre dönüştürme",
+        "Cm'yi metreye çevirme",
+        "Metreyi cm'ye çevirme",
+        "Mm'yi metreye çevirme",
+        "Metreyi mm'ye çevirme",
+        "Km'yi metreye çevirme",
+        "Metreyi km'ye çevirme",
+        "1 metre kaç kmdir?",
+        "1 feet kaç m?",
+        "1 inç kaç fittir?"
+      ],
+      "category": "Uzunluk Dönüştürücüleri"
+    },
+    "weight": {
+      "title": "Ağırlık Dönüştürme - Gram, Kg, Ton ve Ons Çevir | Kolay ve Hızlı!",
+      "description": "Gram, kilogram, ton ve ons gibi farklı ağırlık birimleri arasında hızlı ve kolay dönüştürmeler için Türkiye'nin en kapsamlı ağırlık dönüştürme web sitesine hoş geldiniz! Sitemizde, Türkiye'de en çok aranan ağırlık dönüştürme sorularına yanıt veren dönüştürme araçları ve tablolar bulabilirsiniz.",
+      "keywords": [
+        "Ağırlık dönüştürme",
+        "Gram dönüştürme",
+        "Kilogram dönüştürme",
+        "Ton dönüştürme",
+        "Ons dönüştürme",
+        "G'yi kg'ye çevirme",
+        "Kg'yi g'ye çevirme",
+        "Tonu kg'ye çevirme",
+        "Kg'yi tona çevirme",
+        "Onsu kg'ye çevirme",
+        "Kg'yi onsa çevirme"
+      ],
+      "category": "Ağırlık Dönüştürücüleri"
+    }
+  }
+}

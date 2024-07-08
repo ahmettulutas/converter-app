@@ -1,0 +1,53 @@
+{
+  "lengthHeader": "Längenumrechner",
+  "weightHeader": "Gewichtsumrechner",
+  "labels": {
+    "from": "Von",
+    "result": "Ergebnis",
+    "typeUnit": "Geben Sie einen Wert ein",
+    "convert": "Konvertieren",
+    "home": "Startseite",
+    "weight": "Gewicht umrechnen",
+    "units": {
+      "millimeters": "Millimeter",
+      "centimeters": "Zentimeter",
+      "decimeters": "Dezimeter",
+      "meters": "Meter",
+      "kilometers": "Kilometer",
+      "miles": "Meilen",
+      "feet": "Fuß",
+      "inches": "Zoll",
+      "yards": "Yards",
+      "miligrams": "Milligramm",
+      "centigrams": "Zentigramm",
+      "decigrams": "Dezigramm",
+      "grams": "Gramm",
+      "kilograms": "Kilogramm",
+      "pounds": "Pfund",
+      "ounces": "Unzen"
+    }
+  },
+  "msg": {
+    "noLangSelected": "Keine Sprache ausgewählt",
+    "selectLang": "Sprache auswählen"
+  },
+  "metaData": {
+    "home": {
+      "description": "Willkommen auf der umfassendsten Webseite zur Längenumrechnung in Deutschland! Hier können Sie schnell und einfach verschiedene Längeneinheiten wie Meter, Zentimeter, Millimeter und Kilometer umrechnen. Auf unserer Seite finden Sie Umrechnungstools und Tabellen, die die meistgesuchten Fragen zur Längenumrechnung in Deutschland beantworten.",
+      "keywords": [
+        "Längenumrechnung",
+        "Meter umrechnen",
+        "Zentimeter umrechnen",
+        "Millimeter umrechnen",
+        "Kilometer umrechnen",
+        "Cm in Meter umrechnen",
+        "Meter in cm umrechnen",
+        "Mm in Meter umrechnen",
+        "Meter in mm umrechnen",
+        "Km in Meter umrechnen",
+        "Meter in km umrechnen",
+        "Wie viele Kilometer sind 1 Meter?"
+      ]
+    }
+  }
+}

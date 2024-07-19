@@ -2,8 +2,6 @@ import { baseUrl, staticPageUrls } from '@/constants/common';
 import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 import { MetadataRoute } from 'next';
-/* return type must be Sitemap
-Reference link : https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap */
 
 const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item, idx) => {
   return availableLocales.map((locale) => {

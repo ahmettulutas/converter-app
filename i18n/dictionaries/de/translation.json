@@ -48,6 +48,24 @@
         "Meter in km umrechnen",
         "Wie viele Kilometer sind 1 Meter?"
       ]
+    },
+    "weight": {
+      "title": "Gewichtsumrechner - Gramm, Kilogramm, Tonnen und Unzen Umrechnen | Einfach & Schnell!",
+      "description": "Willkommen auf der umfassendsten Gewichtsumrechnungs-Website in Deutschland! Konvertieren Sie schnell und einfach zwischen verschiedenen Gewichtseinheiten wie Gramm, Kilogramm, Tonnen und Unzen. Finden Sie Umrechnungstools und Tabellen, die die am häufigsten gesuchten Fragen zur Gewichtsumrechnung beantworten.",
+      "keywords": [
+        "Gewichtsumrechnung",
+        "Grammumrechnung",
+        "Kilogrammumrechnung",
+        "Tonnenumrechnung",
+        "Unzenumrechnung",
+        "g in kg umrechnen",
+        "kg in g umrechnen",
+        "Tonne in kg umrechnen",
+        "kg in Tonne umrechnen",
+        "Unze in kg umrechnen",
+        "kg in Unze umrechnen"
+      ],
+      "category": "Gewichtsumrechner"
     }
   }
 }

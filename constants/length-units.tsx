@@ -1,15 +1,15 @@
-import { Rates } from "@/lib/helpers";
+import { Rates } from '@/lib/helpers';
 
 export const lengthUnits = [
-  { value: "millimeters", label: "millimeters" },
-  { value: "centimeters", label: "centimeters" },
-  { value: "decimeters", label: "decimeters" },
-  { value: "meters", label: "meters" },
-  { value: "kilometers", label: "kilometers" },
-  { value: "miles", label: "miles" },
-  { value: "feet", label: "feet" },
-  { value: "inches", label: "inches" },
-  { value: "yards", label: "yards" },
+  { value: 'millimeters', label: 'millimeters' },
+  { value: 'centimeters', label: 'centimeters' },
+  { value: 'decimeters', label: 'decimeters' },
+  { value: 'meters', label: 'meters' },
+  { value: 'kilometers', label: 'kilometers' },
+  { value: 'miles', label: 'miles' },
+  { value: 'feet', label: 'feet' },
+  { value: 'inches', label: 'inches' },
+  { value: 'yards', label: 'yards' },
 ] as const;
 
 export const lengthRates: Rates = {

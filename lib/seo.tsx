@@ -1,8 +1,8 @@
-import { createTranslation } from "@/i18n";
-import { LocaleType, availableLocales } from "@/i18n/settings";
-import { Metadata, ResolvingMetadata } from "next";
-import opengraphImage from "../public/icon.svg";
-import { ogImageSizes, twitterImageSizes } from "@/constants/common";
+import { createTranslation } from '@/i18n';
+import { LocaleType, availableLocales } from '@/i18n/settings';
+import { Metadata, ResolvingMetadata } from 'next';
+import opengraphImage from '../public/icon.svg';
+import { ogImageSizes, twitterImageSizes } from '@/constants/common';
 
 export const generateLocalesForMetaData = (languages: Array<string>) => {
   const locales: Record<string, string> = {};
@@ -17,17 +17,14 @@ type GenerateMetaImageProps = {
   staticImage?: { url: string | URL; alt?: string };
 };
 
-export const generateMetaImages = ({
-  sizes,
-  staticImage,
-}: GenerateMetaImageProps): Array<any> => {
+export const generateMetaImages = ({ sizes, staticImage }: GenerateMetaImageProps): Array<any> => {
   if (!staticImage?.url) return [];
   const metaImages = [];
   for (let { width, height } of sizes) {
     metaImages.push({
       width,
       height,
-      alt: staticImage?.alt || "",
+      alt: staticImage?.alt || '',
       url: staticImage.url,
     });
   }
@@ -40,7 +37,7 @@ export const getDefaultMetaData = async (
   pageKey: string
 ): Promise<Metadata> => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await createTranslation(locale, "translation"); // This is not actually a hook, so I intentionally ignored it here.
+  const { t } = await createTranslation(locale, 'translation'); // This is not actually a hook, so I intentionally ignored it here.
   const previousImages = (await parent).openGraph?.images || [];
   const keywords: Array<string> = t(`metaData.${pageKey}.keywords`, {
     returnObjects: true,
@@ -50,15 +47,16 @@ export const getDefaultMetaData = async (
     description: t(`metaData.${pageKey}.description`),
     applicationName: t(`metaData.applicationName`),
     category: t(`metaData.${pageKey}.category`),
-    creator: "Ahmet Ulutaş",
-    authors: [{ name: "Ahmet Ulutaş" }],
-    publisher: "Ahmet Ulutaş",
+    creator: 'Ahmet Ulutaş',
+    authors: [{ name: 'Ahmet Ulutaş' }],
+    publisher: 'Ahmet Ulutaş',
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
-    referrer: "origin-when-cross-origin",
+    referrer: 'origin-when-cross-origin',
     keywords,
     verification: {
-      google: "3SXiPm6wc4OTk7JcwvRy4ednleq_oJ6qd9EJR41reZ4",
+      google: 'xP70T5-1qM-9PajiTzupy6svF-SvB3D-PIlvb-orQ0A',
     },
+
     openGraph: {
       title: t(`metaData.${pageKey}.title`),
       images: [
@@ -72,10 +70,10 @@ export const getDefaultMetaData = async (
         ...previousImages,
       ],
       locale,
-      type: "website",
+      type: 'website',
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: t(`metaData.${pageKey}.title`),
       description: t(`metaData.${pageKey}.description`),
       images: [

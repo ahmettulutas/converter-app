@@ -1,7 +1,7 @@
-export const staticPageUrls = ["/weight-converter", ""]; // empty string is for index page.
+export const staticPageUrls = ['/weight-converter', '']; // empty string is for index page.
 export const navLinks = [
-  { href: "/", label: "home" },
-  { href: "weight-converter", label: "weight" },
+  { href: '/', label: 'home' },
+  { href: 'weight-converter', label: 'weight' },
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

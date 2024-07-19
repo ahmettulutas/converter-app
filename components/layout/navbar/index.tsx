@@ -19,7 +19,7 @@ export const CollapsibleNavbar = () => {
     <header>
       <nav className={cn("ease-in top-0 right-0 z-50 left-0 bg-transparent")}>
         <PageContainer className="transition-all duration-300 flex py-6">
-          <section className="w-full flex items-center rounded-[20px] p-3 flex-col md:flex-row shadow-lg">
+          <section className="w-full flex items-center rounded-md p-3 flex-col md:flex-row shadow-lg">
             <div className="w-full md:w-auto flex items-center justify-between">
               <Link href="/" className="text-primary">
                 <ArrowLeftRightIcon />

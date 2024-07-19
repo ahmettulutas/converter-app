@@ -1,13 +1,13 @@
-import { Rates } from "@/lib/helpers";
+import { Rates } from '@/lib/helpers';
 
 export const weightUnits = [
-  { value: "miligrams", label: "miligrams" },
-  { value: "centigrams", label: "centigrams" },
-  { value: "decigrams", label: "decigrams" },
-  { value: "grams", label: "grams" },
-  { value: "kilograms", label: "kilograms" },
-  { value: "pounds", label: "pounds" },
-  { value: "ounces", label: "ounces" },
+  { value: 'miligrams', label: 'miligrams' },
+  { value: 'centigrams', label: 'centigrams' },
+  { value: 'decigrams', label: 'decigrams' },
+  { value: 'grams', label: 'grams' },
+  { value: 'kilograms', label: 'kilograms' },
+  { value: 'pounds', label: 'pounds' },
+  { value: 'ounces', label: 'ounces' },
 ] as const;
 
 export const weightRates: Rates = {

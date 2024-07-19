@@ -36,6 +36,7 @@
   "metaData": {
     "applicationName": "Easiest Length Conversion Tools",
     "home": {
+      "title": "Easiest Length Converter - English | Convert feet to meter now!",
       "description": "Metre, santimetre, milimetre, kilometre gibi farklı uzunluk birimleri arasında hızlı ve kolay dönüştürmeler için Türkiye'nin en kapsamlı uzunluk dönüştürme web sitesine hoş geldiniz! Sitemizde, Türkiye'de en çok aranan uzunluk dönüştürme sorularına yanıt veren dönüştürme araçları ve tablolar bulabilirsiniz.",
       "keywords": [
         "Uzunluk dönüştürme",
@@ -55,7 +56,8 @@
       ]
     },
     "weight": {
-      "description": "Welcome to Turkey's most comprehensive weight conversion website for quick and easy conversions between different weight units such as grams, kilograms, tons, and ounces! Here on our site, you can find conversion tools and tables that address the most frequently asked weight conversion questions in Turkey.",
+      "title": "Weight Converter - Convert Grams, Kilos, Tons & Ounces | Easy & Fast!",
+      "description": "Welcome to the most comprehensive weight conversion website in the UK! Quickly and easily convert between different weight units like grams, kilograms, tons, and ounces. Find conversion tools and tables that answer the most commonly searched weight conversion questions.",
       "keywords": [
         "Weight conversion",
         "Gram conversion",
@@ -67,9 +69,9 @@
         "Convert ton to kg",
         "Convert kg to ton",
         "Convert ounce to kg",
-        "Convert kg to ounce",
-        ""
-      ]
+        "Convert kg to ounce"
+      ],
+      "category": "Weight Converters"
     }
   }
 }

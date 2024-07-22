@@ -1,7 +1,8 @@
 {
-  "lengthHeader": "Uzunluk Dönüştürücü",
-  "weightHeader": "Ağırlık Dönüştürücü",
   "labels": {
+    "lengthHeader": "Uzunluk Dönüştürücü",
+    "weightHeader": "Ağırlık Dönüştürücü",
+    "squareHeader": "Metrekare Hesaplama",
     "from": "Başlangıç",
     "result": "Sonuç",
     "typeUnit": "Bir değer girin",
@@ -9,6 +10,10 @@
     "search": "Ara",
     "home": "Anasayfa",
     "weight": "Ağırlık Hesapla",
+    "widthPh": "Örn. 1,25",
+    "widthOfField": "Alanın enini yazın",
+    "lengthOfField": "Alanın boyunu yazın",
+    "calculate": "Hesapla",
     "units": {
       "millimeters": "Milimetre",
       "centimeters": "Santimetre",
@@ -25,7 +30,19 @@
       "grams": "Gram",
       "kilograms": "Kilogram",
       "pounds": "Pound",
-      "ounces": "Ons"
+      "ounces": "Ons",
+      "square_millimeters": "milimetrekare",
+      "square_centimeters": "santimetrekare",
+      "square_decimeters": "desimetrekare",
+      "square_meters": "metrekare",
+      "square_kilometers": "kilometrekare",
+      "acres": "dönüm",
+      "hectares": "hektar",
+      "square_miles": "mil kare",
+      "square_feet": "fit kare",
+      "square_inches": "inç kare",
+      "square_yards": "yarda kare",
+      "donum": "dönüm"
     }
   },
   "msg": {
@@ -73,6 +90,23 @@
         "Kg'yi onsa çevirme"
       ],
       "category": "Ağırlık Dönüştürücüleri"
+    },
+    "square": {
+      "title": "Metrekare Dönüştürücü - Metrekare, Kare Ayak ve Dönüm Dönüştürün | Hızlı ve Kolay!",
+      "description": "En kapsamlı metrekare dönüştürme web sitesine hoş geldiniz! Kare ayak, kare metre ve dönüm gibi farklı alan birimleri arasında hızlı ve kolay bir şekilde dönüştürün. En çok aranan metrekare dönüştürme sorularına cevap veren dönüştürme araçları ve tabloları bulun.",
+      "keywords": [
+        "Metrekare dönüştürme",
+        "Kare ayak dönüştürme",
+        "Kare metre dönüştürme",
+        "Dönüm dönüştürme",
+        "Kare ayakları metrekareye çevirme",
+        "Kare metreleri kare ayaklara çevirme",
+        "Dönümleri metrekareye çevirme",
+        "Metrekare dönüştürme hesap makinesi",
+        "Ücretsiz çevrimiçi metrekare dönüştürücü",
+        "Metrekare dönüştürme aracı"
+      ],
+      "category": "Metrekare Dönüştürücüler"
     }
   }
 }

@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import { dir } from 'i18next';
 import { LocaleType, availableLocales } from '@/i18n/settings';
 import { CollapsibleNavbar } from '@/components/layout/navbar';
+import { Suspense } from 'react';
+import { LoadingSpinner } from '@/components/shared/loading-spinner';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +24,7 @@ export default function RootLayout(props: LocaleRouteLayout) {
     <html lang={params.locale} dir={dir(params.locale)}>
       <body className={inter.className}>
         <CollapsibleNavbar />
-        {children}
+        <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
       </body>
     </html>
   );

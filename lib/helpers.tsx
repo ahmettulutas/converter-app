@@ -1,9 +1,16 @@
+import { areaRates, lengthRates } from '@/constants/units';
 import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 export type Rates = Record<string, number>;
 export const converter = (value: number, fromUnit: string, toUnit: string, conversionRates: Rates) => {
-  const inMeters = value / conversionRates[fromUnit];
-  return inMeters * conversionRates[toUnit];
+  const converted = value / conversionRates[fromUnit];
+  return converted * conversionRates[toUnit];
+};
+
+export const calculateArea = (width: number, length: number, inputUnit: string, outputUnit: string) => {
+  const areaInSquareMeters = width * length * (areaRates[inputUnit] || 1);
+  const result = areaInSquareMeters / (areaRates[outputUnit] || 1);
+  return result;
 };
 
 export const omitLocaleFromPath = (path: string): string => {
@@ -16,3 +23,14 @@ export const omitLocaleFromPath = (path: string): string => {
   const startIdx = isFirstSegmentLocale ? 1 : 0;
   return splittedPath.slice(startIdx).join('/');
 };
+
+export function formatNumberWithSeparator(number: number) {
+  if (isNaN(number) || number === null) {
+    return '';
+  }
+  // Create a new Intl.NumberFormat instance for formatting with a period as thousands separator
+  const formatter = new Intl.NumberFormat('de-DE'); // German locale uses periods for thousands separators
+
+  // Format the number
+  return formatter.format(number);
+}

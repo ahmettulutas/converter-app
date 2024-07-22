@@ -1,13 +1,19 @@
 {
-  "lengthHeader": "Längenumrechner",
-  "weightHeader": "Gewichtsumrechner",
   "labels": {
+    "lengthHeader": "Längenumrechner",
+    "weightHeader": "Gewichtsumrechner",
+    "squareHeader": "Quadratmeterrechner",
     "from": "Von",
     "result": "Ergebnis",
-    "typeUnit": "Geben Sie einen Wert ein",
-    "convert": "Konvertieren",
+    "typeUnit": "Wert eingeben",
+    "convert": "Umrechnen",
+    "search": "Suchen",
     "home": "Startseite",
-    "weight": "Gewicht umrechnen",
+    "weight": "Gewichtsumrechner",
+    "widthPh": "Z. B. 1,25",
+    "widthOfField": "Breite des Feldes eingeben",
+    "lengthOfField": "Länge des Feldes eingeben",
+    "calculate": "Berechnen",
     "units": {
       "millimeters": "Millimeter",
       "centimeters": "Zentimeter",
@@ -17,22 +23,36 @@
       "miles": "Meilen",
       "feet": "Fuß",
       "inches": "Zoll",
-      "yards": "Yards",
+      "yards": "Yard",
       "miligrams": "Milligramm",
       "centigrams": "Zentigramm",
       "decigrams": "Dezigramm",
       "grams": "Gramm",
       "kilograms": "Kilogramm",
       "pounds": "Pfund",
-      "ounces": "Unzen"
+      "ounces": "Unzen",
+      "square_millimeters": "Quadratmillimeter",
+      "square_centimeters": "Quadratzentimeter",
+      "square_decimeters": "Quadratdezimeter",
+      "square_meters": "Quadratmeter",
+      "square_kilometers": "Quadratkilometer",
+      "acres": "Morgen",
+      "hectares": "Hektar",
+      "square_miles": "Quadratmeilen",
+      "square_feet": "Quadratfuß",
+      "square_inches": "Quadratzoll",
+      "square_yards": "Quadratyards",
+      "donum": "donum (in der Türkei verwendet)"
     }
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",
-    "selectLang": "Sprache auswählen"
+    "selectLang": "Sprache auswählen",
+    "noResult": "Keine Ergebnisse gefunden."
   },
   "metaData": {
     "home": {
+      "title": "Einfachster Längenumrechner - Englisch | Füße jetzt in Meter umrechnen!",
       "description": "Willkommen auf der umfassendsten Webseite zur Längenumrechnung in Deutschland! Hier können Sie schnell und einfach verschiedene Längeneinheiten wie Meter, Zentimeter, Millimeter und Kilometer umrechnen. Auf unserer Seite finden Sie Umrechnungstools und Tabellen, die die meistgesuchten Fragen zur Längenumrechnung in Deutschland beantworten.",
       "keywords": [
         "Längenumrechnung",
@@ -66,6 +86,22 @@
         "kg in Unze umrechnen"
       ],
       "category": "Gewichtsumrechner"
+    },
+    "square": {
+      "title": "Quadratmeter-Umrechner - Konvertieren Sie Quadratmeter, Quadratfuß und Morgen | Schnell & Einfach!",
+      "description": "Willkommen auf der umfassendsten Website zur Umrechnung von Quadratmetern! Konvertieren Sie schnell und einfach zwischen verschiedenen Flächeneinheiten wie Quadratmetern, Quadratfuß und Morgen. Finden Sie Umrechnungstools und Tabellen, die die am häufigsten gesuchten Fragen zur Umrechnung von Quadratmetern beantworten.",
+      "keywords": [
+        "Quadratmeterumrechnung",
+        "Quadratfußumrechnung",
+        "Morgenumrechnung",
+        "Konvertieren Sie Quadratfuß in Quadratmeter",
+        "Konvertieren Sie Quadratmeter in Quadratfuß",
+        "Konvertieren Sie Morgen in Quadratmeter",
+        "Quadratmeter-Umrechnungsrechner",
+        "Kostenloser Online-Quadratmeter-Konverter",
+        "Quadratmeter-Umrechnungstool"
+      ],
+      "category": "Quadratmeter-Umrechner"
     }
   }
 }

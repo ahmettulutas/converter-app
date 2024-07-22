@@ -1,14 +1,14 @@
-"use client";
-import { ComboBoxResponsive, SelectType } from "@/components/shared/combobox";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useTranslation } from "@/i18n/client";
-import { Rates, converter } from "@/lib/helpers";
-import { ArrowLeftRight } from "lucide-react";
-import { useParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
+'use client';
+import { ComboBoxResponsive, SelectType } from '@/components/shared/combobox';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useTranslation } from '@/i18n/client';
+import { Rates, converter } from '@/lib/helpers';
+import { ArrowLeftRight } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
-type UnitValues<T extends readonly SelectType[]> = T[number]["value"];
+type UnitValues<T extends readonly SelectType[]> = T[number]['value'];
 
 type ConverterProps<T extends readonly SelectType[]> = {
   units: T;
@@ -17,16 +17,14 @@ type ConverterProps<T extends readonly SelectType[]> = {
   rates: Rates;
 };
 
-export const Converter = <T extends readonly SelectType[]>(
-  props: ConverterProps<T>
-) => {
+export const Converter = <T extends readonly SelectType[]>(props: ConverterProps<T>) => {
   const { units, initialInputUnit, initialOutputUnit, rates } = props;
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const [inputUnit, setInputUnit] = useState(String(initialInputUnit));
   const [outputUnit, setOutputUnit] = useState(String(initialOutputUnit));
-  const [outputValue, setOutputValue] = useState("");
+  const [outputValue, setOutputValue] = useState('');
   const params = useParams();
-  const { t } = useTranslation(params.locale as string, "translation");
+  const { t } = useTranslation(params.locale as string, 'translation');
 
   const handleConvert = useCallback(() => {
     const value = parseFloat(inputValue);
@@ -45,20 +43,26 @@ export const Converter = <T extends readonly SelectType[]>(
   useEffect(() => {
     handleConvert();
   }, [inputUnit, outputUnit, inputValue, handleConvert]);
-  const translatedUnitOptions = units.map(({ value, label }) => ({
-    value,
-    label: t(`labels.units.${label}`),
-  }));
+
+  const translatedUnitOptions = useMemo(
+    () =>
+      units.map(({ value, label }) => ({
+        value,
+        label: t(`labels.units.${label}`),
+      })),
+    [t, units]
+  );
+
   return (
     <section className="grid grid-cols-2 gap-4 w-full max-w-[450px]">
       <div className="w-full col-span-2 flex gap-2">
         <ComboBoxResponsive
           triggerProps={{
-            variant: "outline",
-            className: "justify-between w-full",
+            variant: 'outline',
+            className: 'justify-between w-full',
           }}
           value={inputUnit}
-          title={t("labels.from")}
+          title={t('labels.from')}
           data={translatedUnitOptions}
           handleChange={(e) => {
             setInputUnit(String(e));
@@ -71,11 +75,11 @@ export const Converter = <T extends readonly SelectType[]>(
 
         <ComboBoxResponsive
           triggerProps={{
-            variant: "outline",
-            className: "justify-between w-full",
+            variant: 'outline',
+            className: 'justify-between w-full',
           }}
           value={outputUnit}
-          title={t("labels.result")}
+          title={t('labels.result')}
           data={translatedUnitOptions}
           handleChange={(e) => {
             setOutputUnit(String(e));
@@ -91,18 +95,18 @@ export const Converter = <T extends readonly SelectType[]>(
           setInputValue(e.target.value);
           handleConvert();
         }}
-        placeholder={t("labels.typeUnit")}
+        placeholder={t('labels.typeUnit')}
         className="col-span-2 md:col-span-1"
       />
       <Input
         type="number"
         defaultValue={outputValue}
-        placeholder={t("labels.result")}
+        placeholder={t('labels.result')}
         disabled
         className="col-span-2 md:col-span-1 disabled:opacity-100 bg-gray-100 disabled:cursor-default"
       />
       {inputValue ? (
-        <h2 className="col-span-2 text-center text-lg md:text-2xl">{`${inputValue} ${t(
+        <h2 className="col-span-2 text-center text-lg font-semibold">{`${inputValue} ${t(
           `labels.units.${inputUnit}`
         )} =  ${outputValue} ${t(`labels.units.${outputUnit}`)}`}</h2>
       ) : null}

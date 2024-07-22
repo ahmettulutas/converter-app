@@ -1,7 +1,8 @@
 {
-  "lengthHeader": "Length Converter",
-  "weightHeader": "Weight Converter",
   "labels": {
+    "lengthHeader": "Length Converter",
+    "weightHeader": "Weight Converter",
+    "squareHeader": "SquareMeter Calculator",
     "from": "From",
     "result": "Result",
     "typeUnit": "Type a value",
@@ -9,6 +10,10 @@
     "search": "Search",
     "home": "Home",
     "weight": "Weight converter",
+    "widthPh": "Eg. 1,25",
+    "widthOfField": "Enter the width of field",
+    "lengthOfField": "Enter the length of field",
+    "calculate": "Calculate",
     "units": {
       "millimeters": "Millimeters",
       "centimeters": "Centimeters",
@@ -25,7 +30,19 @@
       "grams": "Grams",
       "kilograms": "Kilograms",
       "pounds": "Pounds",
-      "ounces": "Ounces"
+      "ounces": "Ounces",
+      "square_millimeters": "square millimeters",
+      "square_centimeters": "square centimeters",
+      "square_decimeters": "square decimeters",
+      "square_meters": "square meters",
+      "square_kilometers": "square kilometers",
+      "acres": "acres",
+      "hectares": "hectares",
+      "square_miles": "square miles",
+      "square_feet": "square feet",
+      "square_inches": "square inches",
+      "square_yards": "square yards",
+      "donum": "donum (used in Turkey)"
     }
   },
   "msg": {
@@ -72,6 +89,23 @@
         "Convert kg to ounce"
       ],
       "category": "Weight Converters"
+    },
+    "square": {
+      "title": "Square Meter Converter - Convert Square Feet, Yards, & Acres | Fast & Easy!",
+      "description": "Welcome to the most comprehensive square meter conversion website! Quickly and easily convert between different area units like square feet, square yards, and acres. Find conversion tools and tables that answer the most commonly searched square meter conversion questions.",
+      "keywords": [
+        "Square meter conversion",
+        "Square foot conversion",
+        "Square yard conversion",
+        "Acre conversion",
+        "Convert square feet to square meters",
+        "Convert square yards to square meters",
+        "Convert acres to square meters",
+        "Square meter conversion calculator",
+        "Free online square meter converter",
+        "Square meter conversion tool"
+      ],
+      "category": "Square Meter Converters"
     }
   }
 }

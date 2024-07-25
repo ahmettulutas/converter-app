@@ -12,7 +12,7 @@ export default async function SquareCalculatorPage(props: SharedPageProps) {
   const { t } = await createTranslation(params.locale, 'translation');
   return (
     <main className="flex flex-col items-center justify-center">
-      <h1 className="text-center text-2xl my-2">{t('weightHeader')}</h1>
+      <h1 className="text-center text-2xl my-2">{t('labels.squareHeader')}</h1>
       <CardContainer>
         <SquareCalculator />
       </CardContainer>

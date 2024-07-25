@@ -7,7 +7,7 @@ import { areaUnits } from '@/constants/units';
 import { useTranslation } from '@/i18n/client';
 import { calculateArea, formatNumberWithSeparator } from '@/lib/helpers';
 import { useParams } from 'next/navigation';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 export const SquareCalculator = () => {
   const [width, setWidth] = useState('');
@@ -35,6 +35,10 @@ export const SquareCalculator = () => {
       })),
     [t]
   );
+  // useEffect(() => {
+  //   handleCalculate();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [params.lang]);
 
   return (
     <section className="flex flex-col gap-4 w-full max-w-[950px]">
@@ -42,7 +46,6 @@ export const SquareCalculator = () => {
         <label htmlFor="width" className="col-span-4 text-sm">
           {t('labels.widthOfField')}
         </label>
-
         <Input
           type="number"
           name="width"
@@ -70,7 +73,6 @@ export const SquareCalculator = () => {
         <label htmlFor="length" className="col-span-4 text-sm">
           {t('labels.lengthOfField')}
         </label>
-
         <Input
           type="number"
           name="length"

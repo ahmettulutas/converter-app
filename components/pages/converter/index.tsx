@@ -46,10 +46,12 @@ export const Converter = <T extends readonly SelectType[]>(props: ConverterProps
 
   const translatedUnitOptions = useMemo(
     () =>
-      units.map(({ value, label }) => ({
-        value,
-        label: t(`labels.units.${label}`),
-      })),
+      units
+        .map(({ value, label }) => ({
+          value,
+          label: t(`labels.units.${label}`),
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     [t, units]
   );
 

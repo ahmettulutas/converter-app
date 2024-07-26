@@ -4,6 +4,7 @@
     "weightHeader": "Weight Converter",
     "squareHeader": "Squaremeter Calculator",
     "from": "From",
+    "to": "To",
     "result": "Result",
     "typeUnit": "Type a value",
     "convert": "Convert",

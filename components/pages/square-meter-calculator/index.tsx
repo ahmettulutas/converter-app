@@ -7,38 +7,36 @@ import { areaUnits } from '@/constants/units';
 import { useTranslation } from '@/i18n/client';
 import { calculateArea, formatNumberWithSeparator } from '@/lib/helpers';
 import { useParams } from 'next/navigation';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 export const SquareCalculator = () => {
   const [width, setWidth] = useState('');
   const [length, setLength] = useState('');
   const [inputUnit, setInputUnit] = useState('square_meters');
   const [outputUnit, setOutputUnit] = useState('square_meters');
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState<number | null>();
   const params = useParams();
   const { t } = useTranslation(params.locale as string, 'translation');
 
-  const handleCalculate = useCallback(() => {
+  const handleCalculate = () => {
     const parsedWidth = parseFloat(width);
     const parsedLength = parseFloat(length);
     if (!isNaN(parsedWidth) && !isNaN(parsedLength)) {
       const result = calculateArea(parsedWidth, parsedLength, inputUnit, outputUnit);
-      setResult(`${formatNumberWithSeparator(result)} ${outputUnit.replace('_', ' ')}`); // Store the result with the unit
+      setResult(result);
     }
-  }, [inputUnit, outputUnit, length, width]);
+  };
 
   const translatedUnitOptions = useMemo(
     () =>
-      areaUnits.map(({ value, label }) => ({
-        value,
-        label: t(`labels.units.${label}`),
-      })),
+      areaUnits
+        .map(({ value, label }) => ({
+          value,
+          label: t(`labels.units.${label}`),
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     [t]
   );
-  // useEffect(() => {
-  //   handleCalculate();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [params.lang]);
 
   return (
     <section className="flex flex-col gap-4 w-full max-w-[950px]">
@@ -96,7 +94,11 @@ export const SquareCalculator = () => {
         />
       </div>
       <Button onClick={handleCalculate}>{t('labels.calculate')}</Button>
-      {result ? <h2 className="col-span-2 text-center text-lg md:text-2xl">{result}</h2> : null}
+      {result ? (
+        <h2 className="col-span-2 text-center text-lg md:text-2xl">{`${formatNumberWithSeparator(result)} ${t(
+          `labels.units.${outputUnit}`
+        )}`}</h2>
+      ) : null}
     </section>
   );
 };

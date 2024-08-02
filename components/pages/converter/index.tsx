@@ -54,7 +54,7 @@ export const Converter = <T extends readonly SelectType[]>(props: ConverterProps
         .sort((a, b) => a.label.localeCompare(b.label)),
     [t, units]
   );
-
+  const outputTranslated = t(`labels.units.${outputUnit}`);
   return (
     <section className="grid grid-cols-2 gap-4 w-full max-w-[450px]">
       <div className="w-full col-span-2 flex gap-2">
@@ -110,7 +110,7 @@ export const Converter = <T extends readonly SelectType[]>(props: ConverterProps
       {inputValue ? (
         <h2 className="col-span-2 text-center text-lg font-semibold">{`${inputValue} ${t(
           `labels.units.${inputUnit}`
-        )} =  ${outputValue} ${t(`labels.units.${outputUnit}`)}`}</h2>
+        )} = ${outputValue} ${outputTranslated}`}</h2>
       ) : null}
     </section>
   );

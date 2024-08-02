@@ -7,7 +7,7 @@ import { Converter } from '@/components/pages/converter';
 import { PageContainer } from '@/components/shared/page-container';
 import { lengthRates, lengthUnits } from '@/constants/units';
 
-export default async function Home(props: SharedPageProps) {
+export default async function Home(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   return (

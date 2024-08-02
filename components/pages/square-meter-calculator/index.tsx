@@ -6,6 +6,7 @@ import { areaUnits } from '@/constants/units';
 
 import { useTranslation } from '@/i18n/client';
 import { calculateArea, formatNumberWithSeparator } from '@/lib/helpers';
+import { Calculator } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import React, { useMemo, useState } from 'react';
 
@@ -93,7 +94,10 @@ export const SquareCalculator = () => {
           }}
         />
       </div>
-      <Button onClick={handleCalculate}>{t('labels.calculate')}</Button>
+      <Button className="flex items-center gap-2 text-md" onClick={handleCalculate}>
+        <Calculator />
+        {t('labels.calculate')}
+      </Button>
       {result ? (
         <h2 className="col-span-2 text-center text-lg md:text-2xl">{`${formatNumberWithSeparator(result)} ${t(
           `labels.units.${outputUnit}`

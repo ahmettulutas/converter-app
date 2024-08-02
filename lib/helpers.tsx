@@ -1,4 +1,4 @@
-import { areaRates, lengthRates } from '@/constants/units';
+import { areaRates } from '@/constants/units';
 import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 export type Rates = Record<string, number>;
@@ -24,13 +24,10 @@ export const omitLocaleFromPath = (path: string): string => {
   return splittedPath.slice(startIdx).join('/');
 };
 
-export function formatNumberWithSeparator(number: number) {
+export function formatNumberWithSeparator(number: number): string {
   if (isNaN(number) || number === null) {
     return '';
   }
-  // Create a new Intl.NumberFormat instance for formatting with a period as thousands separator
   const formatter = new Intl.NumberFormat('de-DE'); // German locale uses periods for thousands separators
-
-  // Format the number
   return formatter.format(number);
 }

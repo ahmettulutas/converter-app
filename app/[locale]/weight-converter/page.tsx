@@ -7,7 +7,7 @@ import { getDefaultMetaData } from '@/lib/seo';
 import { Converter } from '@/components/pages/converter';
 import { weightRates, weightUnits } from '@/constants/units';
 
-export default async function WeightConverterPage(props: SharedPageProps) {
+export default async function WeightConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   return (

@@ -7,7 +7,7 @@ import { getDefaultMetaData } from '@/lib/seo';
 
 import { SquareCalculator } from '@/components/pages/square-meter-calculator';
 
-export default async function SquareCalculatorPage(props: SharedPageProps) {
+export default async function SquareCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   return (

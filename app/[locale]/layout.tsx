@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export type SharedPageProps = {
   params: { locale: LocaleType };
 };
+
 const inter = Inter({ subsets: ['latin'] });
 type LocaleRouteLayout = SharedPageProps & {
   children: React.ReactNode;

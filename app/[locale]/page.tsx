@@ -6,17 +6,20 @@ import { getDefaultMetaData } from '@/lib/seo';
 import { Converter } from '@/components/pages/converter';
 import { PageContainer } from '@/components/shared/page-container';
 import { lengthRates, lengthUnits } from '@/constants/units';
+import { Faq } from '@/components/shared/faq';
+import { lengthFaqs } from '@/constants/faq';
 
 export default async function Home(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   return (
     <main className="flex items-center justify-center">
-      <PageContainer className="flex flex-col gap-2">
+      <PageContainer className="flex flex-col gap-2 my-4">
         <h1 className="text-center text-2xl my-2">{t('labels.lengthHeader')}</h1>
         <CardContainer>
           <Converter units={lengthUnits} initialInputUnit="meters" initialOutputUnit="feet" rates={lengthRates} />
         </CardContainer>
+        <Faq faqList={lengthFaqs[params.locale]} />
       </PageContainer>
     </main>
   );

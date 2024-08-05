@@ -1,6 +1,6 @@
 export const staticPageUrls = ['/weight-converter', '']; // empty string is for index page.
 export const navLinks = [
-  { href: '/', label: 'home' },
+  { href: '/', label: 'lengthHeader' },
   { href: 'weight-converter', label: 'weightHeader' },
   { href: 'square-calculator', label: 'squareHeader' },
 ];

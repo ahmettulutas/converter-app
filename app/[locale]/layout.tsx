@@ -22,7 +22,7 @@ type LocaleRouteLayout = SharedPageProps & {
 export default function RootLayout(props: LocaleRouteLayout) {
   const { params, children } = props;
   return (
-    <html lang={params.locale} dir={dir(params.locale)}>
+    <html lang={params.locale} dir={dir(params.locale)} className="scroll-smooth">
       <body className={inter.className}>
         <CollapsibleNavbar />
         <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>

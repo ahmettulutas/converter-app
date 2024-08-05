@@ -24,7 +24,7 @@ export const generateMetaImages = ({ sizes, staticImage }: GenerateMetaImageProp
     metaImages.push({
       width,
       height,
-      alt: staticImage?.alt || '',
+      alt: staticImage?.alt ?? '',
       url: staticImage.url,
     });
   }

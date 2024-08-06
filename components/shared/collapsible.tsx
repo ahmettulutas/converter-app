@@ -21,7 +21,7 @@ export function TableofContent(props: TableofContentProps) {
       <div className="flex items-center justify-between space-x-4 px-4">
         <CollapsibleTrigger asChild>
           <Button variant="outline" size="sm">
-            <TranslatedTitle level="h3" translation="labels.toc" className="text-center text-lg my-2" />
+            <TranslatedTitle level="h3" translation="labels.toc" className="text-center text-md my-2" />
             <ChevronsUpDown className="h-4 w-4" />
             <span className="sr-only">Toggle</span>
           </Button>

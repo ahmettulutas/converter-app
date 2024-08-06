@@ -135,8 +135,32 @@ export const lengthFaqs: Record<LocaleType, Array<{ question: string; answer: st
       question: '1 yard kaç metredir?',
       answer: '1 yard yaklaşık olarak 0,9144 metredir.',
     },
+    {
+      question: 'İnç ile santimetre nasıl çevrilir?',
+      answer: 'İnç değerini 2.54 ile çarparak santimetreye dönüştürebilirsiniz.',
+    },
+    {
+      question: 'Feet ve metre arasındaki fark nedir?',
+      answer: 'Bir metre bir fitten biraz daha uzundur. Yaklaşık olarak 3.28 feet bir metreye eşittir.',
+    },
+    {
+      question: 'Mil ile kilometre nasıl çevrilir?',
+      answer: 'Mil değerini 1.609 ile çarparak kilometreye dönüştürebilirsiniz.',
+    },
   ],
   en: [
+    {
+      question: 'How to convert inches to centimeters?',
+      answer: 'Multiply the number of inches by 2.54 to get the equivalent in centimeters.',
+    },
+    {
+      question: 'What is the difference between feet and meters?',
+      answer: 'A meter is slightly longer than a foot. There are approximately 3.28 feet in a meter.',
+    },
+    {
+      question: 'How to convert miles to kilometers?',
+      answer: 'Multiply the number of miles by 1.609 to get the equivalent in kilometers.',
+    },
     {
       question: 'How many centimeters in a meter?',
       answer: 'There are 100 centimeters in a meter.',
@@ -194,6 +218,18 @@ export const lengthFaqs: Record<LocaleType, Array<{ question: string; answer: st
     {
       question: 'Wie viele Meter sind ein Yard?',
       answer: 'Ein Yard entspricht ungefähr 0,9144 Metern.',
+    },
+    {
+      question: 'Wie wandelt man Zoll in Zentimeter um?',
+      answer: 'Multiplizieren Sie die Anzahl der Zoll mit 2,54, um den Wert in Zentimeter zu erhalten.',
+    },
+    {
+      question: 'Was ist der Unterschied zwischen Fuß und Meter?',
+      answer: 'Ein Meter ist etwas länger als ein Fuß. Etwa 3,28 Fuß entsprechen einem Meter.',
+    },
+    {
+      question: 'Wie wandelt man Meilen in Kilometer um?',
+      answer: 'Multiplizieren Sie die Anzahl der Meilen mit 1,609, um den Wert in Kilometer zu erhalten.',
     },
   ],
 };

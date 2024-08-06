@@ -1,4 +1,4 @@
-export const staticPageUrls = ['/weight-converter', '']; // empty string is for index page.
+export const staticPageUrls = ['/weight-converter', '', '/square-calculator']; // empty string is for index page.
 export const navLinks = [
   { href: '/', label: 'lengthHeader' },
   { href: 'weight-converter', label: 'weightHeader' },

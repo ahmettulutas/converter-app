@@ -6,16 +6,22 @@ import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData } from '@/lib/seo';
 
 import { SquareCalculator } from '@/components/pages/square-meter-calculator';
+import { Faq } from '@/components/shared/faq';
+import { squareMeterConverterFAQs } from '@/constants/faq';
+import { PageContainer } from '@/components/shared/page-container';
 
 export default async function SquareCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   return (
     <main className="flex flex-col items-center justify-center">
-      <h1 className="text-center text-2xl my-2">{t('labels.squareHeader')}</h1>
-      <CardContainer>
-        <SquareCalculator />
-      </CardContainer>
+      <PageContainer className="flex flex-col gap-2 my-4">
+        <h1 className="text-center text-2xl my-2">{t('labels.squareHeader')}</h1>
+        <CardContainer>
+          <SquareCalculator />
+        </CardContainer>
+        <Faq faqList={squareMeterConverterFAQs[params.locale]} />
+      </PageContainer>
     </main>
   );
 }

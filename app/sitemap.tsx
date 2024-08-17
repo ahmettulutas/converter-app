@@ -10,14 +10,12 @@ const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item, 
         url: `${baseUrl}${item}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
-        priority: 1,
       };
     } else {
       return {
         url: `${baseUrl}/${locale}${item}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
-        priority: idx,
       };
     }
   });

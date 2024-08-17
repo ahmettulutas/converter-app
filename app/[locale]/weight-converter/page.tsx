@@ -6,9 +6,10 @@ import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData } from '@/lib/seo';
 import { Converter } from '@/components/pages/converter';
 import { weightRates, weightUnits } from '@/constants/units';
-import { weightFaqs } from '@/constants/faq';
+
 import { Faq } from '@/components/shared/faq';
 import { PageContainer } from '@/components/shared/page-container';
+import { weightFaqs } from '@/constants/faq';
 
 export default async function WeightConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;

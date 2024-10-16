@@ -1,5 +1,5 @@
-import { areaRates } from '@/constants/units';
-import { availableLocales, defaultLanguage } from '@/i18n/settings';
+import { areaRates } from '@/lib/constants/units';
+import { LocaleType, availableLocales, defaultLanguage } from '@/i18n/settings';
 
 export type Rates = Record<string, number>;
 export const converter = (value: number, fromUnit: string, toUnit: string, conversionRates: Rates) => {
@@ -16,7 +16,7 @@ export const calculateArea = (width: number, length: number, inputUnit: string, 
 export const omitLocaleFromPath = (path: string): string => {
   if (!path) return '';
   const splittedPath = path.split('/').filter((item) => !!item);
-  const isFirstSegmentLocale = availableLocales.includes(splittedPath[0]);
+  const isFirstSegmentLocale = availableLocales.includes(splittedPath[0] as LocaleType);
   if (splittedPath.length === 1 && (isFirstSegmentLocale || defaultLanguage === splittedPath[0])) {
     return '';
   }

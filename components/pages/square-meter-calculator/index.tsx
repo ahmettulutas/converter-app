@@ -2,13 +2,14 @@
 import { ComboBoxResponsive } from '@/components/shared/combobox';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { areaUnits } from '@/constants/units';
+import { areaUnits } from '@/lib/constants/units';
 
 import { useTranslation } from '@/i18n/client';
 import { calculateArea, formatNumberWithSeparator } from '@/lib/helpers';
 import { Calculator } from 'lucide-react';
 import { useParams } from 'next/navigation';
 import React, { useMemo, useState } from 'react';
+import { LocaleType } from '@/i18n/settings';
 
 export const SquareCalculator = () => {
   const [width, setWidth] = useState('');
@@ -17,7 +18,7 @@ export const SquareCalculator = () => {
   const [outputUnit, setOutputUnit] = useState('square_meters');
   const [result, setResult] = useState<number | null>();
   const params = useParams();
-  const { t } = useTranslation(params.locale as string, 'translation');
+  const { t } = useTranslation(params.locale as LocaleType, 'translation');
 
   const handleCalculate = () => {
     const parsedWidth = parseFloat(width);

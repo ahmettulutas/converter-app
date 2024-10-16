@@ -3,6 +3,7 @@
     "lengthHeader": "Length Converter",
     "weightHeader": "Weight Converter",
     "squareHeader": "Squaremeter Calculator",
+    "risingHeader": "Rising Sign Calculator",
     "from": "From",
     "to": "To",
     "result": "Result",
@@ -17,6 +18,26 @@
     "calculate": "Calculate",
     "faq": "Frequently Asked Questions",
     "toc": "Table of Content",
+    "cityOrDistrict": "City or District",
+    "country": "Country",
+    "city": "City",
+    "selectCountry": "Country you were born in",
+    "selectCity": "City or district you were born in",
+    "birthTime": "Birth Time",
+    "birthDate": "Birth Date",
+    "Aries": "Aries",
+    "Taurus": "Taurus",
+    "Gemini": "Gemini",
+    "Cancer": "Cancer",
+    "Leo": "Leo",
+    "Virgo": "Virgo",
+    "Libra": "Libra",
+    "Scorpio": "Scorpio",
+    "Sagittarius": "Sagittarius",
+    "Capricorn": "Capricorn",
+    "Aquarius": "Aquarius",
+    "Pisces": "Pisces",
+    "risignCardDesc": "Enter your birth information to find your rising sign.",
     "units": {
       "millimeters": "Millimeters",
       "centimeters": "Centimeters",
@@ -109,6 +130,23 @@
         "Square meter conversion tool"
       ],
       "category": "Square Meter Converters"
+    },
+    "risingSignCalculator": {
+      "title": "Rising Sign Calculator - Find Your Ascendant Sign | Accurate & Free!",
+      "description": "Discover your rising sign (Ascendant) with our free and accurate Rising Sign Calculator. Learn how your rising sign influences your personality and how others perceive you. Enter your birth details to get a personalized astrological insight.",
+      "keywords": [
+        "Rising sign calculator",
+        "Ascendant calculator",
+        "Astrology rising sign",
+        "Find ascendant sign",
+        "What is my rising sign",
+        "Astrological rising sign",
+        "Free rising sign calculator",
+        "Accurate rising sign calculator",
+        "Personalized astrology report",
+        "Rising sign and personality"
+      ],
+      "category": "Astrology Calculators"
     }
   }
 }

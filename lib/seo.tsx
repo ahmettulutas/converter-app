@@ -2,9 +2,9 @@ import { createTranslation } from '@/i18n';
 import { LocaleType, availableLocales } from '@/i18n/settings';
 import { Metadata, ResolvingMetadata } from 'next';
 import opengraphImage from '../public/icon.svg';
-import { ogImageSizes, twitterImageSizes } from '@/constants/common';
+import { ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 
-export const generateLocalesForMetaData = (languages: Array<string>) => {
+export const generateLocalesForMetaData = (languages: typeof availableLocales) => {
   const locales: Record<string, string> = {};
   for (const key of languages) {
     locales[key] = key;

@@ -7,7 +7,7 @@ import { getDefaultMetaData } from '@/lib/seo';
 
 import { SquareCalculator } from '@/components/pages/square-meter-calculator';
 import { Faq } from '@/components/shared/faq';
-import { squareMeterConverterFAQs } from '@/constants/faq';
+import { squareMeterConverterFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 export default async function SquareCalculatorPage(props: Readonly<SharedPageProps>) {

@@ -1,5 +1,5 @@
 export const defaultLanguage = 'en';
-export const availableLocales = [defaultLanguage, 'tr', 'de'];
+export const availableLocales = [defaultLanguage, 'tr', 'de'] as const;
 export const defaultNS = 'translation';
 export type LocaleType = (typeof availableLocales)[number];
 export const cookieName = 'language';

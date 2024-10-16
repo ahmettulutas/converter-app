@@ -1,4 +1,4 @@
-import { baseUrl, staticPageUrls } from '@/constants/common';
+import { baseUrl, staticPageUrls } from '@/lib/constants/common';
 import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 import { MetadataRoute } from 'next';

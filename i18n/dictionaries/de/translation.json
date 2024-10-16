@@ -3,6 +3,7 @@
     "lengthHeader": "Längenumrechner",
     "weightHeader": "Gewichtsumrechner",
     "squareHeader": "Quadratmeterrechner",
+    "risingHeader": "Aszendentenrechner",
     "from": "Von",
     "to": "Zu",
     "result": "Ergebnis",
@@ -17,6 +18,26 @@
     "calculate": "Berechnen",
     "faq": "Häufig gestellte Fragen",
     "toc": "Inhaltsverzeichnis",
+    "cityOrDistrict": "Stadt oder Bezirk",
+    "country": "Land",
+    "city": "Stadt",
+    "selectCountry": "Land, in dem Sie geboren wurden",
+    "selectCity": "Stadt oder Bezirk, in dem Sie geboren wurden",
+    "birthTime": "Geburtszeit",
+    "birthDate": "Geburtsdatum",
+    "Aries": "Widder",
+    "Taurus": "Stier",
+    "Gemini": "Zwillinge",
+    "Cancer": "Krebs",
+    "Leo": "Löwe",
+    "Virgo": "Jungfrau",
+    "Libra": "Waage",
+    "Scorpio": "Skorpion",
+    "Sagittarius": "Schütze",
+    "Capricorn": "Steinbock",
+    "Aquarius": "Wassermann",
+    "Pisces": "Fische",
+    "risignCardDesc": "Geben Sie Ihre Geburtsdaten ein, um Ihr Aszendenten-Zeichen zu finden.",
     "units": {
       "millimeters": "Millimeter",
       "centimeters": "Zentimeter",
@@ -54,6 +75,7 @@
     "noResult": "Keine Ergebnisse gefunden."
   },
   "metaData": {
+    "applicationName": "Einfachste Längenumrechnungstools",
     "home": {
       "title": "Einfachster Längenumrechner - Englisch | Füße jetzt in Meter umrechnen!",
       "description": "Willkommen auf der umfassendsten Webseite zur Längenumrechnung in Deutschland! Hier können Sie schnell und einfach verschiedene Längeneinheiten wie Meter, Zentimeter, Millimeter und Kilometer umrechnen. Auf unserer Seite finden Sie Umrechnungstools und Tabellen, die die meistgesuchten Fragen zur Längenumrechnung in Deutschland beantworten.",
@@ -105,6 +127,23 @@
         "Quadratmeter-Umrechnungstool"
       ],
       "category": "Quadratmeter-Umrechner"
+    },
+    "risingSignCalculator": {
+      "title": "Aszendentenrechner - Finde dein Aszendentzeichen | Genau & Kostenlos!",
+      "description": "Entdecke dein Aszendentzeichen mit unserem kostenlosen und genauen Aszendentenrechner. Erfahre, wie dein Aszendent deine Persönlichkeit beeinflusst und wie andere dich wahrnehmen. Gib deine Geburtsdaten ein, um einen persönlichen astrologischen Einblick zu erhalten.",
+      "keywords": [
+        "Aszendentenrechner",
+        "Aszendent berechnen",
+        "Astrologie Aszendent",
+        "Aszendent finden",
+        "Was ist mein Aszendent",
+        "Astrologisches Aszendentzeichen",
+        "Kostenloser Aszendentenrechner",
+        "Genauer Aszendentenrechner",
+        "Personalisierter Astrologiebericht",
+        "Aszendent und Persönlichkeit"
+      ],
+      "category": "Astrologische Rechner"
     }
   }
 }

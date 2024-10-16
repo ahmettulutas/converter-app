@@ -6,15 +6,16 @@ import { Calculator } from 'lucide-react';
 import { NavbarToggle } from './navbar-toggle';
 import { PageContainer } from '@/components/shared/page-container';
 import { cn } from '@/lib/utils';
-import { navLinks } from '@/constants/common';
+import { navLinks } from '@/lib/constants/common';
 import { LanguageSelector } from './language-selector';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
+import { LocaleType } from '@/i18n/settings';
 
 export const CollapsibleNavbar = () => {
   const [open, setOpen] = useState(false);
   const params = useParams();
-  const { t } = useTranslation(params.locale as string, 'translation');
+  const { t } = useTranslation(params.locale as LocaleType, 'translation');
   return (
     <header>
       <nav className={cn('ease-in top-0 right-0 z-50 left-0 bg-transparent')}>

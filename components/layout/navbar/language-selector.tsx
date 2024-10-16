@@ -5,7 +5,7 @@ import { Button, ButtonProps } from '@/components/ui/button';
 
 import { cn } from '@/lib/utils';
 import { ComboItems } from '@/components/shared/combobox/combo-items';
-import { availableLocales } from '@/i18n/settings';
+import { LocaleType, availableLocales } from '@/i18n/settings';
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
 import { LanguagesIcon } from 'lucide-react';
@@ -23,7 +23,7 @@ export type ComboboxProps = {
 export function LanguageSelector(props: Readonly<ComboboxProps>) {
   const { triggerProps } = props;
   const params = useParams();
-  const { t } = useTranslation(params.locale as string, 'translation');
+  const { t } = useTranslation(params.locale as LocaleType, 'translation');
   const pathname = usePathname();
   const router = useRouter();
   const [selected, setSelected] = React.useState<string | number>(String(params.locale));

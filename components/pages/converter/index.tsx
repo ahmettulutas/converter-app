@@ -3,6 +3,7 @@ import { ComboBoxResponsive, SelectType } from '@/components/shared/combobox';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useTranslation } from '@/i18n/client';
+import { LocaleType } from '@/i18n/settings';
 import { Rates, converter } from '@/lib/helpers';
 import { ArrowLeftRight } from 'lucide-react';
 import { useParams } from 'next/navigation';
@@ -24,7 +25,7 @@ export const Converter = <T extends readonly SelectType[]>(props: ConverterProps
   const [outputUnit, setOutputUnit] = useState(String(initialOutputUnit));
   const [outputValue, setOutputValue] = useState('');
   const params = useParams();
-  const { t } = useTranslation(params.locale as string, 'translation');
+  const { t } = useTranslation(params.locale as LocaleType, 'translation');
 
   const handleConvert = useCallback(() => {
     const value = parseFloat(inputValue);

@@ -4,6 +4,7 @@ import { SelectType } from '.';
 import { useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
+import { LocaleType } from '@/i18n/settings';
 
 type ComboItems = {
   setOpen?: (open: boolean) => void;
@@ -14,7 +15,7 @@ type ComboItems = {
 
 export function ComboItems(props: Readonly<ComboItems>) {
   const params = useParams();
-  const { t } = useTranslation(params.locale as string, 'translation');
+  const { t } = useTranslation(params.locale as LocaleType, 'translation');
   const { setOpen, setSelected, data, emptyMessage } = props;
   const handleSelect = useCallback(
     (selected: string) => {

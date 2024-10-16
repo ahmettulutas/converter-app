@@ -5,11 +5,11 @@ import { CardContainer } from '@/components/shared/card-container';
 import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData } from '@/lib/seo';
 import { Converter } from '@/components/pages/converter';
-import { weightRates, weightUnits } from '@/constants/units';
+import { weightRates, weightUnits } from '@/lib/constants/units';
 
 import { Faq } from '@/components/shared/faq';
 import { PageContainer } from '@/components/shared/page-container';
-import { weightFaqs } from '@/constants/faq';
+import { weightFaqs } from '@/lib/constants/faq';
 
 export default async function WeightConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;

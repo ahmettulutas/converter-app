@@ -5,9 +5,9 @@ import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData } from '@/lib/seo';
 import { Converter } from '@/components/pages/converter';
 import { PageContainer } from '@/components/shared/page-container';
-import { lengthRates, lengthUnits } from '@/constants/units';
+import { lengthRates, lengthUnits } from '@/lib/constants/units';
 import { Faq } from '@/components/shared/faq';
-import { lengthFaqs } from '@/constants/faq';
+import { lengthFaqs } from '@/lib/constants/faq';
 
 export default async function Home(props: Readonly<SharedPageProps>) {
   const { params } = props;

@@ -1,9 +1,9 @@
 {
   "labels": {
-    "lengthHeader": "Längenumrechner",
-    "weightHeader": "Gewichtsumrechner",
-    "squareHeader": "Quadratmeterrechner",
-    "risingHeader": "Aszendentenrechner",
+    "lengthCalculator": "Längenumrechner",
+    "weightCalculator": "Gewichtsumrechner",
+    "squareCalculator": "Quadratmeterrechner",
+    "risingSignCalculator": "Aszendentenrechner",
     "from": "Von",
     "to": "Zu",
     "result": "Ergebnis",
@@ -38,6 +38,8 @@
     "Aquarius": "Wassermann",
     "Pisces": "Fische",
     "risignCardDesc": "Geben Sie Ihre Geburtsdaten ein, um Ihr Aszendenten-Zeichen zu finden.",
+    "applicationCategory": "Rechner",
+    "browserRequirements": "Erfordert JavaScript",
     "units": {
       "millimeters": "Millimeter",
       "centimeters": "Zentimeter",
@@ -76,7 +78,7 @@
   },
   "metaData": {
     "applicationName": "Einfachste Längenumrechnungstools",
-    "home": {
+    "lengthCalculator": {
       "title": "Einfachster Längenumrechner - Englisch | Füße jetzt in Meter umrechnen!",
       "description": "Willkommen auf der umfassendsten Webseite zur Längenumrechnung in Deutschland! Hier können Sie schnell und einfach verschiedene Längeneinheiten wie Meter, Zentimeter, Millimeter und Kilometer umrechnen. Auf unserer Seite finden Sie Umrechnungstools und Tabellen, die die meistgesuchten Fragen zur Längenumrechnung in Deutschland beantworten.",
       "keywords": [
@@ -94,7 +96,7 @@
         "Wie viele Kilometer sind 1 Meter?"
       ]
     },
-    "weight": {
+    "weightCalculator": {
       "title": "Gewichtsumrechner - Gramm, Kilogramm, Tonnen und Unzen Umrechnen | Einfach & Schnell!",
       "description": "Willkommen auf der umfassendsten Gewichtsumrechnungs-Website in Deutschland! Konvertieren Sie schnell und einfach zwischen verschiedenen Gewichtseinheiten wie Gramm, Kilogramm, Tonnen und Unzen. Finden Sie Umrechnungstools und Tabellen, die die am häufigsten gesuchten Fragen zur Gewichtsumrechnung beantworten.",
       "keywords": [
@@ -112,7 +114,7 @@
       ],
       "category": "Gewichtsumrechner"
     },
-    "square": {
+    "squareCalculator": {
       "title": "Quadratmeter-Umrechner - Konvertieren Sie Quadratmeter, Quadratfuß und Morgen | Schnell & Einfach!",
       "description": "Willkommen auf der umfassendsten Website zur Umrechnung von Quadratmetern! Konvertieren Sie schnell und einfach zwischen verschiedenen Flächeneinheiten wie Quadratmetern, Quadratfuß und Morgen. Finden Sie Umrechnungstools und Tabellen, die die am häufigsten gesuchten Fragen zur Umrechnung von Quadratmetern beantworten.",
       "keywords": [

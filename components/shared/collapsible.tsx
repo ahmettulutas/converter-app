@@ -12,7 +12,7 @@ import { CardContainer } from './card-container';
 type TableofContentProps = {
   faqList: Array<{ question: string; answer: string }>;
 };
-export function TableofContent(props: TableofContentProps) {
+export function TableofContent(props: Readonly<TableofContentProps>) {
   const { faqList } = props;
   const [isOpen, setIsOpen] = React.useState(true);
 
@@ -28,7 +28,7 @@ export function TableofContent(props: TableofContentProps) {
         </CollapsibleTrigger>
       </div>
 
-      <CollapsibleContent className="space-y-2 ">
+      <CollapsibleContent className="space-y-2 text-sm">
         <CardContainer>
           <ul className="flex flex-col gap-2">
             {faqList.map((faq) => (

@@ -1,8 +1,8 @@
 import { createTranslation } from '@/i18n';
-import { LocaleType, availableLocales } from '@/i18n/settings';
+import { LocaleType, availableLocales, defaultLanguage } from '@/i18n/settings';
 import { Metadata, ResolvingMetadata } from 'next';
 import opengraphImage from '../public/icon.svg';
-import { ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
+import { baseUrl, companyName, navLinks, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 
 export const generateLocalesForMetaData = (languages: typeof availableLocales) => {
   const locales: Record<string, string> = {};
@@ -98,3 +98,26 @@ export const getDefaultMetaData = async (
     },
   };
 };
+
+export async function getLocalizedJsonLd(locale: LocaleType, pageKey: string) {
+  const { t } = await createTranslation(locale, 'translation');
+  const keywords: Array<string> = t(`metaData.${pageKey}.keywords`, {
+    returnObjects: true,
+  });
+  const pathname = navLinks.find((item) => item.label === pageKey)?.href;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: t(`metaData.${pageKey}.title`),
+    url: locale === defaultLanguage ? `${baseUrl}${pathname}` : `${baseUrl}/${locale}${pathname}`,
+    applicationCategory: t('labels.applicationCategory'),
+    operatingSystem: 'All',
+    description: t(`metaData.${pageKey}.description`),
+    browserRequirements: t('labels.browserRequirements'),
+    creator: {
+      '@type': 'Organization',
+      name: companyName,
+    },
+    keywords,
+  };
+}

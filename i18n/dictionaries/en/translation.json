@@ -1,9 +1,9 @@
 {
   "labels": {
-    "lengthHeader": "Length Converter",
-    "weightHeader": "Weight Converter",
-    "squareHeader": "Squaremeter Calculator",
-    "risingHeader": "Rising Sign Calculator",
+    "lengthCalculator": "Length Converter",
+    "weightCalculator": "Weight Converter",
+    "squareCalculator": "Squaremeter Calculator",
+    "risingSignCalculator": "Rising Sign Calculator",
     "from": "From",
     "to": "To",
     "result": "Result",
@@ -38,6 +38,8 @@
     "Aquarius": "Aquarius",
     "Pisces": "Pisces",
     "risignCardDesc": "Enter your birth information to find your rising sign.",
+    "applicationCategory": "Calculator",
+    "browserRequirements": "Requires JavaScript",
     "units": {
       "millimeters": "Millimeters",
       "centimeters": "Centimeters",
@@ -80,20 +82,20 @@
       "title": "Easiest Length Converter - English | Convert feet to meter now!",
       "description": "Metre, santimetre, milimetre, kilometre gibi farklı uzunluk birimleri arasında hızlı ve kolay dönüştürmeler için Türkiye'nin en kapsamlı uzunluk dönüştürme web sitesine hoş geldiniz! Sitemizde, Türkiye'de en çok aranan uzunluk dönüştürme sorularına yanıt veren dönüştürme araçları ve tablolar bulabilirsiniz.",
       "keywords": [
-        "Uzunluk dönüştürme",
-        "Metre dönüştürme",
-        "Santimetre dönüştürme",
-        "Milimetre dönüştürme",
-        "Kilometre dönüştürme",
-        "Cm'yi metreye çevirme",
-        "Metreyi cm'ye çevirme",
-        "Mm'yi metreye çevirme",
-        "Metreyi mm'ye çevirme",
-        "Km'yi metreye çevirme",
-        "Metreyi km'ye çevirme",
-        "1 metre kaç kmdir?",
-        "Feet to meter",
-        "how much is 1 feet in inches"
+        "Length conversion",
+        "Meter conversion",
+        "Centimeter conversion",
+        "Millimeter conversion",
+        "Kilometer conversion",
+        "Converting cm to meters",
+        "Converting meters to cm",
+        "Converting mm to meters",
+        "Converting meters to mm",
+        "Converting km to meters",
+        "Converting meters to km",
+        "How many kilometers is 1 meter?",
+        "Feet to meters",
+        "How much is 1 foot in inches"
       ]
     },
     "weight": {
@@ -102,6 +104,7 @@
       "keywords": [
         "Weight conversion",
         "Gram conversion",
+        "grams to kilos",
         "Kilogram conversion",
         "Ton conversion",
         "Ounce conversion",

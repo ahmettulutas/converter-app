@@ -1,6 +1,8 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { TableofContent } from './collapsible';
 import { TranslatedTitle } from './translated-title';
+import Script from 'next/script';
+import { JsonSchema } from './json.ld';
 
 type FaqProps = {
   faqList: Array<{ question: string; answer: string }>;
@@ -8,6 +10,19 @@ type FaqProps = {
 
 export function Faq(props: Readonly<FaqProps>) {
   const { faqList } = props;
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqList.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
 
   return (
     <>
@@ -29,6 +44,8 @@ export function Faq(props: Readonly<FaqProps>) {
           <TableofContent faqList={faqList} />
         </div>
       </div>
+
+      <JsonSchema schema={faqSchema} />
     </>
   );
 }

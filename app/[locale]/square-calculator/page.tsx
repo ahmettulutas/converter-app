@@ -3,16 +3,20 @@ import { SharedPageProps } from '../layout';
 
 import { CardContainer } from '@/components/shared/card-container';
 import { ResolvingMetadata } from 'next';
-import { getDefaultMetaData } from '@/lib/seo';
+import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 
 import { SquareCalculator } from '@/components/pages/square-meter-calculator';
 import { Faq } from '@/components/shared/faq';
 import { squareMeterConverterFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
+import { JsonSchema } from '@/components/shared/json.ld';
+
+const pageKey = 'squareCalculator';
 
 export default async function SquareCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
+  const pageSchema = getLocalizedJsonLd(params.locale, pageKey);
   return (
     <main className="flex flex-col items-center justify-center">
       <PageContainer className="flex flex-col gap-2 my-4">
@@ -22,10 +26,11 @@ export default async function SquareCalculatorPage(props: Readonly<SharedPagePro
         </CardContainer>
         <Faq faqList={squareMeterConverterFAQs[params.locale]} />
       </PageContainer>
+      <JsonSchema schema={pageSchema} />
     </main>
   );
 }
 
 export async function generateMetadata({ params }: SharedPageProps, parent: ResolvingMetadata) {
-  return getDefaultMetaData(params.locale, parent, 'square');
+  return getDefaultMetaData(params.locale, parent, pageKey);
 }

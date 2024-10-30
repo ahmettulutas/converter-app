@@ -1,9 +1,9 @@
 {
   "labels": {
-    "lengthHeader": "Uzunluk Dönüştürücü",
-    "weightHeader": "Ağırlık Dönüştürücü",
-    "squareHeader": "Metrekare Hesaplama",
-    "risingHeader": "Yükselen Burç Hesaplayıcı",
+    "lengthCalculator": "Uzunluk Dönüştürücü",
+    "weightCalculator": "Ağırlık Dönüştürücü",
+    "squareCalculator": "Metrekare Hesaplama",
+    "risingSignCalculator": "Yükselen Burç Hesaplayıcı",
     "from": "Başlangıç",
     "result": "Sonuç",
     "typeUnit": "Bir değer girin",
@@ -37,6 +37,8 @@
     "Aquarius": "Kova",
     "Pisces": "Balık",
     "risignCardDesc": "Yükselen burcunuzu bulmak için doğum bilgilerinizi girin.",
+    "applicationCategory": "Hesaplayıcı",
+    "browserRequirements": "JavaScript Gerektirir",
     "units": {
       "millimeters": "Milimetre",
       "centimeters": "Santimetre",

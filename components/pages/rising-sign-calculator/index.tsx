@@ -83,7 +83,7 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
   const [risingSign, setRisingSign] = useState<string | null>(null);
   const params = useParams();
   const { t } = useTranslation(params.locale as LocaleType, 'translation');
-  // Unified handle change function to simplify the updates
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setBirthInfo((prev) => ({ ...prev, [name]: value }));
@@ -92,7 +92,6 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Ensure necessary fields are filled
     if (!birthInfo.birthDate || !birthInfo.birthTime || !birthInfo.city) {
       alert('Please fill out all required fields');
       return;
@@ -102,14 +101,13 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
     setRisingSign(calculatedSign);
   };
 
-  // Memoized data for countries and cities based on the current locale
   const memoizedCountryData = countriesData.map((country) => ({
-    value: country.id,
+    value: String(country.id),
     label: country.translations[currentLocale] ?? country.translations.en,
   }));
 
   const memoizedCityData = birthInfo.country
-    ? citiesData?.[birthInfo.country as keyof typeof citiesData]?.map((item) => ({
+    ? citiesData?.[String(birthInfo.country) as keyof typeof citiesData]?.map((item) => ({
         value: item.id,
         label: item.name,
         longitude: item.longitude,
@@ -120,7 +118,7 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>{t('labels.risingHeader')}</CardTitle>
+        <CardTitle>{t('labels.risingSignCalculator')}</CardTitle>
         <CardDescription>{t('labels.risignCardDesc')}</CardDescription>
       </CardHeader>
       <CardContent>
@@ -170,7 +168,7 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
                 className: 'col-span-2 justify-between w-full overflow-hidden',
                 disabled: !birthInfo.country,
               }}
-              value={birthInfo.city}
+              value={Number(birthInfo.city)}
               title={t('labels.selectCity')}
               data={memoizedCityData}
               handleChange={(e) => {
@@ -178,7 +176,7 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
                 if (selectedCity) {
                   setBirthInfo((prev) => ({
                     ...prev,
-                    city: selectedCity.label,
+                    city: String(e),
                     longitude: Number(selectedCity.longitude),
                     latitude: Number(selectedCity.latitude),
                   }));

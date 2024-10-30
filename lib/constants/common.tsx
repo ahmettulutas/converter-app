@@ -1,9 +1,9 @@
 export const staticPageUrls = ['/weight-converter', '', '/square-calculator']; // empty string is for index page.
 export const navLinks = [
-  { href: '/', label: 'lengthHeader' },
-  { href: 'weight-converter', label: 'weightHeader' },
-  { href: 'square-calculator', label: 'squareHeader' },
-  { href: 'risign-sign-calculator', label: 'risingHeader' },
+  { href: '/', label: 'lengthCalculator' },
+  { href: '/weight-converter', label: 'weightCalculator' },
+  { href: '/square-calculator', label: 'squareCalculator' },
+  { href: '/risign-sign-calculator', label: 'risingSignCalculator' },
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [
@@ -14,3 +14,5 @@ export const twitterImageSizes = [
   { width: 800, height: 418 },
   { width: 1600, height: 900 },
 ];
+
+export const companyName = 'EqualtoWhat';

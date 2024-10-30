@@ -483,6 +483,26 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       answer:
         'Your rising sign is said to impact your physical appearance, including body type, facial features, and style preferences. People with the same rising sign may share common traits in their looks.',
     },
+    {
+      question: 'Can my rising sign provide insight into my career choices?',
+      answer:
+        'Yes, your rising sign can influence your approach to work and career. It may suggest the type of environment in which you thrive and how you present yourself professionally.',
+    },
+    {
+      question: 'How do I interpret the traits associated with my rising sign?',
+      answer:
+        'Each rising sign is associated with specific traits and characteristics. Researching your rising sign can help you understand how those traits manifest in your behavior and interactions.',
+    },
+    {
+      question: 'Do rising signs influence my compatibility with others?',
+      answer:
+        'Yes, rising signs can play a role in compatibility by influencing how you present yourself and relate to others. Understanding both your and your partner’s rising signs can enhance relationship dynamics.',
+    },
+    {
+      question: 'Are there any famous personalities with my rising sign?',
+      answer:
+        'Many celebrities and public figures have their rising sign documented. Researching these individuals can give you additional insight into how that sign is expressed in real life.',
+    },
   ],
   tr: [
     {
@@ -534,6 +554,26 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       answer:
         'Yükselen burcunuz, fiziksel görünümünüzü, beden tipinizi, yüz hatlarınızı ve stil tercihlerinizi etkileyebilir.',
     },
+    {
+      question: 'Yükselen burcum kariyer seçimlerimi etkiler mi?',
+      answer:
+        'Evet, yükselen burcunuz kariyer yaklaşımınızı ve çalışma ortamınızı etkileyebilir. Hangi tür ortamlarda başarılı olduğunuzu gösterir.',
+    },
+    {
+      question: 'Yükselen burcumla ilgili özellikleri nasıl yorumlarım?',
+      answer:
+        'Her yükselen burcun belirli özellikleri ve nitelikleri vardır. Yükselen burcunuzu araştırmak, bu özelliklerin davranış ve etkileşimlerinizde nasıl ortaya çıktığını anlamanıza yardımcı olabilir.',
+    },
+    {
+      question: 'Yükselen burçlarım başkalarıyla uyumumu etkiler mi?',
+      answer:
+        'Evet, yükselen burçlar ilk izleniminizi ve başkalarıyla olan ilişkilerinizi etkileyebilir. Hem sizin hem de partnerinizin yükselen burçlarını anlamak, ilişkilerdeki dinamikleri artırabilir.',
+    },
+    {
+      question: 'Yükselen burcumla aynı olan ünlü kişiler var mı?',
+      answer:
+        'Birçok ünlü ve kamu figürü, yükselen burçları ile belgelenmiştir. Bu bireyleri araştırmak, o burcun gerçek hayatta nasıl ifade edildiğine dair ek bir bilgi verebilir.',
+    },
   ],
   de: [
     {
@@ -558,32 +598,52 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
     {
       question: 'Was ist der Unterschied zwischen dem Sonnenzeichen und dem Aszendenten?',
       answer:
-        'Das Sonnenzeichen repräsentiert Ihr inneres Selbst, während der Aszendent Ihre äußere Erscheinung und die Art und Weise, wie Sie von anderen wahrgenommen werden, zeigt.',
+        'Ihr Sonnenzeichen steht für Ihre grundlegende Identität, während Ihr Aszendent repräsentiert, wie andere Sie wahrnehmen. Beide spielen eine wichtige Rolle in Ihrem astrologischen Chart.',
     },
     {
-      question: 'Warum ist die genaue Geburtszeit wichtig für die Berechnung des Aszendenten?',
+      question: 'Warum muss ich meine genaue Geburtszeit kennen, um meinen Aszendenten zu berechnen?',
       answer:
-        'Der Aszendent ändert sich etwa alle zwei Stunden. Selbst eine kleine Abweichung bei der Geburtszeit kann zu einem anderen Aszendenten führen.',
+        'Die genaue Geburtszeit ist entscheidend, da sich der Aszendent etwa alle zwei Stunden ändert. Selbst ein kleiner Zeitunterschied kann zu einem anderen Aszendenten führen.',
     },
     {
-      question: 'Was sagt mein Aszendent über meine Persönlichkeit aus?',
+      question: 'Was sagt mir mein Aszendent über meine Persönlichkeit?',
       answer:
-        'Der Aszendent gibt Aufschluss über Ihre äußere Persönlichkeit, wie Sie auf neue Erfahrungen zugehen und wie Sie in sozialen Situationen wahrgenommen werden.',
+        'Ihr Aszendent gibt Einblicke in Ihre äußere Persönlichkeit, einschließlich der Art und Weise, wie Sie neue Erfahrungen angehen und wie Sie in sozialen Situationen wahrgenommen werden.',
     },
     {
       question: 'Ist der Aszendent wichtiger als das Sonnenzeichen?',
       answer:
-        'Beide sind wichtig. Das Sonnenzeichen steht für Ihr inneres Selbst, während der Aszendent für Ihre äußere Erscheinung steht.',
+        'Sowohl das Sonnenzeichen als auch der Aszendent sind wichtig in der Astrologie. Das Sonnenzeichen repräsentiert Ihr inneres Selbst, während der Aszendent Ihre äußere Erscheinung widerspiegelt.',
     },
     {
-      question: 'Beeinflusst mein Aszendent meine Beziehungen?',
+      question: 'Kann mein Aszendent meine Beziehungen beeinflussen?',
       answer:
-        'Ja, der Aszendent beeinflusst Ihre Beziehungen, indem er den ersten Eindruck und Ihre Art der Kommunikation prägt.',
+        'Ja, Ihr Aszendent beeinflusst Ihre Beziehungen, indem er den ersten Eindruck und die Art und Weise, wie Sie mit anderen kommunizieren, prägt. Er kann Ihre Anziehungskraft und Kompatibilität mit anderen bestimmen.',
     },
     {
       question: 'Wie beeinflusst mein Aszendent mein Aussehen?',
       answer:
-        'Der Aszendent kann Ihr körperliches Erscheinungsbild, einschließlich Ihres Stils, Ihrer Gesichtszüge und Ihres Körpertyps, beeinflussen.',
+        'Ihr Aszendent soll Ihr körperliches Erscheinungsbild beeinflussen, einschließlich Körperbau, Gesichtszüge und Stilpräferenzen.',
+    },
+    {
+      question: 'Kann mein Aszendent Einblicke in meine Karrierewahl geben?',
+      answer:
+        'Ja, Ihr Aszendent kann Ihre Herangehensweise an Arbeit und Karriere beeinflussen und Ihnen sagen, in welcher Art von Umfeld Sie am besten gedeihen.',
+    },
+    {
+      question: 'Wie interpretiere ich die Eigenschaften meines Aszendenten?',
+      answer:
+        'Jeder Aszendent ist mit bestimmten Eigenschaften und Merkmalen verbunden. Wenn Sie Ihren Aszendenten erforschen, können Sie verstehen, wie diese Eigenschaften in Ihrem Verhalten und Ihren Interaktionen zum Ausdruck kommen.',
+    },
+    {
+      question: 'Beeinflussen Aszendenten meine Kompatibilität mit anderen?',
+      answer:
+        'Ja, Aszendenten können die Kompatibilität beeinflussen, indem sie Ihre äußere Erscheinung und Ihre Beziehung zu anderen prägen. Das Verständnis der Aszendenten von Ihnen und Ihrem Partner kann die Dynamik der Beziehung verbessern.',
+    },
+    {
+      question: 'Gibt es berühmte Persönlichkeiten mit meinem Aszendenten?',
+      answer:
+        'Viele Prominente und öffentliche Personen haben dokumentierte Aszendenten. Die Erforschung dieser Personen kann Ihnen weitere Einblicke geben, wie sich dieser Aszendent im wirklichen Leben zeigt.',
     },
   ],
 };

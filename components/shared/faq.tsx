@@ -30,8 +30,8 @@ export function Faq(props: Readonly<FaqProps>) {
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-[800px] m-auto">
         <div className="flex flex-col gap-4 col-span-1 md:col-span-2">
           <Accordion type="single" collapsible className="w-full">
-            {faqList.map(({ question, answer }, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
+            {faqList.map(({ question, answer }) => (
+              <AccordionItem key={question} value={question}>
                 <AccordionTrigger className="px-2">{question}</AccordionTrigger>
                 <AccordionContent>
                   <p className="ml-2">{answer}</p>

@@ -17,18 +17,25 @@ const pageKey = 'weightCalculator';
 export default async function WeightConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = getLocalizedJsonLd(params.locale, pageKey);
+  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
   return (
-    <main className="flex flex-col items-center justify-center">
-      <PageContainer className="flex flex-col gap-2 my-4">
-        <h1 className="text-center text-2xl my-2">{t('labels.weightHeader')}</h1>
-        <CardContainer>
-          <Converter units={weightUnits} initialInputUnit="kilograms" initialOutputUnit="pounds" rates={weightRates} />
-        </CardContainer>
-        <Faq faqList={weightFaqs[params.locale]} />
-      </PageContainer>
+    <>
+      <main className="flex flex-col items-center justify-center">
+        <PageContainer className="flex flex-col gap-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.weightCalculator')}</h1>
+          <CardContainer>
+            <Converter
+              units={weightUnits}
+              initialInputUnit="kilograms"
+              initialOutputUnit="pounds"
+              rates={weightRates}
+            />
+          </CardContainer>
+          <Faq faqList={weightFaqs[params.locale]} />
+        </PageContainer>
+      </main>
       <JsonSchema schema={pageSchema} />
-    </main>
+    </>
   );
 }
 

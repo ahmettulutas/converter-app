@@ -10,12 +10,14 @@ import { PageContainer } from '@/components/shared/page-container';
 import RisingSignCalculator from '@/components/pages/rising-sign-calculator';
 
 import { JsonSchema } from '@/components/shared/json.ld';
+
 const pageKey = 'risingSignCalculator';
 
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = getLocalizedJsonLd(params.locale, pageKey);
+  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+
   return (
     <>
       <main className="flex flex-col items-center justify-center">
@@ -25,7 +27,7 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
           <Faq faqList={risingSignCalculatorFAQs[params.locale]} />
         </PageContainer>
       </main>
-      <JsonSchema schema={pageSchema} />
+      {pageSchema && <JsonSchema schema={pageSchema} />}
     </>
   );
 }

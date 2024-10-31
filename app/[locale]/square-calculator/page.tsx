@@ -18,16 +18,18 @@ export default async function SquareCalculatorPage(props: Readonly<SharedPagePro
   const { t } = await createTranslation(params.locale, 'translation');
   const pageSchema = getLocalizedJsonLd(params.locale, pageKey);
   return (
-    <main className="flex flex-col items-center justify-center">
-      <PageContainer className="flex flex-col gap-2 my-4">
-        <h1 className="text-center text-2xl my-2">{t('labels.squareHeader')}</h1>
-        <CardContainer>
-          <SquareCalculator />
-        </CardContainer>
-        <Faq faqList={squareMeterConverterFAQs[params.locale]} />
-      </PageContainer>
+    <>
+      <main className="flex flex-col items-center justify-center">
+        <PageContainer className="flex flex-col gap-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.squareCalculator')}</h1>
+          <CardContainer>
+            <SquareCalculator />
+          </CardContainer>
+          <Faq faqList={squareMeterConverterFAQs[params.locale]} />
+        </PageContainer>
+      </main>
       <JsonSchema schema={pageSchema} />
-    </main>
+    </>
   );
 }
 

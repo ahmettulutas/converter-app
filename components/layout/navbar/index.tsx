@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { Calculator } from 'lucide-react';
 import { NavbarToggle } from './navbar-toggle';
 import { PageContainer } from '@/components/shared/page-container';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/styles';
 import { navLinks } from '@/lib/constants/common';
 import { LanguageSelector } from './language-selector';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
-import { LocaleType } from '@/i18n/settings';
+import { LocaleType, defaultLanguage } from '@/i18n/settings';
 
 export const CollapsibleNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -46,7 +46,7 @@ export const CollapsibleNavbar = () => {
               >
                 {navLinks.map(({ label, href }) => (
                   <li key={href}>
-                    <Link href={href}>{t(`labels.${label}`)}</Link>
+                    <Link href={`/${params.locale}${href}`}>{t(`labels.${label}`)}</Link>
                   </li>
                 ))}
                 <li>
@@ -59,7 +59,7 @@ export const CollapsibleNavbar = () => {
             <ul className="gap-4 lg:gap-20 hidden md:flex justify-between m-auto">
               {navLinks.map(({ label, href }) => (
                 <li key={href}>
-                  <Link href={href} className="h-full block relative mx-auto hover:underline">
+                  <Link href={`/${params.locale}${href}`} className="h-full block relative mx-auto hover:underline">
                     {t(`labels.${label}`)}
                   </Link>
                 </li>

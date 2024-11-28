@@ -26,6 +26,17 @@ export const Converter = <T extends readonly SelectType[]>(props: ConverterProps
   const [outputValue, setOutputValue] = useState('');
   const params = useParams();
   const { t } = useTranslation(params.locale as LocaleType, 'translation');
+  const outputTranslated = t(`labels.units.${outputUnit}`);
+  const translatedUnitOptions = useMemo(
+    () =>
+      units
+        .map(({ value, label }) => ({
+          value,
+          label: t(`labels.units.${label}`),
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
+    [t, units]
+  );
 
   const handleConvert = useCallback(() => {
     const value = parseFloat(inputValue);
@@ -45,17 +56,6 @@ export const Converter = <T extends readonly SelectType[]>(props: ConverterProps
     handleConvert();
   }, [inputUnit, outputUnit, inputValue, handleConvert]);
 
-  const translatedUnitOptions = useMemo(
-    () =>
-      units
-        .map(({ value, label }) => ({
-          value,
-          label: t(`labels.units.${label}`),
-        }))
-        .sort((a, b) => a.label.localeCompare(b.label)),
-    [t, units]
-  );
-  const outputTranslated = t(`labels.units.${outputUnit}`);
   return (
     <section className="grid grid-cols-2 gap-4 w-full max-w-[450px]">
       <div className="w-full col-span-2 flex gap-2">

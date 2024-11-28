@@ -4,6 +4,8 @@
     "weightCalculator": "Gewichtsumrechner",
     "squareCalculator": "Quadratmeterrechner",
     "risingSignCalculator": "Aszendentenrechner",
+    "sunSignCalculator": "Sternzeichen-Rechner",
+    "sunSignCardDesc": "Entdecken Sie Ihr Sternzeichen durch Eingabe Ihres Geburtsdatums und Ihrer Geburtszeit. Beginnen Sie noch heute Ihre persönliche astrologische Reise und erkunden Sie die Tiefen Ihres Charakters.",
     "from": "Von",
     "to": "Zu",
     "result": "Ergebnis",
@@ -41,6 +43,7 @@
     "applicationCategory": "Rechner",
     "browserRequirements": "Erfordert JavaScript",
     "risingResult": "Ihr berechneter Aszendent ist",
+    "sunSignResult": "Ihr berechnetes Sternzeichen ist",
     "units": {
       "millimeters": "Millimeter",
       "centimeters": "Zentimeter",
@@ -147,6 +150,23 @@
         "Aszendent und Persönlichkeit"
       ],
       "category": "Astrologische Rechner"
+    },
+    "sunSignCalculator": {
+      "title": "Sternzeichen-Rechner – Entdecken Sie Ihr Sternzeichen | Schnell & Kostenlos!",
+      "description": "Finden Sie Ihr Sternzeichen mit unserem schnellen und kostenlosen Sternzeichen-Rechner. Erfahren Sie, wie Ihr Sternzeichen Ihre grundlegenden Persönlichkeitsmerkmale definiert und Ihr Leben prägt. Geben Sie einfach Ihre Geburtsdaten ein, um genaue astrologische Einblicke zu erhalten.",
+      "keywords": [
+        "Sternzeichen-Rechner",
+        "Tierkreiszeichen-Rechner",
+        "Astrologie-Sternzeichen",
+        "Sternzeichen finden",
+        "Was ist mein Sternzeichen",
+        "Astrologisches Sternzeichen",
+        "Kostenloser Sternzeichen-Rechner",
+        "Genauer Tierkreiszeichen-Rechner",
+        "Personalisierter Astrologie-Bericht",
+        "Sternzeichen und Persönlichkeit"
+      ],
+      "category": "Astrologie-Rechner"
     }
   }
 }

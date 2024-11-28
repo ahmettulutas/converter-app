@@ -6,7 +6,7 @@ import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button, ButtonProps } from '@/components/ui/button';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/styles';
 import { ComboItems } from './combo-items';
 import { DownIcon } from '../../icons/down-icon';
 import { useMediaQuery } from '@/hooks/use-media';

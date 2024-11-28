@@ -4,6 +4,7 @@ export const navLinks = [
   { href: '/weight-converter', label: 'weightCalculator' },
   { href: '/square-calculator', label: 'squareCalculator' },
   { href: '/risign-sign-calculator', label: 'risingSignCalculator' },
+  { href: '/sun-sign-calculator', label: 'sunSignCalculator' },
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

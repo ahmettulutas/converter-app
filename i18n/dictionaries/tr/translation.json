@@ -4,6 +4,8 @@
     "weightCalculator": "Ağırlık Dönüştürücü",
     "squareCalculator": "Metrekare Hesaplama",
     "risingSignCalculator": "Yükselen Burç Hesaplayıcı",
+    "sunSignCalculator": "Güneş Burcu Hesaplayıcı",
+    "sunSignCardDesc": "Doğum tarihinizi ve saatinizi girerek güneş burcunuzu öğrenin. Kişisel astroloji yolculuğunuza bugün başlayın ve karakterinizin derinliklerini keşfedin.",
     "from": "Başlangıç",
     "result": "Sonuç",
     "typeUnit": "Bir değer girin",
@@ -40,6 +42,7 @@
     "applicationCategory": "Hesaplayıcı",
     "browserRequirements": "JavaScript Gerektirir",
     "risingResult": "Hesaplanan yükselen burcunuz",
+    "sunSignResult": "Hesaplanan güneş burcunuz",
     "units": {
       "millimeters": "Milimetre",
       "centimeters": "Santimetre",
@@ -149,6 +152,23 @@
         "Doğru yükselen burç hesaplayıcı",
         "Kişisel astroloji raporu",
         "Yükselen burç ve kişilik"
+      ],
+      "category": "Astroloji Hesaplayıcıları"
+    },
+    "sunSignCalculator": {
+      "title": "Güneş Burcu Hesaplayıcı - Burcunuzu Keşfedin | Hızlı ve Ücretsiz!",
+      "description": "Hızlı ve ücretsiz Güneş Burcu Hesaplayıcımız ile burcunuzu öğrenin. Güneş burcunuzun temel kişilik özelliklerinizi nasıl tanımladığını ve hayatınızı nasıl şekillendirdiğini keşfedin. Doğum bilgilerinizi girerek doğru astrolojik bilgiler alın.",
+      "keywords": [
+        "Güneş burcu hesaplayıcı",
+        "Zodyak burcu hesaplayıcı",
+        "Astroloji güneş burcu",
+        "Burcumu öğren",
+        "Benim güneş burcum nedir",
+        "Astrolojik güneş burcu",
+        "Ücretsiz güneş burcu hesaplayıcı",
+        "Doğru zodyak burcu hesaplayıcı",
+        "Kişisel astroloji raporu",
+        "Güneş burcu ve kişilik"
       ],
       "category": "Astroloji Hesaplayıcıları"
     }

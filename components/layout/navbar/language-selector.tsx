@@ -3,7 +3,7 @@ import React from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button, ButtonProps } from '@/components/ui/button';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/styles';
 import { ComboItems } from '@/components/shared/combobox/combo-items';
 import { LocaleType, availableLocales } from '@/i18n/settings';
 import { useParams, usePathname, useRouter } from 'next/navigation';

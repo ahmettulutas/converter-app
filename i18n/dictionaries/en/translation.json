@@ -4,6 +4,8 @@
     "weightCalculator": "Weight Converter",
     "squareCalculator": "Squaremeter Calculator",
     "risingSignCalculator": "Rising Sign Calculator",
+    "sunSignCalculator": "Sun Sign Calculator",
+    "sunSignCardDesc": "Discover your sun sign by entering your birth date and time. Start your personal astrology journey today and explore the depths of your character.",
     "from": "From",
     "to": "To",
     "result": "Result",
@@ -41,6 +43,7 @@
     "applicationCategory": "Calculator",
     "browserRequirements": "Requires JavaScript",
     "risingResult": "Your calculated rising sign is",
+    "sunSignResult": "Your calculated sun sign is",
     "units": {
       "millimeters": "Millimeters",
       "centimeters": "Centimeters",
@@ -150,6 +153,23 @@
         "Accurate rising sign calculator",
         "Personalized astrology report",
         "Rising sign and personality"
+      ],
+      "category": "Astrology Calculators"
+    },
+    "sunSignCalculator": {
+      "title": "Sun Sign Calculator - Discover Your Zodiac Sign | Fast & Free!",
+      "description": "Find your sun sign with our quick and free Sun Sign Calculator. Learn how your zodiac sign defines your core personality traits and shapes your life. Simply input your birth details for accurate astrological insights.",
+      "keywords": [
+        "Sun sign calculator",
+        "Zodiac sign calculator",
+        "Astrology sun sign",
+        "Find zodiac sign",
+        "What is my sun sign",
+        "Astrological sun sign",
+        "Free sun sign calculator",
+        "Accurate zodiac sign calculator",
+        "Personalized astrology report",
+        "Sun sign and personality"
       ],
       "category": "Astrology Calculators"
     }

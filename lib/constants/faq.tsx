@@ -446,7 +446,7 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
     {
       question: 'How do I find out my rising sign?',
       answer:
-        'You can find your rising sign by entering your birth date, exact birth time, and location into a rising sign calculator. The calculator will determine your Ascendant based on these details.',
+        'You can find your rising sign by entering your birth date, exact birth time, and location into the rising sign calculator above. The calculator will determine your Ascendant based on these details.',
     },
     {
       question: 'Can my rising sign change over time?',
@@ -505,20 +505,11 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
     },
 
     {
-      question: 'How do I find out my rising sign?',
-      answer:
-        'You can find your rising sign by entering your birth date, exact birth time, and location into the rising sign calculator above. The calculator will determine your Ascendant based on these details.',
-    },
-    {
       question: 'What is the significance of my rising sign?',
       answer:
         'Your rising sign represents your outward personality, how you present yourself to the world, and how you initiate things. Its the mask you wear in public.',
     },
-    {
-      question: 'Can my rising sign change over time?',
-      answer:
-        'No, your rising sign is determined by your birth time and location and remains fixed throughout your life.',
-    },
+
     {
       question: 'How does my rising sign interact with my sun sign?',
       answer:
@@ -623,11 +614,7 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       answer:
         'Birçok ünlü ve kamu figürü, yükselen burçları ile belgelenmiştir. Bu bireyleri araştırmak, o burcun gerçek hayatta nasıl ifade edildiğine dair ek bir bilgi verebilir.',
     },
-    {
-      question: 'Yükselen burcumu nasıl öğrenebilirim?',
-      answer:
-        'Doğum tarihinizi, tam doğum saatinizi ve konumunuzu yukarıdaki yükselen burç hesaplayıcısına girerek yükselen burcunuzu öğrenebilirsiniz. Hesaplayıcı, bu bilgileri kullanarak yükselen burcunuzu belirler.',
-    },
+
     {
       question: 'Yükselen burcumun önemi nedir?',
       answer:
@@ -753,11 +740,7 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       answer:
         'Ihr Aszendent repräsentiert Ihre äußere Persönlichkeit, wie Sie sich der Welt präsentieren und wie Sie Dinge angehen. Es ist die Maske, die Sie in der Öffentlichkeit tragen.',
     },
-    {
-      question: 'Kann sich mein Aszendent im Laufe der Zeit ändern?',
-      answer:
-        'Nein, Ihr Aszendent wird durch Ihre Geburtszeit und Ihren Geburtsort bestimmt und bleibt Ihr Leben lang gleich.',
-    },
+
     {
       question: 'Wie interagiert mein Aszendent mit meinem Sternzeichen?',
       answer:
@@ -792,6 +775,112 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       question: 'Was kann ich tun, wenn ich meine genaue Geburtszeit nicht kenne?',
       answer:
         'Wenn Sie Ihre genaue Geburtszeit nicht kennen, können Sie einen Dienst zur Geburtszeit-Rektifikation nutzen, um diese anhand bedeutender Lebensereignisse zu schätzen.',
+    },
+  ],
+};
+
+export const sunSignFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
+  tr: [
+    {
+      question: 'Güneş burcu nedir?',
+      answer:
+        'Güneş burcu, doğum anında Güneş’in bulunduğu burçtur ve kişinin temel kişilik özelliklerini temsil eder.',
+    },
+    {
+      question: 'Güneş burcumu nasıl öğrenebilirim?',
+      answer: 'Doğum tarihinizi ve doğum saatinizi kullanarak güneş burcunuzu hesaplayabilirsiniz.',
+    },
+    {
+      question: 'Güneş burcum kişiliğimi nasıl etkiler?',
+      answer:
+        'Güneş burcunuz, kim olduğunuzu, temel motivasyonlarınızı ve hayata bakış açınızı şekillendiren bir faktördür.',
+    },
+    {
+      question: 'Doğum tarihi dışında güneş burcu hesaplamak için başka ne gerekir?',
+      answer:
+        'Güneş burcunuz genellikle sadece doğum tarihinize göre hesaplanır, ancak tam hesaplama için doğum saati ve yeri de yardımcı olabilir.',
+    },
+    {
+      question: 'Güneş burcu ile yükselen burç aynı mı?',
+      answer: 'Hayır, yükselen burç doğum anında ufukta yükselen burçtur ve güneş burcundan farklıdır.',
+    },
+    {
+      question: 'Bir kişinin birden fazla güneş burcu olabilir mi?',
+      answer: 'Hayır, bir kişinin sadece bir güneş burcu vardır.',
+    },
+    {
+      question: 'Güneş burcu hangi zaman aralıklarında değişir?',
+      answer:
+        'Güneş burcu yaklaşık her ay değişir, genelde bir burç döneminin başlangıç ve bitiş tarihleri arasında geçerlidir.',
+    },
+  ],
+  en: [
+    {
+      question: 'What is a sun sign?',
+      answer:
+        'A sun sign is the zodiac sign where the Sun was positioned at the time of your birth and represents your core personality traits.',
+    },
+    {
+      question: 'How can I find out my sun sign?',
+      answer: 'You can determine your sun sign using your birth date and, optionally, your birth time.',
+    },
+    {
+      question: 'How does my sun sign affect my personality?',
+      answer: 'Your sun sign influences who you are, your motivations, and your general outlook on life.',
+    },
+    {
+      question: 'Do I need anything besides my birth date to calculate my sun sign?',
+      answer:
+        'Your sun sign is typically calculated based on your birth date alone, but including birth time and location can provide more precision.',
+    },
+    {
+      question: 'Is my sun sign the same as my rising sign?',
+      answer:
+        'No, your rising sign is the zodiac sign rising on the horizon at your birth and is different from your sun sign.',
+    },
+    {
+      question: 'Can a person have more than one sun sign?',
+      answer: 'No, a person can only have one sun sign.',
+    },
+    {
+      question: 'When does the sun sign change?',
+      answer:
+        'The sun sign changes roughly every month, corresponding to the start and end dates of zodiac sign periods.',
+    },
+  ],
+  de: [
+    {
+      question: 'Was ist ein Sternzeichen?',
+      answer:
+        'Ein Sternzeichen ist das Tierkreiszeichen, in dem die Sonne zum Zeitpunkt Ihrer Geburt stand, und es repräsentiert Ihre grundlegenden Persönlichkeitsmerkmale.',
+    },
+    {
+      question: 'Wie kann ich mein Sternzeichen herausfinden?',
+      answer:
+        'Sie können Ihr Sternzeichen anhand Ihres Geburtsdatums und, falls verfügbar, Ihrer Geburtszeit bestimmen.',
+    },
+    {
+      question: 'Wie beeinflusst mein Sternzeichen meine Persönlichkeit?',
+      answer: 'Ihr Sternzeichen beeinflusst, wer Sie sind, was Sie motiviert und Ihre allgemeine Lebenseinstellung.',
+    },
+    {
+      question: 'Benötige ich neben meinem Geburtsdatum noch etwas, um mein Sternzeichen zu berechnen?',
+      answer:
+        'Ihr Sternzeichen wird normalerweise nur anhand Ihres Geburtsdatums berechnet, aber die Angabe von Geburtszeit und Ort kann die Genauigkeit verbessern.',
+    },
+    {
+      question: 'Ist mein Sternzeichen dasselbe wie mein Aszendent?',
+      answer:
+        'Nein, Ihr Aszendent ist das Tierkreiszeichen, das zum Zeitpunkt Ihrer Geburt am Horizont aufging, und unterscheidet sich von Ihrem Sternzeichen.',
+    },
+    {
+      question: 'Kann eine Person mehr als ein Sternzeichen haben?',
+      answer: 'Nein, eine Person kann nur ein Sternzeichen haben.',
+    },
+    {
+      question: 'Wann wechselt das Sternzeichen?',
+      answer:
+        'Das Sternzeichen wechselt ungefähr jeden Monat und entspricht den Anfangs- und Enddaten der Tierkreiszeichenperioden.',
     },
   ],
 };

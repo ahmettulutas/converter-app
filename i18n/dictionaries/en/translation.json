@@ -40,6 +40,7 @@
     "risignCardDesc": "Enter your birth information to find your rising sign.",
     "applicationCategory": "Calculator",
     "browserRequirements": "Requires JavaScript",
+    "risingResult": "Your calculated rising sign is",
     "units": {
       "millimeters": "Millimeters",
       "centimeters": "Centimeters",
@@ -98,7 +99,7 @@
         "How much is 1 foot in inches"
       ]
     },
-    "weight": {
+    "weightCalculator": {
       "title": "Weight Converter - Convert Grams, Kilos, Tons & Ounces | Easy & Fast!",
       "description": "Welcome to the most comprehensive weight conversion website in the UK! Quickly and easily convert between different weight units like grams, kilograms, tons, and ounces. Find conversion tools and tables that answer the most commonly searched weight conversion questions.",
       "keywords": [
@@ -106,6 +107,7 @@
         "Gram conversion",
         "grams to kilos",
         "Kilogram conversion",
+        "kilos to tons",
         "Ton conversion",
         "Ounce conversion",
         "Convert g to kg",
@@ -117,7 +119,7 @@
       ],
       "category": "Weight Converters"
     },
-    "square": {
+    "squareCalculator": {
       "title": "Square Meter Converter - Convert Square Feet, Yards, & Acres | Fast & Easy!",
       "description": "Welcome to the most comprehensive square meter conversion website! Quickly and easily convert between different area units like square feet, square yards, and acres. Find conversion tools and tables that answer the most commonly searched square meter conversion questions.",
       "keywords": [

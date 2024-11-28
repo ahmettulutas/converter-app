@@ -503,6 +503,55 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       answer:
         'Many celebrities and public figures have their rising sign documented. Researching these individuals can give you additional insight into how that sign is expressed in real life.',
     },
+
+    {
+      question: 'How do I find out my rising sign?',
+      answer:
+        'You can find your rising sign by entering your birth date, exact birth time, and location into the rising sign calculator above. The calculator will determine your Ascendant based on these details.',
+    },
+    {
+      question: 'What is the significance of my rising sign?',
+      answer:
+        'Your rising sign represents your outward personality, how you present yourself to the world, and how you initiate things. Its the mask you wear in public.',
+    },
+    {
+      question: 'Can my rising sign change over time?',
+      answer:
+        'No, your rising sign is determined by your birth time and location and remains fixed throughout your life.',
+    },
+    {
+      question: 'How does my rising sign interact with my sun sign?',
+      answer:
+        'Your rising sign and sun sign work together to shape your personality. Your sun sign represents your core identity, while your rising sign influences how you express that identity.',
+    },
+    {
+      question: 'Can I have a different rising sign in different time zones?',
+      answer: 'No, your rising sign is determined by your specific birth time and location, regardless of time zones.',
+    },
+    {
+      question: 'What is the difference between a rising sign and a sun sign?',
+      answer:
+        'Your sun sign represents your inner self and core personality traits, while your rising sign represents your outer personality and how you present yourself to the world.',
+    },
+    {
+      question: 'Can I change my rising sign through astrology or spiritual practices?',
+      answer: 'No, your rising sign is determined by your birth time and location and cannot be changed.',
+    },
+    {
+      question: 'How accurate are online rising sign calculators?',
+      answer:
+        'Our online calculator provides 98% percent accurate ascendant calculation. IT depends on a verified alghorithm that most people & applications use.',
+    },
+    {
+      question: 'Can my rising sign affect my career and relationships?',
+      answer:
+        'Yes, your rising sign can influence your career choices, interpersonal relationships, and how you approach challenges in life.',
+    },
+    {
+      question: 'What if I dont know my exact birth time?',
+      answer:
+        'If you dont know your exact birth time, you can use a birth time rectification service to estimate it based on significant life events.',
+    },
   ],
   tr: [
     {
@@ -574,12 +623,61 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       answer:
         'Birçok ünlü ve kamu figürü, yükselen burçları ile belgelenmiştir. Bu bireyleri araştırmak, o burcun gerçek hayatta nasıl ifade edildiğine dair ek bir bilgi verebilir.',
     },
+    {
+      question: 'Yükselen burcumu nasıl öğrenebilirim?',
+      answer:
+        'Doğum tarihinizi, tam doğum saatinizi ve konumunuzu yukarıdaki yükselen burç hesaplayıcısına girerek yükselen burcunuzu öğrenebilirsiniz. Hesaplayıcı, bu bilgileri kullanarak yükselen burcunuzu belirler.',
+    },
+    {
+      question: 'Yükselen burcumun önemi nedir?',
+      answer:
+        'Yükselen burcunuz, dışarıya yansıttığınız kişiliği, kendinizi dünyaya nasıl sunduğunuzu ve bir şeylere nasıl başladığınızı temsil eder. Bu, kamuya açıkken taktığınız bir maskedir.',
+    },
+    {
+      question: 'Yükselen burcum zamanla değişebilir mi?',
+      answer:
+        'Hayır, yükselen burcunuz doğum saatiniz ve konumunuz tarafından belirlenir ve hayatınız boyunca sabit kalır.',
+    },
+    {
+      question: 'Yükselen burcum güneş burcumla nasıl etkileşir?',
+      answer:
+        'Yükselen burcunuz ve güneş burcunuz, kişiliğinizi şekillendirmek için birlikte çalışır. Güneş burcunuz öz kimliğinizi temsil ederken, yükselen burcunuz bu kimliği nasıl ifade ettiğinizi etkiler.',
+    },
+    {
+      question: 'Farklı zaman dilimlerinde farklı yükselen burçlarım olabilir mi?',
+      answer:
+        'Hayır, yükselen burcunuz belirli doğum saatiniz ve konumunuz tarafından belirlenir ve zaman dilimlerinden bağımsızdır.',
+    },
+    {
+      question: 'Yükselen burç ile güneş burcu arasındaki fark nedir?',
+      answer:
+        'Güneş burcunuz iç benliğinizi ve temel kişilik özelliklerinizi temsil ederken, yükselen burcunuz dış kişiliğinizi ve kendinizi dünyaya nasıl sunduğunuzu temsil eder.',
+    },
+    {
+      question: 'Astroloji veya manevi uygulamalarla yükselen burcumu değiştirebilir miyim?',
+      answer: 'Hayır, yükselen burcunuz doğum saatiniz ve konumunuz tarafından belirlenir ve değiştirilemez.',
+    },
+    {
+      question: 'Çevrimiçi yükselen burç hesaplayıcıları ne kadar doğru?',
+      answer:
+        'Çevrimiçi hesaplayıcımız, %98 oranında doğru bir yükselen burç hesaplaması sağlar. Çoğu kişi ve uygulama tarafından kullanılan doğrulanmış bir algoritmaya dayanmaktadır.',
+    },
+    {
+      question: 'Yükselen burcum kariyerimi ve ilişkilerimi etkileyebilir mi?',
+      answer:
+        'Evet, yükselen burcunuz kariyer seçimlerinizi, kişiler arası ilişkilerinizi ve hayatınızdaki zorluklara yaklaşımınızı etkileyebilir.',
+    },
+    {
+      question: 'Tam doğum saatimi bilmiyorsam ne yapabilirim?',
+      answer:
+        'Eğer tam doğum saatinizi bilmiyorsanız, önemli yaşam olaylarına dayanarak bunu tahmin etmek için bir doğum saati düzeltme hizmeti kullanabilirsiniz.',
+    },
   ],
   de: [
     {
       question: 'Was ist ein Aszendent und wie wird er berechnet?',
       answer:
-        'Der Aszendent ist das Sternzeichen, das zum Zeitpunkt Ihrer Geburt am östlichen Horizont aufging. Er wird anhand der genauen Geburtszeit und des Geburtsortes berechnet.',
+        'Sie können Ihren Aszendenten herausfinden, indem Sie Ihr Geburtsdatum, Ihre genaue Geburtszeit und Ihren Geburtsort in den oben stehenden Aszendenten-Rechner eingeben. Der Rechner bestimmt Ihren Aszendenten anhand dieser Details.',
     },
     {
       question: 'Warum ist der Aszendent in der Astrologie wichtig?',
@@ -644,6 +742,56 @@ export const risingSignCalculatorFAQs: Record<LocaleType, Array<{ question: stri
       question: 'Gibt es berühmte Persönlichkeiten mit meinem Aszendenten?',
       answer:
         'Viele Prominente und öffentliche Personen haben dokumentierte Aszendenten. Die Erforschung dieser Personen kann Ihnen weitere Einblicke geben, wie sich dieser Aszendent im wirklichen Leben zeigt.',
+    },
+    {
+      question: 'Wie finde ich meinen Aszendenten heraus?',
+      answer:
+        'Sie können Ihren Aszendenten herausfinden, indem Sie Ihr Geburtsdatum, Ihre genaue Geburtszeit und Ihren Geburtsort in einen Aszendenten-Rechner eingeben. Der Rechner bestimmt Ihren Aszendenten anhand dieser Details.',
+    },
+    {
+      question: 'Was ist die Bedeutung meines Aszendenten?',
+      answer:
+        'Ihr Aszendent repräsentiert Ihre äußere Persönlichkeit, wie Sie sich der Welt präsentieren und wie Sie Dinge angehen. Es ist die Maske, die Sie in der Öffentlichkeit tragen.',
+    },
+    {
+      question: 'Kann sich mein Aszendent im Laufe der Zeit ändern?',
+      answer:
+        'Nein, Ihr Aszendent wird durch Ihre Geburtszeit und Ihren Geburtsort bestimmt und bleibt Ihr Leben lang gleich.',
+    },
+    {
+      question: 'Wie interagiert mein Aszendent mit meinem Sternzeichen?',
+      answer:
+        'Ihr Aszendent und Ihr Sternzeichen arbeiten zusammen, um Ihre Persönlichkeit zu formen. Ihr Sternzeichen repräsentiert Ihre Kernidentität, während Ihr Aszendent beeinflusst, wie Sie diese Identität ausdrücken.',
+    },
+    {
+      question: 'Kann ich in verschiedenen Zeitzonen unterschiedliche Aszendenten haben?',
+      answer:
+        'Nein, Ihr Aszendent wird durch Ihre spezifische Geburtszeit und Ihren Geburtsort bestimmt, unabhängig von den Zeitzonen.',
+    },
+    {
+      question: 'Was ist der Unterschied zwischen einem Aszendenten und einem Sternzeichen?',
+      answer:
+        'Ihr Sternzeichen repräsentiert Ihr inneres Selbst und Ihre Kernpersönlichkeit, während Ihr Aszendent Ihre äußere Persönlichkeit und die Art und Weise, wie Sie sich der Welt präsentieren, darstellt.',
+    },
+    {
+      question: 'Kann ich meinen Aszendenten durch Astrologie oder spirituelle Praktiken ändern?',
+      answer:
+        'Nein, Ihr Aszendent wird durch Ihre Geburtszeit und Ihren Geburtsort bestimmt und kann nicht geändert werden.',
+    },
+    {
+      question: 'Wie genau sind Online-Aszendenten-Rechner?',
+      answer:
+        'Unser Online-Rechner liefert eine zu 98 % genaue Aszendenten-Berechnung. Er basiert auf einem verifizierten Algorithmus, den die meisten Menschen und Anwendungen verwenden.',
+    },
+    {
+      question: 'Kann mein Aszendent meine Karriere und Beziehungen beeinflussen?',
+      answer:
+        'Ja, Ihr Aszendent kann Ihre Karriereentscheidungen, zwischenmenschlichen Beziehungen und Ihren Umgang mit Herausforderungen im Leben beeinflussen.',
+    },
+    {
+      question: 'Was kann ich tun, wenn ich meine genaue Geburtszeit nicht kenne?',
+      answer:
+        'Wenn Sie Ihre genaue Geburtszeit nicht kennen, können Sie einen Dienst zur Geburtszeit-Rektifikation nutzen, um diese anhand bedeutender Lebensereignisse zu schätzen.',
     },
   ],
 };

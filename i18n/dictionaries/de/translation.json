@@ -40,6 +40,7 @@
     "risignCardDesc": "Geben Sie Ihre Geburtsdaten ein, um Ihr Aszendenten-Zeichen zu finden.",
     "applicationCategory": "Rechner",
     "browserRequirements": "Erfordert JavaScript",
+    "risingResult": "Ihr berechneter Aszendent ist",
     "units": {
       "millimeters": "Millimeter",
       "centimeters": "Zentimeter",

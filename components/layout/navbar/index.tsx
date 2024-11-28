@@ -22,7 +22,7 @@ export const CollapsibleNavbar = () => {
         <PageContainer className="transition-all duration-300 flex py-6">
           <section className="w-full flex items-center rounded-md p-3 flex-col md:flex-row shadow-lg">
             <div className="w-full md:w-auto flex items-center justify-between">
-              <Link href="/" className="text-primary flex items-center gap-1">
+              <Link href={params.locale ? `/${params.locale}` : '/'} className="text-primary flex items-center gap-1">
                 <Calculator />
                 <span className="text-xl">E.W</span>
               </Link>

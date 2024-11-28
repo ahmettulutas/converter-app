@@ -1,7 +1,5 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
-import { TableofContent } from './collapsible';
 import { TranslatedTitle } from './translated-title';
-import Script from 'next/script';
 import { JsonSchema } from './json.ld';
 
 type FaqProps = {
@@ -28,21 +26,21 @@ export function Faq(props: Readonly<FaqProps>) {
     <>
       <TranslatedTitle translation="labels.faq" className="text-center text-2xl my-2" />
       <div className="grid grid-cols-1 md:grid-cols-3 max-w-[800px] m-auto">
-        <div className="flex flex-col gap-4 col-span-1 md:col-span-2">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="flex flex-col gap-4 col-span-1 md:col-span-3 min-w-">
+          <Accordion type="single" collapsible className="w-full md:w-[500px]">
             {faqList.map(({ question, answer }) => (
-              <AccordionItem key={question} value={question}>
-                <AccordionTrigger className="px-2">{question}</AccordionTrigger>
+              <AccordionItem value={question} key={question}>
+                <AccordionTrigger className="px-2 items-start text-start">{question}</AccordionTrigger>
                 <AccordionContent>
-                  <p className="ml-2">{answer}</p>
+                  <p className="ml-4 italic">{answer}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
-        <div className="col-span-1 md:col-span-1">
+        {/* <div className="col-span-1 md:col-span-1">
           <TableofContent faqList={faqList} />
-        </div>
+        </div> */}
       </div>
 
       <JsonSchema schema={faqSchema} />

@@ -185,14 +185,14 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
             />
           </div>
           <Button type="submit" className="w-full">
-            Calculate Rising Sign
+            {t('labels.calculate')}
           </Button>
         </form>
       </CardContent>
       <CardFooter>
         {risingSign && (
           <p className="text-center w-full text-lg font-semibold">
-            Your rising sign is: <span className="text-primary">{risingSign}</span>
+            {t('labels.risingResult')} : <span className="text-primary">{t(`labels.${risingSign}`)}</span>
           </p>
         )}
       </CardFooter>

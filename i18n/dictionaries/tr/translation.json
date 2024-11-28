@@ -39,6 +39,7 @@
     "risignCardDesc": "Yükselen burcunuzu bulmak için doğum bilgilerinizi girin.",
     "applicationCategory": "Hesaplayıcı",
     "browserRequirements": "JavaScript Gerektirir",
+    "risingResult": "Hesaplanan yükselen burcunuz",
     "units": {
       "millimeters": "Milimetre",
       "centimeters": "Santimetre",
@@ -98,7 +99,7 @@
       ],
       "category": "Uzunluk Dönüştürücüleri"
     },
-    "weight": {
+    "weightCalculator": {
       "title": "Ağırlık Dönüştürme - Gram, Kg, Ton ve Ons Çevir | Kolay ve Hızlı!",
       "description": "Gram, kilogram, ton ve ons gibi farklı ağırlık birimleri arasında hızlı ve kolay dönüştürmeler için Türkiye'nin en kapsamlı ağırlık dönüştürme web sitesine hoş geldiniz! Sitemizde, Türkiye'de en çok aranan ağırlık dönüştürme sorularına yanıt veren dönüştürme araçları ve tablolar bulabilirsiniz.",
       "keywords": [
@@ -107,7 +108,8 @@
         "Kilogram dönüştürme",
         "Ton dönüştürme",
         "Ons dönüştürme",
-        "G'yi kg'ye çevirme",
+        "Gram kilo dönüştürme",
+        "1 Ton kaç kilodur?",
         "Kg'yi g'ye çevirme",
         "Tonu kg'ye çevirme",
         "Kg'yi tona çevirme",
@@ -116,7 +118,7 @@
       ],
       "category": "Ağırlık Dönüştürücüleri"
     },
-    "square": {
+    "squareCalculator": {
       "title": "Metrekare Dönüştürücü - Metrekare, Kare Ayak ve Dönüm Dönüştürün | Hızlı ve Kolay!",
       "description": "En kapsamlı metrekare dönüştürme web sitesine hoş geldiniz! Kare ayak, kare metre ve dönüm gibi farklı alan birimleri arasında hızlı ve kolay bir şekilde dönüştürün. En çok aranan metrekare dönüştürme sorularına cevap veren dönüştürme araçları ve tabloları bulun.",
       "keywords": [

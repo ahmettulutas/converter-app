@@ -7,10 +7,11 @@ import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 import { Faq } from '@/components/shared/faq';
 import { risingSignCalculatorFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
-import RisingSignCalculator from '@/components/pages/rising-sign-calculator';
 
 import { JsonSchema } from '@/components/shared/json.ld';
+import { Suspense, lazy } from 'react';
 
+const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
 
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
@@ -23,7 +24,9 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
       <main className="flex flex-col items-center justify-center">
         <PageContainer className="flex flex-col gap-2 my-4">
           <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
-          <RisingSignCalculator currentLocale={params.locale} />
+          <Suspense fallback={<>Loading...</>}>
+            <RisingSignCalculator currentLocale={params.locale} />
+          </Suspense>
           <Faq faqList={risingSignCalculatorFAQs[params.locale]} />
         </PageContainer>
       </main>

@@ -5,6 +5,7 @@ import { LocaleType, availableLocales } from '@/i18n/settings';
 import { CollapsibleNavbar } from '@/components/layout/navbar';
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/components/shared/loading-spinner';
+import AdSense from '@/components/shared/ads';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,6 +25,7 @@ export default function RootLayout(props: LocaleRouteLayout) {
   return (
     <html lang={params.locale} dir={dir(params.locale)} className="scroll-smooth">
       <body className={inter.className}>
+        <AdSense />
         <CollapsibleNavbar />
         <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
       </body>

@@ -10,7 +10,7 @@ import { navLinks } from '@/lib/constants/common';
 import { LanguageSelector } from './language-selector';
 import { useParams } from 'next/navigation';
 import { useTranslation } from '@/i18n/client';
-import { LocaleType, defaultLanguage } from '@/i18n/settings';
+import { LocaleType } from '@/i18n/settings';
 
 export const CollapsibleNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -22,7 +22,11 @@ export const CollapsibleNavbar = () => {
         <PageContainer className="transition-all duration-300 flex py-6">
           <section className="w-full flex items-center rounded-md p-3 flex-col md:flex-row shadow-lg">
             <div className="w-full md:w-auto flex items-center justify-between">
-              <Link href={params.locale ? `/${params.locale}` : '/'} className="text-primary flex items-center gap-1">
+              <Link
+                title={t('labels.home')}
+                href={params.locale ? `/${params.locale}` : '/'}
+                className="text-primary flex items-center gap-1"
+              >
                 <Calculator />
                 <span className="text-xl">E.W</span>
               </Link>
@@ -46,7 +50,9 @@ export const CollapsibleNavbar = () => {
               >
                 {navLinks.map(({ label, href }) => (
                   <li key={href}>
-                    <Link href={`/${params.locale}${href}`}>{t(`labels.${label}`)}</Link>
+                    <Link title={t(`labels.${label}`)} href={`/${params.locale}${href}`}>
+                      {t(`labels.${label}`)}
+                    </Link>
                   </li>
                 ))}
                 <li>
@@ -59,7 +65,11 @@ export const CollapsibleNavbar = () => {
             <ul className="gap-4 lg:gap-20 hidden md:flex justify-between m-auto">
               {navLinks.map(({ label, href }) => (
                 <li key={href}>
-                  <Link href={`/${params.locale}${href}`} className="h-full block relative mx-auto hover:underline">
+                  <Link
+                    title={t(`labels.${label}`)}
+                    href={`/${params.locale}${href}`}
+                    className="h-full block relative mx-auto hover:underline"
+                  >
                     {t(`labels.${label}`)}
                   </Link>
                 </li>

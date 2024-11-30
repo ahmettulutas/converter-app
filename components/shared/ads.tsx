@@ -17,6 +17,11 @@ export default function AdSense() {
         data-ad-format="auto"
       ></ins>
       <Script id="ads">(adsbygoogle = window.adsbygoogle || []).push({});</Script>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9880416599476522"
+        crossOrigin="anonymous"
+      ></Script>
     </div>
   );
 }

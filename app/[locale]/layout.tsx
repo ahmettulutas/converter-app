@@ -24,6 +24,7 @@ export default function RootLayout(props: LocaleRouteLayout) {
   const { params, children } = props;
   return (
     <html lang={params.locale} dir={dir(params.locale)} className="scroll-smooth">
+      <meta name="google-adsense-account" content="ca-pub-9880416599476522"></meta>
       <body className={inter.className}>
         <AdSense />
         <CollapsibleNavbar />

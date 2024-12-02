@@ -3,5 +3,5 @@ import { HTMLProps } from 'react';
 
 export const PageContainer = (props: HTMLProps<HTMLDivElement>) => {
   const { className, ...rest } = props;
-  return <div className={cn('mx-auto max-w-[1400px] px-2 md:px-3 lg:px-5 w-full', className)} {...rest} />;
+  return <div className={cn('mx-auto max-w-[1400px] px-4 md:px-6 lg:px-12 w-full', className)} {...rest} />;
 };

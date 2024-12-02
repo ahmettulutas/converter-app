@@ -33,7 +33,9 @@ export function TableofContent(props: Readonly<TableofContentProps>) {
           <ul className="flex flex-col gap-2">
             {faqList.map((faq) => (
               <ol key={faq.question} className="hover:underline">
-                <Link href={`#${faq.question}`}>{faq.question}</Link>
+                <Link href={`#${faq.question}`} title={faq.question}>
+                  {faq.question}
+                </Link>
               </ol>
             ))}
           </ul>

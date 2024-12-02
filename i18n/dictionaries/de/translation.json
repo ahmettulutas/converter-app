@@ -167,6 +167,23 @@
         "Sternzeichen und Persönlichkeit"
       ],
       "category": "Astrologie-Rechner"
+    },
+    "percentageCalculator": {
+      "title": "Prozentrechner – Prozentsätze Einfach und Genau Berechnen!",
+      "description": "Mit unserem kostenlosen Prozentrechner können Sie Prozentsätze, Gesamtwerte oder prozentuale Veränderungen berechnen. Ideal für alltägliche Berechnungen wie Rabatte, Zinssätze und mehr!",
+      "keywords": [
+        "Prozentrechner",
+        "kostenloser Prozentrechner",
+        "Prozent berechnen",
+        "prozentuale Veränderung berechnen",
+        "Gesamtwert aus Prozent berechnen",
+        "einfacher Prozentrechner",
+        "genaue Prozentberechnung",
+        "Prozentformel",
+        "alltägliche Prozentberechnung",
+        "Rabattrechner"
+      ],
+      "category": "Mathematik-Tools"
     }
   }
 }

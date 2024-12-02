@@ -9,8 +9,9 @@ import { sunSignFaqs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
-import SunSignCalculator from '@/components/pages/sun-sign-calculator';
+import { Suspense, lazy } from 'react';
 
+const SunSignCalculator = lazy(() => import('@/components/pages/sun-sign-calculator'));
 const pageKey = 'sunSignCalculator';
 
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
@@ -21,9 +22,13 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
   return (
     <>
       <main className="flex flex-col items-center justify-center">
-        <PageContainer className="flex flex-col gap-2 my-4">
-          <h1 className="text-center text-2xl my-2">{t('labels.sunSignCalculator')}</h1>
-          <SunSignCalculator currentLocale={params.locale} />
+        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
+          <div className="flex-1">
+            <h1 className="text-center text-2xl my-2">{t('labels.sunSignCalculator')}</h1>
+            <Suspense fallback={<>Loading...</>}>
+              <SunSignCalculator currentLocale={params.locale} />
+            </Suspense>
+          </div>
           <Faq faqList={sunSignFaqs[params.locale]} />
         </PageContainer>
       </main>

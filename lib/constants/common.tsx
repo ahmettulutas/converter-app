@@ -4,6 +4,7 @@ export const staticPageUrls = [
   '/square-calculator',
   '/risign-sign-calculator',
   '/sun-sign-calculator',
+  '/percentage-calculator',
 ]; // empty string is for index page.
 export const navLinks = [
   { href: '/', label: 'lengthCalculator' },
@@ -11,6 +12,7 @@ export const navLinks = [
   { href: '/square-calculator', label: 'squareCalculator' },
   { href: '/risign-sign-calculator', label: 'risingSignCalculator' },
   { href: '/sun-sign-calculator', label: 'sunSignCalculator' },
+  { href: '/percentage-calculator', label: 'percentageCalculator' },
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

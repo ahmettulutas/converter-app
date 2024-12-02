@@ -62,7 +62,7 @@ export const CollapsibleNavbar = () => {
             </div>
             {/* Mobile Links end */}
             {/* Desktop Links */}
-            <ul className="gap-4 lg:gap-20 hidden md:flex justify-between m-auto text-sm">
+            <ul className="gap-4 hidden md:flex justify-between m-auto text-sm">
               {navLinks.map(({ label, href }) => (
                 <li key={href}>
                   <Link

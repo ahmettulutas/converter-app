@@ -2,7 +2,7 @@
   "labels": {
     "lengthCalculator": "Uzunluk Dönüştürücü",
     "weightCalculator": "Ağırlık Dönüştürücü",
-    "squareCalculator": "Metrekare Hesaplama",
+    "squareCalculator": "Alan Hesaplama",
     "risingSignCalculator": "Yükselen Burç Hesaplayıcı",
     "sunSignCalculator": "Güneş Burcu Hesaplayıcı",
     "sunSignCardDesc": "Doğum tarihinizi ve saatinizi girerek güneş burcunuzu öğrenin. Kişisel astroloji yolculuğunuza bugün başlayın ve karakterinizin derinliklerini keşfedin.",
@@ -192,6 +192,23 @@
         "Güneş burcu ve kişilik"
       ],
       "category": "Astroloji Hesaplayıcıları"
+    },
+    "percentageCalculator": {
+      "title": "Yüzde Hesaplayıcı – Yüzdeleri Kolay ve Doğru Şekilde Hesaplayın!",
+      "description": "Ücretsiz Yüzde Hesaplayıcımız ile yüzdeleri, toplam değerleri veya yüzde değişimlerini hesaplayabilirsiniz. İndirim, faiz oranları ve daha fazlası için idealdir!",
+      "keywords": [
+        "yüzde hesaplayıcı",
+        "ücretsiz yüzde hesaplayıcı",
+        "yüzde hesaplama",
+        "yüzde değişimi hesaplama",
+        "yüzdeden toplam hesaplama",
+        "kolay yüzde hesaplama",
+        "doğru yüzde hesaplama",
+        "yüzde formülü",
+        "günlük yüzde hesaplama",
+        "indirim hesaplayıcı"
+      ],
+      "category": "Matematik Araçları"
     }
   }
 }

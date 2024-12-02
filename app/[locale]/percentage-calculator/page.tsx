@@ -5,7 +5,7 @@ import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 
 import { Faq } from '@/components/shared/faq';
-import { risingSignCalculatorFAQs } from '@/lib/constants/faq';
+import { percentageFaqs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
@@ -23,12 +23,14 @@ export default async function Page(props: Readonly<SharedPageProps>) {
   return (
     <>
       <main className="flex flex-col items-center justify-center">
-        <PageContainer className="flex flex-col gap-2 my-4">
-          <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
-          <Suspense fallback={<>Loading...</>}>
-            <PercentageCalculator currentLocale={params.locale} />
-          </Suspense>
-          <Faq faqList={risingSignCalculatorFAQs[params.locale]} />
+        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
+          <div className="flex-1">
+            <h1 className="text-center text-2xl my-2">{t('labels.percentageCalculator')}</h1>
+            <Suspense fallback={<>Loading...</>}>
+              <PercentageCalculator currentLocale={params.locale} />
+            </Suspense>
+          </div>
+          <Faq faqList={percentageFaqs[params.locale]} />
         </PageContainer>
       </main>
       {pageSchema && <JsonSchema schema={pageSchema} />}

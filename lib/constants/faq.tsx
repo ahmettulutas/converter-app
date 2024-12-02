@@ -884,3 +884,140 @@ export const sunSignFaqs: Record<LocaleType, Array<{ question: string; answer: s
     },
   ],
 };
+export const percentageFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
+  tr: [
+    {
+      question: 'Bir toplamdan yüzdeyi nasıl hesaplarım?',
+      answer: 'Toplam değeri ve yüzdeyi hesap makinesine girerek bu yüzdeye karşılık gelen değeri bulabilirsiniz.',
+    },
+    {
+      question: 'Yüzdeden toplamı nasıl hesaplarım?',
+      answer: 'Yüzdeyi ve değeri hesaplayıcıya girerek toplamı bulun.',
+    },
+    {
+      question: 'Yüzde değişimi nedir ve nasıl hesaplanır?',
+      answer:
+        'Yüzde değişimi, bir değerden diğerine artışı veya azalışı gösterir. İki değeri hesaplayıcıya girerek yüzde değişimini öğrenebilirsiniz.',
+    },
+    {
+      question: 'Bir değeri yüzde ile nasıl artırırım?',
+      answer: 'Başlangıç değerini ve yüzdeyi hesaplayıcıya girerek artan değeri bulun.',
+    },
+    {
+      question: 'Bir değeri yüzde ile nasıl azaltırım?',
+      answer: 'Başlangıç değerini ve yüzdeyi hesaplayıcıya girerek azalan değeri bulun.',
+    },
+    {
+      question: 'Yüzde ile yüzde puanı arasındaki fark nedir?',
+      answer:
+        'Yüzde bir orandır, yüzde puanı ise mutlak değişimi ölçer. Hesaplayıcıyı kullanarak her iki kavramı da keşfedebilirsiniz.',
+    },
+    {
+      question: 'Hesap makinesi olmadan yüzdeleri hesaplayabilir miyim?',
+      answer: 'Evet, ancak bir hesaplayıcı kullanmak hızlı ve doğru sonuçlar sağlar.',
+    },
+    {
+      question: 'Yüzde hesaplama formülü nedir?',
+      answer: "Formül (değer / toplam) × 100'dür. İşlemi basitleştirmek için hesaplayıcıyı kullanın.",
+    },
+    {
+      question: 'Bu yüzde hesaplayıcı doğru mu?',
+      answer: 'Evet, hesaplayıcımız kesin ve güvenilir sonuçlar sağlamak için tasarlanmıştır.',
+    },
+    {
+      question: 'Günlük hayatta yüzdeleri nasıl hesaplarım?',
+      answer: 'İndirimler, faiz oranları ve oran bazlı hesaplamalar için bu hesaplayıcıyı kullanabilirsiniz.',
+    },
+  ],
+  en: [
+    {
+      question: 'How do I calculate a percentage from a total?',
+      answer:
+        'Enter the total value and the percentage into the percentage calculator to determine the exact value represented by that percentage.',
+    },
+    {
+      question: 'How do I calculate the total from a percentage?',
+      answer: 'Input the percentage and the value into the calculator to find the total.',
+    },
+    {
+      question: 'What is a percentage change, and how do I calculate it?',
+      answer:
+        'Percentage change shows the increase or decrease from one value to another. Enter both values into the calculator to find the percentage change.',
+    },
+    {
+      question: 'How do I increase a value by a percentage?',
+      answer: 'Input the initial value and the percentage into the calculator to find the increased value.',
+    },
+    {
+      question: 'How do I decrease a value by a percentage?',
+      answer: 'Enter the initial value and the percentage to calculate the reduced value.',
+    },
+    {
+      question: 'What is the difference between percentage and percentage points?',
+      answer:
+        'Percentage is a ratio, while percentage points measure absolute change. Use the calculator to explore both concepts.',
+    },
+    {
+      question: 'Can I calculate percentages without a calculator?',
+      answer: 'Yes, but using a percentage calculator ensures quick and accurate results.',
+    },
+    {
+      question: 'What is the formula for percentage calculation?',
+      answer: 'The formula is (value / total) × 100. Use the calculator to simplify the process.',
+    },
+    {
+      question: 'Is this percentage calculator accurate?',
+      answer: 'Yes, our calculator is designed to provide precise and reliable results.',
+    },
+    {
+      question: 'How do I calculate percentages in daily life?',
+      answer: 'Use this calculator for tasks like discounts, interest rates, and proportion-based calculations.',
+    },
+  ],
+
+  de: [
+    {
+      question: 'Wie berechne ich einen Prozentsatz aus einem Gesamtwert?',
+      answer:
+        'Geben Sie den Gesamtwert und den Prozentsatz in den Rechner ein, um den entsprechenden Wert zu ermitteln.',
+    },
+    {
+      question: 'Wie berechne ich den Gesamtwert aus einem Prozentsatz?',
+      answer: 'Geben Sie den Prozentsatz und den Wert in den Rechner ein, um den Gesamtwert zu berechnen.',
+    },
+    {
+      question: 'Was ist eine prozentuale Veränderung und wie berechnet man sie?',
+      answer:
+        'Die prozentuale Veränderung zeigt die Zunahme oder Abnahme von einem Wert zum anderen. Geben Sie beide Werte in den Rechner ein, um die Veränderung zu berechnen.',
+    },
+    {
+      question: 'Wie erhöhe ich einen Wert um einen Prozentsatz?',
+      answer: 'Geben Sie den Anfangswert und den Prozentsatz in den Rechner ein, um den erhöhten Wert zu ermitteln.',
+    },
+    {
+      question: 'Wie reduziere ich einen Wert um einen Prozentsatz?',
+      answer: 'Geben Sie den Anfangswert und den Prozentsatz in den Rechner ein, um den reduzierten Wert zu berechnen.',
+    },
+    {
+      question: 'Was ist der Unterschied zwischen Prozentsatz und Prozentpunkten?',
+      answer:
+        'Ein Prozentsatz ist ein Verhältnis, Prozentpunkte messen die absolute Veränderung. Nutzen Sie den Rechner, um beide Konzepte zu erkunden.',
+    },
+    {
+      question: 'Kann ich Prozentsätze ohne Rechner berechnen?',
+      answer: 'Ja, aber ein Prozentsatzrechner liefert schnelle und genaue Ergebnisse.',
+    },
+    {
+      question: 'Was ist die Formel zur Berechnung von Prozentsätzen?',
+      answer: 'Die Formel lautet (Wert / Gesamt) × 100. Nutzen Sie den Rechner, um den Prozess zu vereinfachen.',
+    },
+    {
+      question: 'Ist dieser Prozentsatzrechner genau?',
+      answer: 'Ja, unser Rechner ist so konzipiert, dass er präzise und zuverlässige Ergebnisse liefert.',
+    },
+    {
+      question: 'Wie berechne ich Prozentsätze im Alltag?',
+      answer: 'Verwenden Sie diesen Rechner für Aufgaben wie Rabatte, Zinssätze und anteilsbasierte Berechnungen.',
+    },
+  ],
+};

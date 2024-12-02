@@ -29,8 +29,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Do not run the middleware on the following paths
-  // prettier-ignore
-  matcher:
-  '/((?!api|static|track|data|css|scripts|.*\\..*|_next).*|sitemap.xml)',
+  // matcher: '/:lng*'
+  matcher: [
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|en/studio|cv.pdf|sitemap.xml).*)', // Captures any string that does not start with one of the specified patterns (api, _next/static, _next/image, assets, favicon.ico, sw.js, en/studio, cv.pdf).
+  ],
 };

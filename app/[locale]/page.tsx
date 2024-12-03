@@ -23,7 +23,7 @@ export default async function LengthConverterPage(props: Readonly<SharedPageProp
       <main className="flex flex-col items-center justify-center">
         <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
           <div className="flex-1">
-            <h1 className="text-center text-2xl my-2">{t('labels.weightCalculator')}</h1>
+            <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
             <Suspense fallback={<>Loading...</>}>
               <Converter
                 units={lengthUnits}

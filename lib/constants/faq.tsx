@@ -3,6 +3,54 @@ import { LocaleType } from '@/i18n/settings';
 export const weightFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
   tr: [
     {
+      question: 'Bir kilogramda kaç ons vardır?',
+      answer:
+        'Bir kilogramda yaklaşık 35,274 ons vardır. Bu, 1 kilogramın 2,20462 pounda eşit olduğu ve her poundun 16 ons içerdiği dönüşüm oranına dayanır.',
+    },
+    {
+      question: 'Kilogramı pounda nasıl çeviririm?',
+      answer:
+        'Kilogramı pounda çevirmek için kilogram değerini 2,20462 ile çarpmanız gerekir. Örneğin, 5 kilogram 11,0231 pounda eşittir.',
+    },
+    {
+      question: '1 kilogramda kaç gram vardır?',
+      answer: '1 kilogramda 1.000 gram vardır. Bu, ağırlık için standart metrik dönüşümdür.',
+    },
+    {
+      question: 'Poundu kilograma çevirme formülü nedir?',
+      answer:
+        "Poundu kilograma çevirmek için pound değerini 2,20462'ye bölün. Örneğin, 10 pound yaklaşık 4,536 kilograma eşittir.",
+    },
+    {
+      question: '1 tonda kaç kilogram vardır?',
+      answer:
+        '1 metrik ton, 1.000 kilograma eşittir. ABD geleneksel sisteminde bir ton (kısa ton olarak da bilinir) yaklaşık 907,184 kilograma eşittir.',
+    },
+    {
+      question: 'Ağırlık hesaplayıcıyı vücut ağırlığını dönüştürmek için kullanabilir miyim?',
+      answer:
+        'Evet, ağırlık hesaplayıcı kilogram, pound ve taş gibi birimler arasında vücut ağırlığını dönüştürmek için kullanılabilir.',
+    },
+    {
+      question: 'Kilogram ile pound arasındaki fark nedir?',
+      answer:
+        'Kilogram metrik bir ağırlık birimidir, pound ise emperyal bir birimdir. 1 kilogram yaklaşık olarak 2,20462 pounda eşittir.',
+    },
+    {
+      question: 'Onsu kilograma nasıl çevirebilirim?',
+      answer:
+        "Onsu kilograma çevirmek için ons değerini 35,274'e bölün. Örneğin, 100 ons yaklaşık 2,835 kilograma eşittir.",
+    },
+    {
+      question: 'Taşı kilograma çevirmek için en kolay yol nedir?',
+      answer: 'Taşı kilograma çevirmek için taş değerini 6,35029 ile çarpın. Örneğin, 2 taş 12,7 kilograma eşittir.',
+    },
+    {
+      question: '1 kilogramda kaç miligram vardır?',
+      answer:
+        '1 kilogramda 1.000.000 miligram vardır, çünkü 1 kilogram 1.000 grama ve her gram 1.000 miligrama eşittir.',
+    },
+    {
       question: '1 ton kaç gramdır?',
       answer: '1 ton 1.000.000 gramdır.',
     },
@@ -76,6 +124,55 @@ export const weightFaqs: Record<LocaleType, Array<{ question: string; answer: st
   ],
   en: [
     {
+      question: 'How many ounces are in a kilogram?',
+      answer:
+        'There are approximately 35.274 ounces in one kilogram. This is based on the conversion rate where 1 kilogram equals 2.20462 pounds, and each pound contains 16 ounces.',
+    },
+    {
+      question: 'How do I convert kilograms to pounds?',
+      answer:
+        'To convert kilograms to pounds, multiply the kilogram value by 2.20462. For example, 5 kilograms equals 11.0231 pounds.',
+    },
+    {
+      question: 'How many grams are in a kilogram?',
+      answer: 'There are 1,000 grams in one kilogram. This is the standard metric conversion for weight.',
+    },
+    {
+      question: 'What is the formula for converting pounds to kilograms?',
+      answer:
+        'To convert pounds to kilograms, divide the pound value by 2.20462. For instance, 10 pounds equals approximately 4.536 kilograms.',
+    },
+    {
+      question: 'How many kilograms are in a ton?',
+      answer:
+        'One metric ton equals 1,000 kilograms. In the U.S. customary system, a ton (also called a short ton) equals approximately 907.184 kilograms.',
+    },
+    {
+      question: 'Can I use a weight calculator for body weight conversion?',
+      answer:
+        'Yes, a weight calculator is useful for converting body weight between units such as kilograms, pounds, and stones.',
+    },
+    {
+      question: 'What is the difference between kilograms and pounds?',
+      answer:
+        'Kilograms are a metric unit of weight, while pounds are an imperial unit. One kilogram is equivalent to approximately 2.20462 pounds.',
+    },
+    {
+      question: 'How do I convert ounces to kilograms?',
+      answer:
+        'To convert ounces to kilograms, divide the ounce value by 35.274. For example, 100 ounces equals approximately 2.835 kilograms.',
+    },
+    {
+      question: 'What is the easiest way to convert stones to kilograms?',
+      answer:
+        'To convert stones to kilograms, multiply the stone value by 6.35029. For example, 2 stones equal 12.7 kilograms.',
+    },
+    {
+      question: 'How many milligrams are in a kilogram?',
+      answer:
+        'There are 1,000,000 milligrams in one kilogram, as 1 kilogram equals 1,000 grams and each gram equals 1,000 milligrams.',
+    },
+    {
       question: 'How many pounds in a kilogram?',
       answer: 'There are approximately 2.20462 pounds in a kilogram.',
     },
@@ -109,6 +206,55 @@ export const weightFaqs: Record<LocaleType, Array<{ question: string; answer: st
     },
   ],
   de: [
+    {
+      question: 'Wie viele Unzen sind in einem Kilogramm?',
+      answer:
+        'In einem Kilogramm sind ungefähr 35,274 Unzen. Dies basiert auf der Umrechnungsrate, bei der 1 Kilogramm 2,20462 Pfund entspricht, und jedes Pfund 16 Unzen enthält.',
+    },
+    {
+      question: 'Wie kann ich Kilogramm in Pfund umrechnen?',
+      answer:
+        'Um Kilogramm in Pfund umzurechnen, multiplizieren Sie den Kilogrammwert mit 2,20462. Zum Beispiel sind 5 Kilogramm 11,0231 Pfund.',
+    },
+    {
+      question: 'Wie viele Gramm sind in einem Kilogramm?',
+      answer: 'In einem Kilogramm sind 1.000 Gramm. Dies ist die Standard-Metriumrechnung für Gewicht.',
+    },
+    {
+      question: 'Was ist die Formel zur Umrechnung von Pfund in Kilogramm?',
+      answer:
+        'Um Pfund in Kilogramm umzurechnen, teilen Sie den Pfundwert durch 2,20462. Zum Beispiel sind 10 Pfund ungefähr 4,536 Kilogramm.',
+    },
+    {
+      question: 'Wie viele Kilogramm sind in einer Tonne?',
+      answer:
+        'Eine metrische Tonne entspricht 1.000 Kilogramm. Im US-amerikanischen System entspricht eine Tonne (auch Short Ton genannt) ungefähr 907,184 Kilogramm.',
+    },
+    {
+      question: 'Kann ich einen Gewichtskalkulator für die Umrechnung von Körpergewicht verwenden?',
+      answer:
+        'Ja, ein Gewichtskalkulator kann verwendet werden, um das Körpergewicht zwischen Einheiten wie Kilogramm, Pfund und Stone umzurechnen.',
+    },
+    {
+      question: 'Was ist der Unterschied zwischen Kilogramm und Pfund?',
+      answer:
+        'Kilogramm ist eine metrische Gewichtseinheit, während Pfund eine imperiale Einheit ist. Ein Kilogramm entspricht ungefähr 2,20462 Pfund.',
+    },
+    {
+      question: 'Wie rechne ich Unzen in Kilogramm um?',
+      answer:
+        'Um Unzen in Kilogramm umzurechnen, teilen Sie den Unzenwert durch 35,274. Zum Beispiel sind 100 Unzen ungefähr 2,835 Kilogramm.',
+    },
+    {
+      question: 'Wie rechne ich Stones am einfachsten in Kilogramm um?',
+      answer:
+        'Um Stones in Kilogramm umzurechnen, multiplizieren Sie den Stones-Wert mit 6,35029. Zum Beispiel sind 2 Stones 12,7 Kilogramm.',
+    },
+    {
+      question: 'Wie viele Milligramm sind in einem Kilogramm?',
+      answer:
+        'In einem Kilogramm sind 1.000.000 Milligramm, da 1 Kilogramm 1.000 Gramm entspricht und jedes Gramm 1.000 Milligramm hat.',
+    },
     {
       question: 'Wie viele Pfund sind ein Kilogramm?',
       answer: 'Ein Kilogramm entspricht ungefähr 2,20462 Pfund.',
@@ -145,6 +291,56 @@ export const weightFaqs: Record<LocaleType, Array<{ question: string; answer: st
 };
 export const squareMeterConverterFAQs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
   en: [
+    {
+      question: 'How can I calculate the area of my land?',
+      answer:
+        'You can calculate the area by entering the width and length of your land into the calculator. Select your preferred units, and the result will be displayed instantly.',
+    },
+    {
+      question: 'Can I convert between different area units?',
+      answer:
+        'Yes, this calculator allows you to input measurements in one unit (e.g., square meters) and convert the area to another unit like acres or hectares.',
+    },
+    {
+      question: 'What units does the square meter calculator support?',
+      answer:
+        'The calculator supports square meters, acres, hectares, square feet, square yards, and many more units for both input and output.',
+    },
+    {
+      question: 'Is the square meter calculator accurate?',
+      answer:
+        'Yes, the calculator is designed to provide accurate conversions and area calculations based on precise formulas.',
+    },
+    {
+      question: 'Can I calculate the area in acres?',
+      answer:
+        'Absolutely! Enter your dimensions in your chosen unit, and you can view the area in acres or any other supported unit.',
+    },
+    {
+      question: 'What is a dönüm, and how is it calculated?',
+      answer:
+        "A dönüm is a traditional land measurement unit used in Turkey and some other countries, equivalent to 1,000 square meters. To calculate a property's size in dönüm, divide the total area in square meters by 1,000.",
+    },
+    {
+      question: 'How do I convert dönüm to square meters?',
+      answer:
+        'To convert dönüm to square meters, multiply the value in dönüm by 1,000. For instance, 3 dönüm is equal to 3,000 square meters.',
+    },
+    {
+      question: 'What tools can I use to calculate land area in dönüm?',
+      answer:
+        'You can use online area calculators or apps that allow input of dimensions in meters to calculate the land area in dönüm.',
+    },
+    {
+      question: 'How does a dönüm compare to an acre?',
+      answer:
+        'A dönüm is equivalent to 1,000 square meters, while an acre is approximately 4,047 square meters. Thus, 1 acre equals about 4 dönüms.',
+    },
+    {
+      question: 'How do I calculate the size of a plot in dönüm?',
+      answer:
+        'Measure the width and length of the plot in meters, multiply these values to find the area in square meters, and then divide by 1,000 to convert to dönüm.',
+    },
     {
       question: 'How to convert square feet to square meters?',
       answer: 'Multiply the square feet by 0.092903 to get the equivalent in square meters.',
@@ -193,7 +389,55 @@ export const squareMeterConverterFAQs: Record<LocaleType, Array<{ question: stri
     // ... more English FAQs
   ],
   tr: [
-    // ... previous Turkish FAQs
+    {
+      question: 'Arazimin alanını nasıl hesaplayabilirim?',
+      answer:
+        'Arazinizin genişlik ve uzunluk değerlerini hesaplayıcıya girerek alanını hesaplayabilirsiniz. Ölçü birimini seçtikten sonra sonuç anında gösterilir.',
+    },
+    {
+      question: 'Farklı alan birimlerine dönüştürebilir miyim?',
+      answer:
+        'Evet, bu hesaplayıcıya bir birimde giriş yapabilir (örneğin, metrekare) ve sonucu başka bir birimde, örneğin dönüm olarak görüntüleyebilirsiniz.',
+    },
+    {
+      question: 'Metrekare hesaplayıcı hangi birimleri destekliyor?',
+      answer:
+        'Hesaplayıcı metrekare, dönüm, hektar, fitkare, yardakare gibi birçok birimi hem giriş hem de çıkış için destekler.',
+    },
+    {
+      question: 'Metrekare hesaplayıcı ne kadar doğru sonuç verir?',
+      answer: 'Hesaplayıcı, doğru formüllere dayanarak kesin dönüşümler ve alan hesaplamaları sağlar.',
+    },
+    {
+      question: 'Arazimin alanını dönüm cinsinden hesaplayabilir miyim?',
+      answer:
+        'Elbette! Ölçülerinizi seçtiğiniz birimde girin ve sonucu dönüm ya da diğer desteklenen birimlerde görüntüleyin.',
+    },
+    {
+      question: 'Dönüm nedir ve nasıl hesaplanır?',
+      answer:
+        "Dönüm, genellikle tarım arazilerinde kullanılan bir ölçü birimidir ve 1 dönüm 1.000 metrekareye eşittir. Bir alanın dönüm cinsinden ölçüsünü hesaplamak için alanın toplam metrekare değerini 1.000'e bölmeniz yeterlidir.",
+    },
+    {
+      question: 'Dönüm alanı nasıl metrekareye çevrilir?',
+      answer:
+        'Dönüm alanını metrekareye çevirmek için dönüm değerini 1.000 ile çarpmanız yeterlidir. Örneğin, 5 dönüm alan 5.000 metrekareye eşittir.',
+    },
+    {
+      question: 'Bir tarlanın dönümünü nasıl hesaplarım?',
+      answer:
+        "Bir tarlanın genişlik ve uzunluk ölçülerini metre cinsinden çarparak toplam metrekareyi bulun. Daha sonra bu sonucu 1.000'e bölerek dönüm değerini hesaplayabilirsiniz.",
+    },
+    {
+      question: 'Dönüm ile hektar arasındaki fark nedir?',
+      answer:
+        'Bir dönüm 1.000 metrekareye eşittirken, bir hektar 10.000 metrekareye eşittir. Yani 1 hektar, 10 dönüme denk gelir.',
+    },
+    {
+      question: 'Dönüm hesaplama için hangi araçları kullanabilirim?',
+      answer:
+        'Dönüm hesaplama için online alan hesaplama araçlarını kullanabilirsiniz. Bu araçlar genişlik ve uzunluk gibi ölçüleri girerek otomatik olarak sonucu verir.',
+    },
     {
       question: 'Balkonun metrekaresi nasıl hesaplanır?',
       answer: 'Balkonun genişliği ile uzunluğunu çarparak metrekare değerini bulabilirsiniz.',
@@ -237,6 +481,56 @@ export const squareMeterConverterFAQs: Record<LocaleType, Array<{ question: stri
     },
   ],
   de: [
+    {
+      question: 'Was ist ein Dönüm und wie wird es berechnet?',
+      answer:
+        'Ein Dönüm ist eine traditionelle Maßeinheit für Landflächen, die vor allem in der Türkei verwendet wird. Ein Dönüm entspricht 1.000 Quadratmetern. Um ein Grundstück in Dönüm zu berechnen, teilen Sie die Gesamtfläche in Quadratmetern durch 1.000.',
+    },
+    {
+      question: 'Wie rechne ich Dönüm in Quadratmeter um?',
+      answer:
+        'Um Dönüm in Quadratmeter umzurechnen, multiplizieren Sie die Anzahl der Dönüm mit 1.000. Zum Beispiel entsprechen 5 Dönüm 5.000 Quadratmetern.',
+    },
+    {
+      question: 'Welche Tools kann ich zur Berechnung von Dönüm-Flächen nutzen?',
+      answer:
+        'Es gibt Online-Rechner für Flächenberechnung, bei denen Sie Maße in Metern eingeben können, um die Fläche in Dönüm zu berechnen.',
+    },
+    {
+      question: 'Wie unterscheidet sich ein Dönüm von einem Hektar?',
+      answer:
+        'Ein Dönüm entspricht 1.000 Quadratmetern, während ein Hektar 10.000 Quadratmetern entspricht. Das bedeutet, dass ein Hektar 10 Dönüm entspricht.',
+    },
+    {
+      question: 'Wie berechne ich die Größe eines Feldes in Dönüm?',
+      answer:
+        'Messen Sie die Breite und Länge des Feldes in Metern, multiplizieren Sie diese Werte, um die Fläche in Quadratmetern zu berechnen, und teilen Sie das Ergebnis durch 1.000, um die Fläche in Dönüm zu erhalten.',
+    },
+    {
+      question: 'Wie kann ich die Fläche meines Grundstücks berechnen?',
+      answer:
+        'Sie können die Fläche berechnen, indem Sie die Breite und Länge Ihres Grundstücks in den Rechner eingeben. Wählen Sie Ihre bevorzugte Maßeinheit aus, und das Ergebnis wird sofort angezeigt.',
+    },
+    {
+      question: 'Kann ich zwischen verschiedenen Flächeneinheiten umrechnen?',
+      answer:
+        'Ja, dieser Rechner ermöglicht es Ihnen, Maße in einer Einheit einzugeben (z. B. Quadratmeter) und die Fläche in einer anderen Einheit wie Acres oder Hektar anzuzeigen.',
+    },
+    {
+      question: 'Welche Einheiten unterstützt der Quadratmeter-Rechner?',
+      answer:
+        'Der Rechner unterstützt Quadratmeter, Acres, Hektar, Quadratfuß, Quadratyards und viele weitere Einheiten für Eingabe und Ausgabe.',
+    },
+    {
+      question: 'Ist der Quadratmeter-Rechner genau?',
+      answer:
+        'Ja, der Rechner wurde entwickelt, um genaue Umrechnungen und Flächenberechnungen basierend auf präzisen Formeln bereitzustellen.',
+    },
+    {
+      question: 'Kann ich die Fläche in Acres berechnen?',
+      answer:
+        'Ja, geben Sie Ihre Maße in der von Ihnen gewählten Einheit ein, und Sie können die Fläche in Acres oder einer anderen unterstützten Einheit anzeigen lassen.',
+    },
     {
       question: 'Wie berechnet man die Quadratmeter eines Balkons?',
       answer: 'Multiplizieren Sie die Breite und Länge des Balkons, um den Quadratmeterwert zu erhalten.',

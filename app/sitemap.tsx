@@ -20,7 +20,7 @@ const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item, 
     }
   });
 });
-console.log(staticSiteMapItems);
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [...staticSiteMapItems];
 }

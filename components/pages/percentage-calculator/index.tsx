@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -134,21 +133,21 @@ export default function YuzdelikHesaplama({ currentLocale }: Readonly<{ currentL
             <h3 className="font-semibold mb-2">{t('labels.description')}</h3>
             <p>{getDescription()}</p>
           </div>
-          {calculationState.type !== 'percentageFromTotal' &&
-            calculationState.type !== 'percentageChange' &&
-            calculationState.type !== 'totalFromPercentage' && (
-              <div className="space-y-2">
-                <label htmlFor="total">{t('labels.total')}</label>
-                <Input
-                  type="number"
-                  id="total"
-                  name="total"
-                  value={calculationState.total}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-            )}
+          {(calculationState.type === 'valueFromPercentage' ||
+            calculationState.type === 'percentageFromTotal' ||
+            calculationState.type === 'percentageChange') && (
+            <div className="space-y-2">
+              <label htmlFor="total">{t('labels.total')}</label>
+              <Input
+                type="number"
+                id="total"
+                name="total"
+                value={calculationState.total}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          )}
           {calculationState.type !== 'valueFromPercentage' && (
             <div className="space-y-2">
               <label htmlFor="value">{t('labels.value')}</label>
@@ -162,7 +161,10 @@ export default function YuzdelikHesaplama({ currentLocale }: Readonly<{ currentL
               />
             </div>
           )}
-          {calculationState.type !== 'percentageFromTotal' && calculationState.type !== 'percentageChange' && (
+          {(calculationState.type === 'valueFromPercentage' ||
+            calculationState.type === 'totalFromPercentage' ||
+            calculationState.type === 'increaseByPercentage' ||
+            calculationState.type === 'decreaseByPercentage') && (
             <div className="space-y-2">
               <label htmlFor="percentage">{t('labels.percentage')}</label>
               <Input

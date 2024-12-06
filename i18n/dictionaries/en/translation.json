@@ -65,6 +65,18 @@
     "percentageChangeDescription": "Use this to find the percentage change between two numbers. For example, to calculate the percentage change from 100 to 150.",
     "increaseByPercentageDescription": "Use this to increase a number by a certain percentage. For example, to calculate what 100 becomes when increased by 20%.",
     "decreaseByPercentageDescription": "Use this to decrease a number by a certain percentage. For example, to calculate what 100 becomes when decreased by 20%.",
+    "mortgageCalculator": "Mortgage Calculator",
+    "mortgageCalculatorDesc": "Calculate your mortgage payments with adjustable interest rates",
+    "principal": "Principal Amount",
+    "interestRate": "Interest Rate",
+    "loanTerm": "Loan Term (years)",
+    "paymentFrequency": "Payment Frequency",
+    "selectPaymentFrequency": "Select payment frequency",
+    "monthly": "Monthly",
+    "biweekly": "Bi-weekly",
+    "payment": "Payment",
+    "totalInterest": "Total Interest",
+    "totalPayment": "Total Payment",
     "units": {
       "millimeters": "Millimeters",
       "centimeters": "Centimeters",
@@ -210,6 +222,23 @@
         "discount calculator"
       ],
       "category": "Math Tools"
+    },
+    "mortgageCalculator": {
+      "title": "Mortgage Calculator – Calculate Mortgage Payments with Ease!",
+      "description": "Use our free Mortgage Calculator to estimate your monthly payments, total interest, and loan terms. Perfect for planning your home purchase or refinancing!",
+      "keywords": [
+        "mortgage calculator",
+        "free mortgage calculator",
+        "calculate mortgage payments",
+        "loan payment calculator",
+        "home loan calculator",
+        "mortgage interest calculator",
+        "mortgage planning tool",
+        "monthly payment calculator",
+        "refinancing calculator",
+        "loan term estimator"
+      ],
+      "category": "Financial Tools"
     }
   }
 }

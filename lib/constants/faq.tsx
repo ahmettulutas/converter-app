@@ -1315,3 +1315,297 @@ export const percentageFaqs: Record<LocaleType, Array<{ question: string; answer
     },
   ],
 };
+
+export const mortgageFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
+  tr: [
+    {
+      question: 'Konut kredisi hesaplayıcı nedir?',
+      answer:
+        'Konut kredisi hesaplayıcı, konut kredisi ödemelerinizi tahmin etmenize yardımcı olan bir araçtır. Kredi tutarı, faiz oranı ve vade gibi faktörleri girerek aylık taksitlerinizi hesaplayabilirsiniz.',
+    },
+    {
+      question: 'Konut kredisi hesaplayıcı nasıl çalışır?',
+      answer:
+        'Konut kredisi hesaplayıcı, girilen değerlere göre aylık ödemelerinizi hesaplamak için matematiksel formüller kullanır.',
+    },
+    {
+      question: 'Sabit faizli ve değişken faizli mortgage arasındaki fark nedir?',
+      answer:
+        "Sabit faizli mortgage'da faiz oranı kredi süresi boyunca sabit kalırken, değişken faizli mortgage'da faiz oranı zamanla değişebilir.",
+    },
+    {
+      question: 'Peşinat nedir?',
+      answer: 'Peşinat, bir evi satın alırken başlangıçta ödediğiniz tutardır.',
+    },
+    {
+      question: 'Faiz oranı nedir?',
+      answer: 'Faiz oranı, kredi tutarının bir yüzdesi olarak kredi veren kuruluşa ödediğiniz faiz miktarıdır.',
+    },
+    {
+      question: 'Vade nedir?',
+      answer: 'Vade, mortgage kredisini geri ödemek için verilen süredir.',
+    },
+    {
+      question: 'Amortisman nedir?',
+      answer:
+        'Amortisman, bir borcun belli bir süre içinde eşit taksitlerle ödenmesi işlemidir. Her ödemeyle hem anapara hem de faiz borcu azalır.',
+    },
+    {
+      question: 'Konut kredisi sigortası (KKB) nedir?',
+      answer:
+        "Konut kredisi sigortası, genellikle %20'den az peşinat verilen kredilerde zorunlu olan bir sigortadır. Kredinin geri ödenememesi durumunda kredi veren kuruluşu korur.",
+    },
+    {
+      question: 'Konut kredisi hesaplayıcıyı nasıl kullanırım?',
+      answer:
+        'Konut kredisi hesaplayıcısını kullanmak için genellikle kredi tutarı, faiz oranı ve vade gibi bilgileri girmeniz yeterlidir. Hesaplayıcı size aylık ödeme tutarınızı gösterecektir.',
+    },
+    {
+      question: 'Aylık mortgage ödememi etkileyen faktörler nelerdir?',
+      answer: 'Aylık mortgage ödemenizi kredi tutarı, faiz oranı, vade, emlak vergileri gibi faktörler etkiler.',
+    },
+    {
+      question: 'Farklı kredi seçeneklerini karşılaştırmak için Konut kredisi hesaplayıcıyı kullanabilir miyim?',
+      answer:
+        'Evet, farklı kredi senaryolarını karşılaştırarak sizin için en uygun seçeneği belirlemek için Konut kredisi hesaplayıcıyı kullanabilirsiniz.',
+    },
+    {
+      question: 'Mortgage için ne kadar borç alabilirim?',
+      answer:
+        'Borç alma kapasiteniz, geliriniz, borçlarınız ve diğer finansal yükümlülükleriniz gibi faktörlere bağlıdır. Kredi veren kuruluşlar genellikle gelir-borç oranınızı değerlendirerek borç verme kapasitenizi belirler.',
+    },
+    {
+      question: 'Kapalı giderler nedir?',
+      answer:
+        'Kapalı giderler, bir evi satın alırken ödediğiniz ek ücretlerdir. Değerleme ücreti, tapu masrafları ve avukatlık ücreti gibi masraflar kapalı giderlere örnek olarak verilebilir.',
+    },
+    {
+      question: 'Kredi yenileme nedir?',
+      answer:
+        'Kredi yenileme, mevcut mortgage kredisini daha düşük faiz oranı veya farklı bir vade ile yeni bir krediyle değiştirme işlemidir.',
+    },
+    {
+      question: 'En iyi mortgage faiz oranını bulmak için ne yapmalıyım?',
+      answer: 'Farklı bankaların sunduğu faiz oranlarını karşılaştırarak en uygun teklifi bulabilirsiniz.',
+    },
+    {
+      question: 'Daha düşük aylık ödemeler için daha uzun vadeli bir kredi düşünebilir miyim?',
+      answer:
+        'Evet, daha uzun vadeli bir kredi seçerek aylık ödemelerinizi düşürebilirsiniz. Ancak uzun vadede daha fazla faiz ödeyeceğinizi unutmayın.',
+    },
+    {
+      question: 'Kredimi daha hızlı ödemek için daha kısa vadeli bir kredi düşünebilir miyim?',
+      answer:
+        'Evet, daha kısa vadeli bir kredi seçerek kredisini daha hızlı ödeyebilir ve faizden tasarruf edebilirsiniz. Ancak aylık ödemeleriniz daha yüksek olacaktır.',
+    },
+    {
+      question: 'Bir finans uzmanı ile görüşmeli miyim?',
+      answer:
+        'Evet, finansal durumunuzu anlamanıza ve mortgage konusunda bilinçli kararlar vermenize yardımcı olması için bir finans uzmanı ile görüşebilirsiniz.',
+    },
+    {
+      question: 'Farklı kredi senaryolarını denemek için Konut kredisi hesaplayıcısını kullanmalıyım.',
+      answer:
+        'Evet, farklı kredi tutarları, faiz oranları ve vade seçeneklerini deneyerek sizin için en uygun seçeneği bulabilirsiniz.',
+    },
+    {
+      question: 'Mevcut mortgage faiz oranlarını ve piyasa trendlerini takip etmeliyim.',
+      answer: 'Evet, piyasadaki gelişmeleri takip ederek bilinçli kararlar verebilirsiniz.',
+    },
+  ],
+  en: [
+    {
+      question: 'What is a mortgage calculator?',
+      answer:
+        'A mortgage calculator is a tool that helps you estimate your monthly mortgage payments based on factors like loan amount, interest rate, and loan term.',
+    },
+    {
+      question: 'How does a mortgage calculator work?',
+      answer:
+        'A mortgage calculator uses mathematical formulas to calculate your monthly mortgage payment based on the inputted values.',
+    },
+    {
+      question: 'What is the difference between a fixed-rate and a variable-rate mortgage?',
+      answer:
+        'A fixed-rate mortgage has a fixed interest rate throughout the loan term, while a variable-rate mortgage has an interest rate that fluctuates over time.',
+    },
+    {
+      question: 'What is a down payment?',
+      answer: 'A down payment is the initial amount of money you pay upfront when purchasing a home.',
+    },
+    {
+      question: 'What is an interest rate?',
+      answer: 'An interest rate is the percentage of the loan amount that you pay as interest to the lender.',
+    },
+    {
+      question: 'What is a loan term?',
+      answer: 'A loan term is the length of time you have to repay the mortgage loan.',
+    },
+    {
+      question: 'What is amortization?',
+      answer:
+        'Amortization is the process of paying off a debt over time, with each payment reducing the principal balance and interest.',
+    },
+    {
+      question: 'What is PMI (Private Mortgage Insurance)?',
+      answer:
+        'Private Mortgage Insurance is typically required for loans with less than a 20% down payment. It protects the lender in case of default.',
+    },
+    {
+      question: 'How do I use a mortgage calculator?',
+      answer:
+        'To use a mortgage calculator, you typically need to input the loan amount, interest rate, and loan term. The calculator will then output the estimated monthly payment.',
+    },
+    {
+      question: 'What factors affect my monthly mortgage payment?',
+      answer:
+        'Your monthly mortgage payment is influenced by factors like the loan amount, interest rate, loan term, and property taxes.',
+    },
+    {
+      question: 'Can I use a mortgage calculator to compare different loan options?',
+      answer:
+        'Yes, you can use a mortgage calculator to compare different loan scenarios and choose the best option for your financial situation.',
+    },
+    {
+      question: 'How much can I afford to borrow for a mortgage?',
+      answer:
+        'Your affordability depends on your income, debts, and other financial obligations. Lenders typically use a debt-to-income ratio to assess your borrowing capacity.',
+    },
+    {
+      question: 'What are closing costs?',
+      answer:
+        'Closing costs are fees associated with finalizing a home purchase, such as appraisal fees, title insurance, and attorney fees.',
+    },
+    {
+      question: 'What is refinancing?',
+      answer:
+        'Refinancing involves replacing your existing mortgage with a new one, often with a lower interest rate or a different loan term.',
+    },
+    {
+      question: 'How can I find the best mortgage rates?',
+      answer: 'Shop around for the best mortgage rates by comparing offers from different lenders.',
+    },
+    {
+      question: 'Should I choose a longer or shorter loan term?',
+      answer:
+        'A longer loan term results in lower monthly payments but higher total interest paid over time. A shorter loan term results in higher monthly payments but lower total interest paid.',
+    },
+    {
+      question: 'What is a good credit score for a mortgage?',
+      answer: 'A higher credit score generally leads to better interest rates and more favorable loan terms.',
+    },
+    {
+      question: 'How can I improve my credit score to qualify for a better mortgage rate?',
+      answer:
+        'To improve your credit score, pay your bills on time, reduce credit card debt, and avoid opening new credit accounts unnecessarily.',
+    },
+    {
+      question: 'What is a pre-approval letter?',
+      answer:
+        "A pre-approval letter is a document from a lender that indicates how much you're qualified to borrow. It can strengthen your offer when buying a home.",
+    },
+    {
+      question: 'How can I reduce my monthly mortgage payment?',
+      answer:
+        'You can reduce your monthly mortgage payment by refinancing to a lower interest rate, making extra payments, or extending the loan term.',
+    },
+  ],
+  de: [
+    {
+      question: 'Was ist ein Hypothekenrechner?',
+      answer:
+        'Ein Hypothekenrechner ist ein Tool, das Ihnen hilft, Ihre monatlichen Hypothekenzahlungen basierend auf Faktoren wie Darlehensbetrag, Zinssatz und Laufzeit zu schätzen.',
+    },
+    {
+      question: 'Wie funktioniert ein Hypothekenrechner?',
+      answer:
+        'Ein Hypothekenrechner verwendet mathematische Formeln, um Ihre monatliche Hypothekenzahlung basierend auf den eingegebenen Werten zu berechnen.',
+    },
+    {
+      question: 'Was ist der Unterschied zwischen einem Festzins- und einem Variablenzinsdarlehen?',
+      answer:
+        'Ein Festzinsdarlehen hat während der gesamten Laufzeit einen festen Zinssatz, während ein variabel verzinstes Darlehen einen Zinssatz hat, der sich im Laufe der Zeit ändert.',
+    },
+    {
+      question: 'Was ist eine Anzahlung?',
+      answer: 'Eine Anzahlung ist der anfängliche Betrag, den Sie beim Kauf eines Hauses zahlen.',
+    },
+    {
+      question: 'Was ist ein Zinssatz?',
+      answer: 'Der Zinssatz ist der Prozentsatz des Darlehensbetrags, den Sie als Zinsen an den Kreditgeber zahlen.',
+    },
+    {
+      question: 'Was ist eine Laufzeit?',
+      answer: 'Die Laufzeit ist die Dauer, in der Sie das Hypothekendarlehen zurückzahlen müssen.',
+    },
+    {
+      question: 'Was ist Tilgung?',
+      answer:
+        'Tilgung ist der Prozess der Rückzahlung einer Schuld im Laufe der Zeit, wobei jede Zahlung den Kapitalbetrag und die Zinsen reduziert.',
+    },
+    {
+      question: 'Was ist eine Privathaftpflichtversicherung (PMI)?',
+      answer:
+        'Eine Privathaftpflichtversicherung ist in der Regel für Darlehen mit weniger als 20 % Anzahlung erforderlich. Sie schützt den Kreditgeber im Falle einer Zahlungsausfall.',
+    },
+    {
+      question: 'Wie verwende ich einen Hypothekenrechner?',
+      answer:
+        'Um einen Hypothekenrechner zu verwenden, müssen Sie in der Regel den Darlehensbetrag, den Zinssatz und die Laufzeit eingeben. Der Rechner gibt dann die geschätzte monatliche Zahlung aus.',
+    },
+    {
+      question: 'Welche Faktoren beeinflussen meine monatliche Hypothekenzahlung?',
+      answer:
+        'Ihre monatliche Hypothekenzahlung wird von Faktoren wie Darlehensbetrag, Zinssatz, Laufzeit und Grundsteuern beeinflusst.',
+    },
+    {
+      question: 'Kann ich einen Hypothekenrechner verwenden, um verschiedene Darlehensoptionen zu vergleichen?',
+      answer:
+        'Ja, Sie können einen Hypothekenrechner verwenden, um verschiedene Darlehenszenarien zu vergleichen und die beste Option für Ihre finanzielle Situation auszuwählen.',
+    },
+    {
+      question: 'Wie viel kann ich mir für eine Hypothek leihen?',
+      answer:
+        'Ihre Kreditwürdigkeit hängt von Ihrem Einkommen, Ihren Schulden und anderen finanziellen Verpflichtungen ab. Kreditgeber beurteilen Ihre Kreditwürdigkeit anhand Ihres Schuldendienstdeckungsverhältnisses.',
+    },
+    {
+      question: 'Was sind Abschlussgebühren?',
+      answer:
+        'Abschlusskosten sind Gebühren, die mit dem Abschluss eines Hauskaufs verbunden sind, wie z. B. Schätzungsgebühren, Titelversicherungsgebühren und Anwaltskosten.',
+    },
+    {
+      question: 'Was ist eine Refinanzierung?',
+      answer:
+        'Eine Refinanzierung beinhaltet den Ersatz Ihres bestehenden Hypothekenkredits durch einen neuen, oft mit einem niedrigeren Zinssatz oder einer anderen Laufzeit.',
+    },
+    {
+      question: 'Wie finde ich die besten Hypothekenzinsen?',
+      answer: 'Vergleichen Sie die Angebote verschiedener Kreditgeber, um den besten Zinssatz zu finden.',
+    },
+    {
+      question: 'Sollte ich eine längere oder kürzere Laufzeit wählen?',
+      answer:
+        'Eine längere Laufzeit führt zu niedrigeren monatlichen Zahlungen, aber zu höheren Gesamtzinsen im Laufe der Zeit. Eine kürzere Laufzeit führt zu höheren monatlichen Zahlungen, aber zu niedrigeren Gesamtzinsen.',
+    },
+    {
+      question: 'Was ist eine gute Kreditwürdigkeit für eine Hypothek?',
+      answer:
+        'Eine höhere Kreditwürdigkeit führt in der Regel zu besseren Zinssätzen und günstigeren Kreditbedingungen.',
+    },
+    {
+      question: 'Wie kann ich meine Kreditwürdigkeit verbessern, um einen besseren Hypothekenzinssatz zu erhalten?',
+      answer:
+        'Um Ihre Kreditwürdigkeit zu verbessern, zahlen Sie Ihre Rechnungen pünktlich, reduzieren Sie Ihre Kreditkartenschulden und vermeiden Sie es, unnötig neue Kreditkonten zu eröffnen.',
+    },
+    {
+      question: 'Was ist ein Vorgenehmigungsbescheid?',
+      answer:
+        'Ein Vorgenehmigungsbescheid ist ein Dokument eines Kreditgebers, das angibt, wie viel Sie sich leihen können. Es kann Ihr Angebot beim Kauf eines Hauses stärken.',
+    },
+    {
+      question: 'Wie kann ich meine monatliche Hypothekenzahlung senken?',
+      answer:
+        'Sie können Ihre monatliche Hypothekenzahlung senken, indem Sie zu einem niedrigeren Zinssatz refinanzieren, zusätzliche Zahlungen leisten oder die Laufzeit verlängern.',
+    },
+  ],
+};

@@ -57,6 +57,18 @@
     "total": "Gesamtsumme",
     "value": "Wert",
     "percentage": "Prozent",
+    "mortgageCalculator": "Hypothekenrechner",
+    "mortgageCalculatorDesc": "Berechnen Sie Ihre Hypothekenzahlungen mit anpassbaren Zinssätzen",
+    "principal": "Hauptbetrag",
+    "interestRate": "Zinssatz",
+    "loanTerm": "Laufzeit (Jahre)",
+    "paymentFrequency": "Zahlungshäufigkeit",
+    "selectPaymentFrequency": "Zahlungshäufigkeit auswählen",
+    "monthly": "Monatlich",
+    "biweekly": "Zweiwöchentlich",
+    "payment": "Zahlung",
+    "totalInterest": "Gesamtzinsen",
+    "totalPayment": "Gesamtzahlung",
     "units": {
       "millimeters": "Millimeter",
       "centimeters": "Zentimeter",
@@ -197,6 +209,23 @@
         "Rabattrechner"
       ],
       "category": "Mathematik-Tools"
+    },
+    "mortgageCalculator": {
+      "title": "Hypothekenrechner – Berechnen Sie Ihre Hypothekenzahlungen einfach!",
+      "description": "Nutzen Sie unseren kostenlosen Hypothekenrechner, um Ihre monatlichen Zahlungen, die Gesamtsumme der Zinsen und die Laufzeit des Darlehens zu schätzen. Perfekt für die Planung Ihres Hauskaufs oder einer Refinanzierung!",
+      "keywords": [
+        "hypothekenrechner",
+        "kostenloser hypothekenrechner",
+        "hypothekenzahlungen berechnen",
+        "kreditrechner",
+        "hauskreditrechner",
+        "hypothekenzinsrechner",
+        "hypothekenplanungswerkzeug",
+        "monatlicher zahlungsrechner",
+        "refinanzierungsrechner",
+        "darlehenslaufzeit berechnen"
+      ],
+      "category": "Finanzwerkzeuge"
     }
   }
 }

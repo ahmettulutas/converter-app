@@ -5,7 +5,9 @@ export const staticPageUrls = [
   '/risign-sign-calculator',
   '/sun-sign-calculator',
   '/percentage-calculator',
-]; // empty string is for index page.
+  '/mortgage-calculator',
+];
+
 export const navLinks = [
   { href: '/', label: 'lengthCalculator' },
   { href: '/weight-converter', label: 'weightCalculator' },
@@ -13,6 +15,7 @@ export const navLinks = [
   { href: '/risign-sign-calculator', label: 'risingSignCalculator' },
   { href: '/sun-sign-calculator', label: 'sunSignCalculator' },
   { href: '/percentage-calculator', label: 'percentageCalculator' },
+  { href: '/mortgage-calculator', label: 'mortgageCalculator' },
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

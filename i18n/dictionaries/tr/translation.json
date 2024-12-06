@@ -64,6 +64,18 @@
     "percentageChangeDescription": "İki sayı arasındaki yüzde değişimini bulmak için bunu kullanın. Örneğin, 100'den 150'ye yüzde değişimini hesaplamak için.",
     "increaseByPercentageDescription": "Bir sayıyı belirli bir yüzde oranında artırmak için bunu kullanın. Örneğin, 100'ün %20 artırıldığında ne olacağını hesaplamak için.",
     "decreaseByPercentageDescription": "Bir sayıyı belirli bir yüzde oranında azaltmak için bunu kullanın. Örneğin, 100'ün %20 azaltıldığında ne olacağını hesaplamak için.",
+    "mortgageCalculator": "Konut Kredisi Hesaplayıcı",
+    "mortgageCalculatorDesc": "Ayarlanabilir faiz oranlarıyla konut kredisi ödemelerinizi hesaplayın",
+    "principal": "Ana Para",
+    "interestRate": "Faiz Oranı",
+    "loanTerm": "Kredi Süresi (yıl)",
+    "paymentFrequency": "Ödeme Sıklığı",
+    "selectPaymentFrequency": "Ödeme sıklığını seçin",
+    "monthly": "Aylık",
+    "biweekly": "İki Haftada Bir",
+    "payment": "Ödeme",
+    "totalInterest": "Toplam Faiz",
+    "totalPayment": "Toplam Ödeme",
     "units": {
       "millimeters": "Milimetre",
       "centimeters": "Santimetre",
@@ -209,6 +221,22 @@
         "indirim hesaplayıcı"
       ],
       "category": "Matematik Araçları"
+    },
+    "mortgageCalculator": {
+      "title": "Konut Kredisi Hesaplayıcı – Kredi Ödemelerinizi Kolayca Hesaplayın!",
+      "description": "Aylık ödemelerinizi, toplam faizi ve kredi vadesini tahmin etmek için ücretsiz Konut Kredisi Hesaplayıcımızı kullanın. Ev satın alma veya yeniden finansman planlaması için mükemmel bir araç!",
+      "keywords": [
+        "konut kredisi hesaplayıcı",
+        "ücretsiz konut kredisi hesaplayıcı",
+        "kredi ödemesi hesaplama",
+        "ev kredisi hesaplayıcı",
+        "kredi faiz hesaplayıcı",
+        "konut kredisi planlama aracı",
+        "aylık ödeme hesaplayıcı",
+        "yeniden finansman hesaplayıcı",
+        "kredi vadesi tahmin edici"
+      ],
+      "category": "Finansal Araçlar"
     }
   }
 }

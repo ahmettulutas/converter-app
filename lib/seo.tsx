@@ -3,6 +3,8 @@ import { LocaleType, availableLocales, defaultLanguage } from '@/i18n/settings';
 import { Metadata, ResolvingMetadata } from 'next';
 import opengraphImage from '../public/icon.svg';
 import { baseUrl, companyName, navLinks, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
+import { urlForImage } from './sanity/helpers/image-fns';
+import { ImageType } from '@/types/images';
 
 export const generateLocalesForMetaData = (languages: typeof availableLocales) => {
   const locales: Record<string, string> = {};
@@ -13,19 +15,35 @@ export const generateLocalesForMetaData = (languages: typeof availableLocales) =
 };
 
 type GenerateMetaImageProps = {
+  sanityImage?: ImageType;
   sizes: Array<{ width: number; height: number }>;
   staticImage?: { url: string | URL; alt?: string };
 };
 
-export const generateMetaImages = ({ sizes, staticImage }: GenerateMetaImageProps): Array<any> => {
-  if (!staticImage?.url) return [];
+export const generateMetaImages = ({ sanityImage, sizes, staticImage }: GenerateMetaImageProps): Array<any> => {
+  if (!sanityImage && !staticImage?.url) return [];
   const metaImages = [];
-  for (let { width, height } of sizes) {
-    metaImages.push({
-      width,
-      height,
-      alt: staticImage?.alt ?? '',
-      url: staticImage.url,
+  if (sanityImage) {
+    for (let { width, height } of sizes) {
+      metaImages.push({
+        width,
+        height,
+        alt: sanityImage?.alt || '',
+        url: urlForImage(sanityImage)?.height(height).width(width).fit('crop').url(),
+        secureUrl: urlForImage(sanityImage)?.height(height).width(width).fit('crop').url(),
+      });
+    }
+  }
+
+  if (staticImage?.url) {
+    sizes.forEach(({ width, height }) => {
+      metaImages.push({
+        width,
+        height,
+        alt: staticImage?.alt || '',
+        url: staticImage.url,
+        secureUrl: staticImage.url,
+      });
     });
   }
   return metaImages;
@@ -76,6 +94,7 @@ export const getDefaultMetaData = async (
       card: 'summary_large_image',
       title: t(`metaData.${pageKey}.title`),
       description: t(`metaData.${pageKey}.description`),
+      creator: 'Ahmet Ulutaş',
       images: [
         ...generateMetaImages({
           staticImage: {
@@ -95,6 +114,22 @@ export const getDefaultMetaData = async (
     alternates: {
       canonical: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
       languages: generateLocalesForMetaData(availableLocales),
+    },
+    robots: {
+      index: true,
+      follow: true,
+      noarchive: false,
+      nosnippet: true,
+      'max-image-preview': 'large',
+      'max-snippet': 200,
+      googleBot: {
+        index: true,
+        follow: true,
+        noarchive: false,
+        nosnippet: true,
+        'max-image-preview': 'large',
+        'max-snippet': 200,
+      },
     },
   };
 };

@@ -3,7 +3,7 @@ import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 import { MetadataRoute } from 'next';
 
-const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item, idx) => {
+const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) => {
   return availableLocales.map((locale) => {
     if (locale === defaultLanguage) {
       return {

@@ -1,13 +1,15 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { TranslatedTitle } from './translated-title';
 import { JsonSchema } from './json.ld';
+import { cn } from '@/lib/utils/styles';
 
 type FaqProps = {
   faqList: Array<{ question: string; answer: string }>;
+  containerClasses?: string;
 };
 
 export function Faq(props: Readonly<FaqProps>) {
-  const { faqList } = props;
+  const { faqList, containerClasses } = props;
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -23,9 +25,9 @@ export function Faq(props: Readonly<FaqProps>) {
   };
 
   return (
-    <div className="flex flex-col max-w-[800px] m-auto">
+    <div className={cn('flex flex-col max-w-[800px] m-auto', containerClasses)}>
       <TranslatedTitle translation="labels.faq" level="h4" className="text-center text-2xl my-2" />
-      <div className="grid grid-cols-1 md:grid-cols-3 m-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="flex flex-col gap-4 col-span-1 md:col-span-3">
           <Accordion type="single" collapsible className="w-full md:w-[500px]">
             {faqList.map(({ question, answer }) => (
@@ -38,9 +40,6 @@ export function Faq(props: Readonly<FaqProps>) {
             ))}
           </Accordion>
         </div>
-        {/* <div className="col-span-1 md:col-span-1">
-          <TableofContent faqList={faqList} />
-        </div> */}
       </div>
 
       <JsonSchema schema={faqSchema} />

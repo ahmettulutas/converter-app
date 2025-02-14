@@ -1609,3 +1609,54 @@ export const mortgageFaqs: Record<LocaleType, Array<{ question: string; answer: 
     },
   ],
 };
+
+export const sexualFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
+  en: [
+    {
+      question: 'What is the purpose of this test?',
+      answer:
+        'This test helps you explore aspects of your sexual and romantic orientation based on your responses. It is not a definitive diagnosis, but a tool for self-reflection.',
+    },
+    {
+      question: 'Can my orientation change over time?',
+      answer:
+        'Yes, sexual orientation can be fluid for some individuals. This test reflects your current feelings and may change over time.',
+    },
+    {
+      question: 'Is my data saved?',
+      answer: 'No, we do not store any of your responses. All results are calculated locally in your browser.',
+    },
+  ],
+  tr: [
+    {
+      question: 'Bu testin amacı nedir?',
+      answer:
+        'Bu test, yanıtlarınıza dayanarak cinsel ve romantik yöneliminizi keşfetmenize yardımcı olur. Kesin bir tanı koymaz, sadece kendinizi anlamanızı sağlar.',
+    },
+    {
+      question: 'Yönelimim zamanla değişebilir mi?',
+      answer:
+        'Evet, bazı bireyler için cinsel yönelim akışkan olabilir. Bu test mevcut hislerinizi yansıtır ve zamanla değişebilir.',
+    },
+    {
+      question: 'Verilerim saklanıyor mu?',
+      answer: 'Hayır, yanıtlarınız kaydedilmez. Tüm sonuçlar tarayıcınızda yerel olarak hesaplanır.',
+    },
+  ],
+  de: [
+    {
+      question: 'Was ist der Zweck dieses Tests?',
+      answer:
+        'Dieser Test hilft Ihnen, Aspekte Ihrer sexuellen und romantischen Orientierung zu erkunden. Er stellt keine endgültige Diagnose dar, sondern dient der Selbstreflexion.',
+    },
+    {
+      question: 'Kann sich meine Orientierung im Laufe der Zeit ändern?',
+      answer:
+        'Ja, für manche Menschen kann die sexuelle Orientierung fließend sein. Dieser Test spiegelt Ihre aktuellen Gefühle wider und kann sich mit der Zeit ändern.',
+    },
+    {
+      question: 'Werden meine Daten gespeichert?',
+      answer: 'Nein, wir speichern keine Ihrer Antworten. Alle Ergebnisse werden lokal in Ihrem Browser berechnet.',
+    },
+  ],
+};

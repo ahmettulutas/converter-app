@@ -25,7 +25,7 @@ export const CollapsibleNavbar = () => {
               <Link
                 title={t('labels.home')}
                 href={params.locale ? `/${params.locale}` : '/'}
-                className="text-primary flex items-center gap-1"
+                className="text-primary flex items-center gap-1 mr-2"
               >
                 <Calculator />
                 <span className="text-xl">E.W</span>

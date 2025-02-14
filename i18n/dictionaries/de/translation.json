@@ -6,6 +6,12 @@
     "risingSignCalculator": "Aszendentenrechner",
     "sunSignCalculator": "Sternzeichen-Rechner",
     "sunSignCardDesc": "Entdecken Sie Ihr Sternzeichen durch Eingabe Ihres Geburtsdatums und Ihrer Geburtszeit. Beginnen Sie noch heute Ihre persönliche astrologische Reise und erkunden Sie die Tiefen Ihres Charakters.",
+    "sexualIdentityTest": "Sexuelle Identitätstest",
+    "sexualDesc": "Dieser Test soll Ihnen helfen, Ihre sexuelle Orientierung zu verstehen. Bitte beantworten Sie jede Frage ehrlich.",
+    "sexualResultDesc": "Basierend auf Ihren Antworten scheinen die folgenden Orientierungen für Sie wahrscheinlicher zu sein. Bedenken Sie jedoch, dass sexuelle Orientierung komplex und fließend sein kann.",
+    "sexualResultWarn": "Dieser Test soll lediglich eine allgemeine Einschätzung bieten. Wie Sie sich selbst definieren und fühlen, ist der wichtigste Faktor. Wenn Sie Fragen zu Ihrer sexuellen Orientierung haben, empfehlen wir Ihnen, einen Spezialisten zu konsultieren.",
+    "completeTest": "Test abschließen",
+    "testResult": "Testergebnis",
     "from": "Von",
     "to": "Zu",
     "result": "Ergebnis",
@@ -226,6 +232,23 @@
         "darlehenslaufzeit berechnen"
       ],
       "category": "Finanzwerkzeuge"
+    },
+    "sexualIdentity": {
+      "title": "Sexuelle Orientierungstest – Entdecken Sie Ihre romantische und sexuelle Identität!",
+      "description": "Machen Sie unseren kostenlosen Test zur sexuellen Orientierung, um Ihre romantischen und sexuellen Präferenzen zu erkunden. Erhalten Sie Einblicke in Ihre Identität mit unserem einfachen Quiz!",
+      "keywords": [
+        "sexuelle Orientierungstest",
+        "romantische Anziehung Quiz",
+        "bin ich bisexuell",
+        "Sexualitätsspektrum Test",
+        "LGBTQ+ Selbstfindung",
+        "Geschlechtsidentität Quiz",
+        "heterosexuell oder homosexuell",
+        "pansexuell Test",
+        "asexuelle Spektrum Quiz",
+        "Anziehung verstehen"
+      ],
+      "category": "Identität & Selbstfindung"
     }
   }
 }

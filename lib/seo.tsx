@@ -1,7 +1,7 @@
 import { createTranslation } from '@/i18n';
 import { LocaleType, availableLocales, defaultLanguage } from '@/i18n/settings';
 import { Metadata, ResolvingMetadata } from 'next';
-import opengraphImage from '../public/icon.svg';
+import opengraphImage from '../public/eq-logo.jpg';
 import { baseUrl, companyName, navLinks, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 import { urlForImage } from './sanity/helpers/image-fns';
 import { ImageType } from '@/types/images';
@@ -25,12 +25,13 @@ export const generateMetaImages = ({ sanityImage, sizes, staticImage }: Generate
   const metaImages = [];
   if (sanityImage) {
     for (let { width, height } of sizes) {
+      const imageUrl = urlForImage(sanityImage)?.height(height).width(width).fit('crop').url();
       metaImages.push({
         width,
         height,
         alt: sanityImage?.alt || '',
-        url: urlForImage(sanityImage)?.height(height).width(width).fit('crop').url(),
-        secureUrl: urlForImage(sanityImage)?.height(height).width(width).fit('crop').url(),
+        url: imageUrl,
+        secureUrl: imageUrl,
       });
     }
   }

@@ -5,7 +5,12 @@
     "squareCalculator": "Squaremeter Calculator",
     "risingSignCalculator": "Rising Sign Calculator",
     "sunSignCalculator": "Sun Sign Calculator",
-    "sunSignCardDesc": "Discover your sun sign by entering your birth date and time. Start your personal astrology journey today and explore the depths of your character.",
+    "sexualIdentityTest": "Sexual Identity Test",
+    "sexualDesc": "This test is designed to help you understand your sexual orientation. Please answer each question honestly.",
+    "sexualResultDesc": "Based on your answers, the following orientations seem more likely for you. However, keep in mind that sexual orientation is complex and fluid.",
+    "sexualResultWarn": "This test is only meant to provide a general idea. How you define and feel about yourself is the most important factor. If you have questions about your sexual orientation, we recommend consulting a specialist.",
+    "completeTest": "Complete the Test",
+    "testResult": "Test Result",
     "from": "From",
     "to": "To",
     "result": "Result",
@@ -239,6 +244,23 @@
         "loan term estimator"
       ],
       "category": "Financial Tools"
+    },
+    "sexualIdentity": {
+      "title": "Sexual Orientation Test – Discover Your Romantic and Sexual Identity!",
+      "description": "Take our free Sexual Orientation Test to explore your romantic and sexual preferences. Gain insights about your identity with our easy-to-use quiz!",
+      "keywords": [
+        "sexual orientation test",
+        "romantic attraction quiz",
+        "am I bisexual",
+        "sexuality spectrum test",
+        "LGBTQ+ self-discovery",
+        "gender identity quiz",
+        "heterosexual or homosexual",
+        "pansexual test",
+        "asexual spectrum quiz",
+        "understanding attraction"
+      ],
+      "category": "Identity & Self-Discovery"
     }
   }
 }

@@ -6,6 +6,12 @@
     "risingSignCalculator": "Yükselen Burç Hesaplayıcı",
     "sunSignCalculator": "Güneş Burcu Hesaplayıcı",
     "sunSignCardDesc": "Doğum tarihinizi ve saatinizi girerek güneş burcunuzu öğrenin. Kişisel astroloji yolculuğunuza bugün başlayın ve karakterinizin derinliklerini keşfedin.",
+    "sexualIdentityTest": "Cinsel Kimlik Testi",
+    "sexualDesc": "Bu test, cinsel yöneliminizi anlamanıza yardımcı olmak için tasarlanmıştır. Lütfen her soruyu dürüstçe cevaplayın.",
+    "sexualResultDesc": "Cevaplarınıza göre, aşağıdaki yönelimler sizin için daha olası görünmektedir. Ancak unutmayın ki, cinsel yönelim karmaşık ve akışkan olabilir.",
+    "sexualResultWarn": "Bu test sadece genel bir fikir vermek içindir. Kendinizi nasıl tanımladığınız ve hissettiğiniz en önemli faktördür. Cinsel yöneliminiz hakkında sorularınız varsa, bir uzmana danışmanızı öneririz.",
+    "completeTest": "Testi Tamamla",
+    "testResult": "Test Sonucu",
     "from": "Başlangıç",
     "result": "Sonuç",
     "typeUnit": "Bir değer girin",
@@ -237,6 +243,23 @@
         "kredi vadesi tahmin edici"
       ],
       "category": "Finansal Araçlar"
+    },
+    "sexualIdentity": {
+      "title": "Cinsel Yönelim Testi – Romantik ve Cinsel Kimliğinizi Keşfedin!",
+      "description": "Ücretsiz Cinsel Yönelim Testimizi yaparak romantik ve cinsel tercihlerinizi keşfedin. Kimliğiniz hakkında içgörüler kazanın!",
+      "keywords": [
+        "cinsel yönelim testi",
+        "romantik çekim testi",
+        "biseksüel miyim",
+        "cinsellik spektrumu testi",
+        "LGBTQ+ kendini keşfetme",
+        "cinsiyet kimliği testi",
+        "heteroseksüel mi eşcinsel mi",
+        "panseksüel testi",
+        "aseksüel spektrum testi",
+        "çekimi anlama"
+      ],
+      "category": "Kimlik & Kendini Keşfetme"
     }
   }
 }

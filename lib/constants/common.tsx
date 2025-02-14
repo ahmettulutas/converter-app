@@ -6,6 +6,7 @@ export const staticPageUrls = [
   '/sun-sign-calculator',
   '/percentage-calculator',
   '/mortgage-calculator',
+  '/sexual-identity-test',
 ];
 
 export const navLinks = [
@@ -16,6 +17,7 @@ export const navLinks = [
   { href: '/sun-sign-calculator', label: 'sunSignCalculator' },
   { href: '/percentage-calculator', label: 'percentageCalculator' },
   { href: '/mortgage-calculator', label: 'mortgageCalculator' },
+  { href: '/sexual-identity-test', label: 'sexualIdentityTest' },
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

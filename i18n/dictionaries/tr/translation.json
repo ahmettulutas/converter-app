@@ -110,10 +110,10 @@
       "square_feet": "fit kare",
       "square_inches": "inç kare",
       "square_yards": "yarda kare",
-      "donum": "dönüm",
-      "tableOfContent": "İçindekiler",
-      "blog": "Blog"
-    }
+      "donum": "dönüm"
+    },
+    "tableOfContent": "İçindekiler",
+    "blog": "Blog"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",

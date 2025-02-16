@@ -110,10 +110,10 @@
       "square_feet": "square feet",
       "square_inches": "square inches",
       "square_yards": "square yards",
-      "donum": "donum (used in Turkey)",
-      "tableOfContent": "Table of Content",
-      "blog": "Blog"
-    }
+      "donum": "donum (used in Turkey)"
+    },
+    "tableOfContent": "Table of Content",
+    "blog": "Blog"
   },
   "msg": {
     "noLangSelected": "No language is selected",

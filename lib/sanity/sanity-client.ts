@@ -7,5 +7,7 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
+  perspective: 'published',
 });
-export const getClient = () => client;
+
+export const sanityClient = () => client;

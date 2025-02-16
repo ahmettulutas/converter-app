@@ -2,6 +2,7 @@ import { BookIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
 
 import categorySchema from '../category-schema';
+import calculatorButtonSchema from '../button-schema';
 import { availableLocales } from '@/i18n/settings';
 
 export default defineType({
@@ -25,6 +26,12 @@ export default defineType({
         maxLength: 96,
       },
       validation: (rule) => rule.required().error('A slug is required to generate a page on the website'),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'category',
@@ -54,6 +61,8 @@ export default defineType({
             },
           ],
         },
+        //@ts-ignore
+        calculatorButtonSchema,
       ],
     }),
     defineField({
@@ -64,6 +73,14 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessiblity.',
+        },
+      ],
     }),
     defineField({
       name: 'date',

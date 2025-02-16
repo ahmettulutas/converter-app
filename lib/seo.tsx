@@ -5,6 +5,7 @@ import opengraphImage from '../public/eq-logo.jpg';
 import { baseUrl, companyName, navLinks, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 import { urlForImage } from './sanity/helpers/image-fns';
 import { ImageType } from '@/types/images';
+import { BlogPost } from './sanity/queries/blog-queries';
 
 export const generateLocalesForMetaData = (languages: typeof availableLocales) => {
   const locales: Record<string, string> = {};
@@ -18,34 +19,34 @@ type GenerateMetaImageProps = {
   sanityImage?: ImageType;
   sizes: Array<{ width: number; height: number }>;
   staticImage?: { url: string | URL; alt?: string };
+  title: string;
 };
 
-export const generateMetaImages = ({ sanityImage, sizes, staticImage }: GenerateMetaImageProps): Array<any> => {
+export const generateMetaImages = ({ sanityImage, sizes, staticImage, title }: GenerateMetaImageProps) => {
   if (!sanityImage && !staticImage?.url) return [];
   const metaImages = [];
   if (sanityImage) {
-    for (let { width, height } of sizes) {
-      const imageUrl = urlForImage(sanityImage)?.height(height).width(width).fit('crop').url();
+    for (const { width, height } of sizes) {
+      const imgUrl = urlForImage(sanityImage)?.height(height).width(width).fit('crop').auto('format').url();
       metaImages.push({
         width,
         height,
-        alt: sanityImage?.alt || '',
-        url: imageUrl,
-        secureUrl: imageUrl,
+        alt: sanityImage?.alt ?? title,
+        url: imgUrl,
+        secureUrl: imgUrl,
       });
     }
   }
 
   if (staticImage?.url) {
-    sizes.forEach(({ width, height }) => {
+    for (const { width, height } of sizes) {
       metaImages.push({
         width,
         height,
-        alt: staticImage?.alt || '',
+        alt: staticImage?.alt ?? title,
         url: staticImage.url,
-        secureUrl: staticImage.url,
       });
-    });
+    }
   }
   return metaImages;
 };
@@ -84,6 +85,7 @@ export const getDefaultMetaData = async (
             url: opengraphImage.src,
             alt: t(`metaData.${pageKey}.title`),
           },
+          title: t(`metaData.${pageKey}.title`),
           sizes: ogImageSizes,
         }),
         ...previousImages,
@@ -102,6 +104,7 @@ export const getDefaultMetaData = async (
             url: opengraphImage.src,
             alt: t(`metaData.${pageKey}.title`),
           },
+          title: t(`metaData.${pageKey}.title`),
           sizes: twitterImageSizes,
         }),
         ...previousImages,
@@ -119,17 +122,13 @@ export const getDefaultMetaData = async (
     robots: {
       index: true,
       follow: true,
-      noarchive: false,
-      nosnippet: false,
-      'max-image-preview': 'large',
-      'max-snippet': 200,
       googleBot: {
         index: true,
         follow: true,
-        noarchive: false,
-        nosnippet: false,
+        noimageindex: false,
+        'max-video-preview': -1,
         'max-image-preview': 'large',
-        'max-snippet': 200,
+        'max-snippet': -1,
       },
     },
   };
@@ -155,5 +154,53 @@ export async function getLocalizedJsonLd(locale: LocaleType, pageKey: string) {
       name: companyName,
     },
     keywords,
+  };
+}
+
+export function generateBlogPostSchema(blogPost: BlogPost) {
+  const { _id, title, slug, coverImage, date, description, category, language, _translations } = blogPost;
+  const imageUrl = urlForImage(coverImage).height(1000).width(2000).url();
+  return {
+    '@context': 'http://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${new URL(process.env.NEXT_PUBLIC_BASE_URL as string)}/${slug}`,
+    },
+    headline: title,
+    image: {
+      '@type': 'ImageObject',
+      url: imageUrl,
+      width: 300,
+      height: 300,
+    },
+    datePublished: date || new Date().toISOString(),
+    dateModified: blogPost._updatedAt || date || new Date().toISOString(),
+    author: {
+      '@type': 'Person',
+      name: companyName,
+    },
+    description: description,
+    articleSection: category?.name,
+    inLanguage: language,
+    publisher: {
+      '@type': 'Organization',
+      name: companyName,
+      logo: {
+        '@type': 'ImageObject',
+        url: opengraphImage.src,
+      },
+    },
+    articleBody: description,
+    isPartOf: {
+      '@type': 'Blog',
+      name: title,
+    },
+    hasPart: _translations?.map((translation) => ({
+      '@type': 'BlogPosting',
+      headline: translation.title,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/${translation.slug}`,
+      inLanguage: translation.language,
+    })),
   };
 }

@@ -104,7 +104,9 @@
       "square_inches": "Quadratzoll",
       "square_yards": "Quadratyards",
       "donum": "donum (in der Türkei verwendet)"
-    }
+    },
+    "tableOfContent": "Inhaltsverzeichnis",
+    "blog": "Blog"
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",

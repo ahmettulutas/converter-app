@@ -2,7 +2,7 @@ export const staticPageUrls = [
   '/weight-converter',
   '',
   '/square-calculator',
-  '/risign-sign-calculator',
+  '/rising-sign-calculator',
   '/sun-sign-calculator',
   '/percentage-calculator',
   '/mortgage-calculator',
@@ -13,7 +13,7 @@ export const navLinks = [
   { href: '/', label: 'lengthCalculator' },
   { href: '/weight-converter', label: 'weightCalculator' },
   { href: '/square-calculator', label: 'squareCalculator' },
-  { href: '/risign-sign-calculator', label: 'risingSignCalculator' },
+  { href: '/rising-sign-calculator', label: 'risingSignCalculator' },
   { href: '/sun-sign-calculator', label: 'sunSignCalculator' },
   { href: '/percentage-calculator', label: 'percentageCalculator' },
   { href: '/mortgage-calculator', label: 'mortgageCalculator' },
@@ -30,3 +30,8 @@ export const twitterImageSizes = [
 ];
 
 export const companyName = 'EqualtoWhat';
+
+export const commonSizes = [
+  { width: 1200, height: 630 }, // Open Graph
+  { width: 800, height: 600 }, // Twitter
+];

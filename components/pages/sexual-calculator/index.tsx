@@ -155,7 +155,7 @@ export default function SexualOrientationTest({ currentLocale }: Readonly<{ curr
           </CardContent>
           <CardFooter>
             <Button onClick={handleSubmit} disabled={answers.some((answer) => answer === '')}>
-              {t('label.completeTest')}
+              {t('labels.completeTest')}
             </Button>
           </CardFooter>
         </Card>

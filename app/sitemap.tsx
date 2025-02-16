@@ -2,6 +2,7 @@ import { baseUrl, staticPageUrls } from '@/lib/constants/common';
 import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 import { MetadataRoute } from 'next';
+import { getAllBlogSlugs } from '@/actions/blog';
 
 const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) => {
   return availableLocales.map((locale) => {
@@ -22,24 +23,12 @@ const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) 
 });
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  return [...staticSiteMapItems];
+  const allBlogs = await getAllBlogSlugs();
+  const dynamicBlogSlugs: MetadataRoute.Sitemap = allBlogs.map(({ language, _updatedAt, slug }) => ({
+    url: `${baseUrl}/${language}/${slug}`,
+    lastModified: _updatedAt,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+  return [...staticSiteMapItems, ...dynamicBlogSlugs];
 }
-
-// const generateAlternateLinks = (url: string) => {
-//   const languages: Record<string, string> = {};
-//   availableLocales
-//     .filter((item) => item !== defaultLanguage)
-//     .forEach((locale) => (languages[locale] = `${baseUrl}/${locale}${url}`));
-//   return languages;
-// };
-
-// const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.map((item, idx) => {
-//   return {
-//     url: `${baseUrl}${item}`,
-//     lastModified: new Date(),
-//     changeFrequency: 'monthly',
-//     alternates: {
-//       languages: generateAlternateLinks(item),
-//     },
-//   };
-// });

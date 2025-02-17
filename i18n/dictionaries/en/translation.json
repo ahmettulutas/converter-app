@@ -113,7 +113,12 @@
       "donum": "donum (used in Turkey)"
     },
     "tableOfContent": "Table of Content",
-    "blog": "Blog"
+    "blog": "Blog",
+    "continueReading": "Continue Reading",
+    "converters": "Converters",
+    "astrology": "Astrology",
+    "tools": "Tools",
+    "content": "Content"
   },
   "msg": {
     "noLangSelected": "No language is selected",
@@ -263,6 +268,23 @@
         "understanding attraction"
       ],
       "category": "Identity & Self-Discovery"
+    },
+    "layout": {
+      "title": "Discover Powerful Online Tools – Free Calculators & Converters",
+      "description": "Access a variety of free online calculators and conversion tools for daily tasks. From unit converters to financial calculators, simplify your calculations instantly!",
+      "keywords": [
+        "online calculators",
+        "free conversion tools",
+        "unit converters",
+        "financial calculators",
+        "health calculators",
+        "mathematical tools",
+        "instant calculators",
+        "daily calculation tools",
+        "measurement converters",
+        "scientific calculators"
+      ],
+      "category": "Online Tools"
     }
   }
 }

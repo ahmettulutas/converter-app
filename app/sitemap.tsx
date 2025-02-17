@@ -1,5 +1,5 @@
 import { baseUrl, staticPageUrls } from '@/lib/constants/common';
-import { availableLocales, defaultLanguage } from '@/i18n/settings';
+import { availableLocales } from '@/i18n/settings';
 
 import { MetadataRoute } from 'next';
 import { getAllBlogSlugs } from '@/actions/blog';

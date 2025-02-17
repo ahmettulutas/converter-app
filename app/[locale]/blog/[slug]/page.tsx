@@ -53,39 +53,39 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
 
   return (
     <main className="scroll-smooth">
-      <PageContainer className="max-w-4xl">
+      <PageContainer>
         <div>
           <h1 className="text-4xl md:text-6xl mb-10 lg:text-5xl text-center">{data?.blog?.title}</h1>
         </div>
-        <section className="flex flex-col md:flex-row gap-4 md:gap-6 md:justify-between">
-          {heroImg && (
-            <div className="relative aspect-square flex-1">
-              <Image
-                src={heroImg}
-                alt={data.blog.coverImage.alt ?? data.blog.title}
-                fill
-                placeholder="blur"
-                sizes="100vw"
-                style={{ objectFit: 'cover' }}
-                {...(data.blog?.coverImage?.blurDataURL && {
-                  placeholder: 'blur',
-                  blurDataURL: data.blog.coverImage.blurDataURL,
-                })}
-              />
-            </div>
-          )}
+        {heroImg && (
+          <div className="relative aspect-video w-full flex-1">
+            <Image
+              src={heroImg}
+              alt={data.blog.coverImage.alt ?? data.blog.title}
+              fill
+              placeholder="blur"
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
+              {...(data.blog?.coverImage?.blurDataURL && {
+                placeholder: 'blur',
+                blurDataURL: data.blog.coverImage.blurDataURL,
+              })}
+            />
+          </div>
+        )}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 my-2">
           {data?.blog?.headings?.length > 0 && (
             <Suspense fallback={<TableOfContentSkeleton />}>
-              <div className="flex-1">
-                <details className="border p-4 border-lightChampaigne" open>
-                  <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
-                  <TableOfContent headings={data?.blog?.headings} language={'locale'} />
-                </details>
-              </div>
+              <details className="border p-4 border-lightChampaigne col-span-1 sticky top-2 h-min" open>
+                <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
+                <TableOfContent headings={data?.blog?.headings} language={'locale'} />
+              </details>
             </Suspense>
           )}
+          <div className="col-span-2 md:col-span-3 mt-2">
+            {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
+          </div>
         </section>
-        {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
       </PageContainer>
 
       <JsonSchema schema={generateBlogPostSchema(data.blog)} />

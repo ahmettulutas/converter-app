@@ -1,3 +1,54 @@
+import {
+  Ruler,
+  Weight,
+  Square,
+  Compass,
+  Sun,
+  Percent,
+  Home,
+  Heart,
+  Calculator,
+  ScaleIcon as Scales,
+  BookIcon,
+} from 'lucide-react';
+
+export const navCategories = [
+  {
+    category: 'converters',
+    label: 'labels.converters',
+    icon: Calculator,
+    links: [
+      { href: '/', label: 'lengthCalculator', icon: Ruler },
+      { href: '/weight-converter', label: 'weightCalculator', icon: Weight },
+      { href: '/square-calculator', label: 'squareCalculator', icon: Square },
+    ],
+  },
+  {
+    category: 'astrology',
+    label: 'labels.astrology',
+    icon: Sun,
+    links: [
+      { href: '/rising-sign-calculator', label: 'risingSignCalculator', icon: Compass },
+      { href: '/sun-sign-calculator', label: 'sunSignCalculator', icon: Sun },
+    ],
+  },
+  {
+    category: 'tools',
+    label: 'labels.tools',
+    icon: Scales,
+    links: [
+      { href: '/percentage-calculator', label: 'percentageCalculator', icon: Percent },
+      { href: '/mortgage-calculator', label: 'mortgageCalculator', icon: Home },
+      { href: '/sexual-identity-test', label: 'sexualIdentityTest', icon: Heart },
+    ],
+  },
+  {
+    category: 'content',
+    label: 'labels.content',
+    icon: BookIcon,
+    links: [{ href: '/blog', label: 'blog', icon: BookIcon }],
+  },
+];
 export const staticPageUrls = [
   '/weight-converter',
   '',
@@ -7,17 +58,7 @@ export const staticPageUrls = [
   '/percentage-calculator',
   '/mortgage-calculator',
   '/sexual-identity-test',
-];
-
-export const navLinks = [
-  { href: '/', label: 'lengthCalculator' },
-  { href: '/weight-converter', label: 'weightCalculator' },
-  { href: '/square-calculator', label: 'squareCalculator' },
-  { href: '/rising-sign-calculator', label: 'risingSignCalculator' },
-  { href: '/sun-sign-calculator', label: 'sunSignCalculator' },
-  { href: '/percentage-calculator', label: 'percentageCalculator' },
-  { href: '/mortgage-calculator', label: 'mortgageCalculator' },
-  { href: '/sexual-identity-test', label: 'sexualIdentityTest' },
+  '/blog',
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

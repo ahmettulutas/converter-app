@@ -2,7 +2,7 @@ import { createTranslation } from '@/i18n';
 import { LocaleType, availableLocales, defaultLanguage } from '@/i18n/settings';
 import { Metadata, ResolvingMetadata } from 'next';
 import opengraphImage from '../public/eq-logo.jpg';
-import { baseUrl, companyName, navLinks, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
+import { baseUrl, companyName, navCategories, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 import { urlForImage } from './sanity/helpers/image-fns';
 import { ImageType } from '@/types/images';
 import { BlogPost } from './sanity/queries/blog-queries';
@@ -125,7 +125,9 @@ export async function getLocalizedJsonLd(locale: LocaleType, pageKey: string) {
   const keywords: Array<string> = t(`metaData.${pageKey}.keywords`, {
     returnObjects: true,
   });
-  const pathname = navLinks.find((item) => item.label === pageKey)?.href;
+  const pathname = navCategories
+    .flatMap(({ links }) => links.map((link) => link))
+    .find((item) => item.label === pageKey)?.href;
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',

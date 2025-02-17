@@ -41,10 +41,7 @@ export default function RootLayout(props: LocaleRouteLayout) {
       <body className={inter.className}>
         <AdSense />
         <CollapsibleNavbar />
-        <Suspense fallback={<LoadingSpinner />}>
-          <Sidebar />
-          {children}
-        </Suspense>
+        <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
       </body>
     </html>
   );

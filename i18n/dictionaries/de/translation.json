@@ -106,7 +106,12 @@
       "donum": "donum (in der Türkei verwendet)"
     },
     "tableOfContent": "Inhaltsverzeichnis",
-    "blog": "Blog"
+    "blog": "Blog",
+    "continueReading": "Weiterlesen",
+    "converters": "Umrechner",
+    "astrology": "Astrologie",
+    "tools": "Werkzeuge",
+    "content": "Inhalt"
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",
@@ -251,6 +256,23 @@
         "Anziehung verstehen"
       ],
       "category": "Identität & Selbstfindung"
+    },
+    "layout": {
+      "title": "Entdecken Sie leistungsstarke Online-Tools – Kostenlose Rechner & Umrechner",
+      "description": "Nutzen Sie eine Vielzahl kostenloser Online-Rechner und Umrechnungstools für den Alltag. Von Einheitenumrechnern bis zu Finanzrechnern – vereinfachen Sie Ihre Berechnungen sofort!",
+      "keywords": [
+        "Online-Rechner",
+        "kostenlose Umrechnungstools",
+        "Einheitenumrechner",
+        "Finanzrechner",
+        "Gesundheitsrechner",
+        "mathematische Werkzeuge",
+        "sofortige Rechner",
+        "tägliche Berechnungstools",
+        "Maßeinheiten-Umrechner",
+        "wissenschaftliche Rechner"
+      ],
+      "category": "Online-Tools"
     }
   }
 }

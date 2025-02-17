@@ -113,7 +113,12 @@
       "donum": "dönüm"
     },
     "tableOfContent": "İçindekiler",
-    "blog": "Blog"
+    "blog": "Blog",
+    "continueReading": "Okumaya Devam et",
+    "converters": "Dönüştürücüler",
+    "astrology": "Astroloji",
+    "tools": "Araçlar",
+    "content": "İçerik"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
@@ -262,6 +267,23 @@
         "çekimi anlama"
       ],
       "category": "Kimlik & Kendini Keşfetme"
+    },
+    "layout": {
+      "title": "Güçlü Online Araçları Keşfedin – Ücretsiz Hesaplayıcılar ve Dönüştürücüler",
+      "description": "Günlük ihtiyaçlarınız için çeşitli ücretsiz online hesaplayıcılar ve dönüşüm araçlarına erişin. Birim dönüştürücülerden finansal hesaplayıcılara kadar hesaplamalarınızı anında kolaylaştırın!",
+      "keywords": [
+        "online hesaplayıcılar",
+        "ücretsiz dönüşüm araçları",
+        "birim dönüştürücüler",
+        "finansal hesaplayıcılar",
+        "sağlık hesaplayıcıları",
+        "matematiksel araçlar",
+        "anlık hesaplayıcılar",
+        "günlük hesaplama araçları",
+        "ölçü birimi dönüştürücüler",
+        "bilimsel hesaplayıcılar"
+      ],
+      "category": "Online Araçlar"
     }
   }
 }

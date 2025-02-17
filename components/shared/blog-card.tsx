@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -7,6 +8,7 @@ import { BlogPostForList } from '@/actions/blog';
 
 import { format, parseISO } from 'date-fns';
 import { LocaleType } from '@/i18n/settings';
+import { useTranslation } from '@/i18n/client';
 
 export default function BlogDate({ date }: { date?: string }) {
   if (!date) return null;
@@ -25,6 +27,7 @@ type BlogCardProps = {
 export function BlogCard(props: BlogCardProps) {
   const { blog, locale } = props;
   const { title, description, slug, date } = blog;
+  const { t } = useTranslation(locale, 'translation');
   return (
     <Card className="flex flex-col h-full">
       <CardHeader>
@@ -36,8 +39,12 @@ export function BlogCard(props: BlogCardProps) {
       <CardFooter className="flex justify-between items-center">
         <BlogDate date={date} />
         <Button variant="ghost" size="sm" asChild>
-          <Link href={`/${locale}/blog/${slug}`} className="flex items-center gap-2">
-            Read more
+          <Link
+            href={`/${locale}/blog/${slug}`}
+            className="flex items-center gap-2"
+            title={t('labels.continueReading')}
+          >
+            {t('labels.continueReading')}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>

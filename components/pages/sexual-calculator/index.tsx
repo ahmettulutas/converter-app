@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
@@ -29,6 +29,7 @@ export default function SexualOrientationTest({ currentLocale }: Readonly<{ curr
     newAnswers[questionIndex] = answer;
     setAnswers(newAnswers);
   };
+  const resultRef = useRef<HTMLDivElement | null>(null);
 
   const calculateResults = () => {
     const newOrientations = orientations[currentLocale].map((o) => ({ ...o, score: 0 }));
@@ -108,11 +109,18 @@ export default function SexualOrientationTest({ currentLocale }: Readonly<{ curr
   const handleSubmit = () => {
     calculateResults();
     setShowResults(true);
+
+    // Scroll to results after a short delay (to ensure they are rendered)
+    setTimeout(() => {
+      if (resultRef.current) {
+        resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   const renderResults = () => {
     return (
-      <div className="p-4 bg-primary/10 rounded-md h-min">
+      <div className="p-4 bg-primary/10 rounded-md h-min" ref={resultRef}>
         <h3 className="font-semibold text-lg mb-2">{t('labels.testResult')}:</h3>
         <p className="mb-4">{t('labels.sexualResultDesc')}</p>
         {results.map((orientation, index) => (
@@ -141,7 +149,7 @@ export default function SexualOrientationTest({ currentLocale }: Readonly<{ curr
           <CardContent>
             {questions[currentLocale].map((question, index) => (
               <div key={index} className="mb-6">
-                <p className="font-medium mb-2">{question}</p>
+                <p className="font-medium mb-2">{`${index + 1}. ${question}`}</p>
                 <RadioGroup onValueChange={(value) => handleAnswerChange(index, value)} value={answers[index]}>
                   {options[currentLocale][index].map((option, optionIndex) => (
                     <div key={optionIndex} className="flex items-center space-x-2">

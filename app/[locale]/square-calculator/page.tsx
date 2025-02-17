@@ -4,19 +4,31 @@ import { SharedPageProps } from '../layout';
 import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 
-import { Faq } from '@/components/shared/faq';
 import { squareMeterConverterFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
 
 const SquareCalculator = lazy(() => import('@/components/pages/square-meter-calculator'));
+const Faq = lazy(() => import('@/components/shared/faq'));
 const pageKey = 'squareCalculator';
 
 export default async function SquareCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   const pageSchema = getLocalizedJsonLd(params.locale, pageKey);
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: squareMeterConverterFAQs[params.locale].map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
   return (
     <>
       <main className="flex flex-col items-center justify-center">
@@ -27,10 +39,13 @@ export default async function SquareCalculatorPage(props: Readonly<SharedPagePro
               <SquareCalculator />
             </Suspense>
           </div>
-          <Faq faqList={squareMeterConverterFAQs[params.locale]} />
+          <Suspense fallback={<>Loading...</>}>
+            <Faq faqList={squareMeterConverterFAQs[params.locale]} />
+          </Suspense>
         </PageContainer>
       </main>
-      <JsonSchema schema={pageSchema} />
+      <JsonSchema schema={faqSchema} />
+      {pageSchema && <JsonSchema schema={pageSchema} />}
     </>
   );
 }

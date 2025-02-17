@@ -73,16 +73,16 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
             />
           </div>
         )}
-        <section className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 my-2">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
           {data?.blog?.headings?.length > 0 && (
             <Suspense fallback={<TableOfContentSkeleton />}>
-              <details className="border p-4 border-lightChampaigne col-span-1 sticky top-2 h-min" open>
+              <details className="border p-4 border-lightChampaigne col-span-1 md:sticky top-2 h-min bg-white" open>
                 <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
                 <TableOfContent headings={data?.blog?.headings} language={'locale'} />
               </details>
             </Suspense>
           )}
-          <div className="col-span-2 md:col-span-3 mt-2">
+          <div className="col-span-1 md:col-span-2 mt-2">
             {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
           </div>
         </section>

@@ -6,19 +6,32 @@ import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 
 import { weightRates, weightUnits } from '@/lib/constants/units';
 
-import { Faq } from '@/components/shared/faq';
 import { PageContainer } from '@/components/shared/page-container';
 import { weightFaqs } from '@/lib/constants/faq';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
 
 const Converter = lazy(() => import('@/components/pages/converter'));
+const Faq = lazy(() => import('@/components/shared/faq'));
 const pageKey = 'weightCalculator';
 
 export default async function WeightConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
   const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: weightFaqs[params.locale].map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
   return (
     <>
       <main className="flex flex-col items-center justify-center">
@@ -36,10 +49,13 @@ export default async function WeightConverterPage(props: Readonly<SharedPageProp
               />
             </Suspense>
           </div>
-          <Faq faqList={weightFaqs[params.locale]} />
+          <Suspense fallback={<>Loading...</>}>
+            <Faq faqList={weightFaqs[params.locale]} />
+          </Suspense>
         </PageContainer>
       </main>
-      <JsonSchema schema={pageSchema} />
+      <JsonSchema schema={faqSchema} />
+      {pageSchema && <JsonSchema schema={pageSchema} />}
     </>
   );
 }

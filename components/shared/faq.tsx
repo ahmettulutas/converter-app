@@ -8,21 +8,8 @@ type FaqProps = {
   containerClasses?: string;
 };
 
-export function Faq(props: Readonly<FaqProps>) {
+export default function Faq(props: Readonly<FaqProps>) {
   const { faqList, containerClasses } = props;
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqList.map(({ question, answer }) => ({
-      '@type': 'Question',
-      name: question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: answer,
-      },
-    })),
-  };
 
   return (
     <div className={cn('flex flex-col max-w-[800px] m-auto', containerClasses)}>
@@ -41,8 +28,6 @@ export function Faq(props: Readonly<FaqProps>) {
           </Accordion>
         </div>
       </div>
-
-      <JsonSchema schema={faqSchema} />
     </div>
   );
 }

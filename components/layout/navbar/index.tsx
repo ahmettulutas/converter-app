@@ -67,6 +67,7 @@ export const CollapsibleNavbar = () => {
                         className="flex items-center gap-2 py-2"
                         title={t(`labels.${label}`)}
                         href={`/${params.locale}${href}`}
+                        onClick={(o) => setOpen(!o)}
                       >
                         <Icon className="h-4 w-4" />
                         <span className="text-sm font-medium leading-none">{t(`labels.${label}`)}</span>

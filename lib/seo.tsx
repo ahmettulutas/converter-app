@@ -73,7 +73,7 @@ export const getDefaultMetaData = async (
     creator: 'Ahmet Ulutaş',
     authors: [{ name: 'Ahmet Ulutaş' }],
     publisher: 'Ahmet Ulutaş',
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
+    metadataBase: new URL(baseUrl),
     referrer: 'origin-when-cross-origin',
     keywords,
     verification: {

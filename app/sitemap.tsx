@@ -6,19 +6,11 @@ import { getAllBlogSlugs } from '@/actions/blog';
 
 const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) => {
   return availableLocales.map((locale) => {
-    if (locale === defaultLanguage) {
-      return {
-        url: `${baseUrl}${item}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-      };
-    } else {
-      return {
-        url: `${baseUrl}/${locale}${item}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-      };
-    }
+    return {
+      url: `${baseUrl}/${locale}${item}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+    };
   });
 });
 

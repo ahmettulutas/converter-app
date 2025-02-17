@@ -22,34 +22,37 @@ type GenerateMetaImageProps = {
   title: string;
 };
 
-export const generateMetaImages = ({ sanityImage, sizes, staticImage, title }: GenerateMetaImageProps) => {
-  if (!sanityImage && !staticImage?.url) return [];
+export const generateSanityOgImages = ({ sanityImage, sizes, title }: GenerateMetaImageProps) => {
+  if (!sanityImage) return [];
   const metaImages = [];
-  if (sanityImage) {
-    for (const { width, height } of sizes) {
-      const imgUrl = urlForImage(sanityImage)?.height(height).width(width).fit('crop').auto('format').url();
-      metaImages.push({
-        width,
-        height,
-        alt: sanityImage?.alt ?? title,
-        url: imgUrl,
-        secureUrl: imgUrl,
-      });
-    }
-  }
-
-  if (staticImage?.url) {
-    for (const { width, height } of sizes) {
-      metaImages.push({
-        width,
-        height,
-        alt: staticImage?.alt ?? title,
-        url: staticImage.url,
-      });
-    }
+  for (const { width, height } of sizes) {
+    const imgUrl = urlForImage(sanityImage)?.height(height).width(width).fit('crop').auto('format').url();
+    metaImages.push({
+      width,
+      height,
+      alt: sanityImage?.alt ?? title,
+      url: imgUrl,
+      secureUrl: imgUrl,
+    });
   }
   return metaImages;
 };
+
+const generateOgImages = (baseUrl: string, imagePath: string, title: string, sanityUrl: boolean = false) =>
+  ogImageSizes.map(({ width, height }) => ({
+    url: `${baseUrl}${imagePath}?w=${width}&h=${height}`,
+    width,
+    height,
+    alt: title,
+  }));
+
+const generateTwitterImages = (baseUrl: string, imagePath: string, title: string) =>
+  twitterImageSizes.map(({ width, height }) => ({
+    url: `${baseUrl}${imagePath}?w=${width}&h=${height}`,
+    width,
+    height,
+    alt: title,
+  }));
 
 export const getDefaultMetaData = async (
   locale: LocaleType,
@@ -79,17 +82,7 @@ export const getDefaultMetaData = async (
 
     openGraph: {
       title: t(`metaData.${pageKey}.title`),
-      images: [
-        ...generateMetaImages({
-          staticImage: {
-            url: opengraphImage.src,
-            alt: t(`metaData.${pageKey}.title`),
-          },
-          title: t(`metaData.${pageKey}.title`),
-          sizes: ogImageSizes,
-        }),
-        ...previousImages,
-      ],
+      images: [...generateOgImages(baseUrl, opengraphImage.src, t(`metaData.${pageKey}.title`)), ...previousImages],
       locale,
       type: 'website',
     },
@@ -99,14 +92,7 @@ export const getDefaultMetaData = async (
       description: t(`metaData.${pageKey}.description`),
       creator: 'Ahmet Ulutaş',
       images: [
-        ...generateMetaImages({
-          staticImage: {
-            url: opengraphImage.src,
-            alt: t(`metaData.${pageKey}.title`),
-          },
-          title: t(`metaData.${pageKey}.title`),
-          sizes: twitterImageSizes,
-        }),
+        ...generateTwitterImages(baseUrl, opengraphImage.src, t(`metaData.${pageKey}.title`)),
         ...previousImages,
       ],
     },
@@ -144,7 +130,7 @@ export async function getLocalizedJsonLd(locale: LocaleType, pageKey: string) {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: t(`metaData.${pageKey}.title`),
-    url: locale === defaultLanguage ? `${baseUrl}${pathname}` : `${baseUrl}/${locale}${pathname}`,
+    url: `${baseUrl}/${locale}${pathname}`,
     applicationCategory: t('labels.applicationCategory'),
     operatingSystem: 'All',
     description: t(`metaData.${pageKey}.description`),

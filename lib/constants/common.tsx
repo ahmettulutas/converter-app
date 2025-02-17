@@ -21,17 +21,14 @@ export const navLinks = [
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [
-  { width: 800, height: 600 },
-  { width: 1800, height: 1600 },
+  { width: 1200, height: 630 }, // Standard OG size
+  { width: 1600, height: 840 }, // High-res option
+  { width: 800, height: 419 }, // Smaller fallback
 ];
 export const twitterImageSizes = [
-  { width: 800, height: 418 },
-  { width: 1600, height: 900 },
+  { width: 800, height: 419 }, // Rounded for correct aspect ratio
+  { width: 1600, height: 840 }, // Adjusted for 1.91:1
+  { width: 1200, height: 630 }, // Best practice
 ];
 
 export const companyName = 'EqualtoWhat';
-
-export const commonSizes = [
-  { width: 1200, height: 630 }, // Open Graph
-  { width: 800, height: 600 }, // Twitter
-];

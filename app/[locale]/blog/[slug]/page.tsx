@@ -5,9 +5,9 @@ import RichTextContent from '@/components/shared/rich-text-content';
 import { TableOfContentSkeleton } from '@/components/skeletons/table-of-content';
 import { createTranslation } from '@/i18n';
 import { defaultLanguage, LocaleType } from '@/i18n/settings';
-import { commonSizes } from '@/lib/constants/common';
+import { ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 import { urlForImage } from '@/lib/sanity/helpers/image-fns';
-import { generateBlogPostSchema, generateMetaImages, getDefaultMetaData } from '@/lib/seo';
+import { generateBlogPostSchema, generateSanityOgImages, getDefaultMetaData } from '@/lib/seo';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -125,10 +125,15 @@ export async function generateMetadata({ params }: BlogDetailPageProps, parent: 
   const { t } = await createTranslation(locale, 'translation');
   const metaTitle = blogPost.title ?? t('metaData.defaultTitle');
   const metaDescription = blogPost.description ?? t('metaData.defaultBlogDesc');
-
-  const allGeneratedImages = generateMetaImages({
+  const previousImages = (await parent).openGraph?.images || [];
+  const ogImages = generateSanityOgImages({
     sanityImage: blogPost?.coverImage,
-    sizes: commonSizes,
+    sizes: ogImageSizes,
+    title: metaTitle,
+  });
+  const twitterImages = generateSanityOgImages({
+    sanityImage: blogPost?.coverImage,
+    sizes: twitterImageSizes,
     title: metaTitle,
   });
 
@@ -136,7 +141,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps, parent: 
     title: metaTitle,
     description: metaDescription,
     openGraph: {
-      images: allGeneratedImages.length > 0 ? allGeneratedImages : [],
+      images: [...ogImages, ...previousImages],
       description: metaDescription,
       title: metaTitle,
     },
@@ -144,7 +149,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps, parent: 
       card: 'summary',
       title: metaTitle,
       description: metaDescription,
-      images: allGeneratedImages.length > 0 ? allGeneratedImages : [],
+      images: [...twitterImages, ...previousImages],
       site: process.env.NEXT_PUBLIC_BASE_URL,
     },
     alternates: {

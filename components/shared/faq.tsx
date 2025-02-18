@@ -1,6 +1,6 @@
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { TranslatedTitle } from './translated-title';
-import { JsonSchema } from './json.ld';
+// import { JsonSchema } from './json.ld';
 import { cn } from '@/lib/utils/styles';
 
 type FaqProps = {

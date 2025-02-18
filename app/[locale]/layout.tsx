@@ -7,7 +7,6 @@ import { Suspense } from 'react';
 import { LoadingSpinner } from '@/components/shared/loading-spinner';
 import AdSense from '@/components/shared/ads';
 import './globals.css';
-import Sidebar from '@/components/layout/sidebar';
 
 import Script from 'next/script';
 export const metadata: Metadata = {

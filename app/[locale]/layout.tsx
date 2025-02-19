@@ -27,16 +27,15 @@ export default function RootLayout(props: LocaleRouteLayout) {
   return (
     <html lang={params.locale} dir={dir(params.locale)} className="scroll-smooth">
       <meta name="google-adsense-account" content="ca-pub-9880416599476522"></meta>
-      <head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KCYH24DV1Q"></Script>
-        <Script
-          src={`window.dataLayer = window.dataLayer || [];
+      <head></head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KCYH24DV1Q"></Script>
+      <Script
+        src={`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-KCYH24DV1Q');`}
-        ></Script>
-      </head>
+      ></Script>
       <body className={inter.className}>
         <AdSense />
         <CollapsibleNavbar />

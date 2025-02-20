@@ -51,15 +51,15 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
   );
 }
 
-export async function generateMetadata({ params, searchParams }: SharedPageProps, parent: ResolvingMetadata) {
-  if (!searchParams?.sign) {
-    return getDefaultMetaData(params.locale, parent, pageKey);
+export async function generateMetadata(props: SharedPageProps, parent: ResolvingMetadata) {
+  if (!props?.searchParams?.sign) {
+    return getDefaultMetaData(props?.params?.locale, parent, pageKey);
   }
   return getDefaultMetaData(
-    params.locale,
+    props?.params.locale,
     parent,
     pageKey,
-    { key: 'metaData.risingSignCalculator.dynamicPageTitle', params: { sign: String(searchParams?.sign) } },
-    { key: 'metaData.risingSignCalculator.dynamicPageDescription', params: { sign: String(searchParams?.sign) } }
+    { key: 'metaData.risingSignCalculator.dynamicPageTitle', params: { sign: String(props?.searchParams?.sign) } },
+    { key: 'metaData.risingSignCalculator.dynamicPageDescription', params: { sign: String(props?.searchParams?.sign) } }
   );
 }

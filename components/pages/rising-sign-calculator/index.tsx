@@ -25,7 +25,7 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
   const [risingSign, setRisingSign] = useState<string | null>(null);
   const { t } = useTranslation(currentLocale, 'translation');
   const params = useSearchParams();
-  const sign = params.get('sign');
+  const sign = params?.get('sign');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

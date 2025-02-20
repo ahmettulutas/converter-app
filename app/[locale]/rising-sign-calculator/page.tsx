@@ -52,9 +52,8 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
 }
 
 export async function generateMetadata({ params, searchParams }: SharedPageProps, parent: ResolvingMetadata) {
-  const { t } = await createTranslation(params.locale, 'translation');
-
   if (searchParams?.sign) {
+    const { t } = await createTranslation(params.locale, 'translation');
     const title = t('metaData.risingSignCalculator.dynamicPageTitle', { sign: searchParams?.sign });
     const description = t('metaData.risingSignCalculator.dynamicPageDescription', { sign: searchParams?.sign });
     return getDefaultMetaData(params.locale, parent, pageKey, title, description);

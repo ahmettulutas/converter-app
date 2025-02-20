@@ -1,4 +1,3 @@
-import { createTranslation } from '@/i18n';
 import { SharedPageProps } from '../layout';
 
 import { ResolvingMetadata } from 'next';
@@ -9,6 +8,7 @@ import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
+import { createTranslation } from '@/i18n';
 
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
@@ -52,15 +52,14 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
 }
 
 export async function generateMetadata({ params, searchParams }: SharedPageProps, parent: ResolvingMetadata) {
-  const { t } = await createTranslation(params.locale, 'translation');
-  const title = t('metaData.risingSignCalculator.dynamicPageTitle', { sign: searchParams?.sign });
-  const description = t('metaData.risingSignCalculator.dynamicPageDescription', { sign: searchParams?.sign });
-  return getDefaultMetaData(params.locale, parent, pageKey, title, description);
-  /*   if (searchParams?.sign) {
-    const title = t('metaData.risingSignCalculator.dynamicPageTitle', { sign: searchParams?.sign });
-    const description = t('metaData.risingSignCalculator.dynamicPageDescription', { sign: searchParams?.sign });
-    return getDefaultMetaData(params.locale, parent, pageKey, title, description);
+  if (searchParams?.sign) {
+    return getDefaultMetaData(
+      params.locale,
+      parent,
+      pageKey,
+      { key: 'metaData.risingSignCalculator.dynamicPageTitle', params: { sign: String(searchParams?.sign) } },
+      { key: 'metaData.risingSignCalculator.dynamicPageDescription', params: { sign: String(searchParams?.sign) } }
+    );
   }
   return getDefaultMetaData(params.locale, parent, pageKey);
-  */
 }

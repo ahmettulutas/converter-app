@@ -1,17 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { ComboBoxResponsive } from '@/components/shared/combobox';
-import { countriesData } from '@/lib/constants/countries-data';
+
 import { LocaleType } from '@/i18n/settings';
-import { citiesData } from '@/lib/constants/cities-data';
 
 import { useTranslation } from '@/i18n/client';
 import { RisingSignProps, calculateRisingSign } from '@/lib/utils/calculate-rising';
 import { useSearchParams } from 'next/navigation';
+import ComboboxSkeleton from '@/components/skeletons/combobox';
+
+const CountryComboBox = lazy(() => import('./countries-selector'));
+const CityComboBox = lazy(() => import('./cities-selector'));
 
 export default function RisingSignCalculator({ currentLocale }: Readonly<{ currentLocale: LocaleType }>) {
   const [birthInfo, setBirthInfo] = useState<RisingSignProps>({
@@ -43,20 +45,6 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
     const calculatedSign = calculateRisingSign(birthInfo);
     setRisingSign(calculatedSign);
   };
-
-  const memoizedCountryData = countriesData.map((country) => ({
-    value: String(country.id),
-    label: country.translations[currentLocale] ?? country.translations.en,
-  }));
-
-  const memoizedCityData = birthInfo.country
-    ? citiesData?.[String(birthInfo.country) as keyof typeof citiesData]?.map((item) => ({
-        value: item.id,
-        label: item.name,
-        longitude: item.longitude,
-        latitude: item.latitude,
-      }))
-    : [];
 
   return (
     <Card className="w-full max-w-md mx-auto">
@@ -98,42 +86,40 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
           </div>
           <div className="space-y-2">
             <label htmlFor="country">{t('labels.country')}</label>
-            <ComboBoxResponsive
-              triggerProps={{
-                variant: 'outline',
-                className: 'col-span-2 justify-between w-full overflow-hidden',
-              }}
-              value={birthInfo.country}
-              title={t('labels.selectCountry')}
-              data={memoizedCountryData}
-              handleChange={(e) =>
-                setBirthInfo({ ...birthInfo, country: String(e), city: '', latitude: 0, longitude: 0 })
-              }
-            />
+            <Suspense fallback={<ComboboxSkeleton />}>
+              <CountryComboBox
+                currentLocale={currentLocale}
+                value={birthInfo.country}
+                title={t('labels.selectCountry')}
+                onChange={(selectedCountry) =>
+                  setBirthInfo({
+                    ...birthInfo,
+                    country: selectedCountry,
+                    city: '',
+                    latitude: 0,
+                    longitude: 0,
+                  })
+                }
+              />
+            </Suspense>
           </div>
           <div className="space-y-2">
             <label htmlFor="city">{t('labels.city')}</label>
-            <ComboBoxResponsive
-              triggerProps={{
-                variant: 'outline',
-                className: 'col-span-2 justify-between w-full overflow-hidden',
-                disabled: !birthInfo.country,
-              }}
-              value={Number(birthInfo.city)}
-              title={t('labels.selectCity')}
-              data={memoizedCityData}
-              handleChange={(e) => {
-                const selectedCity = memoizedCityData.find((city) => city.value === e);
-                if (selectedCity) {
+            <Suspense fallback={<ComboboxSkeleton />}>
+              <CityComboBox
+                selectedCountry={birthInfo.country}
+                selectedCity={birthInfo.city}
+                title={t('labels.selectCity')}
+                onChange={(selectedCity, latitude, longitude) =>
                   setBirthInfo((prev) => ({
                     ...prev,
-                    city: String(e),
-                    longitude: Number(selectedCity.longitude),
-                    latitude: Number(selectedCity.latitude),
-                  }));
+                    city: selectedCity,
+                    latitude,
+                    longitude,
+                  }))
                 }
-              }}
-            />
+              />
+            </Suspense>
           </div>
           <Button type="submit" className="w-full">
             {t('labels.calculate')}

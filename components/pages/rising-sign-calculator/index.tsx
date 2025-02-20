@@ -11,6 +11,7 @@ import { citiesData } from '@/lib/constants/cities-data';
 
 import { useTranslation } from '@/i18n/client';
 import { RisingSignProps, calculateRisingSign } from '@/lib/utils/calculate-rising';
+import { useSearchParams } from 'next/navigation';
 
 export default function RisingSignCalculator({ currentLocale }: Readonly<{ currentLocale: LocaleType }>) {
   const [birthInfo, setBirthInfo] = useState<RisingSignProps>({
@@ -23,6 +24,8 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
   });
   const [risingSign, setRisingSign] = useState<string | null>(null);
   const { t } = useTranslation(currentLocale, 'translation');
+  const params = useSearchParams();
+  const sign = params.get('sign');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -58,7 +61,15 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>{t('labels.risingSignCalculator')}</CardTitle>
+        <CardTitle>
+          {sign ? (
+            <p>
+              {t('labels.welcome')} <span className="underline text-red-600">{t(`labels.${sign}`)}</span>
+            </p>
+          ) : (
+            t('labels.risingSignCalculator')
+          )}
+        </CardTitle>
         <CardDescription>{t('labels.risignCardDesc')}</CardDescription>
       </CardHeader>
       <CardContent>

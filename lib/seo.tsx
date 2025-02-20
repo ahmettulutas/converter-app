@@ -57,7 +57,9 @@ const generateTwitterImages = (baseUrl: string, imagePath: string, title: string
 export const getDefaultMetaData = async (
   locale: LocaleType,
   parent: ResolvingMetadata,
-  pageKey: string
+  pageKey: string,
+  dynamicTitle?: string,
+  dynamicDescription?: string
 ): Promise<Metadata> => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await createTranslation(locale, 'translation'); // This is not actually a hook, so I intentionally ignored it here.
@@ -65,9 +67,13 @@ export const getDefaultMetaData = async (
   const keywords: Array<string> = t(`metaData.${pageKey}.keywords`, {
     returnObjects: true,
   });
+  const defaultTitle = t(`metaData.${pageKey}.title`);
+  const defaultDescription = t(`metaData.${pageKey}.description`);
+  const title = dynamicTitle ?? defaultTitle;
+  const description = dynamicDescription ?? defaultDescription;
   return {
-    title: t(`metaData.${pageKey}.title`),
-    description: t(`metaData.${pageKey}.description`),
+    title,
+    description,
     applicationName: t(`metaData.applicationName`),
     category: t(`metaData.${pageKey}.category`),
     creator: 'Ahmet Ulutaş',
@@ -81,20 +87,17 @@ export const getDefaultMetaData = async (
     },
 
     openGraph: {
-      title: t(`metaData.${pageKey}.title`),
-      images: [...generateOgImages(baseUrl, opengraphImage.src, t(`metaData.${pageKey}.title`)), ...previousImages],
+      title,
+      images: [...generateOgImages(baseUrl, opengraphImage.src, title), ...previousImages],
       locale,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: t(`metaData.${pageKey}.title`),
-      description: t(`metaData.${pageKey}.description`),
+      title,
+      description,
       creator: 'Ahmet Ulutaş',
-      images: [
-        ...generateTwitterImages(baseUrl, opengraphImage.src, t(`metaData.${pageKey}.title`)),
-        ...previousImages,
-      ],
+      images: [...generateTwitterImages(baseUrl, opengraphImage.src, title), ...previousImages],
     },
     formatDetection: {
       email: false,

@@ -1,4 +1,4 @@
-import { SharedPageProps } from '../layout';
+import { SharedPageProps } from '../../layout';
 
 import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';

@@ -58,8 +58,8 @@ export const getDefaultMetaData = async (
   locale: LocaleType,
   parent: ResolvingMetadata,
   pageKey: string,
-  titleObj?: { key: string; params?: Record<string, string | undefined> },
-  descriptionObj?: { key: string; params?: Record<string, string | undefined> }
+  dynamicTitle?: string,
+  dynamicDescription?: string
 ): Promise<Metadata> => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await createTranslation(locale, 'translation'); // This is not actually a hook, so I intentionally ignored it here.
@@ -69,8 +69,8 @@ export const getDefaultMetaData = async (
   });
   const defaultTitle = t(`metaData.${pageKey}.title`);
   const defaultDescription = t(`metaData.${pageKey}.description`);
-  const title = titleObj ? t(titleObj.key, { ...titleObj.params }) : defaultTitle;
-  const description = descriptionObj ? t(descriptionObj.key, { ...descriptionObj.params }) : defaultDescription;
+  const title = dynamicTitle ?? defaultTitle;
+  const description = dynamicDescription ?? defaultDescription;
   return {
     title,
     description,

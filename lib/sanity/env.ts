@@ -1,5 +1,6 @@
-// const currentDate = new Date();
-export const apiVersion = '2024-12-08';
+import { format } from 'date-fns';
+
+export const apiVersion = 'v2025-02-21';
 
 export const dataset = assertValue(
   process.env.NEXT_PUBLIC_SANITY_DATASET,
@@ -11,12 +12,7 @@ export const projectId = assertValue(
   'Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID'
 );
 
-export const baseUrl = assertValue(
-  process.env.NEXT_PUBLIC_BASE_URL,
-  'Missing environment variable: NEXT_PUBLIC_BASE_URL'
-);
-
-export const useCdn = process.env.NODE_ENV === 'production';
+export const useCdn = false;
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {

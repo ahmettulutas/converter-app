@@ -1,8 +1,8 @@
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { ResolvingMetadata } from 'next';
 import { Inter } from 'next/font/google';
 import { dir } from 'i18next';
 import { LocaleType, availableLocales } from '@/i18n/settings';
-import { CollapsibleNavbar } from '@/components/layout/navbar';
+
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/components/shared/loading-spinner';
 import AdSense from '@/components/shared/ads';
@@ -10,6 +10,9 @@ import './globals.css';
 
 /* import Script from 'next/script'; */
 import { getDefaultMetaData } from '@/lib/seo';
+import { ThemeProvider } from 'next-themes';
+import { AppSidebar } from '@/components/layout/sidebar/app-sidebar';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 
 export type SharedPageProps = {
   params: { locale: LocaleType };
@@ -37,9 +40,21 @@ export default function RootLayout(props: LocaleRouteLayout) {
   gtag('config', 'G-KCYH24DV1Q');`}
       ></Script> */}
       <body className={inter.className}>
-        <AdSense />
-        <CollapsibleNavbar />
-        <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <SidebarProvider>
+            <div className="flex min-h-screen w-full">
+              <AppSidebar />
+              <AdSense />
+              {/* <CollapsibleNavbar /> */}
+              <Suspense fallback={<LoadingSpinner />}>
+                <main className="flex-1 overflow-auto">
+                  <SidebarTrigger />
+                  {children}
+                </main>
+              </Suspense>
+            </div>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

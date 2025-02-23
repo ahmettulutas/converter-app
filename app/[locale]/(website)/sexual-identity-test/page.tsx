@@ -15,11 +15,11 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
 
   return (
     <>
-      <main className="flex flex-col items-center justify-center">
+      <article className="flex flex-col items-center justify-center">
         <Suspense fallback={<>Loading...</>}>
           <SexualOrientationTest currentLocale={params.locale} />
         </Suspense>
-      </main>
+      </article>
       {pageSchema && <JsonSchema schema={pageSchema} />}
     </>
   );

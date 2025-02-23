@@ -33,7 +33,7 @@ export default async function Page(props: Readonly<SharedPageProps>) {
   };
   return (
     <>
-      <main className="flex flex-col items-center justify-center">
+      <article className="flex flex-col items-center justify-center">
         <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
           <div className="flex-1">
             <h1 className="text-center text-2xl my-2">{t('labels.mortgageCalculator')}</h1>
@@ -45,7 +45,7 @@ export default async function Page(props: Readonly<SharedPageProps>) {
             <Faq faqList={mortgageFaqs[params.locale]} />
           </Suspense>
         </PageContainer>
-      </main>
+      </article>
       <JsonSchema schema={faqSchema} />
       {pageSchema && <JsonSchema schema={pageSchema} />}
     </>

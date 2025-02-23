@@ -19,8 +19,8 @@ export const navCategories = [
     icon: Calculator,
     links: [
       { href: '/', label: 'lengthCalculator', icon: Ruler },
-      { href: '/weight-converter', label: 'weightCalculator', icon: Weight },
-      { href: '/square-calculator', label: 'squareCalculator', icon: Square },
+      { href: '/weight-converter', label: 'labels.weightCalculator', icon: Weight },
+      { href: '/square-calculator', label: 'labels.squareCalculator', icon: Square },
     ],
   },
   {
@@ -28,8 +28,8 @@ export const navCategories = [
     label: 'labels.astrology',
     icon: Sun,
     links: [
-      { href: '/rising-sign-calculator', label: 'risingSignCalculator', icon: Compass },
-      { href: '/sun-sign-calculator', label: 'sunSignCalculator', icon: Sun },
+      { href: '/rising-sign-calculator', label: 'labels.risingSignCalculator', icon: Compass },
+      { href: '/sun-sign-calculator', label: 'labels.sunSignCalculator', icon: Sun },
     ],
   },
   {
@@ -37,16 +37,16 @@ export const navCategories = [
     label: 'labels.tools',
     icon: Scales,
     links: [
-      { href: '/percentage-calculator', label: 'percentageCalculator', icon: Percent },
-      { href: '/mortgage-calculator', label: 'mortgageCalculator', icon: Home },
-      { href: '/sexual-identity-test', label: 'sexualIdentityTest', icon: Heart },
+      { href: '/percentage-calculator', label: 'labels.percentageCalculator', icon: Percent },
+      { href: '/mortgage-calculator', label: 'labels.mortgageCalculator', icon: Home },
+      { href: '/sexual-identity-test', label: 'labels.sexualIdentityTest', icon: Heart },
     ],
   },
   {
     category: 'content',
     label: 'labels.content',
     icon: BookIcon,
-    links: [{ href: '/blog', label: 'blog', icon: BookIcon }],
+    links: [{ href: '/blog', label: 'labels.blog', icon: BookIcon }],
   },
 ];
 export const staticPageUrls = [

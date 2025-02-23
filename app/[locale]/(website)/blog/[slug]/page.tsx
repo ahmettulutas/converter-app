@@ -2,10 +2,11 @@ import { getAllBlogSlugs, getBlogBySlug } from '@/actions/blog';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { PageContainer } from '@/components/shared/page-container';
 import RichTextContent from '@/components/shared/rich-text-content';
+import { SocialShareLinks } from '@/components/shared/share-social-media';
 import { TableOfContentSkeleton } from '@/components/skeletons/table-of-content';
 import { createTranslation } from '@/i18n';
 import { defaultLanguage, LocaleType } from '@/i18n/settings';
-import { ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
+import { baseUrl, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 import { urlForImage } from '@/lib/sanity/helpers/image-fns';
 import { generateBlogPostSchema, generateSanityOgImages, getDefaultMetaData } from '@/lib/seo';
 import { Metadata, ResolvingMetadata } from 'next';
@@ -88,6 +89,9 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
             </div>
           </div>
         </PageContainer>
+        <div className="my-4 ml-auto w-min">
+          <SocialShareLinks shareUrl={`${baseUrl}/${locale}/blog/${slug}`} />
+        </div>
       </article>
       <JsonSchema schema={generateBlogPostSchema(data.blog)} />
       {data.blog.faq && (

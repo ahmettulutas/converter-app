@@ -11,11 +11,10 @@ import { useTranslation } from '@/i18n/client';
 import { RisingSignProps, calculateRisingSign } from '@/lib/utils/calculate-rising';
 import { useParams } from 'next/navigation';
 import ComboboxSkeleton from '@/components/skeletons/combobox';
-import Result from './result';
-import SignResult from './result';
 
 const CountryComboBox = lazy(() => import('./countries-selector'));
 const CityComboBox = lazy(() => import('./cities-selector'));
+const SignResult = lazy(() => import('./result'));
 
 export default function RisingSignCalculator({ currentLocale }: Readonly<{ currentLocale: LocaleType }>) {
   const [birthInfo, setBirthInfo] = useState<RisingSignProps>({
@@ -128,7 +127,13 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
           </Button>
         </form>
       </CardContent>
-      <CardFooter>{risingSign && <SignResult risingSign={risingSign} />}</CardFooter>
+      <CardFooter>
+        {risingSign && (
+          <Suspense fallback={<>Loading...</>}>
+            <SignResult risingSign={risingSign} />
+          </Suspense>
+        )}
+      </CardFooter>
     </Card>
   );
 }

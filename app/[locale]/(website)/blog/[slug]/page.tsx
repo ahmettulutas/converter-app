@@ -78,7 +78,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
             {data?.blog?.headings?.length > 0 && (
               <Suspense fallback={<TableOfContentSkeleton />}>
-                <details className="border p-4 border-lightChampaigne col-span-1 md:sticky top-2 h-min bg-white" open>
+                <details className="border p-4 col-span-1 md:sticky top-2 h-min bg-background" open>
                   <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
                   <TableOfContent headings={data?.blog?.headings} language={'locale'} />
                 </details>

@@ -15,7 +15,6 @@ import CalculatorContainer from '@/components/layout/calculator-container';
 
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
-const Faq = lazy(() => import('@/components/shared/faq'));
 
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;

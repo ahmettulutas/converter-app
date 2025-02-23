@@ -18,7 +18,7 @@ const CountryComboBox: React.FC<CountryComboBoxProps> = ({ value, title, onChang
       value: String(country.value),
       label: country.label,
     }));
-  }, []);
+  }, [currentLocale]);
   return (
     <ComboBoxResponsive
       triggerProps={{

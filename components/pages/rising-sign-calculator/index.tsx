@@ -11,6 +11,7 @@ import { useTranslation } from '@/i18n/client';
 import { RisingSignProps, calculateRisingSign } from '@/lib/utils/calculate-rising';
 import { useParams } from 'next/navigation';
 import ComboboxSkeleton from '@/components/skeletons/combobox';
+import Link from 'next/link';
 
 const CountryComboBox = lazy(() => import('./countries-selector'));
 const CityComboBox = lazy(() => import('./cities-selector'));
@@ -127,11 +128,18 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
           </Button>
         </form>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex-col gap-y-2">
         {risingSign && (
-          <Suspense fallback={<>Loading...</>}>
-            <SignResult risingSign={risingSign} />
-          </Suspense>
+          <>
+            <Suspense fallback={<>Loading...</>}>
+              <SignResult risingSign={risingSign} />
+            </Suspense>
+            <Link href={`/${params.locale}/blog/ascendant-sign-calculator-discover-your-rising-sign-instantly`}>
+              <Button className="underline" variant={'outline'}>
+                {t('labels.risingDiscover')}
+              </Button>
+            </Link>
+          </>
         )}
       </CardFooter>
     </Card>

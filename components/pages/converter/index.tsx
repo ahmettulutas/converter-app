@@ -118,7 +118,7 @@ const Converter = <T extends readonly SelectType[]>(props: ConverterProps<T>) =>
                 defaultValue={outputValue}
                 placeholder={t('labels.result')}
                 disabled
-                className="disabled:opacity-100 bg-gray-100 disabled:cursor-default"
+                className="disabled:opacity-100 disabled:cursor-default"
               />
             </div>
           </div>

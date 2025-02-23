@@ -18,7 +18,7 @@ export const navCategories = [
     label: 'labels.converters',
     icon: Calculator,
     links: [
-      { href: '/', label: 'lengthCalculator', icon: Ruler },
+      { href: '/', label: 'labels.lengthCalculator', icon: Ruler },
       { href: '/weight-converter', label: 'labels.weightCalculator', icon: Weight },
       { href: '/square-calculator', label: 'labels.squareCalculator', icon: Square },
     ],

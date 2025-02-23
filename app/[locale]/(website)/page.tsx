@@ -9,6 +9,7 @@ import { lengthRates, lengthUnits } from '@/lib/constants/units';
 import { lengthFaqs } from '@/lib/constants/faq';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
+import CalculatorContainer from '@/components/layout/calculator-container';
 
 const Faq = lazy(() => import('@/components/shared/faq'));
 const pageKey = 'lengthCalculator';
@@ -33,10 +34,11 @@ export default async function LengthConverterPage(props: Readonly<SharedPageProp
   return (
     <>
       <article className="flex flex-col items-center justify-center w-full">
-        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
-          <div className="flex-1">
-            <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
-            <Suspense fallback={<>Loading...</>}>
+        <PageContainer className="flex flex-col gap-y-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
+          <CalculatorContainer
+            faqProps={{ faqList: lengthFaqs[params.locale] }}
+            calculator={
               <Converter
                 units={lengthUnits}
                 initialInputUnit="meters"
@@ -45,11 +47,8 @@ export default async function LengthConverterPage(props: Readonly<SharedPageProp
                 title={t('labels.lengthCalculator')}
                 description={t('metaData.lengthCalculator.description')}
               />
-            </Suspense>
-          </div>
-          <Suspense fallback={<>Loading...</>}>
-            <Faq faqList={lengthFaqs[params.locale]} />
-          </Suspense>
+            }
+          />
         </PageContainer>
       </article>
       <JsonSchema schema={faqSchema} />

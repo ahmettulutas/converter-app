@@ -9,6 +9,7 @@ import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
+import CalculatorContainer from '@/components/layout/calculator-container';
 
 const PercentageCalculator = lazy(() => import('@/components/pages/percentage-calculator'));
 const Faq = lazy(() => import('@/components/shared/faq'));
@@ -32,18 +33,13 @@ export default async function Page(props: Readonly<SharedPageProps>) {
   };
   return (
     <>
-      <article className="flex flex-col items-center justify-center">
-        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
-          <div className="flex-1">
-            <h1 className="text-center text-2xl my-2">{t('labels.percentageCalculator')}</h1>
-            <Suspense fallback={<>Loading...</>}>
-              <PercentageCalculator currentLocale={params.locale} />
-            </Suspense>
-          </div>
-
-          <Suspense fallback={<>Loading...</>}>
-            <Faq faqList={percentageFaqs[params.locale]} />
-          </Suspense>
+      <article>
+        <PageContainer className="flex flex-col gap-y-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.percentageCalculator')}</h1>
+          <CalculatorContainer
+            faqProps={{ faqList: percentageFaqs[params.locale] }}
+            calculator={<PercentageCalculator currentLocale={params.locale} />}
+          />
         </PageContainer>
       </article>
       <JsonSchema schema={faqSchema} />

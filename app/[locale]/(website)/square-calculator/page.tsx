@@ -8,6 +8,7 @@ import { squareMeterConverterFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
+import CalculatorContainer from '@/components/layout/calculator-container';
 
 const SquareCalculator = lazy(() => import('@/components/pages/square-meter-calculator'));
 const Faq = lazy(() => import('@/components/shared/faq'));
@@ -31,17 +32,13 @@ export default async function SquareCalculatorPage(props: Readonly<SharedPagePro
   };
   return (
     <>
-      <article className="flex flex-col items-center justify-center">
-        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
-          <div className="flex-1">
-            <h1 className="text-center text-2xl my-2">{t('labels.squareCalculator')}</h1>
-            <Suspense fallback={<>Loading...</>}>
-              <SquareCalculator />
-            </Suspense>
-          </div>
-          <Suspense fallback={<>Loading...</>}>
-            <Faq faqList={squareMeterConverterFAQs[params.locale]} />
-          </Suspense>
+      <article className="flex flex-col items-center justify-center w-full">
+        <PageContainer className="flex flex-col gap-y-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
+          <CalculatorContainer
+            faqProps={{ faqList: squareMeterConverterFAQs[params.locale] }}
+            calculator={<SquareCalculator />}
+          />
         </PageContainer>
       </article>
       <JsonSchema schema={faqSchema} />

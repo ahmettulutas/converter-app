@@ -44,14 +44,14 @@ export function LanguageSelector(props: Readonly<ComboboxProps>) {
   const buttonContent = (
     <>
       <LanguagesIcon className="h-[1.2rem] w-[1.2rem]" />
-      <p className={cn('max-w-[95%] overflow-hidden)')}>{selectedVal ? selectedVal.label : title}</p>
+      <p>{selectedVal ? selectedVal.label : title}</p>
     </>
   );
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="px-2">
           {buttonContent}
         </Button>
       </DropdownMenuTrigger>

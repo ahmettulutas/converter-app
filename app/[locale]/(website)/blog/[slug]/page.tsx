@@ -52,42 +52,43 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
   const heroImg = data.blog.coverImage ? urlForImage(data.blog.coverImage).height(500).width(500).url() : null;
 
   return (
-    <article className="scroll-smooth">
-      <PageContainer>
-        <div>
-          <h1 className="text-4xl md:text-6xl mb-10 lg:text-5xl text-center">{data?.blog?.title}</h1>
-        </div>
-        {heroImg && (
-          <div className="relative aspect-video w-full flex-1">
-            <Image
-              src={heroImg}
-              alt={data.blog.coverImage.alt ?? data.blog.title}
-              fill
-              placeholder="blur"
-              sizes="100vw"
-              style={{ objectFit: 'cover' }}
-              {...(data.blog?.coverImage?.blurDataURL && {
-                placeholder: 'blur',
-                blurDataURL: data.blog.coverImage.blurDataURL,
-              })}
-            />
+    <>
+      <article>
+        <PageContainer className="max-w-5xl">
+          <div>
+            <h1 className="text-4xl md:text-6xl mb-10 lg:text-5xl text-center">{data?.blog?.title}</h1>
           </div>
-        )}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
-          {data?.blog?.headings?.length > 0 && (
-            <Suspense fallback={<TableOfContentSkeleton />}>
-              <details className="border p-4 border-lightChampaigne col-span-1 md:sticky top-2 h-min bg-white" open>
-                <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
-                <TableOfContent headings={data?.blog?.headings} language={'locale'} />
-              </details>
-            </Suspense>
+          {heroImg && (
+            <div className="relative aspect-video w-full flex-1">
+              <Image
+                src={heroImg}
+                alt={data.blog.coverImage.alt ?? data.blog.title}
+                fill
+                placeholder="blur"
+                sizes="100vw"
+                style={{ objectFit: 'cover' }}
+                {...(data.blog?.coverImage?.blurDataURL && {
+                  placeholder: 'blur',
+                  blurDataURL: data.blog.coverImage.blurDataURL,
+                })}
+              />
+            </div>
           )}
-          <div className="col-span-1 md:col-span-2 mt-2">
-            {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
+            {data?.blog?.headings?.length > 0 && (
+              <Suspense fallback={<TableOfContentSkeleton />}>
+                <details className="border p-4 border-lightChampaigne col-span-1 md:sticky top-2 h-min bg-white" open>
+                  <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
+                  <TableOfContent headings={data?.blog?.headings} language={'locale'} />
+                </details>
+              </Suspense>
+            )}
+            <div className="col-span-1 md:col-span-2 mt-2">
+              {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
+            </div>
           </div>
-        </div>
-      </PageContainer>
-
+        </PageContainer>
+      </article>
       <JsonSchema schema={generateBlogPostSchema(data.blog)} />
       {data.blog.faq && (
         <JsonSchema
@@ -105,7 +106,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
           }}
         />
       )}
-    </article>
+    </>
   );
 }
 

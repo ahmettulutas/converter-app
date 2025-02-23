@@ -10,6 +10,7 @@ import { PageContainer } from '@/components/shared/page-container';
 import { weightFaqs } from '@/lib/constants/faq';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { Suspense, lazy } from 'react';
+import CalculatorContainer from '@/components/layout/calculator-container';
 
 const Converter = lazy(() => import('@/components/pages/converter'));
 const Faq = lazy(() => import('@/components/shared/faq'));
@@ -34,11 +35,12 @@ export default async function WeightConverterPage(props: Readonly<SharedPageProp
   };
   return (
     <>
-      <article className="flex flex-col items-center justify-center">
-        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
-          <div className="flex-1">
-            <h1 className="text-center text-2xl my-2">{t('labels.weightCalculator')}</h1>
-            <Suspense fallback={<>Loading...</>}>
+      <article className="flex flex-col items-center justify-center w-full">
+        <PageContainer className="flex flex-col gap-y-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
+          <CalculatorContainer
+            faqProps={{ faqList: weightFaqs[params.locale] }}
+            calculator={
               <Converter
                 units={weightUnits}
                 initialInputUnit="kilograms"
@@ -47,11 +49,8 @@ export default async function WeightConverterPage(props: Readonly<SharedPageProp
                 title={t('labels.weightCalculator')}
                 description={t('metaData.weightCalculator.description')}
               />
-            </Suspense>
-          </div>
-          <Suspense fallback={<>Loading...</>}>
-            <Faq faqList={weightFaqs[params.locale]} />
-          </Suspense>
+            }
+          />
         </PageContainer>
       </article>
       <JsonSchema schema={faqSchema} />

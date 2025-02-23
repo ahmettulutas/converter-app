@@ -45,7 +45,7 @@ const myPortableTextComponents = {
         // use the node key as the id, it's guaranteed unique
         // one can also slugify the children spans if one want
         // nicer URLs
-        <HeadingTag id={node._key} className="text-2xl lg:text-3xl font-bold my-4 md:my-6">
+        <HeadingTag id={node._key} className="text-xl lg:text-2xl font-bold my-2 md:my-4">
           {children}
           <Link className="text-sm leading-8" href={`#${node._key}`}>
             #

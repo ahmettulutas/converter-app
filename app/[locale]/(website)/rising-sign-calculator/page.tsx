@@ -11,6 +11,7 @@ import { Suspense, lazy } from 'react';
 import { createTranslation } from '@/i18n';
 
 import { LocaleType } from '@/i18n/settings';
+import CalculatorContainer from '@/components/layout/calculator-container';
 
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
@@ -34,17 +35,13 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
   };
   return (
     <>
-      <article className="flex flex-col items-center justify-center">
-        <PageContainer className="flex flex-col md:flex-row gap-x-6 gap-2 my-4">
-          <div className="flex-1">
-            <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
-            <Suspense fallback={<>Loading...</>}>
-              <RisingSignCalculator currentLocale={params.locale} />
-            </Suspense>
-          </div>
-          <Suspense fallback={<>Loading...</>}>
-            <Faq faqList={risingSignCalculatorFAQs[params.locale]} />
-          </Suspense>
+      <article>
+        <PageContainer className="flex flex-col gap-y-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
+          <CalculatorContainer
+            faqProps={{ faqList: risingSignCalculatorFAQs[params.locale] }}
+            calculator={<RisingSignCalculator currentLocale={params.locale} />}
+          />
         </PageContainer>
       </article>
       <JsonSchema schema={faqSchema} />

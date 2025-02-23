@@ -9,8 +9,10 @@ import { LocaleType } from '@/i18n/settings';
 
 import { useTranslation } from '@/i18n/client';
 import { RisingSignProps, calculateRisingSign } from '@/lib/utils/calculate-rising';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import ComboboxSkeleton from '@/components/skeletons/combobox';
+import Result from './result';
+import SignResult from './result';
 
 const CountryComboBox = lazy(() => import('./countries-selector'));
 const CityComboBox = lazy(() => import('./cities-selector'));
@@ -126,14 +128,7 @@ export default function RisingSignCalculator({ currentLocale }: Readonly<{ curre
           </Button>
         </form>
       </CardContent>
-      <CardFooter>
-        {risingSign && (
-          <p className="text-center w-full font-semibold">
-            {t('labels.risingResult')} :{' '}
-            <span className="text-primary text-lg underline">{t(`labels.${risingSign}`)}</span>
-          </p>
-        )}
-      </CardFooter>
+      <CardFooter>{risingSign && <SignResult risingSign={risingSign} />}</CardFooter>
     </Card>
   );
 }

@@ -17,7 +17,7 @@ export default function SignResult({ risingSign }: { risingSign: string }) {
         <span className="text-primary text-lg font-semibold">{t(`labels.${risingSign}`)}</span>
       </div>
       <div className="absolute bottom-2 right-2">
-        <SocialShareLinks shareUrl={`${baseUrl}/${params.locale}/result?sign=${risingSign}`} />
+        <SocialShareLinks shareUrl={`${baseUrl}/${params.locale}/result/sign?sign=${risingSign}`} />
       </div>
     </div>
   );

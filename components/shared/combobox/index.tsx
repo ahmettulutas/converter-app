@@ -37,7 +37,7 @@ export function ComboBoxResponsive(props: Readonly<ComboboxProps>) {
 
   const buttonContent = (
     <>
-      <p className={cn('overflow-hidden)')}>{selectedVal ? selectedVal.label : title}</p>
+      <p className={cn('overflow-hidden')}>{selectedVal ? selectedVal.label : title}</p>
       {icon || <DownIcon className="shrink-0 bg-inherit" />}
     </>
   );

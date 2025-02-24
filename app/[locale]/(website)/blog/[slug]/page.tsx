@@ -72,6 +72,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
                   placeholder: 'blur',
                   blurDataURL: data.blog.coverImage.blurDataURL,
                 })}
+                priority
               />
             </div>
           )}

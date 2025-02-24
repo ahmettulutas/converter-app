@@ -4,6 +4,7 @@
     "weightCalculator": "Weight Converter",
     "squareCalculator": "Squaremeter Calculator",
     "risingSignCalculator": "Rising Sign Calculator",
+    "risingDiscover": "Discover what your rising sing tells about you.",
     "sunSignCalculator": "Sun Sign Calculator",
     "sunSignCardDesc": "Enter your date and time of birth to discover your sun sign. Start your personal astrology journey today and explore the depths of your character.",
     "sexualIdentityTest": "Sexual Identity Test",
@@ -187,9 +188,9 @@
       "category": "Square Meter Converters"
     },
     "risingSignCalculator": {
-      "title": "Rising Sign Calculator - Find Your Ascendant Sign | Accurate & Free!",
-      "dynamicPageTitle": "Find what is the rising sign of {{sign}}",
-      "dynamicPageDescription": "Discover the rising sign, also known as the ascendant sign, of {{sign}} and learn how it influences personality, appearance, and first impressions. Dive deeper into your astrological profile today!",
+      "title": "Free Rising Sign Calculator - Find Your Ascendant Sign | Accurate & Free!",
+      "dynamicPageTitle": "Find what is the rising sign for {{sign}}",
+      "dynamicPageDescription": "Discover the rising sign, also known as the ascendant sign for {{sign}} and learn how it influences personality, appearance, and first impressions. Dive deeper into your astrological profile today!",
       "description": "Discover your rising sign (Ascendant) with our free and accurate Rising Sign Calculator. Learn how your rising sign influences your personality and how others perceive you. Enter your birth details to get a personalized astrological insight.",
       "keywords": [
         "Rising sign calculator",
@@ -206,7 +207,7 @@
       "category": "Astrology Calculators"
     },
     "sunSignCalculator": {
-      "title": "Sun Sign Calculator - Discover Your Zodiac Sign | Fast & Free!",
+      "title": "Free Sun Sign Calculator - Discover Your Zodiac Sign | Fast & Free!",
       "description": "Find your sun sign with our quick and free Sun Sign Calculator. Learn how your zodiac sign defines your core personality traits and shapes your life. Simply input your birth details for accurate astrological insights.",
       "keywords": [
         "Sun sign calculator",

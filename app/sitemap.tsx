@@ -1,5 +1,5 @@
 import { baseUrl, staticPageUrls } from '@/lib/constants/common';
-import { availableLocales } from '@/i18n/settings';
+import { availableLocales, defaultLanguage } from '@/i18n/settings';
 
 import { MetadataRoute } from 'next';
 import { getAllBlogSlugs } from '@/actions/blog';
@@ -8,7 +8,7 @@ import { zodiacSigns } from '@/lib/utils/calculate-rising';
 const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) => {
   return availableLocales.map((locale) => {
     return {
-      url: `${baseUrl}/${locale}${item}`,
+      url: locale === defaultLanguage ? `${baseUrl}/${item}` : `${baseUrl}/${locale}${item}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
     };
@@ -17,7 +17,7 @@ const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) 
 const risingSignDynamicLinks: MetadataRoute.Sitemap = zodiacSigns.flatMap((sign) => {
   return availableLocales.map((locale) => {
     return {
-      url: `${baseUrl}/${locale}/rising-sign-calculator?sign=${sign}`,
+      url: `${baseUrl}/${locale}/rising-sign-calculator/${sign}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
     };

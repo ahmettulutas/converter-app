@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
+import { lazy, Suspense, useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -9,10 +8,14 @@ import { calculateSunSign } from '@/lib/utils/calculate-sun-sign';
 import { useTranslation } from '@/i18n/client';
 import { LocaleType } from '@/i18n/settings';
 
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+
 interface SunSignProps {
   birthDate: string;
   birthHour: string;
 }
+const SignResult = lazy(() => import('../rising-sign-calculator/result'));
 
 export default function SunSignCalculator({ currentLocale }: Readonly<{ currentLocale: LocaleType }>) {
   const [birthInfo, setBirthInfo] = useState<SunSignProps>({
@@ -21,6 +24,7 @@ export default function SunSignCalculator({ currentLocale }: Readonly<{ currentL
   });
   const [sunSign, setSunSign] = useState<string | null>(null);
 
+  const params = useParams();
   const { t } = useTranslation(currentLocale, 'translation');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,12 +78,19 @@ export default function SunSignCalculator({ currentLocale }: Readonly<{ currentL
           </Button>
         </form>
       </CardContent>
-      <CardFooter>
+
+      <CardFooter className="flex-col gap-y-2">
         {sunSign && (
-          <p className="text-center w-full font-semibold">
-            {t('labels.sunSignResult')} :{' '}
-            <span className="text-primary text-lg underline">{t(`labels.${sunSign}`)}</span>
-          </p>
+          <>
+            <Suspense fallback={<>Loading...</>}>
+              <SignResult risingSign={sunSign} />
+            </Suspense>
+            <Link href={`/${params.locale}/blog/sun-sign-calculator-discover-your-zodiac-sign-instantly`}>
+              <Button className="underline" variant={'outline'}>
+                {t('labels.risingDiscover')}
+              </Button>
+            </Link>
+          </>
         )}
       </CardFooter>
     </Card>

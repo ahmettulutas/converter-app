@@ -4,6 +4,7 @@
     "weightCalculator": "Ağırlık Dönüştürücü",
     "squareCalculator": "Alan Hesaplama",
     "risingSignCalculator": "Yükselen Burç Hesaplayıcı",
+    "risingDiscover": "Yükselen burcunun senin hakkında neler söylediğini keşfet.",
     "sunSignCalculator": "Güneş Burcu Hesaplayıcı",
     "sunSignCardDesc": "Doğum tarihinizi ve saatinizi girerek güneş burcunuzu öğrenin. Kişisel astroloji yolculuğunuza bugün başlayın ve karakterinizin derinliklerini keşfedin.",
     "sexualIdentityTest": "Cinsel Kimlik Testi",
@@ -186,7 +187,7 @@
       "category": "Metrekare Dönüştürücüler"
     },
     "risingSignCalculator": {
-      "title": "Yükselen Burç Hesaplayıcı - Yükselen Burcunuzu Bulun | Doğru & Ücretsiz!",
+      "title": "Ücretsiz Yükselen Burç Hesaplama - Yükselen Burcunuzu Bulun | Hızlı & Ücretsiz!",
       "description": "Ücretsiz ve doğru Yükselen Burç Hesaplayıcı ile yükselen burcunuzu keşfedin. Yükselen burcunuzun kişiliğinizi nasıl etkilediğini ve başkalarının sizi nasıl algıladığını öğrenin. Kişisel astrolojik içgörü almak için doğum bilgilerinizi girin.",
       "keywords": [
         "Yükselen burç hesaplayıcı",
@@ -203,7 +204,7 @@
       "category": "Astroloji Hesaplayıcıları"
     },
     "sunSignCalculator": {
-      "title": "Güneş Burcu Hesaplayıcı - Burcunuzu Keşfedin | Hızlı ve Ücretsiz!",
+      "title": "Ücretsiz Güneş Burcu Hesaplama - Burcunuzu Keşfedin | Hızlı ve Ücretsiz!",
       "description": "Hızlı ve ücretsiz Güneş Burcu Hesaplayıcımız ile burcunuzu öğrenin. Güneş burcunuzun temel kişilik özelliklerinizi nasıl tanımladığını ve hayatınızı nasıl şekillendirdiğini keşfedin. Doğum bilgilerinizi girerek doğru astrolojik bilgiler alın.",
       "keywords": [
         "Güneş burcu hesaplayıcı",
@@ -255,7 +256,7 @@
       "category": "Finansal Araçlar"
     },
     "sexualIdentity": {
-      "title": "Cinsel Yönelim Testi – Romantik ve Cinsel Kimliğinizi Keşfedin!",
+      "title": "Ücretsiz Cinsel Yönelim Testi – Romantik ve Cinsel Kimliğinizi Keşfedin!",
       "description": "Ücretsiz Cinsel Yönelim Testimizi yaparak romantik ve cinsel tercihlerinizi keşfedin. Kimliğiniz hakkında içgörüler kazanın!",
       "keywords": [
         "cinsel yönelim testi",

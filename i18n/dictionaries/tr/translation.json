@@ -120,7 +120,8 @@
     "astrology": "Astroloji",
     "tools": "Araçlar",
     "content": "İçerik",
-    "welcome": "Hoşgeldin"
+    "welcome": "Hoşgeldin",
+    "birthMapCalculator": "Doğum haritası Hesaplama"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
@@ -288,6 +289,25 @@
         "bilimsel hesaplayıcılar"
       ],
       "category": "Online Araçlar"
+    },
+    "birthMapCalculator": {
+      "tr": {
+        "title": "Doğum Haritası Hesaplayıcı – Kişisel Astroloji Haritanızı Keşfedin | Hızlı & Ücretsiz!",
+        "description": "Doğum Haritası Hesaplayıcı ile gezegen konumlarınızı ve ev yerleşimlerinizi bilimsel doğrulukla keşfedin. Doğum tarihi, saati ve konumunuzu girerek kişisel astroloji haritanızı oluşturun. Jean Meeus'un astronomik algoritmalarına dayanarak hazırlanan doğru sonuçlar.",
+        "keywords": [
+          "Doğum Haritası Hesaplayıcı",
+          "Astroloji Haritası",
+          "Natal Harita",
+          "Kişisel Doğum Haritası",
+          "Gezegen Konumları",
+          "Ev Yerleşimleri",
+          "Bilimsel Doğum Haritası",
+          "Jean Meeus Algoritmaları",
+          "Astroloji Yorumları",
+          "Ücretsiz Astroloji Hesaplama"
+        ],
+        "category": "Astroloji Hesaplayıcı"
+      }
     }
   }
 }

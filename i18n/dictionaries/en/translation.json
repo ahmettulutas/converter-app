@@ -121,7 +121,8 @@
     "astrology": "Astrology",
     "tools": "Tools",
     "content": "Content",
-    "welcome": "Welcome"
+    "welcome": "Welcome",
+    "birthMapCalculator": "Birth Map Calculator"
   },
   "msg": {
     "noLangSelected": "No language is selected",
@@ -290,6 +291,23 @@
         "scientific calculators"
       ],
       "category": "Online Tools"
+    },
+    "birthMapCalculator": {
+      "title": "Birth Map Calculator – Explore Your Personal Astrology Chart | Fast & Free!",
+      "description": "Discover your planetary positions and house placements with our scientifically accurate Birth Map Calculator. Simply enter your birth date, time, and location to generate your personal birth chart. Based on Jean Meeus' astronomical algorithms for precise calculations.",
+      "keywords": [
+        "Birth Map Calculator",
+        "Astrology Birth Chart",
+        "Natal Chart",
+        "Personal Birth Chart",
+        "Planetary Positions",
+        "House Placements",
+        "Scientific Astrology",
+        "Jean Meeus Algorithms",
+        "Astrological Interpretations",
+        "Free Astrology Calculator"
+      ],
+      "category": "Astrology Calculator"
     }
   }
 }

@@ -10,6 +10,8 @@ import {
   Calculator,
   ScaleIcon as Scales,
   BookIcon,
+  WholeWord,
+  Globe2,
 } from 'lucide-react';
 
 export const navCategories = [
@@ -30,6 +32,7 @@ export const navCategories = [
     links: [
       { href: '/rising-sign-calculator', label: 'labels.risingSignCalculator', icon: Compass },
       { href: '/sun-sign-calculator', label: 'labels.sunSignCalculator', icon: Sun },
+      { href: '/birth-map-calculator', label: 'labels.birthMapCalculator', icon: Globe2 },
     ],
   },
   {

@@ -119,7 +119,8 @@
     "astrology": "Astrologie",
     "tools": "Werkzeuge",
     "content": "Inhalt",
-    "welcome": "Wilkommen"
+    "welcome": "Wilkommen",
+    "birthMapCalculator": "Geburtskarten-Rechner"
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",
@@ -283,6 +284,23 @@
         "wissenschaftliche Rechner"
       ],
       "category": "Online-Tools"
+    },
+    "birthMapCalculator": {
+      "title": "Geburtshoroskop-Rechner – Entdecken Sie Ihre persönliche Astro-Karte | Schnell & Kostenlos!",
+      "description": "Erstellen Sie Ihr individuelles Geburtshoroskop mit unserem wissenschaftlich präzisen Rechner. Geben Sie Geburtsdatum, Uhrzeit und Standort ein, um genaue Planetenpositionen und Häuser zu berechnen. Basierend auf den astronomischen Algorithmen von Jean Meeus.",
+      "keywords": [
+        "Geburtshoroskop-Rechner",
+        "Astrologische Geburtskarte",
+        "Natalhoroskop",
+        "Persönliches Geburtshoroskop",
+        "Planetenpositionen",
+        "Häuserberechnung",
+        "Wissenschaftliche Astrologie",
+        "Jean Meeus Algorithmen",
+        "Astrologische Deutungen",
+        "Kostenloser Astrologie-Rechner"
+      ],
+      "category": "Astrologie-Rechner"
     }
   }
 }

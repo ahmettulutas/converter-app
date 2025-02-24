@@ -1660,3 +1660,86 @@ export const sexualFaqs: Record<LocaleType, Array<{ question: string; answer: st
     },
   ],
 };
+export const birthMapFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
+  tr: [
+    {
+      question: 'Bu doğum haritası hesaplayıcı ne kadar güvenilir?',
+      answer:
+        'Bu doğum haritası hesaplayıcı, astronomik hesaplamalar için Jean Meeus\'un "Astronomical Algorithms" kitabında yer alan bilimsel yöntemleri kullanır. Hassas gezegen konumlarını ve ev hesaplamalarını sağlamak için doğruluğu kanıtlanmış algoritmalar kullanılmıştır.',
+    },
+    {
+      question: 'Jean Meeus algoritmaları neden önemlidir?',
+      answer:
+        'Jean Meeus, astronomik hesaplamalar konusunda dünya çapında tanınan bir uzmandır. "Astronomical Algorithms" kitabında yer alan yöntemler, modern astronomlar ve astrologlar tarafından gezegen konumlarını kesin bir şekilde hesaplamak için kullanılmaktadır.',
+    },
+    {
+      question: 'Doğum haritası bilimsel midir?',
+      answer:
+        "Bu doğum haritası hesaplayıcı, gezegenlerin gerçek konumlarını belirlemek için bilimsel astronomik hesaplamalar kullanır. Jean Meeus'un algoritmalarına dayanarak, doğru gökyüzü konumları elde edilir. Ancak, haritanın yorumlanması astrolojik geleneklere bağlıdır.",
+    },
+    {
+      question: 'Bu hesaplayıcı gerçek zamanlı gezegen konumlarını hesaplayabilir mi?',
+      answer:
+        'Evet, bu hesaplayıcı doğum tarihi, saat ve yer bilgilerini kullanarak gerçek zamanlı gezegen konumlarını ve ev yerleşimlerini hesaplar. Bu sayede kişiye özel doğum haritası oluşturulabilir.',
+    },
+    {
+      question: 'Jean Meeus algoritmaları hangi kaynaklara dayanıyor?',
+      answer:
+        'Jean Meeus\'un algoritmaları, "Astronomical Algorithms" kitabında detaylandırılmıştır ve uluslararası astronomi camiası tarafından kabul görmüş kaynaklara dayanmaktadır. Bu algoritmalar, gezegenlerin yörüngeleri ve konumları hakkında güvenilir veriler sunar.',
+    },
+  ],
+  en: [
+    {
+      question: 'How reliable is this birth map calculator?',
+      answer:
+        'This birth map calculator uses scientifically-proven methods from Jean Meeus\' book "Astronomical Algorithms" for astronomical calculations. It ensures accurate planetary positions and house placements using well-established algorithms.',
+    },
+    {
+      question: 'Why are Jean Meeus algorithms significant?',
+      answer:
+        'Jean Meeus is a world-renowned expert in astronomical calculations. The methods outlined in his book "Astronomical Algorithms" are widely used by modern astronomers and astrologers for precise planetary positioning.',
+    },
+    {
+      question: 'Is the birth map scientifically accurate?',
+      answer:
+        "This calculator uses scientific astronomical computations to determine the actual positions of planets. By leveraging Jean Meeus' algorithms, it ensures precise sky positions. However, the interpretation of the chart follows astrological traditions.",
+    },
+    {
+      question: 'Can this calculator compute real-time planetary positions?',
+      answer:
+        'Yes, this calculator uses birth date, time, and location to calculate real-time planetary positions and house placements, enabling the creation of a personalized birth chart.',
+    },
+    {
+      question: 'What sources do Jean Meeus algorithms rely on?',
+      answer:
+        'Jean Meeus\' algorithms are thoroughly detailed in his book "Astronomical Algorithms" and are based on widely accepted sources within the global astronomical community, providing reliable data on planetary orbits and positions.',
+    },
+  ],
+  de: [
+    {
+      question: 'Wie zuverlässig ist dieser Geburtshoroskop-Rechner?',
+      answer:
+        'Dieser Geburtshoroskop-Rechner verwendet wissenschaftlich bewährte Methoden aus Jean Meeus\' Buch "Astronomical Algorithms" für astronomische Berechnungen. Er stellt genaue Planetenpositionen und Häuser sicher, basierend auf etablierten Algorithmen.',
+    },
+    {
+      question: 'Warum sind die Jean Meeus-Algorithmen so bedeutend?',
+      answer:
+        'Jean Meeus ist ein weltweit anerkannter Experte für astronomische Berechnungen. Die Methoden in seinem Buch "Astronomical Algorithms" werden von modernen Astronomen und Astrologen verwendet, um präzise Planetenpositionen zu berechnen.',
+    },
+    {
+      question: 'Ist das Geburtshoroskop wissenschaftlich korrekt?',
+      answer:
+        'Dieser Rechner verwendet wissenschaftliche astronomische Berechnungen, um die tatsächlichen Positionen der Planeten zu bestimmen. Durch die Verwendung der Algorithmen von Jean Meeus wird eine genaue Darstellung des Himmels gewährleistet. Die Interpretation des Horoskops folgt jedoch astrologischen Traditionen.',
+    },
+    {
+      question: 'Kann dieser Rechner Echtzeit-Planetenpositionen berechnen?',
+      answer:
+        'Ja, dieser Rechner verwendet Geburtsdatum, Uhrzeit und Standort, um die Echtzeit-Positionen der Planeten sowie die Häuser zu berechnen. So kann ein individuelles Geburtshoroskop erstellt werden.',
+    },
+    {
+      question: 'Auf welchen Quellen basieren die Jean Meeus-Algorithmen?',
+      answer:
+        'Die Algorithmen von Jean Meeus sind in seinem Buch "Astronomical Algorithms" ausführlich beschrieben und basieren auf anerkannten Quellen der internationalen Astronomie. Sie liefern verlässliche Daten zu Planetenbahnen und -positionen.',
+    },
+  ],
+};

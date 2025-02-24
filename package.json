@@ -16,6 +16,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@astrodraw/astrochart": "^3.0.2",
     "@portabletext/react": "^3.2.0",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-collapsible": "^1.1.0",
@@ -35,6 +36,7 @@
     "@sanity/icons": "^3.5.0",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.66.1",
+    "astronomia": "^4.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

@@ -13,8 +13,8 @@ import { useParams } from 'next/navigation';
 import ComboboxSkeleton from '@/components/skeletons/combobox';
 import Link from 'next/link';
 
-const CountryComboBox = lazy(() => import('./countries-selector'));
-const CityComboBox = lazy(() => import('./cities-selector'));
+const CountryComboBox = lazy(() => import('../../shared/countries-selector'));
+const CityComboBox = lazy(() => import('../../shared/cities-selector'));
 const SignResult = lazy(() => import('./result'));
 
 export default function RisingSignCalculator({ currentLocale }: Readonly<{ currentLocale: LocaleType }>) {

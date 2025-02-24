@@ -7,7 +7,7 @@ import { risingSignCalculatorFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 import { createTranslation } from '@/i18n';
 
 import { LocaleType } from '@/i18n/settings';

@@ -122,12 +122,29 @@
     "tools": "Tools",
     "content": "Content",
     "welcome": "Welcome",
-    "birthMapCalculator": "Birth Map Calculator"
+    "birthMapCalculator": "Birth Map Calculator",
+    "generateChartsDescription": "Generates both natal and transit charts.",
+    "fullName": "Full Name",
+    "enterFullName": "Enter your full name",
+    "generateCharts": "Generate Charts",
+    "natalChart": "Natal Chart",
+    "transitChart": "Transit Chart",
+    "planets": "Planets",
+    "planet": "Planet",
+    "longitude": "Longitude",
+    "house": "House",
+    "aspects": "Aspects",
+    "aspect": "Aspect",
+    "between": "Between",
+    "orb": "Orb",
+    "conjunction": "Conjunction",
+    "square": "Square"
   },
   "msg": {
     "noLangSelected": "No language is selected",
     "selectLang": "Select a language",
-    "noResult": "No result found."
+    "noResult": "No result found.",
+    "fillAllFields": "Please fill out all required fields."
   },
   "metaData": {
     "applicationName": "Easiest Length Conversion Tools",

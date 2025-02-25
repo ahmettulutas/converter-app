@@ -121,12 +121,29 @@
     "tools": "Araçlar",
     "content": "İçerik",
     "welcome": "Hoşgeldin",
-    "birthMapCalculator": "Doğum haritası Hesaplama"
+    "birthMapCalculator": "Doğum haritası Hesaplama",
+    "generateChartsDescription": "Natal ve transit haritalarını oluşturun.",
+    "fullName": "Tam Ad",
+    "enterFullName": "Tam adınızı girin",
+    "generateCharts": "Haritaları Oluştur",
+    "natalChart": "Natal Haritası",
+    "transitChart": "Transit Haritası",
+    "planets": "Gezegenler",
+    "planet": "Gezegen",
+    "longitude": "Boylam",
+    "house": "Ev",
+    "aspects": "Açılar",
+    "aspect": "Açı",
+    "between": "Arasında",
+    "orb": "Orb",
+    "conjunction": "Kavuşum",
+    "square": "Kare"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
     "selectLang": "Bir dil seçin",
-    "noResult": "Sonuç bulunamadı."
+    "noResult": "Sonuç bulunamadı.",
+    "fillAllFields": "Lütfen tüm gerekli alanları doldurun."
   },
   "metaData": {
     "applicationName": "En Kolay Uzunluk Dönüştürme Araçları",

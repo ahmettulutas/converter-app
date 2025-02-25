@@ -9,11 +9,13 @@ import { Chart } from '@astrodraw/astrochart';
 import ComboboxSkeleton from '@/components/skeletons/combobox';
 import { computeChartData } from '@/lib/utils/calculate-birthmap';
 import { LocaleType } from '@/i18n/settings';
+import { useTranslation } from '@/i18n/client';
 
 type ChartData = {
   planets: { [key: string]: number[] };
   cusps: number[];
 };
+
 const CountryComboBox = lazy(() => import('../../shared/countries-selector'));
 const CityComboBox = lazy(() => import('../../shared/cities-selector'));
 
@@ -31,6 +33,7 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
   const [chartData, setChartData] = useState<ChartData | null>(null);
   const natalRef = useRef<HTMLDivElement>(null);
   const transitRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation(currentLocale, 'translation');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -43,7 +46,7 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.date || !formData.time || !formData.city) {
-      alert('Please fill out all required fields.');
+      alert(t('msg.fillAllFields'));
       return;
     }
     const data = computeChartData(formData.date, formData.time, formData.latitude, formData.longitude);
@@ -69,14 +72,14 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
     <div className="flex flex-col gap-4 lg:gap-6 mx-auto">
       <Card className="mx-auto w-full lg:max-w-md">
         <CardHeader>
-          <CardTitle>Dual Birth Map Calculator</CardTitle>
-          <CardDescription>Generates both natal and transit charts.</CardDescription>
+          <CardTitle>{t('labels.birthMapCalculator')}</CardTitle>
+          <CardDescription>{t('labels.generateChartsDescription')}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block font-medium mb-1">
-                Full Name
+                {t('labels.fullName')}
               </label>
               <Input
                 id="name"
@@ -84,34 +87,33 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
                 type="text"
                 value={formData.name || ''}
                 onChange={handleInputChange}
-                placeholder="Enter your full name"
-                /* required */
+                placeholder={t('labels.enterFullName')}
               />
             </div>
 
             <div>
               <label htmlFor="date" className="block font-medium mb-1">
-                Birth Date
+                {t('labels.birthDate')}
               </label>
               <Input id="date" name="date" type="date" value={formData.date} onChange={handleInputChange} required />
             </div>
 
             <div>
               <label htmlFor="time" className="block font-medium mb-1">
-                Birth Time (24h)
+                {t('labels.birthTime')}
               </label>
               <Input id="time" name="time" type="time" value={formData.time} onChange={handleInputChange} required />
             </div>
 
             <div className="space-y-2">
               <label htmlFor="country" className="block font-medium mb-1">
-                Country
+                {t('labels.country')}
               </label>
               <Suspense fallback={<ComboboxSkeleton />}>
                 <CountryComboBox
                   currentLocale={currentLocale}
                   value={formData.country}
-                  title="Select Country"
+                  title={t('labels.selectCountry')}
                   onChange={(selectedCountry) =>
                     setFormData((prev) => ({
                       ...prev,
@@ -124,15 +126,16 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
                 />
               </Suspense>
             </div>
+
             <div className="space-y-2">
               <label htmlFor="city" className="block font-medium mb-1">
-                City
+                {t('labels.city')}
               </label>
               <Suspense fallback={<ComboboxSkeleton />}>
                 <CityComboBox
                   selectedCountry={formData.country}
                   selectedCity={formData.city}
-                  title="Select City"
+                  title={t('labels.selectCity')}
                   onChange={(selectedCity, latitude, longitude) =>
                     setFormData((prev) => ({
                       ...prev,
@@ -146,34 +149,36 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
             </div>
 
             <Button type="submit" className="w-full">
-              Generate Charts
+              {t('labels.generateCharts')}
             </Button>
           </form>
         </CardContent>
       </Card>
+
       <Card className="mx-auto py-4 w-full">
         <CardContent className="flex flex-col lg:flex-row gap-4 items-center">
           <div>
-            <h3>Natal Chart</h3>
+            <h3>{t('labels.natalChart')}</h3>
             <div id="natal" ref={natalRef} className="max-w-2xl"></div>
           </div>
           <div>
-            <h3>Transit Chart</h3>
+            <h3>{t('labels.transitChart')}</h3>
             <div id="transit" ref={transitRef} className="max-w-2xl"></div>
           </div>
         </CardContent>
       </Card>
+
       {chartData && (
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full">
           <Card className="mx-auto py-4 flex-1 w-full">
             <CardContent>
-              <h3>Planets</h3>
+              <h3>{t('labels.planets')}</h3>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Planet</TableHead>
-                    <TableHead>Longitude</TableHead>
-                    <TableHead>House</TableHead>
+                    <TableHead>{t('labels.planet')}</TableHead>
+                    <TableHead>{t('labels.longitude')}</TableHead>
+                    <TableHead>{t('labels.house')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -188,25 +193,26 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
               </Table>
             </CardContent>
           </Card>
+
           <Card className="mx-auto py-4 flex-1 w-full">
             <CardContent>
-              <h3>Aspects</h3>
+              <h3>{t('labels.aspects')}</h3>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Aspect</TableHead>
-                    <TableHead>Between</TableHead>
-                    <TableHead>Orb</TableHead>
+                    <TableHead>{t('labels.aspect')}</TableHead>
+                    <TableHead>{t('labels.between')}</TableHead>
+                    <TableHead>{t('labels.orb')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell>Conjunction</TableCell>
+                    <TableCell>{t('labels.conjunction')}</TableCell>
                     <TableCell>Sun - Moon</TableCell>
                     <TableCell>2°</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell>Square</TableCell>
+                    <TableCell>{t('labels.square')}</TableCell>
                     <TableCell>Mars - Jupiter</TableCell>
                     <TableCell>5°</TableCell>
                   </TableRow>

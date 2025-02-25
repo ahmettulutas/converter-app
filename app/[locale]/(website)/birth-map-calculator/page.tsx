@@ -30,7 +30,7 @@ export default async function Page(props: Readonly<SharedPageProps>) {
     <>
       <article>
         <PageContainer className="flex flex-col gap-y-2 my-4">
-          <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
+          <h1 className="text-center text-2xl my-2">{t('labels.birthMapCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: birthMapFaqs[params.locale] }}
             calculator={<DualBirthMapCalculator currentLocale={params.locale} />}

@@ -59,7 +59,7 @@ const Converter = <T extends readonly SelectType[]>(props: ConverterProps<T>) =>
   }, [inputUnit, outputUnit, inputValue, handleConvert]);
 
   return (
-    <Card>
+    <Card className="mx-auto max-w-lg">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

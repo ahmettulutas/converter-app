@@ -19,6 +19,7 @@ const CityComboBox = lazy(() => import('../../shared/cities-selector'));
 
 export default function DualBirthMapCalculator({ currentLocale }: { currentLocale: LocaleType }) {
   const [formData, setFormData] = useState({
+    name: '',
     date: '',
     time: '',
     latitude: 0,
@@ -38,7 +39,7 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
       [name]: value,
     }));
   };
-  console.log(formData);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.date || !formData.time || !formData.city) {
@@ -65,134 +66,156 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
   }, [chartData]);
 
   return (
-    <Card className="max-w-2xl mx-auto mt-8 p-4">
-      <CardHeader>
-        <CardTitle>Dual Birth Map Calculator</CardTitle>
-        <CardDescription>Generates both natal and transit charts.</CardDescription>
-      </CardHeader>
-
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="date" className="block font-medium mb-1">
-              Birth Date
-            </label>
-            <Input id="date" name="date" type="date" value={formData.date} onChange={handleInputChange} required />
-          </div>
-
-          <div>
-            <label htmlFor="time" className="block font-medium mb-1">
-              Birth Time (24h)
-            </label>
-            <Input id="time" name="time" type="time" value={formData.time} onChange={handleInputChange} required />
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="country" className="block font-medium mb-1">
-              Country
-            </label>
-            <Suspense fallback={<ComboboxSkeleton />}>
-              <CountryComboBox
-                currentLocale={currentLocale}
-                value={formData.country}
-                title="Select Country"
-                onChange={(selectedCountry) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    country: selectedCountry,
-                    city: '',
-                    latitude: 0,
-                    longitude: 0,
-                  }))
-                }
+    <div className="flex flex-col gap-4 lg:gap-6 mx-auto">
+      <Card className="mx-auto w-full lg:max-w-md">
+        <CardHeader>
+          <CardTitle>Dual Birth Map Calculator</CardTitle>
+          <CardDescription>Generates both natal and transit charts.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block font-medium mb-1">
+                Full Name
+              </label>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                value={formData.name || ''}
+                onChange={handleInputChange}
+                placeholder="Enter your full name"
+                /* required */
               />
-            </Suspense>
+            </div>
+
+            <div>
+              <label htmlFor="date" className="block font-medium mb-1">
+                Birth Date
+              </label>
+              <Input id="date" name="date" type="date" value={formData.date} onChange={handleInputChange} required />
+            </div>
+
+            <div>
+              <label htmlFor="time" className="block font-medium mb-1">
+                Birth Time (24h)
+              </label>
+              <Input id="time" name="time" type="time" value={formData.time} onChange={handleInputChange} required />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="country" className="block font-medium mb-1">
+                Country
+              </label>
+              <Suspense fallback={<ComboboxSkeleton />}>
+                <CountryComboBox
+                  currentLocale={currentLocale}
+                  value={formData.country}
+                  title="Select Country"
+                  onChange={(selectedCountry) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      country: selectedCountry,
+                      city: '',
+                      latitude: 0,
+                      longitude: 0,
+                    }))
+                  }
+                />
+              </Suspense>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="city" className="block font-medium mb-1">
+                City
+              </label>
+              <Suspense fallback={<ComboboxSkeleton />}>
+                <CityComboBox
+                  selectedCountry={formData.country}
+                  selectedCity={formData.city}
+                  title="Select City"
+                  onChange={(selectedCity, latitude, longitude) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      city: selectedCity,
+                      latitude,
+                      longitude,
+                    }))
+                  }
+                />
+              </Suspense>
+            </div>
+
+            <Button type="submit" className="w-full">
+              Generate Charts
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+      <Card className="mx-auto py-4 w-full">
+        <CardContent className="flex flex-col lg:flex-row gap-4 items-center">
+          <div>
+            <h3>Natal Chart</h3>
+            <div id="natal" ref={natalRef} className="max-w-2xl"></div>
           </div>
-
-          <div className="space-y-2">
-            <label htmlFor="city" className="block font-medium mb-1">
-              City
-            </label>
-            <Suspense fallback={<ComboboxSkeleton />}>
-              <CityComboBox
-                selectedCountry={formData.country}
-                selectedCity={formData.city}
-                title="Select City"
-                onChange={(selectedCity, latitude, longitude) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    city: selectedCity,
-                    latitude,
-                    longitude,
-                  }))
-                }
-              />
-            </Suspense>
+          <div>
+            <h3>Transit Chart</h3>
+            <div id="transit" ref={transitRef} className="max-w-2xl"></div>
           </div>
-
-          <Button type="submit" className="w-full">
-            Generate Charts
-          </Button>
-        </form>
-      </CardContent>
-
-      <CardFooter className="flex justify-between mt-4">
-        <div>
-          <h3>Natal Chart</h3>
-          <div id="natal" ref={natalRef} style={{ width: 400, height: 400 }}></div>
-        </div>
-        <div>
-          <h3>Transit Chart</h3>
-          <div id="transit" ref={transitRef} style={{ width: 400, height: 400 }}></div>
-        </div>
-      </CardFooter>
-
+        </CardContent>
+      </Card>
       {chartData && (
-        <>
-          <h3>Planets</h3>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Planet</TableHead>
-                <TableHead>Longitude</TableHead>
-                <TableHead>House</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {Object.entries(chartData.planets).map(([planet, [longitude]]) => (
-                <TableRow key={planet}>
-                  <TableCell>{planet}</TableCell>
-                  <TableCell>{longitude.toFixed(2)}°</TableCell>
-                  <TableCell>{Math.floor(longitude / 30) + 1}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-
-          <h3>Aspects</h3>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Aspect</TableHead>
-                <TableHead>Between</TableHead>
-                <TableHead>Orb</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>Conjunction</TableCell>
-                <TableCell>Sun - Moon</TableCell>
-                <TableCell>2°</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Square</TableCell>
-                <TableCell>Mars - Jupiter</TableCell>
-                <TableCell>5°</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </>
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 w-full">
+          <Card className="mx-auto py-4 flex-1 w-full">
+            <CardContent>
+              <h3>Planets</h3>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Planet</TableHead>
+                    <TableHead>Longitude</TableHead>
+                    <TableHead>House</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {Object.entries(chartData.planets).map(([planet, [longitude]]) => (
+                    <TableRow key={planet}>
+                      <TableCell>{planet}</TableCell>
+                      <TableCell>{longitude.toFixed(2)}°</TableCell>
+                      <TableCell>{Math.floor(longitude / 30) + 1}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+          <Card className="mx-auto py-4 flex-1 w-full">
+            <CardContent>
+              <h3>Aspects</h3>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Aspect</TableHead>
+                    <TableHead>Between</TableHead>
+                    <TableHead>Orb</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>Conjunction</TableCell>
+                    <TableCell>Sun - Moon</TableCell>
+                    <TableCell>2°</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Square</TableCell>
+                    <TableCell>Mars - Jupiter</TableCell>
+                    <TableCell>5°</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </div>
       )}
-    </Card>
+    </div>
   );
 }

@@ -13,11 +13,11 @@ export default function CalculatorContainer(props: CalculatorContainerProps) {
   const CalculatorSkeleton = customSkeleton || <>Loading...</>;
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_440px]">
-      <div className="space-y-6 max-w-md mx-auto">
+      <div className="space-y-6 mx-auto w-full">
         <Suspense fallback={CalculatorSkeleton}>{calculator}</Suspense>
       </div>
       <Suspense fallback={<>Loading...</>}>
-        <Faq {...{ ...faqProps, containerClasses: 'max-w-3xl mx-auto' }} />
+        <Faq {...{ ...faqProps, containerClasses: 'mx-auto h-fit' }} />
       </Suspense>
     </div>
   );

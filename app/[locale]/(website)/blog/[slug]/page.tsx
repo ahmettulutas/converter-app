@@ -60,7 +60,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
             <h1 className="text-4xl md:text-6xl mb-10 lg:text-5xl text-center">{data?.blog?.title}</h1>
           </div>
           {heroImg && (
-            <div className="relative aspect-video w-full flex-1">
+            <div className="relative aspect-video w-full">
               <Image
                 src={heroImg}
                 alt={data.blog.coverImage.alt ?? data.blog.title}

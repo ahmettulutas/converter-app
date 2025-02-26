@@ -4,8 +4,10 @@ import { PageContainer } from '@/components/shared/page-container';
 import CalculatorContainer from '@/components/layout/calculator-container';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { createTranslation } from '@/i18n';
-import { getLocalizedJsonLd } from '@/lib/seo';
+import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 import { birthMapFaqs } from '@/lib/constants/faq';
+import { ResolvingMetadata } from 'next';
+import { LocaleType } from '@/i18n/settings';
 
 const pageKey = 'birthMapCalculator';
 
@@ -41,4 +43,15 @@ export default async function Page(props: Readonly<SharedPageProps>) {
       {pageSchema && <JsonSchema schema={pageSchema} />}
     </>
   );
+}
+
+export async function generateMetadata(
+  { params }: { params: { sign: string; locale: LocaleType } },
+  parent: ResolvingMetadata
+) {
+  const sign = params.sign;
+  if (!sign) {
+    return getDefaultMetaData(params.locale, parent, pageKey);
+  }
+  return getDefaultMetaData(params.locale, parent, pageKey);
 }

@@ -137,7 +137,18 @@
     "between": "Arasında",
     "orb": "Orb",
     "conjunction": "Kavuşum",
-    "square": "Kare"
+    "square": "Kare",
+    "junoCalculator": "Juno Pozisyon Hesaplayıcı",
+    "junoDescription": "Juno'nun konumunu kesin astronomik algoritmalar kullanarak hesaplayın.",
+    "julianDate": "Jülyen Tarihi",
+    "junoPosition": "Juno'nun Koordinatları",
+    "coordinate": "Koordinat",
+    "graph": "Grafiksel Görünüm",
+    "junoPath": "Juno'nun Yolu",
+    "aspectType": "Açı Türü",
+    "angle": "Açı",
+
+    "basedOnMeeus": "Jean Meeus'un Astronomik Algoritmalarına dayanmaktadır"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
@@ -308,23 +319,21 @@
       "category": "Online Araçlar"
     },
     "birthMapCalculator": {
-      "tr": {
-        "title": "Doğum Haritası Hesaplayıcı – Kişisel Astroloji Haritanızı Keşfedin | Hızlı & Ücretsiz!",
-        "description": "Doğum Haritası Hesaplayıcı ile gezegen konumlarınızı ve ev yerleşimlerinizi bilimsel doğrulukla keşfedin. Doğum tarihi, saati ve konumunuzu girerek kişisel astroloji haritanızı oluşturun. Jean Meeus'un astronomik algoritmalarına dayanarak hazırlanan doğru sonuçlar.",
-        "keywords": [
-          "Doğum Haritası Hesaplayıcı",
-          "Astroloji Haritası",
-          "Natal Harita",
-          "Kişisel Doğum Haritası",
-          "Gezegen Konumları",
-          "Ev Yerleşimleri",
-          "Bilimsel Doğum Haritası",
-          "Jean Meeus Algoritmaları",
-          "Astroloji Yorumları",
-          "Ücretsiz Astroloji Hesaplama"
-        ],
-        "category": "Astroloji Hesaplayıcı"
-      }
+      "title": "Doğum Haritası Hesaplayıcı – Kişisel Astroloji Haritanızı Keşfedin | Hızlı & Ücretsiz!",
+      "description": "Doğum Haritası Hesaplayıcı ile gezegen konumlarınızı ve ev yerleşimlerinizi bilimsel doğrulukla keşfedin. Doğum tarihi, saati ve konumunuzu girerek kişisel astroloji haritanızı oluşturun. Jean Meeus'un astronomik algoritmalarına dayanarak hazırlanan doğru sonuçlar.",
+      "keywords": [
+        "Doğum Haritası Hesaplayıcı",
+        "Astroloji Haritası",
+        "Natal Harita",
+        "Kişisel Doğum Haritası",
+        "Gezegen Konumları",
+        "Ev Yerleşimleri",
+        "Bilimsel Doğum Haritası",
+        "Jean Meeus Algoritmaları",
+        "Astroloji Yorumları",
+        "Ücretsiz Astroloji Hesaplama"
+      ],
+      "category": "Astroloji Hesaplayıcı"
     }
   }
 }

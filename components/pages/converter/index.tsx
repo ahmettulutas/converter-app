@@ -29,16 +29,12 @@ const Converter = <T extends readonly SelectType[]>(props: ConverterProps<T>) =>
   const params = useParams();
   const { t } = useTranslation(params.locale as LocaleType, 'translation');
   const outputTranslated = t(`labels.units.${outputUnit}`);
-  const translatedUnitOptions = useMemo(
-    () =>
-      units
-        .map(({ value, label }) => ({
-          value,
-          label: t(`labels.units.${label}`),
-        }))
-        .sort((a, b) => a.label.localeCompare(b.label)),
-    [t, units]
-  );
+  const translatedUnitOptions = units
+    .map(({ value, label }) => ({
+      value,
+      label: t(`labels.units.${label}`),
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 
   const handleConvert = useCallback(() => {
     const value = parseFloat(inputValue);

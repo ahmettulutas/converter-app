@@ -1,4 +1,3 @@
-import DualBirthMapCalculator from '@/components/pages/birth-map-calculator';
 import { SharedPageProps } from '../layout';
 import { PageContainer } from '@/components/shared/page-container';
 import CalculatorContainer from '@/components/layout/calculator-container';
@@ -7,10 +6,12 @@ import { createTranslation } from '@/i18n';
 import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 import { birthMapFaqs } from '@/lib/constants/faq';
 import { ResolvingMetadata } from 'next';
-import { LocaleType } from '@/i18n/settings';
+
+import dynamic from 'next/dynamic';
+
+const DualBirthMapCalculator = dynamic(() => import('@/components/pages/birth-map-calculator'), { ssr: false });
 
 const pageKey = 'birthMapCalculator';
-
 export default async function Page(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');

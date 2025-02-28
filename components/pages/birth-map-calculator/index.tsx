@@ -54,17 +54,19 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
   };
 
   useEffect(() => {
-    if (chartData && natalRef.current && transitRef.current) {
-      natalRef.current.innerHTML = '';
-      transitRef.current.innerHTML = '';
+    if (typeof window !== 'undefined') {
+      if (chartData && natalRef.current && transitRef.current) {
+        natalRef.current.innerHTML = '';
+        transitRef.current.innerHTML = '';
 
-      const natalChart = new Chart(natalRef.current.id, 400, 400);
-      const radix = natalChart.radix(chartData);
-      radix.aspects();
+        const natalChart = new Chart(natalRef.current.id, 400, 400);
+        const radix = natalChart.radix(chartData);
+        radix.aspects();
 
-      const transitChart = new Chart(transitRef.current.id, 400, 400);
-      const transit = transitChart.radix(chartData);
-      transit.transit(chartData);
+        const transitChart = new Chart(transitRef.current.id, 400, 400);
+        const transit = transitChart.radix(chartData);
+        transit.transit(chartData);
+      }
     }
   }, [chartData]);
 

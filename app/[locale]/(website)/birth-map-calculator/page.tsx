@@ -45,13 +45,6 @@ export default async function Page(props: Readonly<SharedPageProps>) {
   );
 }
 
-export async function generateMetadata(
-  { params }: { params: { sign: string; locale: LocaleType } },
-  parent: ResolvingMetadata
-) {
-  const sign = params.sign;
-  if (!sign) {
-    return getDefaultMetaData(params.locale, parent, pageKey);
-  }
+export async function generateMetadata({ params }: SharedPageProps, parent: ResolvingMetadata) {
   return getDefaultMetaData(params.locale, parent, pageKey);
 }

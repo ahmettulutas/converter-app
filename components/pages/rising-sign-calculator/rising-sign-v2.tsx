@@ -7,15 +7,12 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 
 import {
-  calculateJulianDate,
-  calculateGMST,
-  calculateLST,
   calculateAscendant,
   getZodiacSignAndDegrees,
   getSignExplanation,
   formatDMS,
   formatHMS,
-  addSiderealTime,
+  calculateJulianDate,
 } from '@/lib/utils/calculate-rising-v2';
 
 export default function RisingSignCalculator() {
@@ -37,7 +34,6 @@ export default function RisingSignCalculator() {
     };
   } | null>(null);
   const [error, setError] = useState<string | null>(null);
-
   const calculateRisingSign = () => {
     setError(null);
 
@@ -57,22 +53,30 @@ export default function RisingSignCalculator() {
         return;
       }
 
-      const julianDate = calculateJulianDate(year, month, day, hours, minutes);
-      const UT = hours + minutes / 60; // Convert birth time to UT
-      const GMST = calculateGMST(UT);
-      const LST = calculateLST(GMST, lng);
-      const adjustedLST = addSiderealTime(LST);
-      const ascendant = calculateAscendant(adjustedLST, lat);
+      // ✅ Step 1: Convert Local Time to UTC
+      const birthDateTime = new Date(Date.UTC(year, month - 1, day, hours, minutes, 0));
+      const timezoneOffsetMinutes = birthDateTime.getTimezoneOffset(); // Offset in minutes
+      const timezoneOffsetHours = -timezoneOffsetMinutes / 60; // Convert to hours
+      const UT = hours - timezoneOffsetHours + minutes / 60;
+
+      // ✅ Step 2: Compute Julian Date
+      const julianDate = calculateJulianDate(year, month, day, UT, minutes);
+
+      // ✅ Step 3: Compute Ascendant Using New Formula (FIX: Added `minutes` argument)
+      const ascendant = calculateAscendant(UT, minutes, lat, lng, julianDate);
+
+      // ✅ Step 4: Convert Ascendant to Zodiac Sign
       const { sign, degrees, minutes: arcMinutes, seconds } = getZodiacSignAndDegrees(ascendant);
+
+      // ✅ Debugging & Output
 
       setRisingSign({
         sign,
         position: `${sign} - ${degrees}°${arcMinutes}'${seconds}"`,
         explanation: getSignExplanation(sign),
         technicalDetails: {
-          julianDate: julianDate.toFixed(7),
-          gmst: formatHMS(GMST),
-          lst: formatHMS(adjustedLST),
+          timezoneOffset: `UTC ${timezoneOffsetHours >= 0 ? '+' : ''}${timezoneOffsetHours}`,
+
           ascendantLongitude: `${ascendant.toFixed(2)}° (${formatDMS(ascendant)})`,
           latitude: `${lat}° (${formatDMS(lat)})`,
           longitude: `${lng}° (${formatDMS(lng)})`,
@@ -84,6 +88,7 @@ export default function RisingSignCalculator() {
     }
   };
 
+  console.log(getZodiacSignAndDegrees(27));
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50 p-4">
       <Card className="w-full max-w-lg">

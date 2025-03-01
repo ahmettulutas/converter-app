@@ -19,6 +19,11 @@ export const formatHMS = (hours: number): string => {
   return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 };
 
+// Convert local time to UT
+export const convertToUT = (localHour: number, timezoneOffset: number): number => {
+  return localHour - timezoneOffset;
+};
+
 // Calculate Julian Date from Gregorian date
 export const calculateJulianDate = (
   year: number,
@@ -35,61 +40,72 @@ export const calculateJulianDate = (
   const A = Math.floor(year / 100);
   const B = 2 - A + Math.floor(A / 4);
 
-  const JDN = Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day + B - 1524.5;
-  return JDN + (hours + minutes / 60) / 24;
+  const JD = Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day + B - 1524.5;
+  return JD + (hours + minutes / 60) / 24;
 };
 
-// Calculate Greenwich Mean Sidereal Time (GMST)
+// Calculate Greenwich Mean Sidereal Time (GMST) correctly
 export const calculateGMST = (UT: number): number => {
-  // Convert UT to Sidereal Time
-  const GMST = UT * 1.00273790935; // Corrected factor for UT to GMST conversion
-  return GMST;
+  return (UT * 1.002738) % 24;
 };
 
-// Calculate Local Sidereal Time (LST)
+// Apply longitude correction to GMST to compute Local Sidereal Time (LST)
 export const calculateLST = (GMST: number, longitude: number): number => {
-  // Convert longitude to time (1° = 4 minutes)
-  const longitudeTime = longitude * 4; // in minutes
-  const longitudeHours = longitudeTime / 60; // in hours
-
-  // Add longitude adjustment to GMST
-  let LST = GMST + longitudeHours;
-  return LST;
+  const longitudeOffset = longitude / 15; // Convert degrees to hours
+  return (GMST + longitudeOffset) % 24;
 };
 
-// Add sidereal time for a specific date (e.g., 9 Dec 1993)
-export const addSiderealTime = (LST: number): number => {
-  const siderealTime = 5 + 10 / 60 + 60 / 3600; // 05:10:60 in hours
-  return LST + siderealTime;
+// Add sidereal time for the date (e.g., 9 Dec 1993: 5h 10m 60s)
+export const addSiderealTime = (LST: number, year: number, month: number, day: number): number => {
+  // Calculate days since J2000.0
+  const JD = calculateJulianDate(year, month, day, 0, 0); // Midnight Julian Date
+  const D = JD - 2451545.0;
+
+  // Sidereal time correction based on Earth's rotation (formula)
+  const siderealCorrection = (D * 0.06570982441908) % 24;
+
+  return (LST + siderealCorrection) % 24;
 };
+export const calculateAscendant = (
+  UTCHours: number,
+  UTCMinutes: number,
+  latitude: number,
+  longitude: number,
+  julianDate: number
+): number => {
+  const degToRad = (deg: number) => (deg * Math.PI) / 180;
+  const radToDeg = (rad: number) => (rad * 180) / Math.PI;
 
-// Calculate the Ascendant (Rising Sign)
-export const calculateAscendant = (LST: number, latitude: number): number => {
-  // Convert LST to radians
-  const LSTRad = (LST * 15 * Math.PI) / 180; // LST is in hours, so multiply by 15 to get degrees
+  // ✅ Step 1: Compute Julian Centuries from J2000.0
+  const T = (julianDate - 2451545.0) / 36525;
 
-  // Convert latitude to radians
-  const latRad = (latitude * Math.PI) / 180;
+  // ✅ Step 2: Compute Obliquity of the Ecliptic (JPL Horizons Formula)
+  const obliquity =
+    (((((-4.34e-8 * T - 5.76e-7) * T + 0.0020034) * T - 1.831e-4) * T - 46.836769) * T) / 3600 + 23.4392794444444;
+  const obliquityRad = degToRad(obliquity);
 
-  // Obliquity of the ecliptic (approx. 23.4393 degrees for J2000.0)
-  const obliquityRad = (23.4393 * Math.PI) / 180;
+  // ✅ Step 3: Compute Greenwich Mean Sidereal Time (GMST)
+  let GMST = (67310.548 + (3155760000 + 8640184.812866) * T + 0.093104 * T ** 2 - 6.2e-6 * T ** 3) / 3600;
+  GMST = GMST % 24; // Normalize to 0-24 hours
 
-  // Calculate the ascendant
-  const ascRad = Math.atan2(
+  // ✅ Step 4: Compute Local Sidereal Time (LST)
+  const LST = (GMST + longitude / 15) % 24;
+  const LSTDegrees = LST * 15; // Convert to degrees
+  const LSTRad = degToRad(LSTDegrees);
+
+  // ✅ Step 5: Compute Ascendant
+  let ascRad = Math.atan2(
     Math.cos(LSTRad),
-    Math.sin(LSTRad) * Math.cos(obliquityRad) + Math.tan(latRad) * Math.sin(obliquityRad)
+    -(Math.sin(LSTRad) * Math.cos(obliquityRad) + Math.tan(degToRad(latitude)) * Math.sin(obliquityRad))
   );
 
-  // Convert the ascendant to degrees
-  let ascendant = (ascRad * 180) / Math.PI;
-
-  // Normalize to [0, 360)
+  let ascendant = radToDeg(ascRad) % 360; // Convert to degrees and normalize
   if (ascendant < 0) ascendant += 360;
 
   return ascendant;
 };
 
-// Determine which zodiac sign a given ecliptic longitude falls in
+// Determine zodiac sign and its position within the sign
 export const getZodiacSignAndDegrees = (longitude: number) => {
   const signs = [
     'Aries',
@@ -118,7 +134,7 @@ export const getZodiacSignAndDegrees = (longitude: number) => {
   return { sign, degrees, minutes, seconds };
 };
 
-// Get explanation for each sign
+// Explanation for each zodiac sign
 export const getSignExplanation = (sign: string): string => {
   const explanations: { [key: string]: string } = {
     Aries: 'With Aries rising, you come across as energetic, direct, and assertive.',

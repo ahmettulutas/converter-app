@@ -12,6 +12,7 @@ import { createTranslation } from '@/i18n';
 
 import { LocaleType } from '@/i18n/settings';
 import CalculatorContainer from '@/components/layout/calculator-container';
+import AscendantCalculator2 from '@/components/pages/rising-sign-calculator/rising-sign-v2';
 
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
@@ -39,7 +40,8 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
           <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: risingSignCalculatorFAQs[params.locale] }}
-            calculator={<RisingSignCalculator currentLocale={params.locale} />}
+            /* calculator={<RisingSignCalculator currentLocale={params.locale} />} */
+            calculator={<AscendantCalculator2 />}
           />
         </PageContainer>
       </article>

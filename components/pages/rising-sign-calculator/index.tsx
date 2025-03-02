@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { useTranslation } from '@/i18n/client';
 import { LocaleType } from '@/i18n/settings';
 import { useParams } from 'next/navigation';
-import { calculateAscendant, RisingSignResult } from '@/lib/utils/calculate-rising-v2';
+import { calculateAscendant, RisingSignResult } from '@/lib/utils/calculate-rising';
 import ComboboxSkeleton from '@/components/skeletons/combobox';
 import Link from 'next/link';
 

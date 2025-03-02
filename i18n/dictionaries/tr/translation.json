@@ -158,7 +158,6 @@
     "selectLang": "Bir dil seçin",
     "noResult": "Sonuç bulunamadı.",
     "fillAllFields": "Lütfen tüm gerekli alanları doldurun.",
-    "missingFields": "Lütfen tüm alanları doldurun.",
     "invalidLatitude": "Enlem -90 ile 90 arasında olmalıdır.",
     "invalidLongitude": "Boylam -180 ile 180 arasında olmalıdır.",
     "invalidDateTime": "Geçersiz tarih veya saat formatı.",

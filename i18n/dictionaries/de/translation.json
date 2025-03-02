@@ -145,7 +145,7 @@
     "noLangSelected": "Keine Sprache ausgewählt",
     "selectLang": "Sprache auswählen",
     "noResult": "Keine Ergebnisse gefunden.",
-    "missingFields": "Bitte füllen Sie alle Felder aus.",
+    "fillAllFields": "Bitte füllen Sie alle Felder aus.",
     "invalidLatitude": "Der Breitengrad muss zwischen -90 und 90 liegen.",
     "invalidLongitude": "Der Längengrad muss zwischen -180 und 180 liegen.",
     "invalidDateTime": "Ungültiges Datum oder Uhrzeitformat.",

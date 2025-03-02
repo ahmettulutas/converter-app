@@ -17,7 +17,7 @@ export default function CalculatorContainer(props: CalculatorContainerProps) {
         <Suspense fallback={CalculatorSkeleton}>{calculator}</Suspense>
       </div>
       <Suspense fallback={<>Loading...</>}>
-        <Faq {...{ ...faqProps, containerClasses: 'mx-auto h-fit' }} />
+        <Faq {...{ ...faqProps, containerClasses: 'mx-auto h-fit max-w-lg' }} />
       </Suspense>
     </div>
   );

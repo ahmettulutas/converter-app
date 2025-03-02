@@ -89,11 +89,11 @@ export const calculateAscendant = (
   GMST = GMST % 24; // Normalize to 0-24 hours
 
   // ✅ Step 4: Compute Local Sidereal Time (LST)
-  const LST = (GMST + longitude / 15) % 24;
-  const LSTDegrees = LST * 15; // Convert to degrees
+  const LSTHours = (GMST + longitude / 15) % 24; // Convert longitude to time (1° = 4 min)
+  const LSTDegrees = LSTHours * 15; // Convert LST from hours to degrees
   const LSTRad = degToRad(LSTDegrees);
 
-  // ✅ Step 5: Compute Ascendant
+  // ✅ Step 5: Compute Ascendant Using Correct Formula
   let ascRad = Math.atan2(
     Math.cos(LSTRad),
     -(Math.sin(LSTRad) * Math.cos(obliquityRad) + Math.tan(degToRad(latitude)) * Math.sin(obliquityRad))

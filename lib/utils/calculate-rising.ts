@@ -1,3 +1,18 @@
+export const zodiacSigns: ZodiacSign[] = [
+  'Aries',
+  'Taurus',
+  'Gemini',
+  'Cancer',
+  'Leo',
+  'Virgo',
+  'Libra',
+  'Scorpio',
+  'Sagittarius',
+  'Capricorn',
+  'Aquarius',
+  'Pisces',
+];
+
 // Define zodiac sign type
 export type ZodiacSign =
   | 'Aries'
@@ -41,42 +56,15 @@ export const formatHMS = (hours: number): string => {
 
 // Get zodiac sign from angle
 export const getZodiacSign = (angle: number): ZodiacSign => {
-  const signs: ZodiacSign[] = [
-    'Aries',
-    'Taurus',
-    'Gemini',
-    'Cancer',
-    'Leo',
-    'Virgo',
-    'Libra',
-    'Scorpio',
-    'Sagittarius',
-    'Capricorn',
-    'Aquarius',
-    'Pisces',
-  ];
   const signIndex = Math.floor(angle / 30);
-  return signs[signIndex % 12];
+  return zodiacSigns[signIndex % 12];
 };
 
 // Format zodiac position (sign and degrees)
 export const formatZodiacPosition = (angle: number): string => {
   const signIndex = Math.floor(angle / 30);
-  const signs: ZodiacSign[] = [
-    'Aries',
-    'Taurus',
-    'Gemini',
-    'Cancer',
-    'Leo',
-    'Virgo',
-    'Libra',
-    'Scorpio',
-    'Sagittarius',
-    'Capricorn',
-    'Aquarius',
-    'Pisces',
-  ];
-  const sign = signs[signIndex % 12];
+
+  const sign = zodiacSigns[signIndex % 12];
   const degrees = angle % 30;
   return `${degrees.toFixed(1)}° ${sign}`;
 };

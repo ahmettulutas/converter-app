@@ -148,13 +148,21 @@
     "aspectType": "Açı Türü",
     "angle": "Açı",
 
-    "basedOnMeeus": "Jean Meeus'un Astronomik Algoritmalarına dayanmaktadır"
+    "basedOnMeeus": "Jean Meeus'un Astronomik Algoritmalarına dayanmaktadır",
+    "latitude": "Enlem",
+    "latitudeHint": "(-90 ile 90 arasında)",
+    "longitudeHint": "(-180 ile 180 arasında)"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
     "selectLang": "Bir dil seçin",
     "noResult": "Sonuç bulunamadı.",
-    "fillAllFields": "Lütfen tüm gerekli alanları doldurun."
+    "fillAllFields": "Lütfen tüm gerekli alanları doldurun.",
+    "missingFields": "Lütfen tüm alanları doldurun.",
+    "invalidLatitude": "Enlem -90 ile 90 arasında olmalıdır.",
+    "invalidLongitude": "Boylam -180 ile 180 arasında olmalıdır.",
+    "invalidDateTime": "Geçersiz tarih veya saat formatı.",
+    "calculationError": "Hesaplama sırasında bir hata oluştu."
   },
   "metaData": {
     "applicationName": "En Kolay Uzunluk Dönüştürme Araçları",
@@ -334,6 +342,33 @@
         "Ücretsiz Astroloji Hesaplama"
       ],
       "category": "Astroloji Hesaplayıcı"
+    }
+  },
+  "risingSign": {
+    "title": "Yükselen Burç Hesaplayıcı",
+    "description": "Astrolojik yükselen burcunuzu keşfetmek için doğum bilgilerinizi girin.",
+    "result": "Yükselen Burcunuz",
+    "technicalDetails": "Teknik Detaylar",
+    "julianDate": "Jülyen Tarihi",
+    "gmst": "Greenwich Ortalama Yıldız Zamanı",
+    "lst": "Yerel Yıldız Zamanı",
+    "ascendantLongitude": "Yükselen Burç Boylamı",
+    "latitude": "Doğum Enlemi",
+    "longitude": "Doğum Boylamı",
+    "calculate": "Yükselen Burcu Hesapla",
+    "explanations": {
+      "aries": "Koç yükseleni ile enerjik, iddialı ve kendinden emin birisiniz.",
+      "taurus": "Boğa yükseleni ile güvenilir, sabırlı ve konfor odaklısınız.",
+      "gemini": "İkizler yükseleni ile meraklı, zeki ve iletişimcisiniz.",
+      "cancer": "Yengeç yükseleni ile koruyucu, duyarlı ve sezgiselsiniz.",
+      "leo": "Aslan yükseleni ile kendine güvenen, sıcak kanlı ve lider ruhlusunuz.",
+      "virgo": "Başak yükseleni ile analitik, pratik ve düzenli bir yapıya sahipsiniz.",
+      "libra": "Terazi yükseleni ile uyumlu, çekici ve adil birisiniz.",
+      "scorpio": "Akrep yükseleni ile gizemli, tutkulu ve karizmatiksiniz.",
+      "sagittarius": "Yay yükseleni ile özgür ruhlu, iyimser ve maceraperestsiniz.",
+      "capricorn": "Oğlak yükseleni ile disiplinli, sorumluluk sahibi ve kararlısınız.",
+      "aquarius": "Kova yükseleni ile yenilikçi, sıra dışı ve entelektüelsiniz.",
+      "pisces": "Balık yükseleni ile hassas, yaratıcı ve hayalperestsiniz."
     }
   }
 }

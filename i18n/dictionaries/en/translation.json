@@ -138,13 +138,21 @@
     "between": "Between",
     "orb": "Orb",
     "conjunction": "Conjunction",
-    "square": "Square"
+    "square": "Square",
+    "latitude": "Latitude",
+    "latitudeHint": "(-90 to 90)",
+    "longitudeHint": "(-180 to 180)"
   },
   "msg": {
     "noLangSelected": "No language is selected",
     "selectLang": "Select a language",
     "noResult": "No result found.",
-    "fillAllFields": "Please fill out all required fields."
+    "fillAllFields": "Please fill out all required fields.",
+    "missingFields": "Please fill in all fields.",
+    "invalidLatitude": "Latitude must be between -90 and 90.",
+    "invalidLongitude": "Longitude must be between -180 and 180.",
+    "invalidDateTime": "Invalid date or time format.",
+    "calculationError": "An error occurred during calculation."
   },
   "metaData": {
     "applicationName": "Easiest Length Conversion Tools",
@@ -325,6 +333,33 @@
         "Free Astrology Calculator"
       ],
       "category": "Astrology Calculator"
+    }
+  },
+  "risingSign": {
+    "title": "Rising Sign Calculator",
+    "description": "Enter your birth details to discover your astrological rising sign.",
+    "result": "Your Rising Sign",
+    "technicalDetails": "Technical Details",
+    "julianDate": "Julian Date",
+    "gmst": "Greenwich Mean Sidereal Time",
+    "lst": "Local Sidereal Time",
+    "ascendantLongitude": "Ascendant Longitude",
+    "latitude": "Birth Latitude",
+    "longitude": "Birth Longitude",
+    "calculate": "Calculate Rising Sign",
+    "explanations": {
+      "aries": "With Aries rising, you are energetic, assertive, and confident.",
+      "taurus": "With Taurus rising, you are reliable, grounded, and value comfort.",
+      "gemini": "With Gemini rising, you are communicative, curious, and versatile.",
+      "cancer": "With Cancer rising, you are nurturing, protective, and emotionally intuitive.",
+      "leo": "With Leo rising, you are charismatic, warm, and a natural leader.",
+      "virgo": "With Virgo rising, you are analytical, practical, and detail-oriented.",
+      "libra": "With Libra rising, you are charming, diplomatic, and focused on harmony.",
+      "scorpio": "With Scorpio rising, you are intense, magnetic, and somewhat mysterious.",
+      "sagittarius": "With Sagittarius rising, you are adventurous, optimistic, and philosophical.",
+      "capricorn": "With Capricorn rising, you are disciplined, ambitious, and responsible.",
+      "aquarius": "With Aquarius rising, you are innovative, unconventional, and intellectual.",
+      "pisces": "With Pisces rising, you are compassionate, artistic, and intuitive."
     }
   }
 }

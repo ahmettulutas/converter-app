@@ -136,12 +136,20 @@
     "between": "Zwischen",
     "orb": "Orb",
     "conjunction": "Konjunktion",
-    "square": "Quadrat"
+    "square": "Quadrat",
+    "latitude": "Breitengrad",
+    "latitudeHint": "(-90 bis 90)",
+    "longitudeHint": "(-180 bis 180)"
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",
     "selectLang": "Sprache auswählen",
-    "noResult": "Keine Ergebnisse gefunden."
+    "noResult": "Keine Ergebnisse gefunden.",
+    "missingFields": "Bitte füllen Sie alle Felder aus.",
+    "invalidLatitude": "Der Breitengrad muss zwischen -90 und 90 liegen.",
+    "invalidLongitude": "Der Längengrad muss zwischen -180 und 180 liegen.",
+    "invalidDateTime": "Ungültiges Datum oder Uhrzeitformat.",
+    "calculationError": "Ein Fehler ist bei der Berechnung aufgetreten."
   },
   "metaData": {
     "applicationName": "Einfachste Längenumrechnungstools",
@@ -317,6 +325,32 @@
         "Kostenloser Astrologie-Rechner"
       ],
       "category": "Astrologie-Rechner"
+    }
+  },
+  "risingSign": {
+    "title": "Aszendent-Rechner",
+    "description": "Geben Sie Ihre Geburtsdaten ein, um Ihren astrologischen Aszendenten zu berechnen.",
+    "result": "Ihr Aszendent",
+    "technicalDetails": "Technische Details",
+    "julianDate": "Julianisches Datum",
+    "gmst": "Greenwich Mittlere Sternzeit",
+    "lst": "Lokale Sternzeit",
+    "ascendantLongitude": "Länge des Aszendenten",
+    "latitude": "Geburtsbreite",
+    "longitude": "Geburtslänge",
+    "explanations": {
+      "aries": "Mit Aszendent Widder sind Sie energiegeladen, durchsetzungsfähig und selbstbewusst.",
+      "taurus": "Mit Aszendent Stier sind Sie verlässlich, geduldig und komfortorientiert.",
+      "gemini": "Mit Aszendent Zwillinge sind Sie neugierig, kommunikativ und vielseitig.",
+      "cancer": "Mit Aszendent Krebs sind Sie fürsorglich, emotional und intuitiv.",
+      "leo": "Mit Aszendent Löwe sind Sie charismatisch, selbstbewusst und ein geborener Anführer.",
+      "virgo": "Mit Aszendent Jungfrau sind Sie analytisch, praktisch und detailorientiert.",
+      "libra": "Mit Aszendent Waage sind Sie charmant, diplomatisch und ausgeglichen.",
+      "scorpio": "Mit Aszendent Skorpion sind Sie intensiv, leidenschaftlich und geheimnisvoll.",
+      "sagittarius": "Mit Aszendent Schütze sind Sie abenteuerlustig, optimistisch und philosophisch.",
+      "capricorn": "Mit Aszendent Steinbock sind Sie diszipliniert, zielstrebig und verantwortungsbewusst.",
+      "aquarius": "Mit Aszendent Wassermann sind Sie innovativ, unkonventionell und intellektuell.",
+      "pisces": "Mit Aszendent Fische sind Sie einfühlsam, kreativ und fantasievoll."
     }
   }
 }

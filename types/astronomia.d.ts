@@ -7,3 +7,5 @@ declare module 'astronomia/data/vsop87Bvenus';
 declare module 'astronomia/data/vsop87Bmars';
 declare module 'astronomia/data/vsop87Bjupiter';
 declare module 'astronomia/data/vsop87Bsaturn';
+declare module 'astronomia';
+declare module 'astronomia/jupitermoons';

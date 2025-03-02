@@ -1,0 +1,54 @@
+import DualBirthMapCalculator from '@/components/pages/birth-map-calculator';
+import { SharedPageProps } from '../layout';
+import { PageContainer } from '@/components/shared/page-container';
+import CalculatorContainer from '@/components/layout/calculator-container';
+import { JsonSchema } from '@/components/shared/json.ld';
+import { createTranslation } from '@/i18n';
+import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
+import { birthMapFaqs } from '@/lib/constants/faq';
+import { ResolvingMetadata } from 'next';
+import { LocaleType } from '@/i18n/settings';
+import VenusStarPointCalculator from '@/components/pages/venus-star-points';
+import PlanetRiseCalculator from '@/components/pages/planet-rise';
+import MercuryRetrogradeCalculator from '@/components/pages/mercury-retrograde';
+import MoonPhaseCalculator from '@/components/pages/moon-phaze';
+
+const pageKey = 'birthMapCalculator';
+
+export default async function Page(props: Readonly<SharedPageProps>) {
+  const { params } = props;
+  const { t } = await createTranslation(params.locale, 'translation');
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: birthMapFaqs[params.locale].map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
+
+  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+  return (
+    <>
+      <article>
+        <PageContainer className="flex flex-col gap-y-2 my-4">
+          <h1 className="text-center text-2xl my-2">{t('labels.birthMapCalculator')}</h1>
+          {/* <VenusStarPointCalculator />
+          <PlanetRiseCalculator /> */}
+          <MercuryRetrogradeCalculator />
+          <MoonPhaseCalculator />
+        </PageContainer>
+      </article>
+      <JsonSchema schema={faqSchema} />
+      {pageSchema && <JsonSchema schema={pageSchema} />}
+    </>
+  );
+}
+
+export async function generateMetadata({ params }: SharedPageProps, parent: ResolvingMetadata) {
+  return getDefaultMetaData(params.locale, parent, pageKey);
+}

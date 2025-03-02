@@ -233,82 +233,81 @@ export default function RisingSignCalculator(): JSX.Element {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50 p-4">
-      <Card className="w-full max-w-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl">Rising Sign Calculator</CardTitle>
-          <CardDescription>Enter your birth details to discover your astrological rising sign.</CardDescription>
-        </CardHeader>
+    <Card className="w-full max-w-lg mx-auto">
+      <CardHeader>
+        <CardTitle className="text-2xl">Rising Sign Calculator</CardTitle>
+        <CardDescription>Enter your birth details to discover your astrological rising sign.</CardDescription>
+      </CardHeader>
 
-        <CardContent>
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="birthDate">Birth Date</Label>
-              <Input id="birthDate" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="birthTime">Birth Time (24-hour format, local time)</Label>
-              <Input id="birthTime" type="time" value={birthTime} onChange={(e) => setBirthTime(e.target.value)} />
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="latitude">Latitude</Label>
-                <Input
-                  id="latitude"
-                  type="text"
-                  placeholder="e.g., 41.01"
-                  value={latitude}
-                  onChange={(e) => setLatitude(e.target.value)}
-                />
-                <p className="text-xs text-gray-500">(-90 to 90)</p>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="longitude">Longitude</Label>
-                <Input
-                  id="longitude"
-                  type="text"
-                  placeholder="e.g., 28.95"
-                  value={longitude}
-                  onChange={(e) => setLongitude(e.target.value)}
-                />
-                <p className="text-xs text-gray-500">(-180 to 180)</p>
-              </div>
-            </div>
-
-            {error && <div className="text-red-500 text-sm">{error}</div>}
+      <CardContent>
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="birthDate">Birth Date</Label>
+            <Input id="birthDate" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
           </div>
 
-          {risingSign && (
-            <>
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Your Rising Sign: {risingSign.position}</h3>
-                <p className="text-sm text-gray-700">{risingSign.explanation}</p>
+          <div className="space-y-2">
+            <Label htmlFor="birthTime">Birth Time (24-hour format, local time)</Label>
+            <Input id="birthTime" type="time" value={birthTime} onChange={(e) => setBirthTime(e.target.value)} />
+          </div>
 
-                <div className="bg-gray-50 p-3 rounded-md">
-                  <h4 className="text-sm font-medium">Technical Details</h4>
-                  <ul className="text-xs text-gray-600 mt-1 space-y-1">
-                    <li>Julian Date: {risingSign.technicalDetails.julianDate}</li>
-                    <li>Greenwich Mean Sidereal Time: {risingSign.technicalDetails.gmst}</li>
-                    <li>Local Sidereal Time: {risingSign.technicalDetails.lst}</li>
-                    <li>Ascendant Longitude: {risingSign.technicalDetails.ascendantLongitude}</li>
-                    <li>Birth Latitude: {risingSign.technicalDetails.latitude}</li>
-                    <li>Birth Longitude: {risingSign.technicalDetails.longitude}</li>
-                  </ul>
-                </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="latitude">Latitude</Label>
+              <Input
+                id="latitude"
+                type="text"
+                placeholder="e.g., 41.01"
+                value={latitude}
+                onChange={(e) => setLatitude(e.target.value)}
+              />
+              <p className="text-xs text-gray-500">(-90 to 90)</p>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="longitude">Longitude</Label>
+              <Input
+                id="longitude"
+                type="text"
+                placeholder="e.g., 28.95"
+                value={longitude}
+                onChange={(e) => setLongitude(e.target.value)}
+              />
+              <p className="text-xs text-gray-500">(-180 to 180)</p>
+            </div>
+          </div>
+
+          {error && <div className="text-red-500 text-sm">{error}</div>}
+        </div>
+
+        {risingSign && (
+          <>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Your Rising Sign: {risingSign.position}</h3>
+              <p className="text-sm text-gray-700">{risingSign.explanation}</p>
+
+              <div className="bg-gray-50 p-3 rounded-md">
+                <h4 className="text-sm font-medium">Technical Details</h4>
+                <ul className="text-xs text-gray-600 mt-1 space-y-1">
+                  <li>Julian Date: {risingSign.technicalDetails.julianDate}</li>
+                  <li>Greenwich Mean Sidereal Time: {risingSign.technicalDetails.gmst}</li>
+                  <li>Local Sidereal Time: {risingSign.technicalDetails.lst}</li>
+                  <li>Ascendant Longitude: {risingSign.technicalDetails.ascendantLongitude}</li>
+                  <li>Birth Latitude: {risingSign.technicalDetails.latitude}</li>
+                  <li>Birth Longitude: {risingSign.technicalDetails.longitude}</li>
+                </ul>
               </div>
-            </>
-          )}
-        </CardContent>
+            </div>
+          </>
+        )}
+      </CardContent>
 
-        <CardFooter className="flex flex-col gap-2">
-          <Button className="w-full" onClick={calculateRisingSign}>
-            Calculate Rising Sign
-          </Button>
+      <CardFooter className="flex flex-col gap-2">
+        <Button className="w-full" onClick={calculateRisingSign}>
+          Calculate Rising Sign
+        </Button>
 
-          <Button
+        {/*    <Button
             variant="outline"
             className="w-full"
             onClick={() => {
@@ -319,9 +318,8 @@ export default function RisingSignCalculator(): JSX.Element {
             }}
           >
             Fill Example: Istanbul, Dec 9, 1993, 9:00
-          </Button>
-        </CardFooter>
-      </Card>
-    </div>
+          </Button> */}
+      </CardFooter>
+    </Card>
   );
 }

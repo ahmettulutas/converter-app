@@ -1,16 +1,16 @@
 const zodiacSigns = [
-  'capricorn',
-  'aquarius',
-  'pisces',
-  'aries',
-  'taurus',
-  'gemini',
-  'cancer',
-  'leo',
-  'virgo',
-  'libra',
-  'scorpio',
-  'sagittarius',
+  'Capricorn',
+  'Aquarius',
+  'Pisces',
+  'Aries',
+  'Taurus',
+  'Gemini',
+  'Cancer',
+  'Leo',
+  'Virgo',
+  'Libra',
+  'Scorpio',
+  'Sagittarius',
 ];
 
 const zodiacDates = [

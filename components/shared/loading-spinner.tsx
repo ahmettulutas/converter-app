@@ -1,6 +1,6 @@
 export function LoadingSpinner() {
   return (
-    <div className="absolute bg-white bg-opacity-60 z-10 h-full w-full flex items-center justify-center">
+    <div className="absolute bg-opacity-60 z-10 h-full w-full flex items-center justify-center">
       <svg
         className="animate-spin h-8 w-8 text-primary"
         xmlns="http://www.w3.org/2000/svg"

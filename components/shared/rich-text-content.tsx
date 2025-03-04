@@ -68,8 +68,8 @@ const myPortableTextComponents = {
     link: ({ value, children }: any) => {
       const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
       return (
-        <a href={value?.href} target={target} className="underline" rel={target === '_blank' ? 'noindex nofollow' : ''}>
-          <span className="inline-flex items-center text-primary">
+        <a href={value?.href} target={target} rel={target === '_blank' ? 'noindex nofollow' : ''}>
+          <span className="inline-flex items-center text-primary underline">
             {children}
             <Link2 width={12} height={12} className="inline-block" />
           </span>

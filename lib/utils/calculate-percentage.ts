@@ -21,3 +21,31 @@ export const increaseByPercentage = (value: number, percentage: number): number 
 export const decreaseByPercentage = (value: number, percentage: number): number => {
   return value * (1 - percentage / 100);
 };
+export type CalculationType =
+  | 'valueFromPercentage'
+  | 'percentageFromTotal'
+  | 'percentageChange'
+  | 'increaseByPercentage'
+  | 'decreaseByPercentage'
+  | 'totalFromPercentage';
+
+export const percentTypes: CalculationType[] = [
+  'decreaseByPercentage',
+  'increaseByPercentage',
+  'percentageChange',
+  'percentageFromTotal',
+  'totalFromPercentage',
+  'valueFromPercentage',
+];
+const descriptionMap: Record<CalculationType, string> = {
+  valueFromPercentage: 'labels.valueFromPercentageDescription',
+  percentageFromTotal: 'labels.percentageFromTotalDescription',
+  totalFromPercentage: 'labels.totalFromPercentageDescription',
+  percentageChange: 'labels.percentageChangeDescription',
+  increaseByPercentage: 'labels.increaseByPercentageDescription',
+  decreaseByPercentage: 'labels.decreaseByPercentageDescription',
+};
+
+export const getPercentageDescription = (type: CalculationType): string => {
+  return descriptionMap[type] || descriptionMap.valueFromPercentage;
+};

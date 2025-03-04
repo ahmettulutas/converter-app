@@ -77,6 +77,9 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
             </div>
           )}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
+            <div className="col-span-1 md:col-span-2 mt-2">
+              {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
+            </div>
             {data?.blog?.headings?.length > 0 && (
               <Suspense fallback={<TableOfContentSkeleton />}>
                 <details className="border p-4 col-span-1 md:sticky top-2 h-min bg-background" open>
@@ -85,9 +88,6 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
                 </details>
               </Suspense>
             )}
-            <div className="col-span-1 md:col-span-2 mt-2">
-              {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
-            </div>
           </div>
         </PageContainer>
         <div className="my-4 ml-auto w-min">

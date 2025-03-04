@@ -123,7 +123,12 @@ export const getDefaultMetaData = async (
   };
 };
 
-export async function getLocalizedJsonLd(locale: LocaleType, pageKey: string) {
+export async function getLocalizedJsonLd(
+  locale: LocaleType,
+  pageKey: string,
+  dynamicTitle?: string,
+  dynamicDescription?: string
+) {
   const { t } = await createTranslation(locale, 'translation');
   const keywords: Array<string> = t(`metaData.${pageKey}.keywords`, {
     returnObjects: true,
@@ -134,11 +139,11 @@ export async function getLocalizedJsonLd(locale: LocaleType, pageKey: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: t(`metaData.${pageKey}.title`),
+    name: dynamicTitle ?? t(`metaData.${pageKey}.title`),
     url: `${baseUrl}/${locale}${pathname}`,
     applicationCategory: t('labels.applicationCategory'),
     operatingSystem: 'All',
-    description: t(`metaData.${pageKey}.description`),
+    description: dynamicDescription ?? t(`metaData.${pageKey}.description`),
     browserRequirements: t('labels.browserRequirements'),
     creator: {
       '@type': 'Organization',

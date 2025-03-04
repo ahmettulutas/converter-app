@@ -8,11 +8,10 @@ import { percentageFaqs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 import CalculatorContainer from '@/components/layout/calculator-container';
 
 const PercentageCalculator = lazy(() => import('@/components/pages/percentage-calculator'));
-const Faq = lazy(() => import('@/components/shared/faq'));
 const pageKey = 'percentageCalculator';
 
 export default async function Page(props: Readonly<SharedPageProps>) {

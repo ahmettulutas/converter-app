@@ -12,17 +12,12 @@ import {
   calculatePercentageChange,
   increaseByPercentage,
   decreaseByPercentage,
+  CalculationType,
+  getPercentageDescription,
+  percentTypes,
 } from '@/lib/utils/calculate-percentage';
 import { useTranslation } from '@/i18n/client';
 import { LocaleType } from '@/i18n/settings';
-
-type CalculationType =
-  | 'valueFromPercentage'
-  | 'percentageFromTotal'
-  | 'percentageChange'
-  | 'increaseByPercentage'
-  | 'decreaseByPercentage'
-  | 'totalFromPercentage';
 
 interface CalculationState {
   type: CalculationType;
@@ -32,16 +27,19 @@ interface CalculationState {
   result: string;
 }
 
-export default function YuzdelikHesaplama({ currentLocale }: Readonly<{ currentLocale: LocaleType }>) {
+export default function PercentageCalculator(
+  props: Readonly<{ currentLocale: LocaleType } & { initialType?: CalculationType }>
+) {
+  const { currentLocale, initialType } = props;
   const [calculationState, setCalculationState] = useState<CalculationState>({
-    type: 'valueFromPercentage',
+    type: initialType ?? 'valueFromPercentage',
     value: '',
     total: '',
     percentage: '',
     result: '',
   });
-
   const { t } = useTranslation(currentLocale, 'translation');
+  const description = t(getPercentageDescription(calculationState.type));
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -80,29 +78,14 @@ export default function YuzdelikHesaplama({ currentLocale }: Readonly<{ currentL
     setCalculationState((prev) => ({ ...prev, result }));
   };
 
-  const getDescription = () => {
-    switch (calculationState.type) {
-      case 'valueFromPercentage':
-        return t('labels.valueFromPercentageDescription');
-      case 'percentageFromTotal':
-        return t('labels.percentageFromTotalDescription');
-      case 'totalFromPercentage':
-        return t('labels.totalFromPercentageDescription');
-      case 'percentageChange':
-        return t('labels.percentageChangeDescription');
-      case 'increaseByPercentage':
-        return t('labels.increaseByPercentageDescription');
-      case 'decreaseByPercentage':
-        return t('labels.decreaseByPercentageDescription');
-      default:
-        return '';
-    }
-  };
-
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>{t('labels.percentageCalculator')}</CardTitle>
+        <CardTitle>
+          {initialType
+            ? t(`labels.dynamicPercentTitles.${initialType}`)
+            : t('labels.dynamicPercentTitles.valueFromPercentage')}
+        </CardTitle>
         <CardDescription>{t('labels.percentageCardDesc')}</CardDescription>
       </CardHeader>
       <CardContent>
@@ -120,18 +103,17 @@ export default function YuzdelikHesaplama({ currentLocale }: Readonly<{ currentL
                 <SelectValue placeholder={t('labels.selectCalculationType')} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="valueFromPercentage">{t('labels.calculateValueFromPercentage')}</SelectItem>
-                <SelectItem value="percentageFromTotal">{t('labels.calculatePercentageFromTotal')}</SelectItem>
-                <SelectItem value="totalFromPercentage">{t('labels.calculateTotalFromPercentage')}</SelectItem>
-                <SelectItem value="percentageChange">{t('labels.calculatePercentageChange')}</SelectItem>
-                <SelectItem value="increaseByPercentage">{t('labels.calculateIncreaseByPercentage')}</SelectItem>
-                <SelectItem value="decreaseByPercentage">{t('labels.calculateDecreaseByPercentage')}</SelectItem>
+                {percentTypes.map((type) => (
+                  <SelectItem key={type} value={type}>
+                    {t(`labels.${type}`)}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
           <div className="bg-secondary p-4 rounded-md">
             <h3 className="font-semibold mb-2">{t('labels.description')}</h3>
-            <p>{getDescription()}</p>
+            <p>{description}</p>
           </div>
           {(calculationState.type === 'valueFromPercentage' ||
             calculationState.type === 'percentageFromTotal' ||

@@ -33,12 +33,18 @@ export default function RootLayout(props: LocaleRouteLayout) {
       <meta name="google-adsense-account" content="ca-pub-9880416599476522"></meta>
 
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KCYH24DV1Q"></Script>
-      <Script
+      {/*  <Script
         src={`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-KCYH24DV1Q');`}
+      ></Script> */}
+      <Script
+        strategy="afterInteractive"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9880416599476522"
+        crossOrigin="anonymous"
       ></Script>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>

@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils/styles';
 
 const myPortableTextComponents = {
   types: {
-    calculatorButton: ({ value }: any) => (
+    /* calculatorButton: ({ value }: any) => (
       <a
         href={value.url}
         target="_blank"
@@ -20,7 +20,7 @@ const myPortableTextComponents = {
       >
         {value.label}
       </a>
-    ),
+    ), */
     image: ({ value }: any) => {
       const url = urlForImage(value.asset).height(400).width(300).url();
       if (!url) return <></>;

@@ -13,6 +13,7 @@ import { getDefaultMetaData } from '@/lib/seo';
 import { ThemeProvider } from 'next-themes';
 import { AppSidebar } from '@/components/layout/sidebar/app-sidebar';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import Script from 'next/script';
 
 export type SharedPageProps = {
   params: { locale: LocaleType };
@@ -31,14 +32,14 @@ export default function RootLayout(props: LocaleRouteLayout) {
     <html lang={params.locale} dir={dir(params.locale)} className="scroll-smooth">
       <meta name="google-adsense-account" content="ca-pub-9880416599476522"></meta>
 
-      {/*       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KCYH24DV1Q"></Script>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-KCYH24DV1Q"></Script>
       <Script
         src={`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-KCYH24DV1Q');`}
-      ></Script> */}
+      ></Script>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <SidebarProvider>

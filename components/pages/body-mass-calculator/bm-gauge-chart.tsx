@@ -12,7 +12,7 @@ interface BMIGaugeChartProps {
 }
 
 export function BMIGaugeChart({ result, currentLocale }: BMIGaugeChartProps) {
-  const { bmi, category } = result;
+  const { bmi } = result;
   const [mounted, setMounted] = useState(false);
   const [chartKey, setChartKey] = useState(0);
   const { t } = useTranslation(currentLocale, 'translation');

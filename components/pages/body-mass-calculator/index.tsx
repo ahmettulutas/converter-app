@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,10 +14,10 @@ import {
   type BMIResult,
   getCategoryColor,
 } from '@/lib/utils/calculate-bmi';
-import { BMIGaugeChart } from './bm-gauge-chart';
+
 import { LocaleType } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
-
+const BMIGaugeChart = lazy(() => import('./bm-gauge-chart'));
 interface BMIState {
   age: number;
   gender: Gender;
@@ -207,7 +207,9 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
                 .replace('{bmi}', result.bmi.toFixed(1)) // Ensure 1 decimal place
                 .replace('{category}', result.category)}
             </div>
-            <BMIGaugeChart result={result} currentLocale={currentLocale} />
+            <Suspense fallback={<>Loading...</>}>
+              <BMIGaugeChart result={result} currentLocale={currentLocale} />
+            </Suspense>
             <ul className="space-y-2 mt-6 list-disc pl-2 md:pl-5 text-sm md:text-base">
               <li>
                 {t('labels.bmi.calculator.healthyBmiRange')}: {result.healthyBmiRange}

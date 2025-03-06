@@ -15,8 +15,8 @@ export default function BlogDate({ date }: { date?: string }) {
 
   const parsedDate = parseISO(date);
   return (
-    <time className="text-sm text-muted-foreground" dateTime={date}>
-      {format(parsedDate, 'LLLL	d, yyyy')}
+    <time className="text-xs text-muted-foreground px-3 flex-1 inline-block" dateTime={date}>
+      {format(parsedDate, 'MM.dd.yyyy')}
     </time>
   );
 }
@@ -31,12 +31,12 @@ export function BlogCard(props: BlogCardProps) {
   return (
     <Card className="flex flex-col h-full">
       <CardHeader>
-        <CardTitle className="line-clamp-2 text-lg lg:text-xl">{title}</CardTitle>
+        <CardTitle className="line-clamp-2 text-md lg:text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow">
         <p className="text-sm text-muted-foreground line-clamp-4">{description}</p>
       </CardContent>
-      <CardFooter className="flex flex-col md:flex-row justify-between gap-y-2">
+      <CardFooter className="flex justify-between gap-y-2 items-center flex-col md:flex-row">
         <BlogDate date={date} />
         <Button variant="ghost" size="sm" asChild>
           <Link

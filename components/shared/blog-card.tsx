@@ -31,12 +31,12 @@ export function BlogCard(props: BlogCardProps) {
   return (
     <Card className="flex flex-col h-full">
       <CardHeader>
-        <CardTitle className="line-clamp-2">{title}</CardTitle>
+        <CardTitle className="line-clamp-2 text-lg lg:text-xl">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>
+        <p className="text-sm text-muted-foreground line-clamp-4">{description}</p>
       </CardContent>
-      <CardFooter className="flex justify-between items-center">
+      <CardFooter className="flex flex-col md:flex-row justify-between gap-y-2">
         <BlogDate date={date} />
         <Button variant="ghost" size="sm" asChild>
           <Link

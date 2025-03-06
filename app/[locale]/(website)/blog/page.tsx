@@ -15,8 +15,8 @@ export default async function BlogPage({ params }: Readonly<SharedPageProps>) {
 
   return (
     <article>
-      <PageContainer className="mt-32">
-        <h1 className="mb-10">{t('labels.blog')}</h1>
+      <PageContainer className="mt-8">
+        <h1 className="mb-6 lg:mb-10 text-lg lg:text-2xl">{t('labels.blog')}</h1>
         <section className="grid gap-y-12 md:gap-y-24 my-6 lg:my-10">
           <BlogCardList blogList={blogs} currentLocale={locale} />
         </section>

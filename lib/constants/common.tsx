@@ -10,7 +10,7 @@ import {
   Calculator,
   ScaleIcon as Scales,
   BookIcon,
-  WholeWord,
+  PersonStanding,
   Globe2,
 } from 'lucide-react';
 
@@ -43,6 +43,7 @@ export const navCategories = [
       { href: '/percentage-calculator', label: 'labels.percentageCalculator', icon: Percent },
       { href: '/mortgage-calculator', label: 'labels.mortgageCalculator', icon: Home },
       { href: '/sexual-identity-test', label: 'labels.sexualIdentityTest', icon: Heart },
+      { href: '/body-mass-index-calculator', label: 'labels.bmi.page.title', icon: PersonStanding },
     ],
   },
   {

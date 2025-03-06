@@ -161,9 +161,9 @@
     "longitudeHint": "(-180 ile 180 arasında)",
     "bmi": {
       "page": {
-        "title": "Vücut Kitle Endeksi Hesaplayıcı",
-        "cardTitle": "Doğru Vücut Kitle Endeksi Hesaplayıcı",
-        "description": "Gelişmiş vücut kitle endeksi hesaplama aracımız ile vücut kitle endeksinizi hızlı ve doğru bir şekilde öğrenin. Araç, 'vücut kitle endeksi', 'vücut kitle endeksi hesaplama', 'vücut kitle endeksi hesapla' ve 'vücut kitle endeksi hesaplama formülü' gibi önemli anahtar kelimeleri kapsamaktadır. Ayrıca, 'vucut kitle endeksi', 'vücut kitle endeksi nasıl hesaplanır', 'vücut kitle endeksi hesaplama yaşa göre', 'vücut kitle endeksi hesaplaması' ve 'vücut kitle endeksi hesaplama nasıl yapılır' ifadeleri ile arama motorlarında öne çıkmanızı sağlar. Askerlik vücut kitle endeksinizi de hesaplayarak, sağlıklı yaşam ve fitness hedeflerinizde size rehberlik eder. Kişiye özel sonuçlar sunan bu araç, doğru ve güvenilir ölçümlerle yaşam kalitenizi artırmaya yardımcı olur."
+        "title": "Vücut Kitle Endeksi Hesaplama",
+        "cardTitle": "Gelişmiş Vücut Kitle Endeksi Hesaplama",
+        "description": "Gelişmiş vücut kitle endeksi hesaplama aracımız ile vücut kitle endeksinizi hızlı ve doğru bir şekilde öğrenin. "
       },
       "calculator.title": "BMI Hesaplayıcı",
       "calculator.description": "Vücut Kitle İndeksinizi Hesaplayın",
@@ -284,14 +284,14 @@
       "title": "Ücretsiz Güneş Burcu Hesaplama - Burcunuzu Keşfedin | Hızlı ve Ücretsiz!",
       "description": "Hızlı ve ücretsiz Güneş Burcu Hesaplayıcımız ile burcunuzu öğrenin. Güneş burcunuzun temel kişilik özelliklerinizi nasıl tanımladığını ve hayatınızı nasıl şekillendirdiğini keşfedin. Doğum bilgilerinizi girerek doğru astrolojik bilgiler alın.",
       "keywords": [
-        "Güneş burcu hesaplayıcı",
-        "Zodyak burcu hesaplayıcı",
+        "Güneş burcu Hesaplama",
+        "Zodyak burcu Hesaplama",
         "Astroloji güneş burcu",
         "Burcumu öğren",
         "Benim güneş burcum nedir",
         "Astrolojik güneş burcu",
-        "Ücretsiz güneş burcu hesaplayıcı",
-        "Doğru zodyak burcu hesaplayıcı",
+        "Ücretsiz güneş burcu Hesaplama",
+        "Doğru zodyak burcu hesaplama",
         "Kişisel astroloji raporu",
         "Güneş burcu ve kişilik"
       ],
@@ -351,7 +351,7 @@
     },
     "bmiCalculator": {
       "title": "BMI Hesaplayıcı – Sağlık ve Fitness için Doğru Vücut Kitle İndeksi Hesaplaması | Hızlı & Ücretsiz!",
-      "description": "Gelişmiş BMI Hesaplayıcımız ile Vücut Kitle İndeksinizi (BMI) hızlı ve doğru bir şekilde hesaplayın. Sadece boyunuzu ve kilonuzu girerek anında BMI değerinizi ve kişiye özel sağlık önerilerini alın. Kilo kaybını takip etmek, fitness ilerlemesini izlemek ve genel sağlığınızı yönetmek için idealdir.",
+      "description": "Gelişmiş vücut kitle endeksi hesaplama aracımız ile vücut kitle endeksinizi hızlı ve doğru bir şekilde öğrenin. Araç, 'vücut kitle endeksi', 'vücut kitle endeksi hesaplama', 'vücut kitle endeksi hesapla' ve 'vücut kitle endeksi hesaplama formülü' gibi önemli anahtar kelimeleri kapsamaktadır. Ayrıca, 'vucut kitle endeksi', 'vücut kitle endeksi nasıl hesaplanır', 'vücut kitle endeksi hesaplama yaşa göre', 'vücut kitle endeksi hesaplaması' ve 'vücut kitle endeksi hesaplama nasıl yapılır' ifadeleri ile arama motorlarında öne çıkmanızı sağlar. Askerlik vücut kitle endeksinizi de hesaplayarak, sağlıklı yaşam ve fitness hedeflerinizde size rehberlik eder. Kişiye özel sonuçlar sunan bu araç, doğru ve güvenilir ölçümlerle yaşam kalitenizi artırmaya yardımcı olur.",
       "keywords": [
         "vücut kitle endeksi",
         "vücut kitle endeksi hesaplama",
@@ -384,10 +384,10 @@
       "category": "Online Araçlar"
     },
     "birthMapCalculator": {
-      "title": "Doğum Haritası Hesaplayıcı – Kişisel Astroloji Haritanızı Keşfedin | Hızlı & Ücretsiz!",
-      "description": "Doğum Haritası Hesaplayıcı ile gezegen konumlarınızı ve ev yerleşimlerinizi bilimsel doğrulukla keşfedin. Doğum tarihi, saati ve konumunuzu girerek kişisel astroloji haritanızı oluşturun. Jean Meeus'un astronomik algoritmalarına dayanarak hazırlanan doğru sonuçlar.",
+      "title": "Doğum Haritası Hesaplama – Kişisel Astroloji Haritanızı Keşfedin | Hızlı & Ücretsiz!",
+      "description": "Doğum Haritası Hesaplama ile gezegen konumlarınızı ve ev yerleşimlerinizi bilimsel doğrulukla keşfedin. Doğum tarihi, saati ve konumunuzu girerek kişisel astroloji haritanızı oluşturun. Jean Meeus'un astronomik algoritmalarına dayanarak hazırlanan doğru sonuçlar.",
       "keywords": [
-        "Doğum Haritası Hesaplayıcı",
+        "Doğum Haritası Hesaplama",
         "Astroloji Haritası",
         "Natal Harita",
         "Kişisel Doğum Haritası",
@@ -398,7 +398,7 @@
         "Astroloji Yorumları",
         "Ücretsiz Astroloji Hesaplama"
       ],
-      "category": "Astroloji Hesaplayıcı"
+      "category": "Astroloji Hesaplama"
     }
   },
   "risingSign": {

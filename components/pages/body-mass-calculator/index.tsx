@@ -107,8 +107,8 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
   return (
     <Card className="max-w-lg mx-auto">
       <CardHeader>
-        <CardTitle>{t('labels.bmi.calculator.title')}</CardTitle>
-        <CardDescription>{t('labels.bmi.calculator.description')}</CardDescription>
+        <CardTitle>{t('labels.bmi.page.cardTitle')}</CardTitle>
+        <CardDescription>{t('labels.bmi.page.description')}</CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs

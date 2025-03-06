@@ -13,7 +13,7 @@ import CalculatorContainer from '@/components/layout/calculator-container';
 
 const BodyMassCalculator = lazy(() => import('@/components/pages/body-mass-calculator'));
 
-const pageKey = 'bodyMassCalculator';
+const pageKey = 'bmiCalculator';
 
 export default async function Page(props: Readonly<SharedPageProps>) {
   const { params } = props;
@@ -35,7 +35,7 @@ export default async function Page(props: Readonly<SharedPageProps>) {
     <>
       <article>
         <PageContainer className="flex flex-col gap-y-2 my-4">
-          <h1 className="text-center text-2xl my-2">{t('labels.BodyMassCalculator')}</h1>
+          <h1 className="text-center text-2xl my-2">{t('labels.bmi.page.title')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: bmiFaqs[params.locale] }}
             calculator={<BodyMassCalculator currentLocale={params.locale} />}

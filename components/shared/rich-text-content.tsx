@@ -45,7 +45,7 @@ const myPortableTextComponents = {
         // use the node key as the id, it's guaranteed unique
         // one can also slugify the children spans if one want
         // nicer URLs
-        <HeadingTag id={node._key} className="text-xl lg:text-2xl font-bold">
+        <HeadingTag id={node._key} className="my-1 text-lg lg:text-xl font-bold">
           {children}
           <Link className="text-sm leading-8" href={`#${node._key}`}>
             #
@@ -58,7 +58,7 @@ const myPortableTextComponents = {
 
     if (style === 'normal')
       return (
-        <p className={cn('ml-2 lg:ml-4  leading-8 font-light', index === 0 ? 'indent-8' : 'indent-0')}>{children}</p>
+        <p className={cn('ml-2 lg:ml-4  text-base font-light', index === 0 ? 'indent-8' : 'indent-0')}>{children}</p>
       );
   },
   marks: {
@@ -76,7 +76,11 @@ const myPortableTextComponents = {
     },
     code: ({ value, children }: any) => {
       const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
-      return <code className="bg-accent p-2 rounded-md">{children}</code>;
+      return <code className="bg-accent p-2 rounded-md my-1 block">{children}</code>;
+    },
+    strong: ({ value, children }: any) => {
+      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
+      return <strong className="my-2 block">{children}</strong>;
     },
   },
   list: {

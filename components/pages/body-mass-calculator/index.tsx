@@ -13,23 +13,16 @@ import {
   type Gender,
   type BMIResult,
   getCategoryColor,
+  BMIState,
 } from '@/lib/utils/calculate-bmi';
 
 import { LocaleType } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 const BMIGaugeChart = lazy(() => import('./bm-gauge-chart'));
-interface BMIState {
-  age: number;
-  gender: Gender;
-  height: number;
-  weight: number;
-  unitSystem: UnitSystem;
-}
 
 export default function BMICalculator({ currentLocale }: { currentLocale: LocaleType }) {
   const { t } = useTranslation(currentLocale, 'translation');
   const [bmiState, setBmiState] = useState<BMIState>({
-    age: 25,
     gender: 'male',
     height: 170,
     weight: 70,
@@ -80,14 +73,13 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
   };
 
   const handleCalculate = () => {
-    const { age, gender, height, weight, unitSystem } = bmiState;
-    const calculationResult = calculateBMI(height, weight, age, gender, unitSystem);
+    const { gender, height, weight, unitSystem } = bmiState;
+    const calculationResult = calculateBMI(height, weight, gender, unitSystem);
     setResult(calculationResult);
   };
 
   const handleClear = () => {
     setBmiState({
-      age: 25,
       gender: 'male',
       height: bmiState.unitSystem === 'metric' ? 170 : 67,
       weight: bmiState.unitSystem === 'metric' ? 70 : 154,
@@ -105,7 +97,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
   };
 
   return (
-    <Card className="max-w-lg mx-auto">
+    <Card className="max-w-lg mx-auto bg-background">
       <CardHeader>
         <CardTitle>{t('labels.bmi.page.cardTitle')}</CardTitle>
         <CardDescription>{t('labels.bmi.page.description')}</CardDescription>
@@ -129,12 +121,6 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
           }}
           className="space-y-4 mt-4"
         >
-          <div className="space-y-2">
-            <label htmlFor="age">{t('labels.bmi.calculator.age')}</label>
-            <Input type="number" id="age" name="age" value={bmiState.age} onChange={handleInputChange} required />
-            <div className="text-sm text-muted-foreground">{t('labels.bmi.calculator.ageHint')}</div>
-          </div>
-
           <div className="space-y-2">
             <label>{t('labels.bmi.calculator.gender')}</label>
             <RadioGroup value={bmiState.gender} onValueChange={handleGenderChange} className="flex space-x-4">

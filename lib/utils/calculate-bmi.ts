@@ -1,31 +1,22 @@
-export interface BMIResult {
+export type BMIResult = {
   bmi: number;
   category: BMICategory;
   healthyBmiRange: string;
   healthyWeightRange: string;
   bmiPrime: number;
   ponderalIndex: number;
-}
-
+};
+export type BMIState = {
+  gender: Gender;
+  height: number;
+  weight: number;
+  unitSystem: UnitSystem;
+};
 export type Gender = 'male' | 'female';
 export type UnitSystem = 'metric' | 'us';
 export type BMICategory = 'Thin' | 'Normal' | 'Overweight' | 'Obese';
 
-export interface BMIResult {
-  bmi: number;
-  category: BMICategory;
-  healthyBmiRange: string;
-  healthyWeightRange: string;
-  bmiPrime: number;
-  ponderalIndex: number;
-}
-export function calculateBMI(
-  height: number,
-  weight: number,
-  age: number,
-  gender: Gender,
-  unitSystem: UnitSystem
-): BMIResult {
+export function calculateBMI(height: number, weight: number, gender: Gender, unitSystem: UnitSystem): BMIResult {
   let heightInM = height;
   let weightInKg = weight;
 
@@ -39,13 +30,11 @@ export function calculateBMI(
   // Calculate BMI
   const bmi = weightInKg / (heightInM * heightInM);
 
-  // Determine BMI category with age and gender consideration
   let category: BMICategory;
   let minHealthyBmi: number;
   let maxHealthyBmi: number;
 
-  if (age < 18) {
-    // For children and adolescents
+  if (gender === 'male') {
     if (bmi < 18.5) category = 'Thin';
     else if (bmi < 25) category = 'Normal';
     else if (bmi < 30) category = 'Overweight';
@@ -53,36 +42,16 @@ export function calculateBMI(
 
     minHealthyBmi = 18.5;
     maxHealthyBmi = 25;
-  } else if (age >= 65) {
-    // For older adults
-    if (bmi < 22) category = 'Thin';
-    else if (bmi < 27) category = 'Normal';
-    else if (bmi < 30) category = 'Overweight';
+  } else {
+    // female
+    // Slightly different ranges for women
+    if (bmi < 18.5) category = 'Thin';
+    else if (bmi < 24) category = 'Normal';
+    else if (bmi < 29) category = 'Overweight';
     else category = 'Obese';
 
-    minHealthyBmi = 22;
-    maxHealthyBmi = 27;
-  } else {
-    // Standard adult categories with gender differences
-    if (gender === 'male') {
-      if (bmi < 18.5) category = 'Thin';
-      else if (bmi < 25) category = 'Normal';
-      else if (bmi < 30) category = 'Overweight';
-      else category = 'Obese';
-
-      minHealthyBmi = 18.5;
-      maxHealthyBmi = 25;
-    } else {
-      // female
-      // Slightly different ranges for women
-      if (bmi < 18.5) category = 'Thin';
-      else if (bmi < 24) category = 'Normal';
-      else if (bmi < 29) category = 'Overweight';
-      else category = 'Obese';
-
-      minHealthyBmi = 18.5;
-      maxHealthyBmi = 24;
-    }
+    minHealthyBmi = 18.5;
+    maxHealthyBmi = 24;
   }
 
   // Calculate healthy weight range for height

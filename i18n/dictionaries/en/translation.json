@@ -149,7 +149,41 @@
     "square": "Square",
     "latitude": "Latitude",
     "latitudeHint": "(-90 to 90)",
-    "longitudeHint": "(-180 to 180)"
+    "longitudeHint": "(-180 to 180)",
+    "bmi": {
+      "page": {
+        "title": "Body Mass Calculator",
+        "cardTitle": "Accurate Body Mass Calculator",
+        "description": "Discover our advanced bmi body mass index calculator – the ultimate tool for accurate health assessment. Whether you’re using our body mass index calculator for women or our body mass index calculator for men, our solution is optimized to deliver precise results. Tailored for every user, our platform includes dedicated options such as body mass index calculator women and body mass index calculator female, as well as body mass index calculator for male and body mass index calculator male. Perfect for tracking fitness progress and setting health goals, this tool ensures that everyone, regardless of gender, can easily monitor their body composition. Experience the next level of wellness tracking with our state-of-the-art body mass index calculator designed to provide reliable insights for both men and women."
+      },
+      "calculator.title": "BMI Calculator",
+      "calculator.description": "Calculate your Body Mass Index",
+      "calculator.usUnits": "US Units",
+      "calculator.metricUnits": "Metric Units",
+      "calculator.age": "Age",
+      "calculator.ageHint": "ages: 2 - 120",
+      "calculator.gender": "Gender",
+      "calculator.male": "Male",
+      "calculator.female": "Female",
+      "calculator.height": "Height",
+      "calculator.weight": "Weight",
+      "calculator.calculate": "Calculate",
+      "calculator.clear": "Clear",
+      "calculator.result": "Result",
+      "calculator.healthyBmiRange": "Healthy BMI range",
+      "calculator.healthyWeightRange": "Healthy weight for the height",
+      "calculator.bmiPrime": "BMI Prime",
+      "calculator.ponderalIndex": "Ponderal Index",
+      "gauge.title": "BMI = {bmi} ({category})",
+      "gauge.thin": "Thin",
+      "gauge.thinRange": "<18.5",
+      "gauge.normal": "Normal",
+      "gauge.normalRange": "18.5-25",
+      "gauge.overweight": "Overweight",
+      "gauge.overweightRange": "25-30",
+      "gauge.obese": "Obese",
+      "gauge.obeseRange": ">30"
+    }
   },
   "msg": {
     "noLangSelected": "No language is selected",
@@ -340,6 +374,23 @@
         "Free Astrology Calculator"
       ],
       "category": "Astrology Calculator"
+    },
+    "bmiCalculator": {
+      "title": "BMI Calculator – Accurate Body Mass Index Calculation for Health & Fitness | Fast & Free!",
+      "description": "Calculate your Body Mass Index (BMI) quickly and accurately with our advanced BMI Calculator. Simply enter your height and weight to get an immediate BMI measurement and tailored health insights. Ideal for tracking weight loss, monitoring fitness progress, and managing overall wellness.",
+      "keywords": [
+        "BMI Calculator",
+        "Body Mass Index",
+        "BMI Calculation",
+        "Weight Loss",
+        "Fitness Tracker",
+        "Health Calculator",
+        "Body Composition",
+        "Accurate BMI",
+        "Free Health Calculator",
+        "Wellness"
+      ],
+      "category": "Health & Fitness Calculator"
     }
   },
   "risingSign": {

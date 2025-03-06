@@ -10,7 +10,6 @@ type SocialShareLinksProps = {
 
 export const SocialShareLinks = ({ shareUrl, customShareText }: SocialShareLinksProps) => {
   const shareText = customShareText ?? `Check out this link: ${shareUrl}`;
-  console.log(encodeURIComponent(shareUrl));
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;

@@ -158,7 +158,41 @@
     "basedOnMeeus": "Jean Meeus'un Astronomik Algoritmalarına dayanmaktadır",
     "latitude": "Enlem",
     "latitudeHint": "(-90 ile 90 arasında)",
-    "longitudeHint": "(-180 ile 180 arasında)"
+    "longitudeHint": "(-180 ile 180 arasında)",
+    "bmi": {
+      "page": {
+        "title": "Vücut Kitle Endeksi Hesaplayıcı",
+        "cardTitle": "Doğru Vücut Kitle Endeksi Hesaplayıcı",
+        "description": "Gelişmiş vücut kitle endeksi hesaplama aracımız ile vücut kitle endeksinizi hızlı ve doğru bir şekilde öğrenin. Araç, 'vücut kitle endeksi', 'vücut kitle endeksi hesaplama', 'vücut kitle endeksi hesapla' ve 'vücut kitle endeksi hesaplama formülü' gibi önemli anahtar kelimeleri kapsamaktadır. Ayrıca, 'vucut kitle endeksi', 'vücut kitle endeksi nasıl hesaplanır', 'vücut kitle endeksi hesaplama yaşa göre', 'vücut kitle endeksi hesaplaması' ve 'vücut kitle endeksi hesaplama nasıl yapılır' ifadeleri ile arama motorlarında öne çıkmanızı sağlar. Askerlik vücut kitle endeksinizi de hesaplayarak, sağlıklı yaşam ve fitness hedeflerinizde size rehberlik eder. Kişiye özel sonuçlar sunan bu araç, doğru ve güvenilir ölçümlerle yaşam kalitenizi artırmaya yardımcı olur."
+      },
+      "calculator.title": "BMI Hesaplayıcı",
+      "calculator.description": "Vücut Kitle İndeksinizi Hesaplayın",
+      "calculator.usUnits": "ABD Birimleri",
+      "calculator.metricUnits": "Metrik Birimler",
+      "calculator.age": "Yaş",
+      "calculator.ageHint": "Yaş aralığı: 2 - 120",
+      "calculator.gender": "Cinsiyet",
+      "calculator.male": "Erkek",
+      "calculator.female": "Kadın",
+      "calculator.height": "Boy",
+      "calculator.weight": "Kilo",
+      "calculator.calculate": "Hesapla",
+      "calculator.clear": "Temizle",
+      "calculator.result": "Sonuç",
+      "calculator.healthyBmiRange": "Sağlıklı BMI aralığı",
+      "calculator.healthyWeightRange": "Boy için sağlıklı kilo aralığı",
+      "calculator.bmiPrime": "BMI Prime",
+      "calculator.ponderalIndex": "Ponderal İndeks",
+      "gauge.title": "BMI = {bmi} ({category})",
+      "gauge.thin": "Zayıf",
+      "gauge.thinRange": "<18,5",
+      "gauge.normal": "Normal",
+      "gauge.normalRange": "18,5-25",
+      "gauge.overweight": "Fazla Kilolu",
+      "gauge.overweightRange": "25-30",
+      "gauge.obese": "Obez",
+      "gauge.obeseRange": ">30"
+    }
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
@@ -314,6 +348,23 @@
         "çekimi anlama"
       ],
       "category": "Kimlik & Kendini Keşfetme"
+    },
+    "bmiCalculator": {
+      "title": "BMI Hesaplayıcı – Sağlık ve Fitness için Doğru Vücut Kitle İndeksi Hesaplaması | Hızlı & Ücretsiz!",
+      "description": "Gelişmiş BMI Hesaplayıcımız ile Vücut Kitle İndeksinizi (BMI) hızlı ve doğru bir şekilde hesaplayın. Sadece boyunuzu ve kilonuzu girerek anında BMI değerinizi ve kişiye özel sağlık önerilerini alın. Kilo kaybını takip etmek, fitness ilerlemesini izlemek ve genel sağlığınızı yönetmek için idealdir.",
+      "keywords": [
+        "vücut kitle endeksi",
+        "vücut kitle endeksi hesaplama",
+        "vücut kitle endeksi hesapla",
+        "vücut kitle endeksi hesaplama formülü",
+        "vucut kitle endeksi",
+        "vücut kitle endeksi nasıl hesaplanır",
+        "vücut kitle endeksi hesaplama yaşa göre",
+        "vücut kitle endeksi hesaplaması",
+        "vücut kitle endeksi hesaplama nasıl yapılır",
+        "askerlik vücut kitle endeksi"
+      ],
+      "category": "Sağlık & Fitness Hesaplayıcısı"
     },
     "layout": {
       "title": "Güçlü Online Araçları Keşfedin – Ücretsiz Hesaplayıcılar ve Dönüştürücüler",

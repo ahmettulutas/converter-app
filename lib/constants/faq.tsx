@@ -1743,3 +1743,88 @@ export const birthMapFaqs: Record<LocaleType, Array<{ question: string; answer: 
     },
   ],
 };
+export const bmiFaqs: Record<LocaleType, Array<{ question: string; answer: string }>> = {
+  en: [
+    {
+      question: 'What is BMI and how does our advanced BMI calculator measure body mass index?',
+      answer:
+        'BMI (Body Mass Index) is a widely used indicator to assess if you are underweight, normal weight, overweight, or obese. Our advanced BMI calculator uses your height and weight to deliver accurate body mass index measurements, making it perfect for both men and women.',
+    },
+    {
+      question: 'How accurate is this BMI calculator for men and women?',
+      answer:
+        'Our BMI calculator leverages scientifically validated formulas to provide highly accurate results for both men and women. Whether you are tracking weight loss or maintaining a healthy lifestyle, our tool is optimized for precise body composition analysis.',
+    },
+    {
+      question: 'Why should I choose this BMI calculator for health and weight loss?',
+      answer:
+        'This BMI calculator is designed for those serious about health. It offers reliable results and helps you monitor progress whether you are a man or a woman. Accurate BMI measurement is essential for setting realistic weight loss and health goals.',
+    },
+    {
+      question: 'Can the BMI calculator help me improve my body composition and overall health?',
+      answer:
+        'Yes, by regularly checking your BMI, you can get insights into your body composition. Our calculator is a practical tool for both men and women to track progress, adjust dietary habits, and tailor fitness routines for optimal health outcomes.',
+    },
+    {
+      question: 'Is this BMI calculator suitable for both men and women looking for accurate body mass index results?',
+      answer:
+        'Absolutely! Our BMI calculator is built to provide precise and reliable measurements for all users. It is an ideal choice for men and women who want to better understand their body mass index and make informed decisions about their health.',
+    },
+  ],
+  tr: [
+    {
+      question: 'BMI nedir ve gelişmiş BMI hesaplayıcımız vücut kitle indeksini nasıl ölçer?',
+      answer:
+        'BMI (Vücut Kitle İndeksi), zayıf, normal, kilolu ya da obez olup olmadığınızı belirlemek için kullanılan yaygın bir göstergedir. Gelişmiş BMI hesaplayıcımız, boy ve kilonuzu kullanarak doğru vücut kitle indeksi ölçümleri sunar; bu da hem erkekler hem de kadınlar için idealdir.',
+    },
+    {
+      question: 'Bu BMI hesaplayıcısı erkekler ve kadınlar için ne kadar doğrudur?',
+      answer:
+        'Bilimsel olarak doğrulanmış formülleri kullanan BMI hesaplayıcımız, erkekler ve kadınlar için yüksek doğruluk sağlar. Kilo verme veya sağlıklı yaşam hedeflerinizi izlerken, doğru vücut kompozisyon analizi sunar.',
+    },
+    {
+      question: 'Sağlık ve kilo verme hedeflerim için neden bu BMI hesaplayıcısını seçmeliyim?',
+      answer:
+        'Bu BMI hesaplayıcısı, sağlığına önem verenler için tasarlanmıştır. Hem erkekler hem de kadınlar için güvenilir sonuçlar sunar ve doğru BMI ölçümü, gerçekçi kilo verme ve sağlık hedefleri belirlemenize yardımcı olur.',
+    },
+    {
+      question: 'BMI hesaplayıcısı vücut kompozisyonumu ve genel sağlığımı geliştirmeme nasıl yardımcı olabilir?',
+      answer:
+        'Evet, düzenli olarak BMI kontrolü yaparak vücut kompozisyonunuz hakkında bilgi sahibi olabilirsiniz. Hesaplayıcımız, hem erkekler hem de kadınlar için ilerlemeyi takip etmenizi, beslenme alışkanlıklarınızı ayarlamanızı ve fitness rutinlerinizi optimize etmenizi sağlar.',
+    },
+    {
+      question:
+        'Bu BMI hesaplayıcısı, doğru vücut kitle indeksi sonuçları arayan erkekler ve kadınlar için uygun mudur?',
+      answer:
+        'Kesinlikle! BMI hesaplayıcımız, tüm kullanıcılar için hassas ve güvenilir ölçümler sunacak şekilde tasarlanmıştır. Hem erkekler hem de kadınlar, vücut kitle indekslerini anlamak ve sağlıklarını yönetmek için bu aracı tercih edebilir.',
+    },
+  ],
+  de: [
+    {
+      question: 'Was ist der BMI und wie misst unser fortschrittlicher BMI-Rechner den Body-Mass-Index?',
+      answer:
+        'Der Body-Mass-Index (BMI) ist ein weit verbreiteter Indikator, um festzustellen, ob Sie untergewichtig, normalgewichtig, übergewichtig oder fettleibig sind. Unser fortschrittlicher BMI-Rechner nutzt Ihre Größe und Ihr Gewicht, um präzise Ergebnisse zu liefern – ideal für Männer und Frauen.',
+    },
+    {
+      question: 'Wie genau ist dieser BMI-Rechner für Männer und Frauen?',
+      answer:
+        'Unser BMI-Rechner verwendet wissenschaftlich validierte Formeln, um exakte Messwerte für Männer und Frauen zu liefern. Er ist das ideale Werkzeug, um Gewichtsabnahme und ein gesundes Leben durch genaue Körperfettmessung zu unterstützen.',
+    },
+    {
+      question: 'Warum sollte ich diesen BMI-Rechner für Gesundheit und Gewichtsverlust wählen?',
+      answer:
+        'Dieser BMI-Rechner ist speziell für Gesundheitsbewusste konzipiert. Er bietet verlässliche Ergebnisse und unterstützt Männer und Frauen dabei, ihren Fortschritt zu verfolgen. Eine genaue BMI-Messung ist entscheidend, um realistische Ziele für Gewichtsverlust und Gesundheit zu setzen.',
+    },
+    {
+      question: 'Kann der BMI-Rechner mir helfen, meine Körperzusammensetzung und allgemeine Gesundheit zu verbessern?',
+      answer:
+        'Ja, durch regelmäßige BMI-Messungen erhalten Sie wertvolle Einblicke in Ihre Körperzusammensetzung. Unser Rechner ist ein praktisches Tool für Männer und Frauen, um Fortschritte zu überwachen, Ernährungsgewohnheiten anzupassen und Fitnesspläne zu optimieren.',
+    },
+    {
+      question:
+        'Ist dieser BMI-Rechner sowohl für Männer als auch für Frauen geeignet, die genaue Body-Mass-Index-Ergebnisse suchen?',
+      answer:
+        'Absolut! Unser BMI-Rechner wurde entwickelt, um für alle Geschlechter präzise und zuverlässige Ergebnisse zu liefern. Er bietet speziell angepasste Einblicke, damit sowohl Männer als auch Frauen ihren Body-Mass-Index optimal verstehen und ihre Gesundheit effektiv steuern können.',
+    },
+  ],
+};

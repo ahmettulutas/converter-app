@@ -147,7 +147,41 @@
     "square": "Quadrat",
     "latitude": "Breitengrad",
     "latitudeHint": "(-90 bis 90)",
-    "longitudeHint": "(-180 bis 180)"
+    "longitudeHint": "(-180 bis 180)",
+    "bmi": {
+      "page": {
+        "title": "BMI Rechner – Präzise Body-Mass-Index Berechnung für Gesundheit & Fitness",
+        "cardTitle": "Genauer BMI Rechner",
+        "description": "Berechnen Sie Ihren Body-Mass-Index mit unserem fortschrittlichen BMI Rechner. Egal ob Sie 'body mass index', 'body mass index rechner', 'body mass index berechnen' oder 'body mass index formel' nutzen möchten – unser Tool liefert Ihnen verlässliche Ergebnisse. Entdecken Sie, wie man den Body-Mass-Index ermittelt, und nutzen Sie unsere Ressourcen zur 'berechnung body mass index' sowie zur 'body mass index tabelle'. Unser benutzerfreundlicher Body Mass Index Calculator bietet zudem umfassende Informationen für 'body mass index kinder'. Erreichen Sie Ihre Gesundheits- und Fitnessziele mit exakten Analysen."
+      },
+      "calculator.title": "BMI-Rechner",
+      "calculator.description": "Berechnen Sie Ihren Body-Mass-Index",
+      "calculator.usUnits": "US-Einheiten",
+      "calculator.metricUnits": "Metrische Einheiten",
+      "calculator.age": "Alter",
+      "calculator.ageHint": "Altersspanne: 2 - 120",
+      "calculator.gender": "Geschlecht",
+      "calculator.male": "Männlich",
+      "calculator.female": "Weiblich",
+      "calculator.height": "Größe",
+      "calculator.weight": "Gewicht",
+      "calculator.calculate": "Berechnen",
+      "calculator.clear": "Löschen",
+      "calculator.result": "Ergebnis",
+      "calculator.healthyBmiRange": "Gesunder BMI-Bereich",
+      "calculator.healthyWeightRange": "Gesundes Gewicht für die Größe",
+      "calculator.bmiPrime": "BMI-Prime",
+      "calculator.ponderalIndex": "Ponderal-Index",
+      "gauge.title": "BMI = {bmi} ({category})",
+      "gauge.thin": "Untergewicht",
+      "gauge.thinRange": "<18,5",
+      "gauge.normal": "Normalgewicht",
+      "gauge.normalRange": "18,5-25",
+      "gauge.overweight": "Übergewicht",
+      "gauge.overweightRange": "25-30",
+      "gauge.obese": "Adipositas",
+      "gauge.obeseRange": ">30"
+    }
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",
@@ -304,18 +338,18 @@
       "title": "Entdecken Sie leistungsstarke Online-Tools – Kostenlose Rechner & Umrechner",
       "description": "Nutzen Sie eine Vielzahl kostenloser Online-Rechner und Umrechnungstools für den Alltag. Von Einheitenumrechnern bis zu Finanzrechnern – vereinfachen Sie Ihre Berechnungen sofort!",
       "keywords": [
-        "Online-Rechner",
-        "kostenlose Umrechnungstools",
-        "Einheitenumrechner",
-        "Finanzrechner",
-        "Gesundheitsrechner",
-        "mathematische Werkzeuge",
-        "sofortige Rechner",
-        "tägliche Berechnungstools",
-        "Maßeinheiten-Umrechner",
-        "wissenschaftliche Rechner"
+        "body mass index",
+        "body mass index rechner",
+        "body mass index berechnen",
+        "body mass index formel",
+        "body maß index",
+        "body mass index calculator",
+        "berechnung body mass index",
+        "body mass index tabelle",
+        "wie berechnet man den body mass index",
+        "body mass index kinder"
       ],
-      "category": "Online-Tools"
+      "category": "Gesundheit & Fitness Rechner"
     },
     "birthMapCalculator": {
       "title": "Geburtshoroskop-Rechner – Entdecken Sie Ihre persönliche Astro-Karte | Schnell & Kostenlos!",
@@ -333,6 +367,23 @@
         "Kostenloser Astrologie-Rechner"
       ],
       "category": "Astrologie-Rechner"
+    },
+    "bmiCalculator": {
+      "title": "BMI Rechner – Präzise Berechnung des Body-Mass-Index für Gesundheit & Fitness | Schnell & Kostenlos!",
+      "description": "Berechnen Sie Ihren Body-Mass-Index (BMI) schnell und genau mit unserem fortschrittlichen BMI Rechner. Geben Sie einfach Ihre Körpergröße und Ihr Gewicht ein, um sofort Ihren BMI-Wert sowie maßgeschneiderte Gesundheitstipps zu erhalten. Ideal zur Verfolgung von Gewichtsverlust, Fitnessfortschritten und zur allgemeinen Gesundheitsüberwachung.",
+      "keywords": [
+        "BMI Rechner",
+        "Body-Mass-Index",
+        "BMI Berechnung",
+        "Gewichtsverlust",
+        "Fitness Tracker",
+        "Gesundheitsrechner",
+        "Körperzusammensetzung",
+        "Präziser BMI",
+        "Kostenloser Gesundheitsrechner",
+        "Gesundes Leben"
+      ],
+      "category": "Gesundheit & Fitness Rechner"
     }
   },
   "risingSign": {

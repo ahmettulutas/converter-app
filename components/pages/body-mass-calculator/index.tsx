@@ -160,7 +160,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
                 onChange={handleInputChange}
                 required
               />
-              <div className="absolute inset-y-0 right-3 flex items-center text-sm text-muted-foreground">
+              <div className="absolute inset-y-2 my-auto right-3 flex items-center text-sm text-muted-foreground bg-background z-10">
                 {getHeightUnit()}
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
                 onChange={handleInputChange}
                 required
               />
-              <div className="absolute inset-y-0 right-3 flex items-center text-sm text-muted-foreground">
+              <div className="absolute inset-y-2 my-auto right-3 flex items-center text-sm text-muted-foreground bg-background z-10">
                 {getWeightUnit()}
               </div>
             </div>

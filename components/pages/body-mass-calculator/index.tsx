@@ -1,6 +1,6 @@
 'use client';
 
-import React, { lazy, Suspense, useState } from 'react';
+import React, { lazy, Suspense, useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -30,6 +30,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
   });
 
   const [result, setResult] = useState<BMIResult | null>(null);
+  const [showForm, setShowForm] = useState<boolean>(true);
 
   const formatNumber = (n: number) =>
     new Intl.NumberFormat('de-DE', {
@@ -41,7 +42,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
     const { name, value } = e.target;
     setBmiState((prev) => ({
       ...prev,
-      [name]: parseFloat(value) || 0,
+      [name]: parseFloat(value) || '',
     }));
   };
 
@@ -76,6 +77,11 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
     const { gender, height, weight, unitSystem } = bmiState;
     const calculationResult = calculateBMI(height, weight, gender, unitSystem);
     setResult(calculationResult);
+    setShowForm(false);
+  };
+
+  const handleRecalculate = () => {
+    setShowForm(true);
   };
 
   const handleClear = () => {
@@ -86,6 +92,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
       unitSystem: bmiState.unitSystem,
     });
     setResult(null);
+    setShowForm(true);
   };
 
   const getHeightUnit = () => {
@@ -102,87 +109,9 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
         <CardTitle>{t('labels.bmi.page.cardTitle')}</CardTitle>
         <CardDescription>{t('labels.bmi.page.description')}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <Tabs
-          defaultValue="metric"
-          value={bmiState.unitSystem}
-          onValueChange={(value) => handleUnitChange(value as UnitSystem)}
-        >
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="us">{t('labels.bmi.calculator.usUnits')}</TabsTrigger>
-            <TabsTrigger value="metric">{t('labels.bmi.calculator.metricUnits')}</TabsTrigger>
-          </TabsList>
-        </Tabs>
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleCalculate();
-          }}
-          className="space-y-4 mt-4"
-        >
-          <div className="space-y-2">
-            <label>{t('labels.bmi.calculator.gender')}</label>
-            <RadioGroup value={bmiState.gender} onValueChange={handleGenderChange} className="flex space-x-4">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="male" id="male" />
-                <Label htmlFor="male">{t('labels.bmi.calculator.male')}</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="female" id="female" />
-                <Label htmlFor="female">{t('labels.bmi.calculator.female')}</Label>
-              </div>
-            </RadioGroup>
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="height">{t('labels.bmi.calculator.height')}</label>
-            <div className="relative">
-              <Input
-                type="number"
-                id="height"
-                name="height"
-                value={bmiState.height}
-                onChange={handleInputChange}
-                required
-              />
-              <div className="absolute inset-y-2 my-auto right-3 flex items-center text-sm text-muted-foreground bg-background z-10">
-                {getHeightUnit()}
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="weight">{t('labels.bmi.calculator.weight')}</label>
-            <div className="relative">
-              <Input
-                type="number"
-                id="weight"
-                name="weight"
-                value={bmiState.weight}
-                onChange={handleInputChange}
-                required
-              />
-              <div className="absolute inset-y-2 my-auto right-3 flex items-center text-sm text-muted-foreground bg-background z-10">
-                {getWeightUnit()}
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <Button type="submit" className="w-full">
-              {t('labels.bmi.calculator.calculate')}
-            </Button>
-            <Button type="button" variant="secondary" className="w-full" onClick={handleClear}>
-              {t('labels.bmi.calculator.clear')}
-            </Button>
-          </div>
-        </form>
-      </CardContent>
-
-      {result && (
-        <CardFooter className="flex flex-col">
-          <div className="w-full">
+      <CardContent className="relative">
+        {result ? (
+          <div>
             <div className="text-2xl font-bold text-center mb-4">{t('labels.bmi.calculator.result')}</div>
 
             <div
@@ -190,29 +119,120 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
               style={{ color: getCategoryColor(result.category) }}
             >
               {t('labels.bmi.gauge.title')
-                .replace('{bmi}', result.bmi.toFixed(1)) // Ensure 1 decimal place
+                .replace('{bmi}', result.bmi.toFixed(1))
                 .replace('{category}', result.category)}
             </div>
-            <Suspense fallback={<>Loading...</>}>
+            <Suspense fallback={<div className="text-center py-8">Loading...</div>}>
               <BMIGaugeChart result={result} currentLocale={currentLocale} />
             </Suspense>
             <ul className="space-y-2 mt-6 list-disc pl-2 md:pl-5 text-sm md:text-base">
               <li>
-                {t('labels.bmi.calculator.healthyBmiRange')}: {result.healthyBmiRange}
+                {t('labels.bmi.calculator.healthyBmiRange')}:{' '}
+                <span className="font-bold">{result.healthyBmiRange}</span>
               </li>
               <li>
-                {t('labels.bmi.calculator.healthyWeightRange')}: {result.healthyWeightRange}
+                {t('labels.bmi.calculator.healthyWeightRange')}:{' '}
+                <span className="font-bold">{result.healthyWeightRange}</span>
               </li>
               <li>
-                {t('labels.bmi.calculator.bmiPrime')}: {formatNumber(result.bmiPrime)}
+                {t('labels.bmi.calculator.bmiPrime')}:{' '}
+                <span className="font-bold">{formatNumber(result.bmiPrime)}</span>
               </li>
               <li>
-                {t('labels.bmi.calculator.ponderalIndex')}: {formatNumber(result.ponderalIndex)} kg/m<sup>3</sup>
+                {t('labels.bmi.calculator.ponderalIndex')}:{' '}
+                <span className="font-bold">
+                  {formatNumber(result.ponderalIndex)} kg/m<sup>3</sup>
+                </span>
               </li>
             </ul>
+
+            <div className="grid grid-cols-2 gap-4 mt-6">
+              <Button onClick={handleRecalculate} className="w-full">
+                {t('labels.bmi.calculator.recalculate') || 'Recalculate'}
+              </Button>
+              <Button variant="secondary" onClick={handleClear} className="w-full">
+                {t('labels.bmi.calculator.clear')}
+              </Button>
+            </div>
           </div>
-        </CardFooter>
-      )}
+        ) : (
+          <Tabs
+            defaultValue="metric"
+            value={bmiState.unitSystem}
+            onValueChange={(value) => handleUnitChange(value as UnitSystem)}
+          >
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="us">{t('labels.bmi.calculator.usUnits')}</TabsTrigger>
+              <TabsTrigger value="metric">{t('labels.bmi.calculator.metricUnits')}</TabsTrigger>
+            </TabsList>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleCalculate();
+              }}
+              className="space-y-4 mt-4"
+            >
+              <div className="space-y-2">
+                <label>{t('labels.bmi.calculator.gender')}</label>
+                <RadioGroup value={bmiState.gender} onValueChange={handleGenderChange} className="flex space-x-4">
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="male" id="male" />
+                    <Label htmlFor="male">{t('labels.bmi.calculator.male')}</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="female" id="female" />
+                    <Label htmlFor="female">{t('labels.bmi.calculator.female')}</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="height">{t('labels.bmi.calculator.height')}</label>
+                <div className="relative">
+                  <Input
+                    type="number"
+                    id="height"
+                    name="height"
+                    value={bmiState.height}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <div className="absolute inset-y-2 my-auto right-3 flex items-center text-sm text-muted-foreground bg-background z-10">
+                    {getHeightUnit()}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="weight">{t('labels.bmi.calculator.weight')}</label>
+                <div className="relative">
+                  <Input
+                    type="number"
+                    id="weight"
+                    name="weight"
+                    value={bmiState.weight}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <div className="absolute inset-y-2 my-auto right-3 flex items-center text-sm text-muted-foreground bg-background z-10">
+                    {getWeightUnit()}
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <Button type="submit" className="w-full">
+                  {t('labels.bmi.calculator.calculate')}
+                </Button>
+                <Button type="button" variant="secondary" className="w-full" onClick={handleClear}>
+                  {t('labels.bmi.calculator.clear')}
+                </Button>
+              </div>
+            </form>
+          </Tabs>
+        )}
+      </CardContent>
     </Card>
   );
 }

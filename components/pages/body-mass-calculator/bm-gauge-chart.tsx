@@ -57,6 +57,7 @@ export function BMIGaugeChart({ result, currentLocale }: BMIGaugeChartProps) {
           needleBaseColor="#333"
           animate={true}
           cornerRadius={0} // Flat segments for clear boundaries
+          animDelay={1000}
         />
 
         <div className="flex justify-between w-full text-center px-2 md:px-4 py-2">

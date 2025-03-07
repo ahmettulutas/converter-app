@@ -157,6 +157,7 @@
         "description": "Discover our advanced bmi body mass index calculator – the ultimate tool for accurate health assessment."
       },
       "calculator.title": "BMI Calculator",
+      "calculator.recalculate": "Recalculate",
       "calculator.description": "Calculate your Body Mass Index",
       "calculator.usUnits": "US Units",
       "calculator.metricUnits": "Metric Units",
@@ -394,7 +395,7 @@
     }
   },
   "risingSign": {
-    "title": "Rising Sign Calculator",
+    "title": "Accurate Ascendant Sign Calculator",
     "description": "Enter your birth details to discover your astrological rising sign.",
     "result": "Your Rising Sign",
     "technicalDetails": "Technical Details",

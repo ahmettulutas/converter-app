@@ -1,7 +1,7 @@
 'use client';
 
-import React, { lazy, Suspense, useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import React, { lazy, Suspense, useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -18,19 +18,19 @@ import {
 
 import { LocaleType } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
+
 const BMIGaugeChart = lazy(() => import('./bm-gauge-chart'));
 
 export default function BMICalculator({ currentLocale }: { currentLocale: LocaleType }) {
   const { t } = useTranslation(currentLocale, 'translation');
   const [bmiState, setBmiState] = useState<BMIState>({
-    gender: 'male',
+    gender: 'female',
     height: 170,
     weight: 70,
     unitSystem: 'metric',
   });
 
   const [result, setResult] = useState<BMIResult | null>(null);
-  const [showForm, setShowForm] = useState<boolean>(true);
 
   const formatNumber = (n: number) =>
     new Intl.NumberFormat('de-DE', {
@@ -77,22 +77,20 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
     const { gender, height, weight, unitSystem } = bmiState;
     const calculationResult = calculateBMI(height, weight, gender, unitSystem);
     setResult(calculationResult);
-    setShowForm(false);
   };
 
   const handleRecalculate = () => {
-    setShowForm(true);
+    setResult(null);
   };
 
   const handleClear = () => {
     setBmiState({
       gender: 'male',
-      height: bmiState.unitSystem === 'metric' ? 170 : 67,
-      weight: bmiState.unitSystem === 'metric' ? 70 : 154,
+      height: 0,
+      weight: 0,
       unitSystem: bmiState.unitSystem,
     });
     setResult(null);
-    setShowForm(true);
   };
 
   const getHeightUnit = () => {
@@ -177,12 +175,12 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
                 <label>{t('labels.bmi.calculator.gender')}</label>
                 <RadioGroup value={bmiState.gender} onValueChange={handleGenderChange} className="flex space-x-4">
                   <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="male" id="male" />
-                    <Label htmlFor="male">{t('labels.bmi.calculator.male')}</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
                     <RadioGroupItem value="female" id="female" />
                     <Label htmlFor="female">{t('labels.bmi.calculator.female')}</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="male" id="male" />
+                    <Label htmlFor="male">{t('labels.bmi.calculator.male')}</Label>
                   </div>
                 </RadioGroup>
               </div>

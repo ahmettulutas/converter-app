@@ -9,7 +9,7 @@ import { percentTypes } from '@/lib/utils/calculate-percentage';
 const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) => {
   return availableLocales.map((locale) => {
     return {
-      url: locale === defaultLanguage ? `${baseUrl}/${item}` : `${baseUrl}/${locale}${item}`,
+      url: locale === defaultLanguage ? `${baseUrl}${item}` : `${baseUrl}/${locale}${item}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
     };
@@ -18,7 +18,7 @@ const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) 
 const risingSignDynamicLinks: MetadataRoute.Sitemap = zodiacSigns.flatMap((sign) => {
   return availableLocales.map((locale) => {
     return {
-      url: `${baseUrl}/${locale}/rising-sign-calculator/${sign}`,
+      url: `${baseUrl}${locale == defaultLanguage ? '' : '/'}${locale}/rising-sign-calculator/${sign}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
     };
@@ -28,7 +28,7 @@ const risingSignDynamicLinks: MetadataRoute.Sitemap = zodiacSigns.flatMap((sign)
 const percentageDynamicLinks: MetadataRoute.Sitemap = percentTypes.flatMap((type) => {
   return availableLocales.map((locale) => {
     return {
-      url: `${baseUrl}/${locale}/percentage-calculator/${type}`,
+      url: `${baseUrl}${locale == defaultLanguage ? '' : '/'}${locale}/percentage-calculator/${type}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
     };

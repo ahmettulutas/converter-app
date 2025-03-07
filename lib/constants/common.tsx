@@ -64,6 +64,7 @@ export const staticPageUrls = [
   '/sexual-identity-test',
   '/blog',
   '/birth-map-calculator',
+  '/body-mass-index-calculator',
 ];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 export const ogImageSizes = [

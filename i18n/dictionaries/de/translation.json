@@ -155,6 +155,7 @@
         "description": "Berechnen Sie Ihren Body-Mass-Index mit unserem fortschrittlichen BMI Rechner."
       },
       "calculator.title": "BMI-Rechner",
+      "calculator.recalculate": "Neu Berechnen",
       "calculator.description": "Berechnen Sie Ihren Body-Mass-Index",
       "calculator.usUnits": "US-Einheiten",
       "calculator.metricUnits": "Metrische Einheiten",

@@ -167,6 +167,7 @@
       },
       "calculator.title": "BMI Hesaplama",
       "calculator.description": "Vücut Kitle İndeksinizi Hesaplayın",
+      "calculator.recalculate": "Yeni Hesapla",
       "calculator.usUnits": "ABD Birimleri",
       "calculator.metricUnits": "Metrik Birimler",
       "calculator.age": "Yaş",

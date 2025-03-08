@@ -118,7 +118,7 @@ export default function BMICalculator({ currentLocale }: { currentLocale: Locale
             >
               {t('labels.bmi.gauge.title')
                 .replace('{bmi}', result.bmi.toFixed(1))
-                .replace('{category}', result.category)}
+                .replace('{category}', t(`labels.bmi.gauge.${result.category.toLowerCase()}`))}
             </div>
             <Suspense fallback={<div className="text-center py-8">Loading...</div>}>
               <BMIGaugeChart result={result} currentLocale={currentLocale} />

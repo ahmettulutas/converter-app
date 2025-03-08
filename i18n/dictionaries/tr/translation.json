@@ -186,13 +186,9 @@
       "calculator.ponderalIndex": "Ponderal İndeks",
       "gauge.title": "BMI = {bmi} ({category})",
       "gauge.thin": "Zayıf",
-      "gauge.thinRange": "<18,5",
       "gauge.normal": "Normal",
-      "gauge.normalRange": "18,5-25",
       "gauge.overweight": "Fazla Kilolu",
-      "gauge.overweightRange": "25-30",
-      "gauge.obese": "Obez",
-      "gauge.obeseRange": ">30"
+      "gauge.obese": "Obez"
     }
   },
   "msg": {

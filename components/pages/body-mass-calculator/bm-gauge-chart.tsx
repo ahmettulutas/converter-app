@@ -63,19 +63,19 @@ export function BMIGaugeChart({ result, currentLocale }: BMIGaugeChartProps) {
         <div className="flex justify-between w-full text-center px-2 md:px-4 py-2">
           <div className="text-xs md:text-sm font-medium flex-1" style={{ color: '#3b82f6' }}>
             <div>{t('labels.bmi.gauge.thin')}</div>
-            <div>{t('labels.bmi.gauge.thinRange')}</div>
+            <div>{`<18,5`}</div>
           </div>
           <div className="text-xs md:text-sm font-medium flex-1" style={{ color: '#22c55e' }}>
             <div>{t('labels.bmi.gauge.normal')}</div>
-            <div>{t('labels.bmi.gauge.normalRange')}</div>
+            <div>18,5-25</div>
           </div>
           <div className="text-xs md:text-sm font-medium flex-1" style={{ color: '#f97316' }}>
             <div>{t('labels.bmi.gauge.overweight')}</div>
-            <div>{t('labels.bmi.gauge.overweightRange')}</div>
+            <div>25 - 30</div>
           </div>
           <div className="text-xs md:text-sm font-medium flex-1" style={{ color: '#ef4444' }}>
             <div>{t('labels.bmi.gauge.obese')}</div>
-            <div>{t('labels.bmi.gauge.obeseRange')}</div>
+            <div>{`>30`}</div>
           </div>
         </div>
       </div>

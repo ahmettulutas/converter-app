@@ -177,13 +177,9 @@
       "calculator.ponderalIndex": "Ponderal Index",
       "gauge.title": "BMI = {bmi} ({category})",
       "gauge.thin": "Thin",
-      "gauge.thinRange": "<18.5",
       "gauge.normal": "Normal",
-      "gauge.normalRange": "18.5-25",
       "gauge.overweight": "Overweight",
-      "gauge.overweightRange": "25-30",
-      "gauge.obese": "Obese",
-      "gauge.obeseRange": ">30"
+      "gauge.obese": "Obese"
     }
   },
   "msg": {

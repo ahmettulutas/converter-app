@@ -31,7 +31,10 @@ const risingSignDynamicLinks: MetadataRoute.Sitemap = zodiacSigns.flatMap((sign)
 const percentageDynamicLinks: MetadataRoute.Sitemap = percentTypes.flatMap((type) => {
   return availableLocales.map((locale) => {
     return {
-      url: `${baseUrl}${locale == defaultLanguage ? '' : '/'}${locale}/percentage-calculator/${type}`,
+      url:
+        locale === defaultLanguage
+          ? `${baseUrl}/percentage-calculator/${type}`
+          : `${baseUrl}/${locale}/percentage-calculator/${type}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
     };

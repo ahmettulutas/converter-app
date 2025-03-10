@@ -14,11 +14,14 @@ const staticSiteMapItems: MetadataRoute.Sitemap = staticPageUrls.flatMap((item) 
       changeFrequency: 'monthly',
     };
   });
-});
+}); // url: `${baseUrl}${locale == defaultLanguage ? '' : '/'}${locale}/rising-sign-calculator/${sign}`,
 const risingSignDynamicLinks: MetadataRoute.Sitemap = zodiacSigns.flatMap((sign) => {
   return availableLocales.map((locale) => {
     return {
-      url: `${baseUrl}${locale == defaultLanguage ? '' : '/'}${locale}/rising-sign-calculator/${sign}`,
+      url:
+        locale === defaultLanguage
+          ? `${baseUrl}/rising-sign-calculator/${sign}`
+          : `${baseUrl}/${locale}/rising-sign-calculator/${sign}`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
     };

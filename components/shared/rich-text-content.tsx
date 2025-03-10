@@ -80,7 +80,7 @@ const myPortableTextComponents = {
     },
     strong: ({ value, children }: any) => {
       const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
-      return <strong className="my-2 block">{children}</strong>;
+      return <strong className="my-2 inline-block">{children}</strong>;
     },
   },
   list: {

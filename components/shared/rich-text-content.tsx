@@ -47,7 +47,7 @@ const myPortableTextComponents = {
         // nicer URLs
         <HeadingTag id={node._key} className="my-1 text-lg lg:text-xl font-bold">
           {children}
-          <Link className="text-sm leading-8" href={`#${node._key}`}>
+          <Link className="text-xs leading-8" href={`#${node._key}`}>
             #
           </Link>
         </HeadingTag>
@@ -58,7 +58,7 @@ const myPortableTextComponents = {
 
     if (style === 'normal')
       return (
-        <p className={cn('ml-2 lg:ml-4  text-base font-light', index === 0 ? 'indent-8' : 'indent-0')}>{children}</p>
+        <p className={cn('ml-2 lg:ml-4 text-base font-light', index === 0 ? 'indent-8' : 'indent-0')}>{children}</p>
       );
   },
   marks: {
@@ -75,19 +75,17 @@ const myPortableTextComponents = {
       );
     },
     code: ({ value, children }: any) => {
-      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
       return <code className="bg-accent p-2 rounded-md my-1 block">{children}</code>;
     },
     strong: ({ value, children }: any) => {
-      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
       return <strong className="my-2 inline-block">{children}</strong>;
     },
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="my-4 ml-6 leading-8 text-lg">
+      <ul className="my-4 ml-6">
         {children.map((child: any) => (
-          <li key={child.key} className="leading-8 ml-2 list-disc">
+          <li key={child.key} className="ml-2 list-disc text-base">
             {child.props.children}
           </li>
         ))}
@@ -97,7 +95,7 @@ const myPortableTextComponents = {
       return (
         <ol className="my-4 ml-6">
           {children.map((child: any) => (
-            <li key={child.key} className="leading-8 ml-2">
+            <li key={child.key} className="ml-2 list-decimal text-base">
               {child.props.children}
             </li>
           ))}

@@ -50,7 +50,14 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
   const { locale, slug } = await params;
   const data = await getPageData(slug, locale);
   const { t } = await createTranslation(locale, 'translation');
-  const heroImg = data.blog.coverImage ? urlForImage(data.blog.coverImage).height(500).width(500).url() : null;
+  const heroImg = data.blog.coverImage
+    ? urlForImage(data.blog.coverImage)
+        .quality(100) // Prevents aggressive compression
+        .auto('format')
+        .width(600)
+        .height(600)
+        .url()
+    : null;
 
   return (
     <>
@@ -60,7 +67,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
             <h1 className="text-4xl md:text-6xl mb-10 lg:text-5xl text-center">{data?.blog?.title}</h1>
           </div>
           {heroImg && (
-            <div className="relative aspect-video w-full">
+            <div className="relative aspect-square">
               <Image
                 src={heroImg}
                 alt={data.blog.coverImage.alt ?? data.blog.title}

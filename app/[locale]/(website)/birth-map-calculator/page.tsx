@@ -28,7 +28,7 @@ export default async function Page(props: Readonly<SharedPageProps>) {
     })),
   };
 
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'birth-map-calculator' });
   return (
     <>
       <article>

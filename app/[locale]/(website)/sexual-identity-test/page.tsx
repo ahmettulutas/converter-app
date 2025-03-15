@@ -11,7 +11,8 @@ const pageKey = 'sexualIdentity';
 
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'sexual-identity-test' });
 
   return (
     <>

@@ -17,7 +17,8 @@ const pageKey = 'percentageCalculator';
 export default async function Page(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'percentage-calculator' });
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

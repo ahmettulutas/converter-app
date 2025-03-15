@@ -16,10 +16,23 @@ import CalculatorContainer from '@/components/layout/calculator-container';
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
 
-export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
+export default async function RisignSignCalculatorPage(
+  props: Readonly<SharedPageProps> & { params: { sign: string; locale: LocaleType } }
+) {
   const { params } = props;
+  const sign = params?.sign;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+  const dynamicTitle = sign ? t('metaData.risingSignCalculator.dynamicPageTitle', { sign }) : undefined;
+  const dynamicDescription = sign ? t('metaData.risingSignCalculator.dynamicPageDescription', { sign }) : undefined;
+
+  const pageSchema = await getLocalizedJsonLd({
+    dynamicDescription,
+    dynamicTitle,
+    locale: params.locale,
+    pageKey,
+    pathname: `rising-sign-calculator/${sign}`,
+  });
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

@@ -7,7 +7,7 @@ import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
 import { squareMeterConverterFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 import { JsonSchema } from '@/components/shared/json.ld';
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 import CalculatorContainer from '@/components/layout/calculator-container';
 
 const SquareCalculator = lazy(() => import('@/components/pages/square-meter-calculator'));
@@ -17,7 +17,7 @@ const pageKey = 'squareCalculator';
 export default async function SquareCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = getLocalizedJsonLd(params.locale, pageKey);
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'square-calculator' });
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

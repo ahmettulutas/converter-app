@@ -19,7 +19,7 @@ const pageKey = 'risingSignCalculator';
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'rising-sign-calculator' });
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -32,6 +32,7 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
       },
     })),
   };
+
   return (
     <>
       <article>
@@ -39,7 +40,6 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
           <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: risingSignCalculatorFAQs[params.locale] }}
-            /* calculator={<RisingSignCalculator currentLocale={params.locale} />} */
             calculator={<RisingSignCalculator currentLocale={params.locale} />}
           />
         </PageContainer>

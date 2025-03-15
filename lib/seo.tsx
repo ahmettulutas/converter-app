@@ -123,24 +123,32 @@ export const getDefaultMetaData = async (
   };
 };
 
-export async function getLocalizedJsonLd(
-  locale: LocaleType,
-  pageKey: string,
-  dynamicTitle?: string,
-  dynamicDescription?: string
-) {
+export async function getLocalizedJsonLd({
+  locale,
+  pageKey,
+  dynamicTitle,
+  dynamicDescription,
+  pathname,
+}: {
+  locale: LocaleType;
+  pageKey: string;
+  dynamicTitle?: string;
+  dynamicDescription?: string;
+  pathname: string;
+}) {
   const { t } = await createTranslation(locale, 'translation');
   const keywords: Array<string> = t(`metaData.${pageKey}.keywords`, {
     returnObjects: true,
   });
-  const pathname = navCategories
-    .flatMap(({ links }) => links.map((link) => link))
-    .find((item) => item.label === pageKey)?.href;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: dynamicTitle ?? t(`metaData.${pageKey}.title`),
-    url: `${baseUrl}/${locale}${pathname}`,
+    url:
+      locale === defaultLanguage
+        ? `${baseUrl}${pathname ? `/${pathname}` : ''}`
+        : `${baseUrl}/${locale}${pathname ? `/${pathname}` : ''}`,
     applicationCategory: t('labels.applicationCategory'),
     operatingSystem: 'All',
     description: dynamicDescription ?? t(`metaData.${pageKey}.description`),

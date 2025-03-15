@@ -19,7 +19,8 @@ const pageKey = 'weightCalculator';
 export default async function WeightConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'weight-converter' });
 
   const faqSchema = {
     '@context': 'https://schema.org',

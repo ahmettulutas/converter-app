@@ -18,7 +18,8 @@ const pageKey = 'sunSignCalculator';
 export default async function RisignSignCalculatorPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: 'sun-sign-calculator' });
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

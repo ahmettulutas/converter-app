@@ -23,7 +23,15 @@ export default async function Page(props: DynamicPageProps) {
   const initialType = percentTypes.includes(params.type) ? params.type : undefined;
   const dynamicTitle = initialType ? t(`labels.${initialType}`) : undefined;
   const dynamicDescription = initialType ? t(getPercentageDescription(initialType)) : undefined;
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey, dynamicTitle, dynamicDescription);
+
+  const pageSchema = await getLocalizedJsonLd({
+    dynamicDescription,
+    dynamicTitle,
+    locale: params.locale,
+    pageKey,
+    pathname: `percentage-calculator/${initialType}`,
+  });
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

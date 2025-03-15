@@ -8,7 +8,7 @@ import { lengthRates, lengthUnits } from '@/lib/constants/units';
 
 import { lengthFaqs } from '@/lib/constants/faq';
 import { JsonSchema } from '@/components/shared/json.ld';
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 import CalculatorContainer from '@/components/layout/calculator-container';
 
 const Faq = lazy(() => import('@/components/shared/faq'));
@@ -18,7 +18,7 @@ const Converter = lazy(() => import('@/components/pages/converter'));
 export default async function LengthConverterPage(props: Readonly<SharedPageProps>) {
   const { params } = props;
   const { t } = await createTranslation(params.locale, 'translation');
-  const pageSchema = await getLocalizedJsonLd(params.locale, pageKey);
+  const pageSchema = await getLocalizedJsonLd({ locale: params.locale, pageKey, pathname: '' });
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -31,6 +31,7 @@ export default async function LengthConverterPage(props: Readonly<SharedPageProp
       },
     })),
   };
+
   return (
     <>
       <article className="flex flex-col items-center justify-center w-full">

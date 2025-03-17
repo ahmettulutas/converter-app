@@ -37,7 +37,7 @@ export default async function SquareCalculatorPage(props: Readonly<SharedPagePro
           <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: squareMeterConverterFAQs[params.locale] }}
-            calculator={<SquareCalculator />}
+            calculator={<SquareCalculator currentLocale={params.locale} />}
           />
         </PageContainer>
       </article>

@@ -1,4 +1,5 @@
 import { getAllBlogSlugs, getBlogBySlug } from '@/actions/blog';
+import { CalculatorRenderer } from '@/components/shared/calculator-renderer';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { PageContainer } from '@/components/shared/page-container';
 import RichTextContent from '@/components/shared/rich-text-content';
@@ -67,7 +68,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
             <h1 className="text-4xl md:text-6xl mb-10 lg:text-5xl text-center">{data?.blog?.title}</h1>
           </div>
           {heroImg && (
-            <div className="relative aspect-square">
+            <div className="relative aspect-video mb-8 rounded-md overflow-hidden shadow-md">
               <Image
                 src={heroImg}
                 alt={data.blog.coverImage.alt ?? data.blog.title}
@@ -82,6 +83,13 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
                 priority
               />
             </div>
+          )}
+          {data?.blog?.calculator && (
+            <Suspense fallback={<>Loading...</>}>
+              <section className="my-6 lg:my-8">
+                <CalculatorRenderer calculator={data.blog.calculator[0]} locale={locale} />
+              </section>
+            </Suspense>
           )}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
             <div className="col-span-1 md:col-span-2 mt-2">

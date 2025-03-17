@@ -11,14 +11,14 @@ import { useParams } from 'next/navigation';
 import React, { useMemo, useState } from 'react';
 import { LocaleType } from '@/i18n/settings';
 
-export default function SquareCalculator() {
+export default function SquareCalculator({ currentLocale }: { currentLocale: LocaleType }) {
   const [width, setWidth] = useState('');
   const [length, setLength] = useState('');
   const [inputUnit, setInputUnit] = useState('square_meters');
   const [outputUnit, setOutputUnit] = useState('square_meters');
   const [result, setResult] = useState<number | null>();
-  const params = useParams();
-  const { t } = useTranslation(params.locale as LocaleType, 'translation');
+
+  const { t } = useTranslation(currentLocale, 'translation');
 
   const handleCalculate = () => {
     const parsedWidth = parseFloat(width);

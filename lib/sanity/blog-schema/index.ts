@@ -4,6 +4,7 @@ import { defineField, defineType } from 'sanity';
 import categorySchema from '../category-schema';
 import calculatorButtonSchema from '../button-schema';
 import { availableLocales } from '@/i18n/settings';
+import { availableCalculators } from '@/lib/constants/available-calculators';
 
 export default defineType({
   name: 'blogs',
@@ -95,6 +96,14 @@ export default defineType({
       validation: (rule) => rule.required().min(1).max(1),
       options: {
         list: availableLocales.map((l) => ({ title: l, value: l })),
+      },
+    }),
+    defineField({
+      name: 'calculator',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: availableCalculators.map((l) => ({ title: l, value: l })),
       },
     }),
   ],

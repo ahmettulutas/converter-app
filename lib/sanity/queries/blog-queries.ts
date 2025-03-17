@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
 import { ImageType } from '@/types/images';
 import { TypedObject } from 'sanity';
+import { AvailableCalculatorType } from '@/lib/constants/available-calculators';
 
 export type HeadingLink = {
   _key: string;
@@ -15,6 +16,7 @@ const blogPostFields = groq`
   description,
   content,
   language,
+  calculator,
   faq,
   coverImage {
   ...,
@@ -50,6 +52,7 @@ export type BlogPost = {
   category: Category;
   content?: TypedObject;
   language: string;
+  calculator?: AvailableCalculatorType[];
   _translations: Array<BlogPost>;
   headings: HeadingLink[];
 

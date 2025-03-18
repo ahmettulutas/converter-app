@@ -41,7 +41,7 @@ export function AppSidebar() {
                 {category.links.map((link) => (
                   <SidebarMenuItem key={link.label}>
                     <SidebarMenuButton asChild>
-                      <Link title={t(`labels.${link.label}`)} href={`/${params.locale}${link.href}`}>
+                      <Link title={t(link.label)} href={`/${params.locale}${link.href}`}>
                         <link.icon className="mr-2 h-4 w-4" />
                         {t(link.label)}
                       </Link>

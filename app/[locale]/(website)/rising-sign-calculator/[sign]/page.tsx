@@ -10,8 +10,11 @@ import { JsonSchema } from '@/components/shared/json.ld';
 import { lazy } from 'react';
 import { createTranslation } from '@/i18n';
 
-import { LocaleType } from '@/i18n/settings';
+import { defaultLanguage, LocaleType } from '@/i18n/settings';
 import CalculatorContainer from '@/components/layout/calculator-container';
+import RelatedLinks from '@/components/shared/dynamic-links';
+import { zodiacSigns } from '@/lib/utils/calculate-rising';
+import { baseUrl } from '@/lib/constants/common';
 
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
@@ -22,8 +25,14 @@ export default async function RisignSignCalculatorPage(
   const { params } = props;
   const sign = params?.sign;
   const { t } = await createTranslation(params.locale, 'translation');
-  const dynamicTitle = sign ? t('metaData.risingSignCalculator.dynamicPageTitle', { sign }) : undefined;
-  const dynamicDescription = sign ? t('metaData.risingSignCalculator.dynamicPageDescription', { sign }) : undefined;
+  const translatedSign = sign ? t(`labels.${sign}`) : '';
+
+  const dynamicTitle = translatedSign
+    ? t('metaData.risingSignCalculator.dynamicPageTitle', { translatedSign })
+    : undefined;
+  const dynamicDescription = translatedSign
+    ? t('metaData.risingSignCalculator.dynamicPageDescription', { translatedSign })
+    : undefined;
 
   const pageSchema = await getLocalizedJsonLd({
     dynamicDescription,
@@ -45,14 +54,30 @@ export default async function RisignSignCalculatorPage(
       },
     })),
   };
+
+  const relatedLinks = zodiacSigns.map((sign) => ({
+    title: t('metaData.risingSignCalculator.dynamicPageTitle', { translatedSign: t(`labels.${sign}`) }),
+    url:
+      params.locale === defaultLanguage
+        ? `${baseUrl}/rising-sign-calculator/${sign}`
+        : `${baseUrl}/${params.locale}/rising-sign-calculator/${sign}`,
+  }));
+
   return (
     <>
       <article>
         <PageContainer className="flex flex-col gap-y-2 my-4">
-          <h1 className="text-center text-2xl my-2">{t('labels.risingSignCalculator')}</h1>
+          <h1 className="text-center text-2xl my-2">{dynamicTitle ?? t('labels.risingSignCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: risingSignCalculatorFAQs[params.locale] }}
-            calculator={<RisingSignCalculator currentLocale={params.locale} />}
+            calculator={
+              <div className="flex flex-col gap-y-4">
+                <RisingSignCalculator currentLocale={params.locale} initialSign={params.sign} />
+                <div className="max-w-xl mx-auto">
+                  <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
+                </div>
+              </div>
+            }
           />
         </PageContainer>
       </article>
@@ -74,8 +99,11 @@ export async function generateMetadata(
     return getDefaultMetaData(params.locale, parent, pageKey);
   }
 
-  const title = t('metaData.risingSignCalculator.dynamicPageTitle', { sign });
-  const description = t('metaData.risingSignCalculator.dynamicPageDescription', { sign });
+  const translatedSign = sign ? t(`labels.${sign}`) : '';
+  const title = translatedSign ? t('metaData.risingSignCalculator.dynamicPageTitle', { translatedSign }) : undefined;
+  const description = translatedSign
+    ? t('metaData.risingSignCalculator.dynamicPageDescription', { translatedSign })
+    : undefined;
 
   return getDefaultMetaData(params.locale, parent, pageKey, title, description);
 }

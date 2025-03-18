@@ -34,18 +34,18 @@
     "selectCity": "City or district you were born in",
     "birthTime": "Birth Time",
     "birthDate": "Birth Date",
-    "Aries": "Aries",
-    "Taurus": "Taurus",
-    "Gemini": "Gemini",
-    "Cancer": "Cancer",
-    "Leo": "Leo",
-    "Virgo": "Virgo",
-    "Libra": "Libra",
-    "Scorpio": "Scorpio",
-    "Sagittarius": "Sagittarius",
-    "Capricorn": "Capricorn",
-    "Aquarius": "Aquarius",
-    "Pisces": "Pisces",
+    "aries": "Aries",
+    "taurus": "Taurus",
+    "gemini": "Gemini",
+    "cancer": "Cancer",
+    "leo": "Leo",
+    "virgo": "Virgo",
+    "libra": "Libra",
+    "scorpio": "Scorpio",
+    "sagittarius": "Sagittarius",
+    "capricorn": "Capricorn",
+    "aquarius": "Aquarius",
+    "pisces": "Pisces",
     "risignCardDesc": "Enter your birth information to find your rising sign.",
     "applicationCategory": "Calculator",
     "browserRequirements": "Requires JavaScript",
@@ -180,7 +180,10 @@
       "gauge.normal": "Normal",
       "gauge.overweight": "Overweight",
       "gauge.obese": "Obese"
-    }
+    },
+    "clickToLearnRs": "Click to find out your ascendant sign.",
+    "idkMyBirthTime": "I don't know my birth time.",
+    "relatedLinks": "Related Links"
   },
   "msg": {
     "noLangSelected": "No language is selected",
@@ -190,7 +193,9 @@
     "invalidLatitude": "Latitude must be between -90 and 90.",
     "invalidLongitude": "Longitude must be between -180 and 180.",
     "invalidDateTime": "Invalid date or time format.",
-    "calculationError": "An error occurred during calculation."
+    "calculationError": "An error occurred during calculation.",
+    "noCity": "City not found.",
+    "atLeastTwo": "Type at least two characters."
   },
   "metaData": {
     "applicationName": "Easiest Length Conversion Tools",
@@ -253,8 +258,8 @@
     },
     "risingSignCalculator": {
       "title": "Free Rising Sign Calculator - Find Your Ascendant Sign | Accurate & Free!",
-      "dynamicPageTitle": "Find what is the rising sign for {{sign}}",
-      "dynamicPageDescription": "Discover the rising sign, also known as the ascendant sign for {{sign}} and learn how it influences personality, appearance, and first impressions. Dive deeper into your astrological profile today!",
+      "dynamicPageTitle": "Find what is the rising sign for {{translatedSign}}",
+      "dynamicPageDescription": "Discover the rising sign, also known as the ascendant sign for {{translatedSign}} and learn how it influences personality, appearance, and first impressions. Dive deeper into your astrological profile today!",
       "description": "Discover your rising sign (Ascendant) with our free and accurate Rising Sign Calculator. Learn how your rising sign influences your personality and how others perceive you. Enter your birth details to get a personalized astrological insight.",
       "keywords": [
         "Rising sign calculator",

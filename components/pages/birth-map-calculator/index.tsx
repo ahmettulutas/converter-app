@@ -10,26 +10,32 @@ import ComboboxSkeleton from '@/components/skeletons/combobox';
 import { computeChartData } from '@/lib/utils/calculate-birthmap';
 import { LocaleType } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
+import { PlaceResult } from '@/app/api/places/route';
+import { LocationSelect } from '@/components/shared/location-select';
 
 type ChartData = {
   planets: { [key: string]: number[] };
   cusps: number[];
 };
 
-const CountryComboBox = lazy(() => import('../../shared/countries-selector'));
-const CityComboBox = lazy(() => import('../../shared/cities-selector'));
+// const CountryComboBox = lazy(() => import('../../shared/countries-selector'));
+// const CityComboBox = lazy(() => import('../../shared/cities-selector'));
 
 export default function DualBirthMapCalculator({ currentLocale }: { currentLocale: LocaleType }) {
   const [formData, setFormData] = useState({
     name: '',
     date: '',
     time: '',
-    latitude: 0,
-    longitude: 0,
-    country: '',
-    city: '',
-  });
 
+    country: '',
+  });
+  const [city, setCity] = useState<PlaceResult | null>(() => {
+    if (typeof window !== 'undefined') {
+      const storedCity = window.localStorage.getItem('city');
+      return storedCity ? JSON.parse(storedCity) : null;
+    }
+    return null;
+  });
   const [chartData, setChartData] = useState<ChartData | null>(null);
   const natalRef = useRef<HTMLDivElement>(null);
   const transitRef = useRef<HTMLDivElement>(null);
@@ -45,12 +51,16 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.date || !formData.time || !formData.city) {
+    if (!formData.date || !formData.time || !city?.latitude) {
       alert(t('msg.fillAllFields'));
       return;
     }
-    const data = computeChartData(formData.date, formData.time, formData.latitude, formData.longitude);
+    const data = computeChartData(formData.date, formData.time, city?.latitude, city?.longitude);
     setChartData(data);
+  };
+  const handleCitySelect = (city: PlaceResult | null) => {
+    setCity(city);
+    window.localStorage.setItem('city', JSON.stringify(city));
   };
 
   useEffect(() => {
@@ -72,7 +82,7 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
 
   return (
     <div className="flex flex-col gap-4 lg:gap-6 mx-auto">
-      <Card className="mx-auto w-full lg:max-w-md">
+      <Card className="mx-auto w-full lg:max-w-md shadow-md">
         <CardHeader>
           <CardTitle>{t('labels.birthMapCalculator')}</CardTitle>
           <CardDescription>{t('labels.generateChartsDescription')}</CardDescription>
@@ -110,44 +120,14 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
             <div className="space-y-2">
               <label htmlFor="country" className="block font-medium mb-1">
                 {t('labels.country')}
-              </label>
-              <Suspense fallback={<ComboboxSkeleton />}>
-                <CountryComboBox
+                <LocationSelect
                   currentLocale={currentLocale}
-                  value={formData.country}
-                  title={t('labels.selectCountry')}
-                  onChange={(selectedCountry) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      country: selectedCountry,
-                      city: '',
-                      latitude: 0,
-                      longitude: 0,
-                    }))
-                  }
+                  onChange={handleCitySelect}
+                  value={city}
+                  placeholder={t('labels.selectCity')}
+                  label={t('labels.selectCity')}
                 />
-              </Suspense>
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="city" className="block font-medium mb-1">
-                {t('labels.city')}
               </label>
-              <Suspense fallback={<ComboboxSkeleton />}>
-                <CityComboBox
-                  selectedCountry={formData.country}
-                  selectedCity={formData.city}
-                  title={t('labels.selectCity')}
-                  onChange={(selectedCity, latitude, longitude) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      city: selectedCity,
-                      latitude,
-                      longitude,
-                    }))
-                  }
-                />
-              </Suspense>
             </div>
 
             <Button type="submit" className="w-full">
@@ -157,7 +137,7 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
         </CardContent>
       </Card>
 
-      <Card className="mx-auto py-4 w-full">
+      <Card className="mx-auto py-4 w-full shadow-md">
         <CardContent className="flex flex-col lg:flex-row gap-4 items-center">
           <div>
             <h3>{t('labels.natalChart')}</h3>

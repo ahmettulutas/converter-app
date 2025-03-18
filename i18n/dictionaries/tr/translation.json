@@ -33,18 +33,18 @@
     "selectCity": "Doğduğunuz şehir veya ilçe",
     "birthTime": "Doğum Saati",
     "birthDate": "Doğum Tarihi",
-    "Aries": "Koç",
-    "Taurus": "Boğa",
-    "Gemini": "İkizler",
-    "Cancer": "Yengeç",
-    "Leo": "Aslan",
-    "Virgo": "Başak",
-    "Libra": "Terazi",
-    "Scorpio": "Akrep",
-    "Sagittarius": "Yay",
-    "Capricorn": "Oğlak",
-    "Aquarius": "Kova",
-    "Pisces": "Balık",
+    "aries": "Koç",
+    "taurus": "Boğa",
+    "gemini": "İkizler",
+    "cancer": "Yengeç",
+    "leo": "Aslan",
+    "virgo": "Başak",
+    "libra": "Terazi",
+    "scorpio": "Akrep",
+    "sagittarius": "Yay",
+    "capricorn": "Oğlak",
+    "aquarius": "Kova",
+    "pisces": "Balık",
     "risignCardDesc": "Yükselen burcunuzu bulmak için doğum bilgilerinizi girin.",
     "applicationCategory": "Hesaplayıcı",
     "browserRequirements": "JavaScript Gerektirir",
@@ -189,7 +189,10 @@
       "gauge.normal": "Normal",
       "gauge.overweight": "Fazla Kilolu",
       "gauge.obese": "Obez"
-    }
+    },
+    "clickToLearnRs": "Yükselen burcunuzu keşfetmek için tıklayın!",
+    "idkMyBirthTime": "Doğum saatimi bilmiyorum",
+    "relatedLinks": "İlişkili Diğer Linkler"
   },
   "msg": {
     "noLangSelected": "Dil seçilmedi",
@@ -199,7 +202,9 @@
     "invalidLatitude": "Enlem -90 ile 90 arasında olmalıdır.",
     "invalidLongitude": "Boylam -180 ile 180 arasında olmalıdır.",
     "invalidDateTime": "Geçersiz tarih veya saat formatı.",
-    "calculationError": "Hesaplama sırasında bir hata oluştu."
+    "calculationError": "Hesaplama sırasında bir hata oluştu.",
+    "noCity": "Aradığınız şehir bulunamadı.",
+    "atLeastTwo": "En az 2 karakter girin."
   },
   "metaData": {
     "applicationName": "En Kolay Uzunluk Dönüştürme Araçları",
@@ -263,6 +268,8 @@
     "risingSignCalculator": {
       "title": "Ücretsiz Yükselen Burç Hesaplama - Yükselen Burcunuzu Bulun | Hızlı & Ücretsiz!",
       "description": "Ücretsiz ve doğru Yükselen Burç Hesaplayıcı ile yükselen burcunuzu keşfedin. Yükselen burcunuzun kişiliğinizi nasıl etkilediğini ve başkalarının sizi nasıl algıladığını öğrenin. Kişisel astrolojik içgörü almak için doğum bilgilerinizi girin.",
+      "dynamicPageTitle": "{{translatedSign}} Burcunun Yükseleni Nedir?",
+      "dynamicPageDescription": "Astrolojik hesaplamaları nasa verilerini kullanarak doğru bir şekilde bu hesaplama aracıyla yapabilir {{translatedSign}} burcunun yükselenini ücretsiz ve doğru bir şekilde hesaplayabilirsiniz.",
       "keywords": [
         "Yükselen burç hesaplayıcı",
         "Aslan burcu hesaplayıcı",
@@ -277,6 +284,7 @@
       ],
       "category": "Astroloji Hesaplayıcıları"
     },
+
     "sunSignCalculator": {
       "title": "Ücretsiz Güneş Burcu Hesaplama - Burcunuzu Keşfedin | Hızlı ve Ücretsiz!",
       "description": "Hızlı ve ücretsiz Güneş Burcu Hesaplayıcımız ile burcunuzu öğrenin. Güneş burcunuzun temel kişilik özelliklerinizi nasıl tanımladığını ve hayatınızı nasıl şekillendirdiğini keşfedin. Doğum bilgilerinizi girerek doğru astrolojik bilgiler alın.",
@@ -297,8 +305,8 @@
     "percentageCalculator": {
       "title": "Yüzde Hesaplayıcı – Yüzdeleri Kolay ve Doğru Şekilde Hesaplayın!",
       "description": "Ücretsiz Yüzde Hesaplayıcımız ile yüzdeleri, toplam değerleri veya yüzde değişimlerini hesaplayabilirsiniz. İndirim, faiz oranları ve daha fazlası için idealdir!",
-      "dynamicPageTitle": "{{sign}} burcunun yükselenini öğrenin",
-      "dynamicPageDescription": "{{sign}} burcunun yükselen burcunu, yani ascendant burcunu keşfedin ve bunun kişiliğinizi, görünüşünüzü ve ilk izlenimlerinizi nasıl etkilediğini öğrenin. Astrolojik profilinizi bugün daha derinlemesine inceleyin!",
+      "dynamicPageTitle": "{{translatedSign}} burcunun yükselenini öğrenin",
+      "dynamicPageDescription": "{{translatedSign}} burcunun yükselen burcunu, yani ascendant burcunu keşfedin ve bunun kişiliğinizi, görünüşünüzü ve ilk izlenimlerinizi nasıl etkilediğini öğrenin. Astrolojik profilinizi bugün daha derinlemesine inceleyin!",
       "keywords": [
         "yüzde hesaplayıcı",
         "ücretsiz yüzde hesaplayıcı",

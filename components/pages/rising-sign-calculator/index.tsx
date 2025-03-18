@@ -1,37 +1,67 @@
 'use client';
 
-import { lazy, Suspense, useState } from 'react';
+import React, { Suspense, useState } from 'react';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { useTranslation } from '@/i18n/client';
-import { LocaleType } from '@/i18n/settings';
+
+import { Clock } from 'lucide-react';
+
+import { format } from 'date-fns';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+
 import { useParams } from 'next/navigation';
+import { PlaceResult } from '@/app/api/places/route';
+import { DatePicker } from '@/components/ui/date-picker';
+import { LocationSelect } from '@/components/shared/location-select';
+import { Checkbox } from '@/components/ui/checkbox';
 import { calculateAscendant, RisingSignResult } from '@/lib/utils/calculate-rising';
-import ComboboxSkeleton from '@/components/skeletons/combobox';
+import { useTranslation } from '@/i18n/client';
+import SignResult from './result';
 import Link from 'next/link';
+import { LocaleType } from '@/i18n/settings';
 
-const CountryComboBox = lazy(() => import('../../shared/countries-selector'));
-const CityComboBox = lazy(() => import('../../shared/cities-selector'));
-const SignResult = lazy(() => import('./result'));
-
-export default function RisingSignCalculator({ currentLocale }: { currentLocale: LocaleType }) {
-  const [birthDate, setBirthDate] = useState('');
+export default function RisingSignForm({
+  currentLocale,
+  initialSign,
+}: {
+  currentLocale: LocaleType;
+  initialSign?: string;
+}) {
+  const [birthDate, setBirthDate] = useState<Date | undefined>(undefined);
+  const [unknownBirthTime, setUnknownBirthTime] = useState(false);
   const [birthTime, setBirthTime] = useState('');
-  const [latitude, setLatitude] = useState('');
-  const [longitude, setLongitude] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
+  const [city, setCity] = useState<PlaceResult | null>(() => {
+    if (typeof window !== 'undefined') {
+      const storedCity = window.localStorage.getItem('city');
+      return storedCity ? JSON.parse(storedCity) : null;
+    }
+    return null;
+  });
   const [risingSign, setRisingSign] = useState<RisingSignResult | null>(null);
   const [error, setError] = useState('');
 
   const { t } = useTranslation(currentLocale, 'translation');
-  const params = useParams();
-  const sign = params?.sign;
+
+  const translatedSign = initialSign ? t(`labels.${initialSign}`) : '';
+  const dynamicTitle = translatedSign
+    ? t('metaData.risingSignCalculator.dynamicPageTitle', { translatedSign })
+    : undefined;
+  const dynamicDescription = translatedSign
+    ? t('metaData.risingSignCalculator.dynamicPageDescription', { translatedSign })
+    : undefined;
 
   const handleCalculate = () => {
-    const { result, error } = calculateAscendant(birthDate, birthTime, latitude, longitude);
+    if (!birthDate || !city?.latitude || !city?.longitude) return;
+
+    const formattedBirthDate = format(birthDate, 'yyyy-MM-dd');
+    const { result, error } = calculateAscendant(
+      formattedBirthDate,
+      birthTime,
+      String(city.latitude),
+      String(city.longitude)
+    );
     if (error) {
       setError(t(`msg.${error}`));
       setRisingSign(null);
@@ -40,75 +70,93 @@ export default function RisingSignCalculator({ currentLocale }: { currentLocale:
       setRisingSign(result);
     }
   };
+  const handleCitySelect = (city: PlaceResult | null) => {
+    setCity(city);
+    window.localStorage.setItem('city', JSON.stringify(city));
+  };
 
   return (
     <Card className="w-full max-w-lg mx-auto">
       <CardHeader>
-        <CardTitle>
-          {sign ? (
-            <p>
-              {t('labels.welcome')} <span className="underline text-red-600">{t(`labels.${sign}`)}</span>
-            </p>
-          ) : (
-            t('risingSign.title')
-          )}
-        </CardTitle>
-        <CardDescription>{t('risingSign.description')}</CardDescription>
+        <CardTitle>{dynamicTitle ? <p>{dynamicTitle}</p> : t('risingSign.title')}</CardTitle>
+        <CardDescription>{dynamicDescription ?? t('risingSign.description')}</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleCalculate();
+          }}
+          className="space-y-4"
+        >
           <div className="space-y-2">
-            <Label htmlFor="birthDate">{t('labels.birthDate')}</Label>
-            <Input id="birthDate" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
+            <DatePicker
+              title={t('labels.birthDate')}
+              onChange={(date) => setBirthDate(date)}
+              initialValue={birthDate}
+            />
           </div>
 
+          {/* Doğum Saati */}
           <div className="space-y-2">
-            <Label htmlFor="birthTime">{t('labels.birthTime')}</Label>
-            <Input id="birthTime" type="time" value={birthTime} onChange={(e) => setBirthTime(e.target.value)} />
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="country">{t('labels.country')}</Label>
-              <Suspense fallback={<ComboboxSkeleton />}>
-                <CountryComboBox
-                  currentLocale={currentLocale}
-                  value={selectedCountry}
-                  title={t('labels.selectCountry')}
-                  onChange={(selectedCountry) => {
-                    setSelectedCountry(selectedCountry);
-                    setLongitude('');
-                    setLatitude('');
-                  }}
-                />
-              </Suspense>
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="city">{t('labels.city')}</label>
-              <Suspense fallback={<ComboboxSkeleton />}>
-                <CityComboBox
-                  selectedCountry={selectedCountry}
-                  selectedCity={selectedCity}
-                  title={t('labels.selectCity')}
-                  onChange={(selectedCity, latitude, longitude) => {
-                    setSelectedCity(selectedCity);
-                    setLongitude(String(longitude));
-                    setLatitude(String(latitude));
-                  }}
-                />
-              </Suspense>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="unknown-birth-time"
+                checked={unknownBirthTime}
+                onCheckedChange={(checked) => {
+                  if (checked) setBirthTime('12:00');
+                  setUnknownBirthTime(checked as boolean);
+                }}
+              />
+              <Label htmlFor="unknown-birth-time">{t('labels.idkMyBirthTime')}</Label>
             </div>
           </div>
 
-          {error && <div className="text-red-500 text-sm">{error}</div>}
-        </div>
+          {!unknownBirthTime && (
+            <div className="space-y-2">
+              <Label htmlFor="time">{t('labels.birthTime')}</Label>
+              <div className="relative">
+                <Input
+                  id="time"
+                  type="time"
+                  value={birthTime}
+                  onChange={(e) => setBirthTime(e.target.value)}
+                  className="rounded-xl pl-10"
+                />
+                <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              </div>
+            </div>
+          )}
+
+          <LocationSelect
+            currentLocale={currentLocale}
+            onChange={handleCitySelect}
+            value={city}
+            placeholder={t('labels.selectCity')}
+            label={t('labels.selectCity')}
+          />
+
+          {/* Hesapla Butonu */}
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button type="submit" className="w-full rounded-xl Hover:bg-primary/90 text-primary-foreground">
+                  {t('labels.calculate')}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('labels.clickToLearnRs')}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </form>
+        {error && <div className="text-red-500 text-sm">{error}</div>}
       </CardContent>
 
       {risingSign && (
         <CardFooter className="flex flex-col gap-2">
           <h3 className="text-lg font-semibold">
-            {t('risingSign.result')}: {risingSign.position}
+            {t('risingSign.result')}: {t(`labels.${risingSign.risingSign}`)}
           </h3>
           <p className="text-sm">{t(risingSign.explanation)}</p>
 
@@ -137,11 +185,11 @@ export default function RisingSignCalculator({ currentLocale }: { currentLocale:
           </div>
           <>
             <Suspense fallback={<>Loading...</>}>
-              <SignResult risingSign={`${t('risingSign.result')}: ${risingSign.position}`} />
+              <SignResult risingSign={risingSign.risingSign} />
             </Suspense>
             <Link
               className="w-full"
-              href={`/${params.locale}/blog/ascendant-sign-calculator-discover-your-rising-sign-instantly`}
+              href={`/${currentLocale}/blog/ascendant-sign-calculator-discover-your-rising-sign-instantly`}
             >
               <Button className="underline w-full" variant={'outline'}>
                 {t('labels.risingDiscover')}
@@ -150,12 +198,6 @@ export default function RisingSignCalculator({ currentLocale }: { currentLocale:
           </>
         </CardFooter>
       )}
-
-      <CardFooter className="flex flex-col gap-2">
-        <Button className="w-full" onClick={handleCalculate}>
-          {t('risingSign.calculate')}
-        </Button>
-      </CardFooter>
     </Card>
   );
 }

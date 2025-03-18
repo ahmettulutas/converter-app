@@ -1,32 +1,32 @@
 export const zodiacSigns: ZodiacSign[] = [
-  'Aries',
-  'Taurus',
-  'Gemini',
-  'Cancer',
-  'Leo',
-  'Virgo',
-  'Libra',
-  'Scorpio',
-  'Sagittarius',
-  'Capricorn',
-  'Aquarius',
-  'Pisces',
+  'aries',
+  'taurus',
+  'gemini',
+  'cancer',
+  'leo',
+  'virgo',
+  'libra',
+  'scorpio',
+  'sagittarius',
+  'capricorn',
+  'aquarius',
+  'pisces',
 ];
 
 // Define zodiac sign type
 export type ZodiacSign =
-  | 'Aries'
-  | 'Taurus'
-  | 'Gemini'
-  | 'Cancer'
-  | 'Leo'
-  | 'Virgo'
-  | 'Libra'
-  | 'Scorpio'
-  | 'Sagittarius'
-  | 'Capricorn'
-  | 'Aquarius'
-  | 'Pisces';
+  | 'aries'
+  | 'taurus'
+  | 'gemini'
+  | 'cancer'
+  | 'leo'
+  | 'virgo'
+  | 'libra'
+  | 'scorpio'
+  | 'sagittarius'
+  | 'capricorn'
+  | 'aquarius'
+  | 'pisces';
 
 // Define interface for rising sign result
 export interface RisingSignResult {

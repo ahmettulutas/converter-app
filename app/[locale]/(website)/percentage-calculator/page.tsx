@@ -10,6 +10,10 @@ import { PageContainer } from '@/components/shared/page-container';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { lazy } from 'react';
 import CalculatorContainer from '@/components/layout/calculator-container';
+import { percentTypes } from '@/lib/utils/calculate-percentage';
+import { baseUrl } from '@/lib/constants/common';
+import { defaultLanguage } from '@/i18n/settings';
+import RelatedLinks from '@/components/shared/dynamic-links';
 
 const PercentageCalculator = lazy(() => import('@/components/pages/percentage-calculator'));
 const pageKey = 'percentageCalculator';
@@ -31,6 +35,14 @@ export default async function Page(props: Readonly<SharedPageProps>) {
       },
     })),
   };
+  const relatedLinks = percentTypes.map((type) => ({
+    title: t(`labels.${type}`),
+    url:
+      params.locale === defaultLanguage
+        ? `${baseUrl}/percentage-calculator/${type}`
+        : `${baseUrl}/${params.locale}/percentage-calculator/${type}`,
+  }));
+
   return (
     <>
       <article>
@@ -38,7 +50,14 @@ export default async function Page(props: Readonly<SharedPageProps>) {
           <h1 className="text-center text-2xl my-2">{t('labels.percentageCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: percentageFaqs[params.locale] }}
-            calculator={<PercentageCalculator currentLocale={params.locale} />}
+            calculator={
+              <div className="flex flex-col gap-y-4">
+                <PercentageCalculator currentLocale={params.locale} />
+                <div className="max-w-xl mx-auto">
+                  <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
+                </div>
+              </div>
+            }
           />
         </PageContainer>
       </article>

@@ -34,18 +34,18 @@
     "selectCity": "Stadt oder Bezirk, in dem Sie geboren wurden",
     "birthTime": "Geburtszeit",
     "birthDate": "Geburtsdatum",
-    "Aries": "Widder",
-    "Taurus": "Stier",
-    "Gemini": "Zwillinge",
-    "Cancer": "Krebs",
-    "Leo": "Löwe",
-    "Virgo": "Jungfrau",
-    "Libra": "Waage",
-    "Scorpio": "Skorpion",
-    "Sagittarius": "Schütze",
-    "Capricorn": "Steinbock",
-    "Aquarius": "Wassermann",
-    "Pisces": "Fische",
+    "aries": "Widder",
+    "taurus": "Stier",
+    "gemini": "Zwillinge",
+    "cancer": "Krebs",
+    "leo": "Löwe",
+    "virgo": "Jungfrau",
+    "libra": "Waage",
+    "scorpio": "Skorpion",
+    "sagittarius": "Schütze",
+    "capricorn": "Steinbock",
+    "aquarius": "Wassermann",
+    "pisces": "Fische",
     "risignCardDesc": "Geben Sie Ihre Geburtsdaten ein, um Ihr Aszendenten-Zeichen zu finden.",
     "applicationCategory": "Rechner",
     "browserRequirements": "Erfordert JavaScript",
@@ -178,7 +178,10 @@
       "gauge.normal": "Normalgewicht",
       "gauge.overweight": "Übergewicht",
       "gauge.obese": "Adipositas"
-    }
+    },
+    "clickToLearnRs": "Klicken Sie hier, um Ihr Aszendentenzeichen herauszufinden.",
+    "idkMyBirthTime": "Ich kenne meine Geburtszeit nicht.",
+    "relatedLinks": "Verwandte Links"
   },
   "msg": {
     "noLangSelected": "Keine Sprache ausgewählt",
@@ -188,7 +191,9 @@
     "invalidLatitude": "Der Breitengrad muss zwischen -90 und 90 liegen.",
     "invalidLongitude": "Der Längengrad muss zwischen -180 und 180 liegen.",
     "invalidDateTime": "Ungültiges Datum oder Uhrzeitformat.",
-    "calculationError": "Ein Fehler ist bei der Berechnung aufgetreten."
+    "calculationError": "Ein Fehler ist bei der Berechnung aufgetreten.",
+    "noCity": "Stadt nicht gefunden.",
+    "atLeastTwo": "Geben Sie mindestens zwei Zeichen ein."
   },
   "metaData": {
     "applicationName": "Einfachste Längenumrechnungstools",
@@ -247,8 +252,8 @@
     "risingSignCalculator": {
       "title": "Aszendentenrechner - Finde dein Aszendentzeichen | Genau & Kostenlos!",
       "description": "Entdecke dein Aszendentzeichen mit unserem kostenlosen und genauen Aszendentenrechner. Erfahre, wie dein Aszendent deine Persönlichkeit beeinflusst und wie andere dich wahrnehmen. Gib deine Geburtsdaten ein, um einen persönlichen astrologischen Einblick zu erhalten.",
-      "dynamicPageTitle": "Finde das Aszendentenzeichen von {{sign}}",
-      "dynamicPageDescription": "Entdecke das Aszendentenzeichen, auch bekannt als das steigende Zeichen, von {{sign}} und erfahre, wie es Persönlichkeit, Erscheinungsbild und erste Eindrücke beeinflusst. Tauche noch heute tiefer in dein astrologisches Profil ein!",
+      "dynamicPageTitle": "Finde das Aszendentenzeichen von {{translatedSign}}",
+      "dynamicPageDescription": "Entdecke das Aszendentenzeichen, auch bekannt als das steigende Zeichen, von {{translatedSign}} und erfahre, wie es Persönlichkeit, Erscheinungsbild und erste Eindrücke beeinflusst. Tauche noch heute tiefer in dein astrologisches Profil ein!",
       "keywords": [
         "Aszendentenrechner",
         "Aszendent berechnen",

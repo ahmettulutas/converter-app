@@ -55,7 +55,7 @@ export default function MortgageCalculator({ currentLocale }: Readonly<{ current
   };
 
   return (
-    <Card className="max-w-lg mx-auto">
+    <Card className="max-w-lg mx-auto shadow-md">
       <CardHeader>
         <CardTitle>{t('labels.mortgageCalculator')}</CardTitle>
         <CardDescription>{t('labels.mortgageCalculatorDesc')}</CardDescription>

@@ -65,6 +65,7 @@ export default async function Page(props: DynamicPageProps) {
             faqProps={{ faqList: percentageFaqs[params.locale] }}
             calculator={
               <div className="flex flex-col gap-y-4">
+                <PercentageCalculator currentLocale={params.locale} initialType={initialType} />
                 <div className="max-w-xl mx-auto">
                   <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
                 </div>

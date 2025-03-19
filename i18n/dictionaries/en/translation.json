@@ -195,7 +195,8 @@
     "invalidDateTime": "Invalid date or time format.",
     "calculationError": "An error occurred during calculation.",
     "noCity": "City not found.",
-    "atLeastTwo": "Type at least two characters."
+    "atLeastTwo": "Type at least two characters.",
+    "failedCity": "Failed to load cities. Please try again."
   },
   "metaData": {
     "applicationName": "Easiest Length Conversion Tools",

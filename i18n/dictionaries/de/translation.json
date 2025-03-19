@@ -193,7 +193,8 @@
     "invalidDateTime": "Ungültiges Datum oder Uhrzeitformat.",
     "calculationError": "Ein Fehler ist bei der Berechnung aufgetreten.",
     "noCity": "Stadt nicht gefunden.",
-    "atLeastTwo": "Geben Sie mindestens zwei Zeichen ein."
+    "atLeastTwo": "Geben Sie mindestens zwei Zeichen ein.",
+    "failedCity": "Städte konnten nicht geladen werden. Bitte versuchen Sie es erneut."
   },
   "metaData": {
     "applicationName": "Einfachste Längenumrechnungstools",

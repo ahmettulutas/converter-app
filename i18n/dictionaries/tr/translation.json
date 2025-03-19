@@ -204,7 +204,8 @@
     "invalidDateTime": "Geçersiz tarih veya saat formatı.",
     "calculationError": "Hesaplama sırasında bir hata oluştu.",
     "noCity": "Aradığınız şehir bulunamadı.",
-    "atLeastTwo": "En az 2 karakter girin."
+    "atLeastTwo": "En az 2 karakter girin.",
+    "failedCity": "Şehirler yüklenemedi. Lütfen tekrar deneyin."
   },
   "metaData": {
     "applicationName": "En Kolay Uzunluk Dönüştürme Araçları",

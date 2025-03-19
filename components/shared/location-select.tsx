@@ -56,7 +56,7 @@ export function LocationSelect({ onChange, value, label, placeholder, currentLoc
       setCities(data.cities || []);
     } catch (err) {
       console.error('Failed to fetch cities:', err);
-      setError('Failed to load cities. Please try again.');
+      setError(t('msg.failedCity'));
       setCities([]);
     } finally {
       setIsLoading(false);
@@ -145,7 +145,7 @@ export function LocationSelect({ onChange, value, label, placeholder, currentLoc
                 </div>
               ) : error ? (
                 <div className="p-2">
-                  <Alert variant="destructive" className="text-sm py-2">
+                  <Alert variant="destructive" className="text-sm py-2 gap-x-2 [&>svg]:top-2">
                     <AlertCircle className="h-4 w-4" />
                     <AlertDescription>{error}</AlertDescription>
                   </Alert>

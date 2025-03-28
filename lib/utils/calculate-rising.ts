@@ -76,7 +76,6 @@ export const calculateAscendant = (
   latitude: string,
   longitude: string
 ): { result: RisingSignResult | null; error: string } => {
-  let error = '';
   let result: RisingSignResult | null = null;
 
   if (!birthDate || !birthTime || !latitude || !longitude) {

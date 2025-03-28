@@ -31,37 +31,40 @@ export function LocationSelect({ onChange, value, label, placeholder, currentLoc
   const [error, setError] = React.useState<string | null>(null);
   const { t } = useTranslation(currentLocale, 'translation');
   // Debounced search function
-  const searchCities = React.useCallback(async (query: string) => {
-    if (!query || query.length < 2) {
-      setCities([]);
-      return;
-    }
-
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch(`/api/places?query=${encodeURIComponent(query)}`);
-
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+  const searchCities = React.useCallback(
+    async (query: string) => {
+      if (!query || query.length < 2) {
+        setCities([]);
+        return;
       }
 
-      const data = await response.json();
+      setIsLoading(true);
+      setError(null);
 
-      if (data.error) {
-        throw new Error(data.error);
+      try {
+        const response = await fetch(`/api/places?query=${encodeURIComponent(query)}`);
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        setCities(data.cities || []);
+      } catch (err) {
+        console.error('Failed to fetch cities:', err);
+        setError(t('msg.failedCity'));
+        setCities([]);
+      } finally {
+        setIsLoading(false);
       }
-
-      setCities(data.cities || []);
-    } catch (err) {
-      console.error('Failed to fetch cities:', err);
-      setError(t('msg.failedCity'));
-      setCities([]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+    },
+    [t]
+  );
 
   React.useEffect(() => {
     const debounceTimer = setTimeout(() => {

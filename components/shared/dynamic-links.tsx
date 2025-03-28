@@ -17,7 +17,9 @@ const RelatedLinks = ({ links, title }: RelatedLinksProps) => {
       <CardContent className="flex flex-wrap gap-2">
         {links.map((link) => (
           <Link key={link.url} href={link.url} title={link.title}>
-            <Button variant={'outline'}>{link.title}</Button>
+            <Button size="sm" variant="outline">
+              {link.title}
+            </Button>
           </Link>
         ))}
       </CardContent>

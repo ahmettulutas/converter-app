@@ -1,119 +1,73 @@
 'use client';
-import { PortableText } from '@portabletext/react';
-import React from 'react';
-import { TypedObject } from 'sanity';
-import Link from 'next/link';
-import { Link2 } from 'lucide-react';
+
+import { urlForImage } from '@/lib/sanity/helpers/image-fns';
+import { PortableText as PortableTextComponent } from '@portabletext/react';
 
 import Image from 'next/image';
-import { urlForImage } from '@/lib/sanity/helpers/image-fns';
-import { cn } from '@/lib/utils/styles';
+import Link from 'next/link';
 
-const myPortableTextComponents = {
+const components = {
   types: {
-    /* calculatorButton: ({ value }: any) => (
-      <a
-        href={value.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-      >
-        {value.label}
-      </a>
-    ), */
     image: ({ value }: any) => {
-      const url = urlForImage(value.asset).height(400).width(300).url();
-      if (!url) return <></>;
+      const imageUrl = urlForImage(value)?.url();
+
+      if (!imageUrl) {
+        return null;
+      }
+
       return (
-        <figure className="flex flex-col gap-1 overflow-hidden md:float-right ml-2">
-          <div className="relative h-[400px] md:w-[300px]">
-            <Image src={url} alt={value.alt} fill />
+        <figure className="my-8 relative">
+          <div className="aspect-video relative rounded-lg overflow-hidden">
+            <Image
+              src={imageUrl || '/placeholder.svg'}
+              alt={value.alt || ''}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 800px"
+            />
           </div>
-          {value?.alt && <figcaption className="text-xs text-right p-1 pr-4">{value.alt}</figcaption>}
+          {value.caption && (
+            <figcaption className="text-center text-sm text-muted-foreground mt-2">{value.caption}</figcaption>
+          )}
         </figure>
       );
     },
-  },
-  block: (props: any) => {
-    const { node, children, index } = props;
-    const style = node?.style || 'normal';
-
-    if (/^h\d/.test(style)) {
-      // set the heading tag (h1,h2,h3,etc)
-      const HeadingTag = style;
+    code: ({ value }: any) => {
       return (
-        // use the node key as the id, it's guaranteed unique
-        // one can also slugify the children spans if one want
-        // nicer URLs
-        <HeadingTag id={node._key} className="my-1 text-lg lg:text-xl font-bold">
-          {children}
-          <Link className="text-xs leading-8" href={`#${node._key}`}>
-            #
-          </Link>
-        </HeadingTag>
+        <pre className="bg-muted p-4 rounded-lg overflow-x-auto my-6">
+          {value.filename && <div className="text-sm text-muted-foreground mb-2">{value.filename}</div>}
+          <code className="text-sm font-mono">{value.code}</code>
+        </pre>
       );
-    }
-
-    if (style === 'blockquote') return <blockquote>{children}</blockquote>;
-
-    if (style === 'normal')
-      return (
-        <p className={cn('ml-2 lg:ml-4 text-base font-light', index === 0 ? 'indent-8' : 'indent-0')}>{children}</p>
-      );
+    },
   },
   marks: {
-    em: ({ children }: any) => <em className="font-semibold">{children}</em>,
-    link: ({ value, children }: any) => {
-      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
+    link: ({ children, value }: any) => {
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
+
       return (
-        <a href={value?.href} target={target} rel={target === '_blank' ? 'noindex nofollow' : ''}>
-          <span className="inline-flex items-center text-primary underline">
-            {children}
-            <Link2 width={12} height={12} className="inline-block" />
-          </span>
-        </a>
+        <Link href={value.href} rel={rel} className="text-primary hover:underline">
+          {children}
+        </Link>
       );
     },
-    code: ({ value, children }: any) => {
-      return <code className="bg-accent p-2 rounded-md my-1 block">{children}</code>;
-    },
-    strong: ({ value, children }: any) => {
-      return <strong className="my-2 inline-block">{children}</strong>;
-    },
+  },
+  block: {
+    h1: ({ children }: any) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
+    h2: ({ children }: any) => <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>,
+    h3: ({ children }: any) => <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>,
+    h4: ({ children }: any) => <h4 className="text-lg font-bold mt-6 mb-2">{children}</h4>,
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-4 border-primary pl-4 italic my-6">{children}</blockquote>
+    ),
+    normal: ({ children }: any) => <p className="my-4">{children}</p>,
   },
   list: {
-    bullet: ({ children }: any) => (
-      <ul className="my-4 ml-6">
-        {children.map((child: any) => (
-          <li key={child.key} className="ml-2 list-disc text-base">
-            {child.props.children}
-          </li>
-        ))}
-      </ul>
-    ),
-    number: ({ children }: any) => {
-      return (
-        <ol className="my-4 ml-6">
-          {children.map((child: any) => (
-            <li key={child.key} className="ml-2 list-decimal text-base">
-              {child.props.children}
-            </li>
-          ))}
-        </ol>
-      );
-    },
-    checkmarks: ({ children }: any) => <ol className="m-auto">{children}</ol>,
-    p: ({ children }: any) => <p className="my-2">{children}</p>,
+    bullet: ({ children }: any) => <ul className="list-disc pl-6 my-4">{children}</ul>,
+    number: ({ children }: any) => <ol className="list-decimal pl-6 my-4">{children}</ol>,
   },
 };
 
-const RichTextContent = ({ content, className }: { content: TypedObject; className?: string }) => {
-  // check the npm package for more details. https://www.npmjs.com/package/@portabletext/react
-  return (
-    <article className={cn('text-md md:text-lg', className)}>
-      <PortableText value={content} components={myPortableTextComponents} />
-    </article>
-  );
-};
-
-export default RichTextContent;
+export function PortableText({ value }: { value: any }) {
+  return <PortableTextComponent value={value} components={components} />;
+}

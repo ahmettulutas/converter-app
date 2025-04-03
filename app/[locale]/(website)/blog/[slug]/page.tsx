@@ -2,7 +2,7 @@ import { getAllBlogSlugs, getBlogBySlug } from '@/actions/blog';
 import { CalculatorRenderer } from '@/components/shared/calculator-renderer';
 import { JsonSchema } from '@/components/shared/json.ld';
 import { PageContainer } from '@/components/shared/page-container';
-import RichTextContent from '@/components/shared/rich-text-content';
+import { PortableText } from '@/components/shared/rich-text-content';
 import { SocialShareLinks } from '@/components/shared/share-social-media';
 import { TableOfContentSkeleton } from '@/components/skeletons/table-of-content';
 import { createTranslation } from '@/i18n';
@@ -91,17 +91,28 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
               </section>
             </Suspense>
           )}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-6 my-2 pt-1">
             <div className="col-span-1 md:col-span-2 mt-2">
-              {data?.blog?.content ? <RichTextContent content={data?.blog?.content} /> : <></>}
+              {data.blog.content ? (
+                <div className="prose prose-gray dark:prose-invert max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+                  <PortableText value={data.blog.content} />
+                </div>
+              ) : (
+                <div className="prose prose-gray dark:prose-invert max-w-none">
+                  <p>İçerik bulunamadı.</p>
+                </div>
+              )}
             </div>
+
             {data?.blog?.headings?.length > 0 && (
-              <Suspense fallback={<TableOfContentSkeleton />}>
-                <details className="border p-4 col-span-1 md:sticky top-2 h-min bg-background" open>
-                  <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
-                  <TableOfContent headings={data?.blog?.headings} language={'locale'} />
-                </details>
-              </Suspense>
+              <div className="col-span-1">
+                <div className="md:sticky md:top-2 border p-4 bg-background">
+                  <details open>
+                    <summary className="text-lg font-semibold cursor-pointer">{t('labels.tableOfContent')}</summary>
+                    <TableOfContent headings={data?.blog?.headings} language={'locale'} />
+                  </details>
+                </div>
+              </div>
             )}
           </div>
         </PageContainer>

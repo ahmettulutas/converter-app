@@ -30,7 +30,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // matcher: '/:lng*'
-  matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|en/studio|cv.pdf|sitemap.xml).*)', // Captures any string that does not start with one of the specified patterns (api, _next/static, _next/image, assets, favicon.ico, sw.js, en/studio, cv.pdf).
-  ],
+  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|sitemap.xml|robots.txt).*)'],
 };

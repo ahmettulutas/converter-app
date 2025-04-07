@@ -1,4 +1,4 @@
-import { SharedPageProps } from '../layout';
+import { type SharedPageProps } from '../layout';
 
 import { ResolvingMetadata } from 'next';
 import { getDefaultMetaData, getLocalizedJsonLd } from '@/lib/seo';
@@ -7,15 +7,15 @@ import { risingSignCalculatorFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { createTranslation } from '@/i18n';
 
 import { defaultLanguage, LocaleType } from '@/i18n/settings';
 import CalculatorContainer from '@/components/layout/calculator-container';
 import { zodiacSigns } from '@/lib/utils/calculate-rising';
 import { baseUrl } from '@/lib/constants/common';
-import RelatedLinks from '@/components/shared/dynamic-links';
 
+const RelatedLinks = lazy(() => import('@/components/shared/dynamic-links'));
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
 const pageKey = 'risingSignCalculator';
 
@@ -53,9 +53,14 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
             faqProps={{ faqList: risingSignCalculatorFAQs[params.locale] }}
             calculator={
               <div className="flex flex-col gap-y-4">
-                <RisingSignCalculator currentLocale={params.locale} />
+                <Suspense fallback={<>Loaing...</>}>
+                  <RisingSignCalculator currentLocale={params.locale} />
+                </Suspense>
+
                 <div className="max-w-xl mx-auto">
-                  <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
+                  <Suspense fallback={<>Loading...</>}>
+                    <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
+                  </Suspense>
                 </div>
               </div>
             }

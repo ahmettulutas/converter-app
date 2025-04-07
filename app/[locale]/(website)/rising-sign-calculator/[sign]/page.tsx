@@ -7,18 +7,19 @@ import { risingSignCalculatorFAQs } from '@/lib/constants/faq';
 import { PageContainer } from '@/components/shared/page-container';
 
 import { JsonSchema } from '@/components/shared/json.ld';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { createTranslation } from '@/i18n';
 
 import { defaultLanguage, LocaleType } from '@/i18n/settings';
 import CalculatorContainer from '@/components/layout/calculator-container';
-import RelatedLinks from '@/components/shared/dynamic-links';
+
 import { zodiacSigns } from '@/lib/utils/calculate-rising';
 import { baseUrl } from '@/lib/constants/common';
 
 const RisingSignCalculator = lazy(() => import('@/components/pages/rising-sign-calculator'));
-const pageKey = 'risingSignCalculator';
+const RelatedLinks = lazy(() => import('@/components/shared/dynamic-links'));
 
+const pageKey = 'risingSignCalculator';
 export default async function RisignSignCalculatorPage(
   props: Readonly<SharedPageProps> & { params: { sign: string; locale: LocaleType } }
 ) {
@@ -74,7 +75,9 @@ export default async function RisignSignCalculatorPage(
               <div className="flex flex-col gap-y-4">
                 <RisingSignCalculator currentLocale={params.locale} initialSign={params.sign} />
                 <div className="max-w-xl mx-auto">
-                  <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
+                  <Suspense fallback={<>Loading...</>}>
+                    <RelatedLinks links={relatedLinks} title={t('labels.relatedLinks')} />
+                  </Suspense>
                 </div>
               </div>
             }

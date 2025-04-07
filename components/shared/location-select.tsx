@@ -22,7 +22,7 @@ interface LocationSelectProps {
   currentLocale: LocaleType;
 }
 
-export function LocationSelect({ onChange, value, label, placeholder, currentLocale }: LocationSelectProps) {
+const LocationSelect = ({ onChange, value, label, placeholder, currentLocale }: LocationSelectProps) => {
   const [open, setOpen] = React.useState(false);
   const [searchTerm, setSearchTerm] = React.useState('');
   const [cities, setCities] = React.useState<PlaceResult[]>([]);
@@ -198,4 +198,5 @@ export function LocationSelect({ onChange, value, label, placeholder, currentLoc
       </Popover>
     </div>
   );
-}
+};
+export default LocationSelect;

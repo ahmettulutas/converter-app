@@ -81,8 +81,7 @@ export function DatePicker(props: DatePickerProps) {
           />
         </PopoverContent>
       </Popover>
-
-      <Input type="date" value={manualDate} onChange={handleManualDateChange} className="rounded-xl" />
+      <Input id="date" type="date" value={manualDate} onChange={handleManualDateChange} className="rounded-xl" />
     </div>
   );
 }

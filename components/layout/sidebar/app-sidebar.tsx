@@ -1,5 +1,5 @@
 'use client';
-import { ArrowLeftRight, Calculator, Settings } from 'lucide-react';
+import { Calculator, Settings } from 'lucide-react';
 
 import {
   Sidebar,
@@ -19,9 +19,7 @@ import { useParams } from 'next/navigation';
 import { LocaleType } from '@/i18n/settings';
 import Link from 'next/link';
 
-// Import your dataset (adjust the import path as needed)
-
-export function AppSidebar() {
+const AppSidebar = () => {
   const params = useParams();
   const { t } = useTranslation(params.locale as LocaleType, 'translation');
   return (
@@ -66,4 +64,5 @@ export function AppSidebar() {
       <SidebarRail />
     </Sidebar>
   );
-}
+};
+export default AppSidebar;

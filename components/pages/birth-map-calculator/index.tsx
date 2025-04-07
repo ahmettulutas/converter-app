@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -11,7 +11,9 @@ import { computeChartData } from '@/lib/utils/calculate-birthmap';
 import { LocaleType } from '@/i18n/settings';
 import { useTranslation } from '@/i18n/client';
 import { PlaceResult } from '@/app/api/places/route';
-import { LocationSelect } from '@/components/shared/location-select';
+import ComboboxSkeleton from '@/components/skeletons/combobox';
+
+const LocationSelect = lazy(() => import('@/components/shared/location-select'));
 
 type ChartData = {
   planets: { [key: string]: number[] };
@@ -118,13 +120,15 @@ export default function DualBirthMapCalculator({ currentLocale }: { currentLocal
             </div>
 
             <div className="space-y-2">
-              <LocationSelect
-                currentLocale={currentLocale}
-                onChange={handleCitySelect}
-                value={city}
-                placeholder={t('labels.selectCity')}
-                label={t('labels.selectCity')}
-              />
+              <Suspense fallback={<ComboboxSkeleton />}>
+                <LocationSelect
+                  currentLocale={currentLocale}
+                  onChange={handleCitySelect}
+                  value={city}
+                  placeholder={t('labels.selectCity')}
+                  label={t('labels.selectCity')}
+                />
+              </Suspense>
             </div>
 
             <Button type="submit" className="w-full">

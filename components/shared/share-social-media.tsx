@@ -16,13 +16,13 @@ export const SocialShareLinks = ({ shareUrl, customShareText }: SocialShareLinks
 
   return (
     <div className="flex space-x-2">
-      <a href={facebookShareUrl} target="_blank" rel="noopener noreferrer">
+      <a href={facebookShareUrl} target="_blank" rel="noopener noreferrer" title="bu makaleyi facebookta paylaş">
         <FacebookIcon className="w-6 h-6" />
       </a>
-      <a href={twitterShareUrl} target="_blank" rel="noopener noreferrer">
+      <a href={twitterShareUrl} target="_blank" rel="noopener noreferrer" title="bu makaleyi twitterda paylaş">
         <TwitterIcon className="w-6 h-6" />
       </a>
-      <a href={whatsappShareUrl} target="_blank" rel="noopener noreferrer">
+      <a href={whatsappShareUrl} target="_blank" rel="noopener noreferrer" title="bu makaleyi whatsappta paylaş">
         <WahtsappIcon className="w-6 h-6" />
       </a>
     </div>

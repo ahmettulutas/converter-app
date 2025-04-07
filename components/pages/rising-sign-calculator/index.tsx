@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useState } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -11,16 +11,19 @@ import { Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
-import { useParams } from 'next/navigation';
 import { PlaceResult } from '@/app/api/places/route';
 import { DatePicker } from '@/components/ui/date-picker';
-import { LocationSelect } from '@/components/shared/location-select';
+
 import { Checkbox } from '@/components/ui/checkbox';
 import { calculateAscendant, RisingSignResult } from '@/lib/utils/calculate-rising';
 import { useTranslation } from '@/i18n/client';
-import SignResult from './result';
+
 import Link from 'next/link';
 import { LocaleType } from '@/i18n/settings';
+import ComboboxSkeleton from '@/components/skeletons/combobox';
+
+const LocationSelect = lazy(() => import('@/components/shared/location-select'));
+const SignResult = lazy(() => import('./result'));
 
 export default function RisingSignForm({
   currentLocale,
@@ -90,17 +93,21 @@ export default function RisingSignForm({
           className="space-y-4"
         >
           <div className="space-y-2">
-            <DatePicker
-              title={t('labels.birthDate')}
-              onChange={(date) => setBirthDate(date)}
-              initialValue={birthDate}
-            />
+            <Label htmlFor="date">{t('labels.birthDate')}</Label>
+            <Suspense fallback={<ComboboxSkeleton />}>
+              <DatePicker
+                title={t('labels.birthDate')}
+                onChange={(date) => setBirthDate(date)}
+                initialValue={birthDate}
+              />
+            </Suspense>
           </div>
 
           {/* Doğum Saati */}
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
               <Checkbox
+                title={t('labels.idkMyBirthTime')}
                 id="unknown-birth-time"
                 checked={unknownBirthTime}
                 onCheckedChange={(checked) => {
@@ -127,14 +134,15 @@ export default function RisingSignForm({
               </div>
             </div>
           )}
-
-          <LocationSelect
-            currentLocale={currentLocale}
-            onChange={handleCitySelect}
-            value={city}
-            placeholder={t('labels.selectCity')}
-            label={t('labels.selectCity')}
-          />
+          <Suspense fallback={<ComboboxSkeleton />}>
+            <LocationSelect
+              currentLocale={currentLocale}
+              onChange={handleCitySelect}
+              value={city}
+              placeholder={t('labels.selectCity')}
+              label={t('labels.selectCity')}
+            />
+          </Suspense>
 
           {/* Hesapla Butonu */}
           <TooltipProvider>

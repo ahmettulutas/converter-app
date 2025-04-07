@@ -1,7 +1,7 @@
 import { createTranslation } from '@/i18n';
 import { LocaleType, availableLocales, defaultLanguage } from '@/i18n/settings';
 import { Metadata, ResolvingMetadata } from 'next';
-import opengraphImage from '../public/eq-logo.jpg';
+import opengraphImage from '../public/eq-logo.webp';
 import { baseUrl, companyName, ogImageSizes, twitterImageSizes } from '@/lib/constants/common';
 import { urlForImage } from './sanity/helpers/image-fns';
 import { ImageType } from '@/types/images';

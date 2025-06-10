@@ -36,7 +36,7 @@ export default async function RisignSignCalculatorPage(props: Readonly<SharedPag
     <>
       <article className="flex flex-col items-center justify-center w-full">
         <PageContainer className="flex flex-col gap-y-2 my-4">
-          <h1 className="text-center text-2xl my-2">{t('labels.lengthCalculator')}</h1>
+          <h1 className="text-center text-2xl my-2">{t('labels.sunSignCalculator')}</h1>
           <CalculatorContainer
             faqProps={{ faqList: sunSignFaqs[params.locale] }}
             calculator={<SunSignCalculator currentLocale={params.locale} />}
